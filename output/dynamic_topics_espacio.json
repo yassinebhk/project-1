@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-10-04T19:42:43.803949+00:00",
+  "topics": [
+    {
+      "key": "diamantes_en_neptuno",
+      "titulo": "Llueve diamantes en Neptuno pero no podrías llevártuno",
+      "hook": "En los gigantes de hielo del sistema solar, el cielo literalmente se cae a pedazos en forma de piedras preciosas.",
+      "angle": "Explicar el proceso físico de la alta presión atmosférica que descompone el metano y forma lluvias de diamantes sólidos en Neptuno y Urano según datos de la NASA.",
+      "visual": "neptune planet atmosphere lightning glowing diamond rain cosmic blue storm"
+    },
+    {
+      "key": "sonido_agujero_negro",
+      "titulo": "La NASA grabó el sonido real de un agujero negro",
+      "hook": "Esto que escuchas no es ciencia ficción, es la onda de presión real de un agujero negro viajando por el espacio.",
+      "angle": "Las ondas sonoras reales extraídas por el observatorio Chandra de la NASA en el cúmulo de galaxias de Perseo, transformadas a escala audible humana.",
+      "visual": "chandra x ray observatory black hole sound wave ripple cosmic gas"
+    },
+    {
+      "key": "estrella_mas_fria",
+      "titulo": "Encontraron una estrella más fría que una taza de café",
+      "hook": "Imagina una estrella que brilla en la oscuridad y está tan fría que podrías tocarla sin quemarte.",
+      "angle": "Las características de las enanas marrones y sub-enanas ultrafrías como WISE 0855−0714, con temperaturas bajo cero registradas por telescopios infrarrojos.",
+      "visual": "brown dwarf star dim infrared deep space cold purple sphere"
+    },
+    {
+      "key": "cicatriz_lunar",
+      "titulo": "La cicatriz en la Luna que revela un impacto colosal",
+      "hook": "La Luna tiene una enorme herida secreta en su cara oculta que la ciencia tardó décadas en comprender.",
+      "angle": "El análisis de la Cuenca Polo Sur-Aitken, el cráter de impacto más grande y antiguo de la Luna, medido por orbitadores lunares.",
+      "visual": "moon far side huge crater topography scientific elevation map nasa"
+    },
+    {
+      "key": "oceano_encelado",
+      "titulo": "El océano escondido en una luna de Saturno donde podría haber vida",
+      "hook": "Bajo una gruesa capa de hielo alienígena se esconde el mar más prometedor para buscar vida extraterrestre.",
+      "angle": "Los géiseres de agua salada y compuestos orgánicos detectados por la sonda Cassini expulsados desde el polo sur de Encélado.",
+      "visual": "enceladus saturn moon ice plumes water jet erupting into space"
+    },
+    {
+      "key": "anillos_saturno_desaparecen",
+      "titulo": "Los icónicos anillos de Saturno van a desaparecer",
+      "hook": "El planeta más bello del sistema solar está perdiendo su seña de identidad ante nuestros propios ojos.",
+      "angle": "El fenómeno de la lluvia de anillos, donde la gravedad de Saturno atrae el hielo aceleradamente, calculado en estudios recientes de la NASA.",
+      "visual": "saturn rings fading ice particles falling gravitational pull realistic"
+    },
+    {
+      "key": "galaxia_hu_11",
+      "titulo": "La galaxia monstruo que creció demasiado rápido",
+      "hook": "El telescopio James Webb acaba de fotografiar un imposible cósmico que desafía las leyes de la física.",
+      "angle": "La detección de galaxias masivas en el universo temprano por el JWST que obligan a reescribir los modelos cosmológicos estándar.",
+      "visual": "james webb deep field massive ancient galaxy infrared red glowing"
+    },
+    {
+      "key": "escudo_magnetico_tierra",
+      "titulo": "El campo magnético terrestre tiene una gigantesca brecha",
+      "hook": "Hay una falla invisible sobre nuestras cabezas por donde la radiación solar entra sin permiso.",
+      "angle": "La anomalía del Atlántico Sur, una zona donde el cinturón de radiación de Van Allen se acerca peligrosamente a la superficie terrestre.",
+      "visual": "earth magnetic field lines auroras space weather satellite view glow"
+    },
+    {
+      "key": "humedad_espacial_orion",
+      "titulo": "El agua en el espacio supera a todos los océanos de la Tierra",
+      "hook": "Flotando en el vacío hay una reserva infinita de agua potable que supera cualquier cálculo.",
+      "angle": "La nube molecular gigante en la constelación de Orión que contiene vapor de agua equivalente a miles de veces los océanos terrestres.",
+      "visual": "orion nebula vast gas cloud star formation infrared vibrant colors"
+    },
+    {
+      "key": "asteroide_apofis",
+      "titulo": "El asteroide Apofis rozará la Tierra en el año 2029",
+      "hook": "En pocos años, un asteroide gigante pasará tan cerca de nosotros que cruzará por debajo de los satélites.",
+      "angle": "Los datos orbitales oficiales de la ESA y la NASA sobre el acercamiento seguro pero extremadamente cercano del asteroide Apofis en 2029.",
+      "visual": "asteroid approaching earth orbit satellites warning trajectory space"
+    },
+    {
+      "key": "velocidad_viaje_luz",
+      "titulo": "Por qué viajar a la velocidad de la luz destruye el tiempo",
+      "hook": "Si pudieras viajar a la velocidad de la luz, el universo entero envejecería mientras tú sigues exactamente igual.",
+      "angle": "La dilatación temporal predicha por la Relatividad Especial de Einstein y demostrada con relojes atómicos en satélites GPS.",
+      "visual": "speed of light warp drive star trails time dilation physics concept"
+    },
+    {
+      "key": "tormenta_solar_carrington",
+      "titulo": "La mayor tormenta solar de la historia moderna",
+      "hook": "En 1859 el cielo nocturno ardió en auroras boreales y los telegrafos empezaron a funcionar solos sin baterías.",
+      "angle": "El impacto y la magnitud del Evento Carrington, la eyección de masa coronal más potente documentada instrumentalmente en la historia.",
+      "visual": "solar flare coronal mass ejection earth auroras intense geomagnetic storm"
+    }
+  ]
+}
