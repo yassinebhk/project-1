@@ -434,6 +434,11 @@ def build() -> dict:
         vids_ids = [v["video_id"] for v in vlist]
         likes_total = sum(v["likes"] for v in vlist)
         views_sum = sum(v["views"] for v in vlist)
+        # Fix veracidad: la API de YouTube reporta viewCount=0 a nivel de CANAL en
+        # canales nuevos (lag de agregación). Usar el máximo entre el viewCount del
+        # canal y la suma real de views de sus vídeos (canales viejos conservan su
+        # total histórico mayor; los nuevos reflejan sus views reales).
+        views = max(views or 0, views_sum)
         eng_rate = round(100 * likes_total / views_sum, 2) if views_sum else None
         views_vals = sorted(v["views"] for v in vlist)
         median_views = views_vals[len(views_vals) // 2] if views_vals else 0
