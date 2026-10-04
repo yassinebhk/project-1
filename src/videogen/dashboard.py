@@ -405,7 +405,10 @@ def build() -> dict:
         watch_hours = shorts90 = None
         ext_pct = ext_views = traffic_28d = None
         traffic_top = None
+        snap_handle = ""
         for r in sorted(chan_by_pk.get(pk, []), key=lambda x: x.get("ts", 0) or 0):
+            if r.get("handle"):
+                snap_handle = r["handle"]
             if r.get("videos"):
                 videos = r["videos"]
             if r.get("watch_hours") is not None:
@@ -484,7 +487,7 @@ def build() -> dict:
 
         # handle: estático del registro, o el @handle (customUrl) del último snapshot
         # de la API → nunca queda vacío si el canal existe. Normaliza con '@' delante.
-        _h = ch.get("handle") or latest.get("handle") or ""
+        _h = ch.get("handle") or snap_handle or ""
         if _h and not _h.startswith("@"):
             _h = "@" + _h
         _h = _h or None
