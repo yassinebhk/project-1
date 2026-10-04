@@ -1,13 +1,5 @@
 [
   {
-    "slug": "stock-market-losses-tax-hack",
-    "title": "Recupera tus pérdidas en bolsa · hasta -25% base · #1",
-    "status": "ok",
-    "media_id": "18124633538497472",
-    "url": "https://instagram.com/reel/18124633538497472",
-    "ts": "2026-09-23T22:19:48.512144+00:00"
-  },
-  {
     "slug": "tributacion-etfs-espana-2026",
     "title": "Tributación ETFs España · 19-28% tramo · #1",
     "status": "ok",
@@ -789,5 +781,13 @@
     "status": "fail_publish",
     "container_id": "18097829795188569",
     "ts": "2026-10-04T09:11:18.076405+00:00"
+  },
+  {
+    "slug": "modelo-130-excepcion-70-por-ciento",
+    "title": "Zafarse del Modelo 130 · 20% trimestral · #1",
+    "status": "ok",
+    "media_id": "18113409227025202",
+    "url": "https://instagram.com/reel/18113409227025202",
+    "ts": "2026-10-04T13:16:17.511288+00:00"
   }
 ]
