@@ -45,7 +45,7 @@ CH_COLORS = [
 CHANNELS: list[dict] = [
     dict(key="waitwhy",    name="WaitWhy",           pk="youtube",          handle="@waitwhy_ybb",     cat="True crime / corrupción", status="active", lang="ES", group="core", flagship=True),
     dict(key="ayudas",     name="AyudaGob",          pk="youtube_ayudas",   handle="@AyudaGob_es",     cat="Ayudas y subvenciones",   status="active", lang="ES", group="core"),
-    dict(key="motor",      name="Motor60s",          pk="youtube_motor",    handle="@Motor60sES",      cat="Motor / curiosidades",    status="active", lang="ES", group="core"),
+    dict(key="motor",      name="Motor60s (→ Enigmas)", pk="youtube_motor", handle=None,               cat="Motor — reconvertido a Enigmas 04/10", status="paused", lang="ES", group="extra"),
     dict(key="pov",        name="TiempoAtrás ES",    pk="youtube_pov",      handle="@TiempoAtras_ES",  cat="Historia / POV",          status="active", lang="ES", group="core"),
     dict(key="ranking",    name="TopRanking ES",     pk="youtube_ranking",  handle="@TopRanking_ES",   cat="Rankings / datos",        status="active", lang="ES", group="core"),
     dict(key="ia",         name="IA Autónomos ES",   pk="youtube_ia",       handle="@IAAutonomos_es",  cat="IA para autónomos",       status="active", lang="ES", group="core"),
@@ -64,7 +64,7 @@ CHANNELS: list[dict] = [
     dict(key="stoic",       name="Stoic Mind",        pk="youtube_stoic",       handle=None, cat="Estoicismo (EN)",          status="active", lang="EN", group="core"),
     dict(key="sesgos",      name="Mente Racional",    pk="youtube_sesgos",      handle=None, cat="Sesgos cognitivos",        status="active", lang="ES", group="core"),
     dict(key="curiosidades", name="¿Qué Pasaría Si?", pk="youtube_curiosidades", handle=None, cat="Curiosidades / ciencia",  status="active", lang="ES", group="core"),
-    dict(key="misterios",   name="Enigmas sin Resolver", pk="youtube_misterios", handle=None, cat="Misterios documentados", status="paused", lang="ES", group="extra"),
+    dict(key="misterios",   name="Enigmas sin Resolver", pk="youtube_misterios", handle=None, cat="Misterios (ex-Motor60s)",  status="active", lang="ES", group="core"),
     dict(key="filosofia",   name="Abismo",            pk="youtube_filosofia",   handle=None, cat="Filosofía profunda",       status="paused", lang="ES", group="extra"),
     dict(key="espacio",     name="Cosmos",            pk="youtube_espacio",     handle=None, cat="Astronomía (ex-TaxHack)",   status="active", lang="ES", group="core"),
     dict(key="geoquiz",     name="GeoQuiz",           pk="youtube_geoquiz",     handle=None, cat="Geografía / quiz",         status="paused", lang="EN", group="extra"),
@@ -81,6 +81,7 @@ CATCHUP_PROD = {
     "Mente Racional":   {"short": True, "long": True},
     "¿Qué Pasaría Si?": {"short": True, "long": False},
     "Cosmos":           {"short": True, "long": False},
+    "Enigmas sin Resolver": {"short": True, "long": False},
 }
 # Canales huérfanos (sin YT propio) que suben al canal host de otro nicho afín.
 YT_HOST_REDIRECT = {"criminopatia": "WaitWhy", "trabajos": "TusDerechos ES", "padel": "TopRanking ES"}

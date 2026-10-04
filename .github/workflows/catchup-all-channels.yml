@@ -75,17 +75,11 @@ jobs:
       command: ayudas-once
     secrets: inherit
 
-  motor_short:
-    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
-    needs: [ayudas_short]
-    uses: ./.github/workflows/_videogen-job.yml
-    with:
-      command: motor-once
-    secrets: inherit
-
+  # Motor60s RECONVERTIDO a Enigmas (04/10): el pipeline 'misterios' (ya en este catchup)
+  # alimenta el canal. Se para motor para no subir coches al canal renombrado.
   pov_short:
     if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
-    needs: [motor_short]
+    needs: [ayudas_short]
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: pov-once
@@ -268,17 +262,10 @@ jobs:
       command: ayudas-longform
     secrets: inherit
 
-  motor_long:
-    if: ${{ always() && (inputs.only == 'all' || inputs.only == 'longform') }}
-    needs: [ayudas_long]
-    uses: ./.github/workflows/_videogen-job.yml
-    with:
-      command: motor-longform
-    secrets: inherit
-
+  # motor_long eliminado (04/10): Motor60s reconvertido a Enigmas. Sin long-form de motor.
   ai_tools_long:
     if: ${{ always() && (inputs.only == 'all' || inputs.only == 'longform') }}
-    needs: [motor_long]
+    needs: [ayudas_long]
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: ai-tools-longform

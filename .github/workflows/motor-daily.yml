@@ -4,9 +4,8 @@ name: Motor 2ª mano daily (Motor60s)
 # 1 short/día 13:00 UTC (15:00 CEST — sobremesa/tarde).
 # DESACTIVADO hasta setup del user (canal YT + 3 secrets YT_MOTOR_*).
 
+# RETIRADO 04/10: Motor60s reconvertido a Enigmas/Misterios. Sin cron (solo dispatch).
 on:
-  schedule:
-    - cron: "26 13 * * *"
   workflow_dispatch: {}
 
 permissions:

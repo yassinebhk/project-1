@@ -3,9 +3,8 @@ name: Motor long-form weekly (Motor60s)
 # 1 long-form/semana DOMINGO 14 UTC (16 CEST).
 # DESACTIVADO hasta OAuth canal Motor.
 
+# RETIRADO 04/10: Motor60s reconvertido a Enigmas. Sin cron (solo dispatch).
 on:
-  schedule:
-    - cron: "7 11 * * 5"
   workflow_dispatch: {}
 
 permissions:
