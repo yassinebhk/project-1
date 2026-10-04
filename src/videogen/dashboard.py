@@ -50,7 +50,7 @@ CHANNELS: list[dict] = [
     dict(key="ranking",    name="TopRanking ES",     pk="youtube_ranking",  handle="@TopRanking_ES",   cat="Rankings / datos",        status="active", lang="ES", group="core"),
     dict(key="ia",         name="IA Autónomos ES",   pk="youtube_ia",       handle="@IAAutonomos_es",  cat="IA para autónomos",       status="active", lang="ES", group="core"),
     dict(key="aitools",    name="AI Tools Weekly",   pk="youtube_aitools",  handle=None,               cat="AI tools",                status="active", lang="EN", group="core"),
-    dict(key="tax",        name="TaxHack ES",        pk="youtube_tax",      handle="@TaxHack_es",      cat="Fiscalidad",              status="active", lang="ES", group="core"),
+    dict(key="tax",        name="TaxHack (→ Cosmos)", pk="youtube_tax",     handle=None,               cat="Fiscalidad — reconvertido a Cosmos 04/10", status="paused", lang="ES", group="extra"),
     dict(key="legal",      name="TusDerechos ES",    pk="youtube_legal",    handle="@TusDerechos_ES",  cat="Derecho laboral",         status="active", lang="ES", group="core"),
     dict(key="ambient",    name="MenteEnCalma",      pk="youtube_ambient",  handle=None,               cat="Relax / binaural",        status="active", lang="ES", group="core"),
     dict(key="padel",      name="Pádel",             pk=None,               handle=None,               cat="Pádel (Manim)",           status="active", lang="ES", group="extra"),
@@ -66,7 +66,7 @@ CHANNELS: list[dict] = [
     dict(key="curiosidades", name="¿Qué Pasaría Si?", pk="youtube_curiosidades", handle=None, cat="Curiosidades / ciencia",  status="active", lang="ES", group="core"),
     dict(key="misterios",   name="Enigmas sin Resolver", pk="youtube_misterios", handle=None, cat="Misterios documentados", status="paused", lang="ES", group="extra"),
     dict(key="filosofia",   name="Abismo",            pk="youtube_filosofia",   handle=None, cat="Filosofía profunda",       status="paused", lang="ES", group="extra"),
-    dict(key="espacio",     name="Cosmos",            pk="youtube_espacio",     handle=None, cat="Astronomía",               status="paused", lang="ES", group="extra"),
+    dict(key="espacio",     name="Cosmos",            pk="youtube_espacio",     handle=None, cat="Astronomía (ex-TaxHack)",   status="active", lang="ES", group="core"),
     dict(key="geoquiz",     name="GeoQuiz",           pk="youtube_geoquiz",     handle=None, cat="Geografía / quiz",         status="paused", lang="EN", group="extra"),
 ]
 
@@ -80,6 +80,7 @@ CATCHUP_PROD = {
     "Stoic Mind":       {"short": True, "long": True},
     "Mente Racional":   {"short": True, "long": True},
     "¿Qué Pasaría Si?": {"short": True, "long": False},
+    "Cosmos":           {"short": True, "long": False},
 }
 # Canales huérfanos (sin YT propio) que suben al canal host de otro nicho afín.
 YT_HOST_REDIRECT = {"criminopatia": "WaitWhy", "trabajos": "TusDerechos ES", "padel": "TopRanking ES"}

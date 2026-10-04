@@ -56,17 +56,12 @@ jobs:
       command: hourly-catchup
     secrets: inherit
 
-  tax_short:
-    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
-    needs: [waitwhy_short]
-    uses: ./.github/workflows/_videogen-job.yml
-    with:
-      command: tax-once
-    secrets: inherit
-
+  # TaxHack RECONVERTIDO a Cosmos (04/10): el canal pasa a Astronomía (pipeline
+  # 'espacio', que ya corre en este catchup). Se para el pipeline de fiscalidad para
+  # no subir tax al canal renombrado. YT_TAX reautoriza al canal Cosmos como YT_ESPACIO.
   legal_short:
     if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
-    needs: [tax_short]
+    needs: [waitwhy_short]
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: legal-once
@@ -256,17 +251,10 @@ jobs:
       command: longgen-once
     secrets: inherit
 
-  tax_long:
-    if: ${{ always() && (inputs.only == 'all' || inputs.only == 'longform') }}
-    needs: [waitwhy_long]
-    uses: ./.github/workflows/_videogen-job.yml
-    with:
-      command: tax-longform
-    secrets: inherit
-
+  # tax_long eliminado (04/10): TaxHack reconvertido a Cosmos. Sin long-form de fiscalidad.
   legal_long:
     if: ${{ always() && (inputs.only == 'all' || inputs.only == 'longform') }}
-    needs: [tax_long]
+    needs: [waitwhy_long]
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: legal-longform
