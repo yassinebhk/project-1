@@ -72,7 +72,15 @@ CHANNELS: list[dict] = [
 
 # IG whitelist (otra sesión 21/09): solo canales afines a true crime ES suben a
 # Instagram @waitwhy_ (evita penalty de Originality Score por mezcla de nichos).
-IG_WHITELIST = {"waitwhy", "criminopatia", "legal", "ayudas", "pov", "trabajos"}
+IG_WHITELIST = {"waitwhy", "criminopatia", "legal", "ayudas", "pov", "trabajos",
+                "stoic", "sesgos"}  # 03/10: Stoic + Mente Racional suben a IG @waitwhy_ (compartida)
+# Canales que PRODUCEN vía catchup (sin workflow/cron propio) → prod para el badge
+# del panel (Shorts/Long-form), ya que el parser de cron no los ve. Por nombre.
+CATCHUP_PROD = {
+    "Stoic Mind":       {"short": True, "long": True},
+    "Mente Racional":   {"short": True, "long": True},
+    "¿Qué Pasaría Si?": {"short": True, "long": False},
+}
 # Canales huérfanos (sin YT propio) que suben al canal host de otro nicho afín.
 YT_HOST_REDIRECT = {"criminopatia": "WaitWhy", "trabajos": "TusDerechos ES", "padel": "TopRanking ES"}
 
@@ -474,9 +482,15 @@ def build() -> dict:
             net_views += views
         net_videos += videos
 
+        # handle: estático del registro, o el @handle (customUrl) del último snapshot
+        # de la API → nunca queda vacío si el canal existe. Normaliza con '@' delante.
+        _h = ch.get("handle") or latest.get("handle") or ""
+        if _h and not _h.startswith("@"):
+            _h = "@" + _h
+        _h = _h or None
         channels_out.append(dict(
-            key=ch["key"], name=ch["name"], handle=ch.get("handle"),
-            url=_yt_url(ch.get("handle")), cat=ch["cat"], status=ch["status"],
+            key=ch["key"], name=ch["name"], handle=_h,
+            url=_yt_url(_h), cat=ch["cat"], status=ch["status"],
             lang=ch["lang"], group=ch.get("group", "extra"),
             flagship=ch.get("flagship", False), color=color,
             ig=(ch["key"] in IG_WHITELIST), yt_host=YT_HOST_REDIRECT.get(ch["key"]),
@@ -851,6 +865,10 @@ def build() -> dict:
     for c in channels_out:
         pinfo = prod.get(c["name"], {"short": False, "long": False,
                                      "short_time": None, "long_time": None, "long_day": None})
+        # Canales que producen vía catchup (sin cron propio) → marca short/long reales.
+        _ov = CATCHUP_PROD.get(c["name"])
+        if _ov:
+            pinfo = {**pinfo, **_ov}
         c["prod"] = pinfo
         if c["status"] == "paused":
             c["health"] = "pausado"

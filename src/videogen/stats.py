@@ -211,6 +211,7 @@ def fetch_channel_stats(channel_prefix: str = "") -> dict | None:
     st = it.get("statistics", {})
     return {
         "title": it["snippet"]["title"],
+        "handle": it["snippet"].get("customUrl", ""),  # @handle público del canal
         "subscribers": int(st.get("subscriberCount", 0)),
         "hidden_subs": st.get("hiddenSubscriberCount", False),
         "views": int(st.get("viewCount", 0)),

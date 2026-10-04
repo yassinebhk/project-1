@@ -152,6 +152,7 @@ def _snapshot_channel_generic(yt_prefix: str, platform_key: str) -> list[dict]:
                 "likes": 0,
                 "videos": int(ch.get("videos", 0) or 0),
                 "title": ch.get("title", ""),
+                "handle": ch.get("handle", ""),  # @handle público (customUrl)
                 "source": "api",
             }
             try:
