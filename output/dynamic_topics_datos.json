@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-10-06T09:21:15.080321+00:00",
+  "topics": [
+    {
+      "key": "nubes_peso",
+      "titulo": "¿Cuánto pesa realmente una nube cumulo?",
+      "hook": "Parece algodón flotando en el cielo, pero esa nube blanca sobre tu cabeza pesa exactamente lo mismo que 80 elefantes.",
+      "angle": "El peso promedio de una nube de tormentacumulus es de unas 500.000 toneladas debido a la densidad del agua suspendida.",
+      "visual": "timelapse cielo nublado, elefantes digitales flotando, animacion gotas de agua, datos cientificos pantalla"
+    },
+    {
+      "key": "hielo_caliente",
+      "titulo": "El hielo que quema a altas temperaturas",
+      "hook": "Existe un tipo de hielo que nunca se derretiría en tu refresco, porque solo puede existir a temperaturas superiores a los 800 grados.",
+      "angle": "El hielo VII o superiónico existe bajo presiones extremas y altas temperaturas, manteniendo una estructura cristalina sólida.",
+      "visual": "bloque de hielo brillante, fuego intenso alrededor, laboratorio cientifico microscopio, atomos chocando"
+    },
+    {
+      "key": "tiempo_marte",
+      "titulo": "Por qué un año en Marte dura menos que sus estaciones",
+      "hook": "En Marte puedes cumplir años más rápido, pero espera a saber por qué un día allí es casi idéntico al de la Tierra.",
+      "angle": "Un sol marciano dura 24 horas y 39 minutos, muy similar al terrestre, pero su traslación hace que el año dure 687 días.",
+      "visual": "planeta marte rotando, reloj antiguo espacial, comparacion tierra marte, atardecer rojo marciano"
+    },
+    {
+      "key": "sonido_oro",
+      "titulo": "El metal más silencioso del universo",
+      "hook": "Si golpeas este metal puro con un martillo, no escucharás absolutamente ningún eco ni sonido metálico.",
+      "angle": "El oro puro es tan blando y denso que absorbe las vibraciones acústicas, evitando la reverberación al recibir un impacto.",
+      "visual": "martillo golpeando barra de oro, ondas de sonido silenciadas, macro textura de oro, laboratorio de fisica"
+    },
+    {
+      "key": "paradoja_gato",
+      "titulo": "La razón por la que los gatos siempre caen de pie",
+      "hook": "No tienen superpoderes mágicos, pero usan la física cuántica y un reflejo vestibular imposible para aterrizar sin daño.",
+      "angle": "El reflejo de enderezamiento felino permite rotar el cuerpo en dos mitades independientes usando el momento angular.",
+      "visual": "gato cayendo en camara lenta, animacion de esqueleto rotando, fisica de vectores, habitacion minimalista"
+    },
+    {
+      "key": "musculo_mas_fuerte",
+      "titulo": "El músculo humano más potente según su tamaño",
+      "hook": "No es el bíceps ni la pierna; el músculo que ejerce más fuerza en proporción a su tamaño está en tu propia boca.",
+      "angle": "El masetero es capaz de cerrar la mandíbula con una fuerza de hasta 90 kilos sobre los molares gracias a su ventaja mecánica.",
+      "visual": "primer plano rostro humano, animacion 3d musculo mandibula, calavera mordiendo, rayos x medicos"
+    },
+    {
+      "key": "bosque_subterraneo",
+      "titulo": "El organismo vivo más grande del mundo",
+      "hook": "El ser vivo más colosal del planeta no es una ballena ni una secuoya gigante, y vive completamente oculto bajo tierra.",
+      "angle": "El hongo de la miel en Oregón cubre casi 9 kilómetros cuadrados y comparte un único sistema de micelio subterráneo.",
+      "visual": "bosque de oregon desde arriba, raices de arboles con hongos luminosos, red subterranea animada, toma aerea bosque"
+    },
+    {
+      "key": "tiburon_antiguo",
+      "titulo": "El animal que existía antes que los árboles",
+      "hook": "Los tiburones llevan tanto tiempo nadando en la Tierra que vivieron en un planeta donde aún no existía ni un solo árbol.",
+      "angle": "Los tiburones aparecieron hace unos 450 millones de años, mientras que los primeros árboles evolucionaron 50 millones de años después.",
+      "visual": "tiburon prehistorico nadando, paisaje sin plantas terrestres, fosiles marinos, linea temporal animada"
+    },
+    {
+      "key": "diamantes_lluvia",
+      "titulo": "Planetas donde literalmente llueve oro y diamantes",
+      "hook": "Olvida el agua; en estos gigantes gaseosos del sistema solar, las tormentas producen auténticas piedras preciosas.",
+      "angle": "En Júpiter y Saturno, la atmósfera convierte el metano en hollín y luego en diamantes sólidos debido a la presión.",
+      "visual": "tormenta de diamantes espaciales, planeta gaseoso gigante, atmosfera tormentosa, anillos de saturno"
+    },
+    {
+      "key": "saliva_humana",
+      "titulo": "La cantidad de saliva que produces en tu vida",
+      "hook": "A lo largo de tu vida vas a generar tanta saliva que podrías llenar por completo dos piscinas olímpicas enteras.",
+      "angle": "Las glándulas salivales producen entre 1 y 1.5 litros diarios, sumando unos 25.000 litros a lo largo de una vida promedio.",
+      "visual": "piscina olimpica llena de agua, glándulas salivales animadas, macro gota de saliva, infografia medica"
+    },
+    {
+      "key": "suelo_oceonico",
+      "titulo": "La cascada submarina más grande del mundo",
+      "hook": "Bajo las frías aguas del océano Atlántico existe una catarata gigante que es tres veces más alta que el Salto Ángel.",
+      "angle": "La catarata del Estrecho de Dinamarca cae 3.500 metros bajo el agua debido a diferencias de temperatura y densidad.",
+      "visual": "oceano profundo oscuro, corriente de agua helada descendiendo, mapa batimetrico 3d, buceador escala"
+    },
+    {
+      "key": "camaleon_vision",
+      "titulo": "El superpoder visual que tiene el camaleón",
+      "hook": "Un camaleón puede mirar hacia adelante y hacia atrás al mismo tiempo gracias a sus ojos que operan de forma independiente.",
+      "angle": "Tienen un campo de visión de 360 grados y pueden procesar dos imágenes distintas de manera simultánea en su cerebro.",
+      "visual": "macro ojo de camaleon girando, pantalla dividida vision doble, selva tropical borrosa, animacion optica"
+    }
+  ]
+}
