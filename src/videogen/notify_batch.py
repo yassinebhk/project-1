@@ -28,14 +28,20 @@ def add(text: str, urgent: bool = False) -> None:
     if urgent:
         _send_message_now(text)
         return
-    # Reducción de ruido (user 06/10: "demasiada basura en Telegram"). Silencia los
-    # resúmenes de crosspost RRSS por canal (🌀/🤖/… · RRSS) que son puro relleno;
-    # mantiene confirmaciones de subida, alertas y lo del what-if. urgent SIEMPRE pasa.
-    # Reversible: TELEGRAM_MUTE_RRSS_SUMMARIES=0.
+    # Bot de Telegram = SOLO GeoQuiz (user 06/10: "que sea solo de eso, no me envíes
+    # vídeos de otras cosas ni contenido basura"). En modo ONLY_GEOQUIZ (default on),
+    # se descarta TODO lo no-urgente que no mencione GeoQuiz/TikTok. Las alertas de
+    # FALLO (urgent=True) SIEMPRE llegan — no son basura, las necesitas.
+    # Reversible: TELEGRAM_ONLY_GEOQUIZ=0 (vuelve al modo normal con resúmenes RRSS
+    # silenciados vía TELEGRAM_MUTE_RRSS_SUMMARIES).
     import os as _os
-    if _os.environ.get("TELEGRAM_MUTE_RRSS_SUMMARIES", "1").lower() not in ("0", "false", "no"):
-        t = text or ""
-        if "· RRSS" in t and "¿Qué Pasar" not in t and "TikTok" not in t:
+    t = (text or "")
+    _tl = t.lower()
+    if _os.environ.get("TELEGRAM_ONLY_GEOQUIZ", "1").lower() not in ("0", "false", "no"):
+        if "geoquiz" not in _tl and "tiktok" not in _tl:
+            return
+    elif _os.environ.get("TELEGRAM_MUTE_RRSS_SUMMARIES", "1").lower() not in ("0", "false", "no"):
+        if "· RRSS" in t and "geoquiz" not in _tl and "tiktok" not in _tl:
             return
     _BUFFER.append(text)
 

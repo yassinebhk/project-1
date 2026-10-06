@@ -205,13 +205,10 @@ def generate_geoquiz(out_dir: Path, candidates: list[tuple], n_rounds: int = 5) 
         print(f"  geoquiz: ffmpeg encode fail: {r.stderr[-400:]}")
         return None
 
-    total_s = sum(d for _, d in frames)
-    try:
-        from ..ranking.generator import _add_music_to_video
-        final = _add_music_to_video(raw, work, int(total_s)) or raw
-    except Exception as e:
-        print(f"  geoquiz: music skip ({e})")
-        final = raw
+    # SIN música (user 06/10): el vídeo sale MUDO para que en TikTok se le añada el
+    # sonido que esté en TENDENCIA (truco del research: sonido trending = alcance gratis).
+    # Añadir música propia solo competiría con el audio trending de TikTok.
+    final = raw
 
     names = ", ".join(c[1] for c in chosen)
     title = "Guess the country by its flag 🏴 | Only 1% score 5/5"

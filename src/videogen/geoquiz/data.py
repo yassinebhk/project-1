@@ -26,7 +26,7 @@ COUNTRIES: list[tuple[str, str, str, int]] = [
     ("kr", "South Korea", "Seoul", 2), ("th", "Thailand", "Bangkok", 2),
     ("vn", "Vietnam", "Hanoi", 2), ("id", "Indonesia", "Jakarta", 2),
     ("ph", "Philippines", "Manila", 2), ("sa", "Saudi Arabia", "Riyadh", 2),
-    ("ae", "United Arab Emirates", "Abu Dhabi", 2), ("il", "Israel", "Jerusalem", 2),
+    ("ae", "United Arab Emirates", "Abu Dhabi", 2),
     ("ng", "Nigeria", "Abuja", 2), ("ke", "Kenya", "Nairobi", 2),
     ("ma", "Morocco", "Rabat", 2), ("cl", "Chile", "Santiago", 2),
     ("co", "Colombia", "Bogotá", 2), ("pe", "Peru", "Lima", 2),
