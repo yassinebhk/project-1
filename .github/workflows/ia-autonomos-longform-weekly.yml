@@ -3,9 +3,8 @@ name: IA Autónomos long-form weekly (IA Autónomos ES)
 # 1 long-form/semana MIÉRCOLES 13:30 UTC (15:30 CEST).
 # Escalonado 90 min tras POV para repartir la carga de Gemini.
 
+# RETIRADO 06/10: IA Autónomos reconvertido a "Datos Increíbles". Sin cron (solo dispatch).
 on:
-  schedule:
-    - cron: "30 13 * * 3"
   workflow_dispatch: {}
 
 permissions:

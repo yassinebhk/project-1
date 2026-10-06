@@ -48,7 +48,7 @@ CHANNELS: list[dict] = [
     dict(key="motor",      name="Motor60s (→ Enigmas)", pk="youtube_motor", handle=None,               cat="Motor — reconvertido a Enigmas 04/10", status="paused", lang="ES", group="extra"),
     dict(key="pov",        name="TiempoAtrás ES",    pk="youtube_pov",      handle="@TiempoAtras_ES",  cat="Historia / POV",          status="active", lang="ES", group="core"),
     dict(key="ranking",    name="TopRanking ES",     pk="youtube_ranking",  handle="@TopRanking_ES",   cat="Rankings / datos",        status="active", lang="ES", group="core"),
-    dict(key="ia",         name="IA Autónomos ES",   pk="youtube_ia",       handle="@IAAutonomos_es",  cat="IA para autónomos",       status="active", lang="ES", group="core"),
+    dict(key="ia",         name="Datos Increíbles",  pk="youtube_ia",       handle=None,               cat="Datos / curiosidades (ex-IA Autónomos)", status="active", lang="ES", group="core"),
     dict(key="aitools",    name="AI Tools Weekly",   pk="youtube_aitools",  handle=None,               cat="AI tools",                status="active", lang="EN", group="core"),
     dict(key="tax",        name="TaxHack (→ Cosmos)", pk="youtube_tax",     handle=None,               cat="Fiscalidad — reconvertido a Cosmos 04/10", status="paused", lang="ES", group="extra"),
     dict(key="legal",      name="TusDerechos ES",    pk="youtube_legal",    handle="@TusDerechos_ES",  cat="Derecho laboral",         status="active", lang="ES", group="core"),
@@ -82,6 +82,7 @@ CATCHUP_PROD = {
     "¿Qué Pasaría Si?": {"short": True, "long": False},
     "Cosmos":           {"short": True, "long": False},
     "Enigmas sin Resolver": {"short": True, "long": False},
+    "Datos Increíbles": {"short": True, "long": False},
 }
 # Canales huérfanos (sin YT propio) que suben al canal host de otro nicho afín.
 YT_HOST_REDIRECT = {"criminopatia": "WaitWhy", "trabajos": "TusDerechos ES", "padel": "TopRanking ES"}

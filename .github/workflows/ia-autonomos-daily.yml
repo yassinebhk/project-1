@@ -14,9 +14,8 @@ name: IA Autónomos daily (9º canal — micronicho blue-ocean 2026)
 #   - YT_IA_CLIENT_SECRET
 # Si faltan → pipeline aborta silenciosamente con notif Telegram.
 
+# RETIRADO 06/10: IA Autónomos reconvertido a "Datos Increíbles". Sin cron (solo dispatch).
 on:
-  schedule:
-    - cron: "43 11 * * *"
   workflow_dispatch: {}
 
 permissions:

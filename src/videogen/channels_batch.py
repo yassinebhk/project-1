@@ -173,6 +173,7 @@ CURIOSIDADES = SimpleChannelConfig(
     platform_key="youtube_curiosidades", lang="es", system_prompt_file="batch_es_system.md",
     tone="curioso y energético, divulgativo; asombro con rigor científico",
     category_id="27", emoji="🤔", cross_teaser="🤔 ¿Qué pasaría si…",
+    shorts_per_day=2,  # 06/10: es el formato GANADOR (628 views/vid, 2.3% eng) → doblar cadencia
     theme_desc=("A Spanish faceless channel of 'what if' hypotheticals and surprising facts, "
                 "GROUNDED IN REAL SCIENCE (physics, biology, astronomy). The hypothetical is the "
                 "hook; the payoff is real science."),
@@ -262,7 +263,66 @@ ESPACIO = SimpleChannelConfig(
 )
 
 
-BATCH: list[SimpleChannelConfig] = [MISTERIOS, SESGOS, FILOSOFIA, CURIOSIDADES, ESPACIO]
+# ───────────────────────── 6) Datos Increíbles (ES) — reconvierte IA Autónomos ─────────────────────────
+# 06/10: IA Autónomos (muerto, eng 0,6%) → curiosidades/ciencia tipo "amazing facts"
+# (formato Zack D. Films, 2º canal de curiosidad tras el éxito del what-if). REUTILIZA
+# el canal YT_IA ya autorizado (sin reauth; el usuario solo renombra el canal en Studio).
+DATOS = SimpleChannelConfig(
+    slug="datos", prefix="YT_IA", display_name="Datos Increíbles",
+    platform_key="youtube_ia", lang="es", system_prompt_file="batch_es_system.md",
+    tone="asombroso y divulgativo; un dato que deja loco pero 100% verificable",
+    category_id="27", emoji="🤯", cross_teaser="🤯 Dato increíble", shorts_per_day=1,
+    theme_desc=("A Spanish faceless channel of ONE amazing-but-true fact per short "
+                "(science, history, nature, the human body, physics) — the 'did you "
+                "know?!' format. NOT hypotheticals (that's another channel), NOT only space."),
+    veracity_rules=("- Each fact MUST be real and citable (source on screen). NO myths, "
+                    "NO exaggeration, NO 'facts' that are debunked urban legends."),
+    seed=[
+        {"key": "octopus_hearts", "titulo": "Los pulpos tienen 3 corazones (y sangre azul)",
+         "hook": "Un pulpo tiene TRES corazones. Y su sangre es azul.",
+         "angle": "2 corazones branquiales + 1 sistémico; sangre con hemocianina (cobre) = azul. Fuente: biología marina.",
+         "visual": "pulpo nadando, primer plano tentáculos, océano profundo"},
+        {"key": "honey_never", "titulo": "La miel nunca caduca: se ha comido miel de 3000 años",
+         "hook": "Arqueólogos comieron miel de 3000 años… y estaba perfecta.",
+         "angle": "Baja humedad + pH ácido + peróxido impiden bacterias; miel comestible en tumbas egipcias. Fuente: Smithsonian.",
+         "visual": "miel goteando, tarro, tumba egipcia dorada"},
+        {"key": "trees_vs_stars", "titulo": "Hay más árboles en la Tierra que estrellas en la Vía Láctea",
+         "hook": "La Tierra tiene más árboles que estrellas nuestra galaxia.",
+         "angle": "~3 billones de árboles (estudio Nature 2015) vs 100-400 mil millones de estrellas en la Vía Láctea.",
+         "visual": "bosque infinito aéreo, vía láctea, comparación"},
+        {"key": "lightning_hotter", "titulo": "Un rayo es 5 veces más caliente que la superficie del Sol",
+         "hook": "Un rayo alcanza 5× la temperatura de la superficie del Sol.",
+         "angle": "Rayo ~30.000 °C vs superficie solar ~5.500 °C. Fuente: NOAA/física atmosférica.",
+         "visual": "rayo cayendo, tormenta, sol"},
+        {"key": "cleopatra_time", "titulo": "Cleopatra vivió más cerca del iPhone que de las pirámides",
+         "hook": "Cleopatra está más cerca en el tiempo de ti que de las pirámides.",
+         "angle": "Pirámide de Guiza ~2560 a.C.; Cleopatra ~30 a.C.; iPhone 2007. La diferencia lo confirma.",
+         "visual": "pirámides, busto de Cleopatra, línea temporal"},
+        {"key": "banana_radioactive", "titulo": "Los plátanos son (un poco) radiactivos",
+         "hook": "Te comes algo radiactivo casi cada día: el plátano.",
+         "angle": "Potasio-40 natural emite radiación mínima; existe la 'dosis banana' como unidad informal. Fuente: física nuclear.",
+         "visual": "plátano, símbolo radiactivo suave, cocina"},
+        {"key": "body_bacteria", "titulo": "Tienes tantas bacterias como células humanas",
+         "hook": "La mitad de 'tú' no es humano: son bacterias.",
+         "angle": "Ratio ~1:1 bacterias:células humanas (revisión Sender et al., 2016). No eres solo tú.",
+         "visual": "microbioma ilustración, intestino, bacterias"},
+        {"key": "blue_whale_heart", "titulo": "El corazón de una ballena azul pesa como un coche",
+         "hook": "El corazón de la ballena azul pesa como un coche pequeño.",
+         "angle": "~180 kg; late tan fuerte que se detectaría a kilómetros. Fuente: ROM / biología.",
+         "visual": "ballena azul, océano, escala con coche"},
+        {"key": "everest_base", "titulo": "El Everest NO es la montaña más alta (medida desde la base)",
+         "hook": "El Everest es el más ALTO, pero no la montaña más grande.",
+         "angle": "Mauna Kea mide ~10.200 m desde su base submarina vs Everest 8.849 m sobre el mar. Fuente: USGS.",
+         "visual": "Everest nevado, Mauna Kea, corte del océano"},
+        {"key": "eiffel_summer", "titulo": "La Torre Eiffel crece 15 cm en verano",
+         "hook": "La Torre Eiffel es más alta en verano que en invierno.",
+         "angle": "El hierro se dilata con el calor → ~15 cm más alta en verano. Fuente: física de materiales.",
+         "visual": "Torre Eiffel, sol de verano, termómetro"},
+    ],
+)
+
+
+BATCH: list[SimpleChannelConfig] = [MISTERIOS, SESGOS, FILOSOFIA, CURIOSIDADES, ESPACIO, DATOS]
 
 
 def by_slug(slug: str) -> SimpleChannelConfig | None:

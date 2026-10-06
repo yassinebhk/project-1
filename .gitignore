@@ -37,6 +37,9 @@ output/**
 !output/dynamic_topics_espacio.json
 # GeoQuiz EN (quiz de banderas, generador propio) — ledger de países/rondas
 !output/geoquiz_ledger.json
+# Datos Increíbles (ex-IA Autónomos, reconvertido 06/10)
+!output/datos_ledger.json
+!output/dynamic_topics_datos.json
 # Ranking datasets (World Bank refresh semanal)
 !output/ranking_datasets/
 !output/ranking_datasets/**

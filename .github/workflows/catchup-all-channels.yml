@@ -93,12 +93,14 @@ jobs:
       command: ranking-once
     secrets: inherit
 
+  # IA Autónomos RECONVERTIDO a "Datos Increíbles" (06/10): reusa el canal YT_IA (sin
+  # reauth). El pipeline 'datos' (batch) sustituye a ia-autonomos-once en la cadena.
   ia_autonomos_short:
     if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
     needs: [ranking_short]
     uses: ./.github/workflows/_videogen-job.yml
     with:
-      command: ia-autonomos-once
+      command: batch-once --slug datos
     secrets: inherit
 
   ambient_short:
