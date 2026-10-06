@@ -71,7 +71,7 @@ SESGOS = SimpleChannelConfig(
     platform_key="youtube_sesgos", lang="es", system_prompt_file="batch_es_system.md",
     tone="didáctico, claro y cercano; como un amigo listo que te revela cómo te engaña tu mente",
     category_id="27", emoji="🧠", cross_teaser="🧠 Sesgo cognitivo",
-    to_tiktok=True, to_ig=True,  # user 03/10: shorts también a IG + TikTok
+    to_tiktok=False, to_ig=True,  # IG sí; TikTok NO (06/10: foco TikTok solo what-if)
     ig_hashtags=["psicologia", "sesgoscognitivos", "mente", "aprende", "curiosidades", "shorts"],
     longform=True, shorts_per_day=1,  # user 03/10: + long-form 1×/sem, cap 1 short/día
     theme_desc=("A Spanish faceless channel explaining ONE cognitive bias / mental model per "
@@ -174,6 +174,7 @@ CURIOSIDADES = SimpleChannelConfig(
     tone="curioso y energético, divulgativo; asombro con rigor científico",
     category_id="27", emoji="🤔", cross_teaser="🤔 ¿Qué pasaría si…",
     shorts_per_day=2,  # 06/10: es el formato GANADOR (628 views/vid, 2.3% eng) → doblar cadencia
+    to_tiktok=True,  # 06/10: FOCO TikTok — SOLO el what-if va a TikTok (whitelist central)
     theme_desc=("A Spanish faceless channel of 'what if' hypotheticals and surprising facts, "
                 "GROUNDED IN REAL SCIENCE (physics, biology, astronomy). The hypothetical is the "
                 "hook; the payoff is real science."),

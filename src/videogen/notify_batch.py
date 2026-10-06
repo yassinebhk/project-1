@@ -107,11 +107,19 @@ def send_video_for_tiktok(mp4_path: str | Path, channel_display: str,
     Telegram sendVideo acepta hasta 50MB por bot API. Shorts <60s con
     bitrate razonable = 5-15MB → suele caber. Si excede, skip con aviso.
     """
-    # Canales DESACTIVADOS para TikTok (user 03/10: quitar los 2 de menor engagement
-    # → MenteEnCalma y TaxHack, y meter en su lugar Stoic Mind + Mente Racional).
-    # Override con env TIKTOK_DISABLED_CHANNELS (coma-sep, match por substring).
-    _disabled = os.environ.get("TIKTOK_DISABLED_CHANNELS", "MenteEnCalma,TaxHack")
     _cd = (channel_display or "").lower()
+    # FOCO TikTok (user 06/10): TikTok no crecía por mezclar 15 nichos en una cuenta
+    # (+2 seg/2sem, 1% eng — mismo error que hundió IG). Estrategia nueva: UN nicho =
+    # el GANADOR "¿Qué Pasaría Si?" (what-if, 628 views/vid). WHITELIST central: SOLO
+    # los canales de TIKTOK_ALLOWED_CHANNELS envían a TikTok; el resto se corta aquí,
+    # da igual qué pipeline llame. Vaciar la env ('') = sin whitelist (vuelve a todos).
+    _allowed = os.environ.get("TIKTOK_ALLOWED_CHANNELS", "¿Qué Pasaría Si?")
+    _allow_list = [a.strip().lower() for a in _allowed.split(",") if a.strip()]
+    if _allow_list and not any(a in _cd for a in _allow_list):
+        print(f"  TT: {channel_display} fuera de la whitelist TikTok (foco what-if) — skip")
+        return False
+    # (Legacy) canales explícitamente desactivados, por si se desactiva la whitelist.
+    _disabled = os.environ.get("TIKTOK_DISABLED_CHANNELS", "")
     if any(d.strip() and d.strip().lower() in _cd for d in _disabled.split(",")):
         print(f"  TT: {channel_display} desactivado para TikTok (skip)")
         return False
