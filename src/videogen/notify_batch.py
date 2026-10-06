@@ -28,6 +28,15 @@ def add(text: str, urgent: bool = False) -> None:
     if urgent:
         _send_message_now(text)
         return
+    # Reducción de ruido (user 06/10: "demasiada basura en Telegram"). Silencia los
+    # resúmenes de crosspost RRSS por canal (🌀/🤖/… · RRSS) que son puro relleno;
+    # mantiene confirmaciones de subida, alertas y lo del what-if. urgent SIEMPRE pasa.
+    # Reversible: TELEGRAM_MUTE_RRSS_SUMMARIES=0.
+    import os as _os
+    if _os.environ.get("TELEGRAM_MUTE_RRSS_SUMMARIES", "1").lower() not in ("0", "false", "no"):
+        t = text or ""
+        if "· RRSS" in t and "¿Qué Pasar" not in t and "TikTok" not in t:
+            return
     _BUFFER.append(text)
 
 
