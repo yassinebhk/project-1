@@ -122,7 +122,7 @@ def send_video_for_tiktok(mp4_path: str | Path, channel_display: str,
     # el GANADOR "¿Qué Pasaría Si?" (what-if, 628 views/vid). WHITELIST central: SOLO
     # los canales de TIKTOK_ALLOWED_CHANNELS envían a TikTok; el resto se corta aquí,
     # da igual qué pipeline llame. Vaciar la env ('') = sin whitelist (vuelve a todos).
-    _allowed = os.environ.get("TIKTOK_ALLOWED_CHANNELS", "¿Qué Pasaría Si?")
+    _allowed = os.environ.get("TIKTOK_ALLOWED_CHANNELS", "GeoQuiz")
     _allow_list = [a.strip().lower() for a in _allowed.split(",") if a.strip()]
     if _allow_list and not any(a in _cd for a in _allow_list):
         print(f"  TT: {channel_display} fuera de la whitelist TikTok (foco what-if) — skip")

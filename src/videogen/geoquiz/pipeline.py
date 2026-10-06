@@ -74,82 +74,78 @@ def _episode(led: dict) -> int:
     return len(led.get("rounds", [])) + 1
 
 
-def run_once() -> dict[str, Any]:
-    has_creds = bool(os.environ.get(YT_PREFIX + "_REFRESH_TOKEN"))
-    allow_test = (os.environ.get("GEOQUIZ_GENERATE_WITHOUT_CHANNEL", "").lower() in ("1", "true", "yes")
-                  or os.environ.get("BATCH_GENERATE_WITHOUT_CHANNEL", "").lower() in ("1", "true", "yes"))
-    if not has_creds and not allow_test:
-        print(f"  geoquiz: sin {YT_PREFIX}_* y sin flag test → no-op (canal pendiente)")
-        return {"status": "no_channel"}
+def _today_count(led: dict) -> int:
+    today = datetime.now(timezone.utc).date().isoformat()
+    return (led.get("by_day") or {}).get(today, 0)
 
+
+def run_once() -> dict[str, Any]:
+    """GeoQuiz = formato #1 de TikTok para nosotros (research 06/10): sin voz, quiz,
+    comment-bait + follow CTA. DESTINO PRINCIPAL = TikTok (el MP4 va a Telegram para
+    subida manual a @interest_stuff). YT es OPCIONAL (si algún día hay canal YT_GEOQUIZ).
+    Siempre GENERA; cap diario GEOQUIZ_PER_DAY (default 1) para no inundar Telegram."""
+    has_creds = bool(os.environ.get(YT_PREFIX + "_REFRESH_TOKEN"))
     led = _load_ledger()
+
+    cap = int(os.environ.get("GEOQUIZ_PER_DAY", "1") or "1")
+    if _today_count(led) >= cap:
+        print(f"  geoquiz: tope diario ({cap}) alcanzado — skip")
+        return {"status": "skip_daily_cap"}
+
+    ep = _episode(led)
     candidates = _pick_candidates(led)
-    print(f"  geoquiz: generando ronda #{_episode(led)} ({len(candidates)} candidatos)")
+    print(f"  geoquiz: generando ronda #{ep} ({len(candidates)} candidatos)")
     meta = generator.generate_geoquiz(GEOQUIZ_ROOT, candidates, n_rounds=N_ROUNDS)
     if not meta:
         _notify("❌ GeoQuiz falló generación", urgent=True)
         return {"status": "gen_fail"}
+    # Efecto SERIE (research: 'Parte X' + follow = 2-3× tasa de follow).
+    meta["title"] = f"Guess the country by its flag #{ep} 🏴 | Only 1% score 5/5"[:100]
 
-    # evita repetir EXACTAMENTE el mismo set de 5 países
-    if meta["round_key"] in set(led.get("rounds", [])):
-        print("  geoquiz: round_key repetido — se marca igual, baja probabilidad")
+    # YT upload OPCIONAL (destino principal es TikTok). Sin canal → se omite, no rompe.
+    url, yt_status = "", "skip_no_channel"
+    if has_creds:
+        from ..upload_youtube import upload_video
+        prev_prefix = os.environ.get("YT_CHANNEL_PREFIX", "")
+        prev_guard = os.environ.get("DEDUP_UPLOAD_GUARD")
+        os.environ["YT_CHANNEL_PREFIX"] = YT_PREFIX
+        os.environ["DEDUP_UPLOAD_GUARD"] = "0"  # título fijo de serie
+        try:
+            vid = upload_video(
+                Path(meta["video_path"]), title=meta["title"], description=meta["description"],
+                tags=meta.get("tags", []), category_id="27", is_short=True, privacy="public",
+            )
+            url = f"https://youtube.com/shorts/{vid}"
+            yt_status = "ok"
+        except Exception as e:
+            print(f"  geoquiz upload fail: {type(e).__name__}: {e}")
+            yt_status = f"fail: {type(e).__name__}"
+        finally:
+            if prev_prefix:
+                os.environ["YT_CHANNEL_PREFIX"] = prev_prefix
+            else:
+                os.environ.pop("YT_CHANNEL_PREFIX", None)
+            if prev_guard is not None:
+                os.environ["DEDUP_UPLOAD_GUARD"] = prev_guard
+            else:
+                os.environ.pop("DEDUP_UPLOAD_GUARD", None)
 
-    if not has_creds:
-        # marcar usados igualmente (pre-cableado: para ir rotando países)
-        now = datetime.now(timezone.utc).isoformat()
-        for iso2 in meta["countries"]:
-            led["countries"][iso2] = now
-        led["rounds"].append(meta["round_key"])
-        _save_ledger(led)
-        print("  geoquiz: generado, subida OMITIDA (pre-cableado)")
-        _notify(f"🌍 <b>{DISPLAY_NAME}</b> (pre-cableado) · ronda generada sin canal YT\n"
-                f"<i>{', '.join(meta['countries'])}</i> · slug <code>{meta['slug']}</code>")
-        return {"status": "ok", "slug": meta["slug"], "url": "",
-                "yt_status": "skip_no_channel", "round_key": meta["round_key"]}
-
-    # subida (desactiva el guard de dedup POR TÍTULO: el título es fijo de serie)
-    from ..upload_youtube import upload_video
-    prev_prefix = os.environ.get("YT_CHANNEL_PREFIX", "")
-    prev_guard = os.environ.get("DEDUP_UPLOAD_GUARD")
-    os.environ["YT_CHANNEL_PREFIX"] = YT_PREFIX
-    os.environ["DEDUP_UPLOAD_GUARD"] = "0"
-    url, yt_status = "", "skip"
+    # TikTok (destino principal): el MP4 va a Telegram → subida manual a @interest_stuff.
+    tt_ok = False
     try:
-        vid = upload_video(
-            Path(meta["video_path"]), title=meta["title"], description=meta["description"],
-            tags=meta.get("tags", []), category_id="27", is_short=True, privacy="public",
-        )
-        url = f"https://youtube.com/shorts/{vid}"
-        yt_status = "ok"
+        from ..notify_batch import send_video_for_tiktok
+        tt_ok = send_video_for_tiktok(meta["video_path"], DISPLAY_NAME, meta["title"], url)
     except Exception as e:
-        print(f"  geoquiz upload fail: {type(e).__name__}: {e}")
-        yt_status = f"fail: {type(e).__name__}"
-    finally:
-        if prev_prefix:
-            os.environ["YT_CHANNEL_PREFIX"] = prev_prefix
-        else:
-            os.environ.pop("YT_CHANNEL_PREFIX", None)
-        if prev_guard is not None:
-            os.environ["DEDUP_UPLOAD_GUARD"] = prev_guard
-        else:
-            os.environ.pop("DEDUP_UPLOAD_GUARD", None)
+        print(f"  geoquiz: TT tg fail — {e}")
 
     now = datetime.now(timezone.utc).isoformat()
+    today = datetime.now(timezone.utc).date().isoformat()
     for iso2 in meta["countries"]:
         led["countries"][iso2] = now
     led["rounds"].append(meta["round_key"])
+    led.setdefault("by_day", {})[today] = _today_count(led) + 1
     _save_ledger(led)
-    _notify(f"✅ <b>{DISPLAY_NAME}</b> · {url or yt_status}\n<i>{', '.join(meta['countries'])}</i>")
-
-    # Crosspost solo a Bluesky propio (BSKY_GEOQUIZ_*) — no contamina otras marcas.
-    try:
-        if os.environ.get("BSKY_GEOQUIZ_HANDLE") and os.environ.get("BSKY_GEOQUIZ_APP_PASSWORD"):
-            from .. import crosspost_full
-            cross = crosspost_full.crosspost_short_from_mp4(
-                Path(meta["video_path"]), meta["title"], url,
-                teaser="🌍 Guess the country by its flag", channel_label="geoquiz", slug=meta["slug"])
-            _notify(f"🌍 <b>GeoQuiz · RRSS</b> {crosspost_full.summary_line(cross)}")
-    except Exception as e:
-        print(f"  geoquiz crosspost fail: {e}")
+    _notify(f"🌍 <b>{DISPLAY_NAME}</b> #{ep} → {'Telegram para TikTok ✅' if tt_ok else 'generado'}"
+            f"\n<i>{', '.join(meta['countries'])}</i>" + (f"\nYT: {url}" if url else ""))
     return {"status": "ok", "slug": meta["slug"], "url": url,
-            "yt_status": yt_status, "round_key": meta["round_key"]}
+            "yt_status": yt_status, "tt": tt_ok, "round_key": meta["round_key"]}

@@ -173,8 +173,8 @@ CURIOSIDADES = SimpleChannelConfig(
     platform_key="youtube_curiosidades", lang="es", system_prompt_file="batch_es_system.md",
     tone="curioso y energético, divulgativo; asombro con rigor científico",
     category_id="27", emoji="🤔", cross_teaser="🤔 ¿Qué pasaría si…",
-    shorts_per_day=2,  # 06/10: es el formato GANADOR (628 views/vid, 2.3% eng) → doblar cadencia
-    to_tiktok=True,  # 06/10: FOCO TikTok — SOLO el what-if va a TikTok (whitelist central)
+    shorts_per_day=2,  # 06/10: es el formato GANADOR en YouTube (628 views/vid, 2.3% eng)
+    to_tiktok=False,  # 06/10: TikTok pasa a GeoQuiz (formato #1 TikTok, sin voz); what-if = solo YouTube
     theme_desc=("A Spanish faceless channel of 'what if' hypotheticals and surprising facts, "
                 "GROUNDED IN REAL SCIENCE (physics, biology, astronomy). The hypothetical is the "
                 "hook; the payoff is real science."),

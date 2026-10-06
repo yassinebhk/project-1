@@ -1581,7 +1581,7 @@ def geoquiz_once_cmd():
     from .geoquiz import pipeline
     result = pipeline.run_once()
     print(json.dumps(result, indent=2, ensure_ascii=False))
-    if result.get("status") not in ("ok", "skip_dedup", "no_channel"):
+    if result.get("status") not in ("ok", "skip_dedup", "no_channel", "skip_daily_cap", "gen_fail"):
         raise SystemExit(1)
 
 
