@@ -1,12 +1,5 @@
 [
   {
-    "slug": "ley-startups-15-sociedades",
-    "title": "Baja impuestos a tu empresa · 15% IS · #1",
-    "status": "fail_publish",
-    "container_id": "18096671477188569",
-    "ts": "2026-09-25T17:12:46.597170+00:00"
-  },
-  {
     "slug": "taiwan-microchips-economia-global-1",
     "title": "Taiwán microchips — 80% del mercado mundial · #1",
     "status": "ok",
@@ -786,5 +779,12 @@
     "media_id": "18132249298738488",
     "url": "https://instagram.com/reel/18132249298738488",
     "ts": "2026-10-06T01:35:53.078920+00:00"
+  },
+  {
+    "slug": "us-money-printing-global-impact",
+    "title": "Reserva Federal — 3 billones de dólares impresos en un año · #1",
+    "status": "fail_publish",
+    "container_id": "18098099705188569",
+    "ts": "2026-10-06T09:10:50.207814+00:00"
   }
 ]
