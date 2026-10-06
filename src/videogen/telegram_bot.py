@@ -2585,10 +2585,20 @@ async def _build_daily_report(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> i
 async def daily_summary(ctx: ContextTypes.DEFAULT_TYPE):
     chat_id = ctx.job.chat_id
 
-    # Health check token PRIMERO (si expirado, alerta visible antes)
+    # Health check token PRIMERO (si expirado, alerta visible antes). Esto NO es
+    # un "resumen": solo manda algo si un token está roto → es una ALERTA que el
+    # usuario sí quiere (un canal caído en silencio es peor). Se queda SIEMPRE.
     ok, reason = _check_yt_token()
     if not ok:
         await _send_yt_token_alert(chat_id, ctx, reason)
+
+    # Resumen diario a Telegram: APAGADO por defecto (user 06/10: "no quiero
+    # resúmenes diarios, eso lo veo en el Centro de Mando que se actualiza cada
+    # x horas"). El bot solo recibe los vídeos GeoQuiz + alertas de fallo/token.
+    # El panel docs/dashboard se refresca igual (runner.py, tras este return, y
+    # 2× más al día vía dashboard-refresh.yml). Reactivar: TELEGRAM_DAILY_SUMMARY=1.
+    if os.environ.get("TELEGRAM_DAILY_SUMMARY", "0").lower() not in ("1", "true", "yes", "on"):
+        return
 
     # 1) Resumen ÚNICO como mensaje fijable
     new_msg_id = await _build_daily_report(chat_id, ctx)
