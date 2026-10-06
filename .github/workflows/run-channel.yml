@@ -11,6 +11,10 @@ on:
         description: "Comando videogen a ejecutar"
         required: true
         default: "stoic-once"
+      extra_env:
+        description: "Env extra k=v (una por línea). Ej. GEOQUIZ_PER_DAY=9 para forzar una validación saltando el tope diario."
+        required: false
+        default: ""
 
 permissions:
   contents: write
@@ -20,4 +24,5 @@ jobs:
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: ${{ inputs.command }}
+      extra_env: ${{ inputs.extra_env }}
     secrets: inherit
