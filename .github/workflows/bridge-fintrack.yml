@@ -7,7 +7,12 @@ name: Bridge fintrack (GeoQuiz — runner self-hosted)
 # migracion-oracle-runner-08-10. El cap GEOQUIZ_PER_DAY=1 evita duplicados.
 
 on:
-  workflow_dispatch: {}
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Forzar generación saltando el tope diario (para validar)"
+        type: boolean
+        default: false
   schedule:
     # 2×/día (07:19 y 15:19 UTC) — el cap diario deja pasar solo 1. Si el schedule
     # no dispara por el tema de billing, usar workflow_dispatch (manual o cron-job.org).
@@ -23,4 +28,5 @@ jobs:
       command: geoquiz-once
       runs_on: bridge
       install_spec: "."
+      extra_env: ${{ inputs.force && 'GEOQUIZ_PER_DAY=9' || '' }}
     secrets: inherit
