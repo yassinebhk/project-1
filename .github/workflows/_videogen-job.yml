@@ -34,6 +34,11 @@ on:
         required: false
         type: string
         default: "ubuntu-latest"
+      install_spec:
+        description: "Qué instalar con pip -e. Default '.[whisper]' (captions). El puente de fintrack (1GB RAM) pasa '.' para evitar torch, que no necesita GeoQuiz."
+        required: false
+        type: string
+        default: ".[whisper]"
 
 jobs:
   run:
@@ -69,7 +74,7 @@ jobs:
             --timeout 60 \
             --prefer-binary \
             'boto3>=1.35,<2' \
-            -e '.[whisper]'
+            -e '${{ inputs.install_spec }}'
 
       - name: Install Manim (solo padel-once — motor de animación)
         if: inputs.command == 'padel-once'

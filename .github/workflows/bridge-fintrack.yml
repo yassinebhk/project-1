@@ -22,4 +22,5 @@ jobs:
     with:
       command: geoquiz-once
       runs_on: bridge
+      install_spec: "."
     secrets: inherit
