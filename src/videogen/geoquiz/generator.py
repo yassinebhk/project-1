@@ -197,10 +197,14 @@ def generate_geoquiz(out_dir: Path, candidates: list[tuple], n_rounds: int = 5) 
             idx += 1
 
     raw = work / "raw.mp4"
+    # -preset ultrafast: el contenido son frames estáticos (banderas + texto), así que
+    # la calidad es idéntica a 'medium' pero encodea 5-10× más rápido. Clave para que
+    # corra en la VM e2-micro del puente (CPU burstable débil, que con el preset por
+    # defecto superaba el timeout de ffmpeg). También acelera CI/Oracle.
     cmd = ["ffmpeg", "-y", "-framerate", str(fps), "-i", str(seq / "%05d.png"),
-           "-c:v", "libx264", "-pix_fmt", "yuv420p", "-r", str(fps),
+           "-c:v", "libx264", "-preset", "ultrafast", "-pix_fmt", "yuv420p", "-r", str(fps),
            "-movflags", "+faststart", str(raw)]
-    r = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
+    r = subprocess.run(cmd, capture_output=True, text=True, timeout=900)
     if r.returncode != 0 or not raw.exists():
         print(f"  geoquiz: ffmpeg encode fail: {r.stderr[-400:]}")
         return None
