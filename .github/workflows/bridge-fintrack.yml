@@ -1,0 +1,25 @@
+name: Bridge fintrack (GeoQuiz — runner self-hosted)
+
+# PUENTE temporal (08/10): el repo es PRIVADO y GitHub Actions se quedó sin minutos.
+# Este workflow corre GeoQuiz en el runner self-hosted de la VM fintrack (etiqueta
+# 'bridge'), que NO consume minutos de Actions → gratis aunque el repo sea privado.
+# Se retira cuando la VM de Oracle (más RAM) esté lista. Ver memoria
+# migracion-oracle-runner-08-10. El cap GEOQUIZ_PER_DAY=1 evita duplicados.
+
+on:
+  workflow_dispatch: {}
+  schedule:
+    # 2×/día (07:19 y 15:19 UTC) — el cap diario deja pasar solo 1. Si el schedule
+    # no dispara por el tema de billing, usar workflow_dispatch (manual o cron-job.org).
+    - cron: "19 7,15 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  geoquiz:
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: geoquiz-once
+      runs_on: bridge
+    secrets: inherit

@@ -29,10 +29,15 @@ on:
         required: false
         type: string
         default: ""
+      runs_on:
+        description: "Runner: 'ubuntu-latest' (default) o 'bridge' para el self-hosted de fintrack (puente mientras el repo es privado y Actions no tiene minutos)."
+        required: false
+        type: string
+        default: "ubuntu-latest"
 
 jobs:
   run:
-    runs-on: ubuntu-latest
+    runs-on: ${{ inputs.runs_on }}
     timeout-minutes: 60
     permissions:
       contents: write
