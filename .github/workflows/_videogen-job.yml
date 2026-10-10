@@ -58,9 +58,16 @@ jobs:
           cache: "pip"
 
       - name: Install ffmpeg + fonts
+        # Si ffmpeg ya está (runner self-hosted de fintrack), saltar apt: evita el
+        # exit 100 por contención del lock de apt (unattended-upgrades) y es más rápido.
+        # En ubuntu-latest no viene → se instala igual.
         run: |
-          sudo apt-get update -qq
-          sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-color-emoji
+          if command -v ffmpeg >/dev/null 2>&1; then
+            echo "ffmpeg ya presente ($(ffmpeg -version 2>/dev/null | head -1)) — salto apt"
+          else
+            sudo apt-get update -qq
+            sudo apt-get install -y --no-install-recommends ffmpeg fonts-noto-color-emoji
+          fi
 
       - name: Install videogen (editable)
         # Versión pinneada de boto3 + retries pip para evitar el backtracking hell
