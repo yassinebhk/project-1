@@ -1,0 +1,13 @@
+# Assets del formato tactika (3D isométrico)
+#
+# Para activar el avatar narrador 'Mark' en el overlay bottom-left:
+# añade un PNG con fondo transparente (recomendado 400x400) como:
+#     mark_avatar.png
+#
+# Si el PNG no existe, el pipeline tactika sigue funcionando — solo se omite
+# el overlay del narrador (render.py:_overlay_avatar devuelve el vídeo intacto).
+#
+# Cumple [[coste-cero-obligatorio]]: no usar HeyGen/D-ID. Opciones gratis:
+# - Ready Player Me (gratis, descargar snapshot PNG)
+# - Pollinations ("professional male padel coach bust portrait, cartoon")
+# - Pexels "coach portrait" (busca uno con fondo recortable)
