@@ -278,7 +278,7 @@ class TactikaLob(TactikaBase):
     FACT_KEY = "net_control_wins_70pct"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((-1.7, -7), (1.7, -7)), rivals=((-1.5, 7), (1.5, 7)))
         self.title_card("Dominan la red", color=LABEL_RIVAL)
         self.wait(2.0)
@@ -320,7 +320,7 @@ class TactikaBandeja(TactikaBase):
     FACT_KEY = "backhand_80pct_bandeja"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((-1.7, -2), (1.7, -2)), rivals=((-1.5, 6), (1.5, 6)))
         self.title_card("Te meten un globo", color=LABEL_RIVAL)
         lob_in = self.ball_arc_3d(start=(0, 6, 1), peak_z=5.5, end=(-1.5, -5, 1.5))
@@ -350,7 +350,7 @@ class TactikaBackWall(TactikaBase):
     FACT_KEY = "glass_rebound_40pct_defense"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((-1.7, -3), (1.7, -3)), rivals=((-1.5, 6), (1.5, 6)))
         self.title_card("Bola al cristal del fondo")
         inc = self.ball_arc_3d(start=(0, 6, 1), peak_z=2.5, end=(-1.5, -9, 1.0))
@@ -381,7 +381,7 @@ class TactikaSmash(TactikaBase):
     FACT_KEY = "rally_length_7_strokes"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((-1.7, -2), (1.7, -2)), rivals=((-1.5, 7), (1.5, 7)))
         self.title_card("Bola corta y alta", color=BALL_C)
         setup = self.ball_arc_3d(start=(-1.7, -2, 2.5), peak_z=2.8, end=(-1.5, -1.5, 2.0))
@@ -410,7 +410,7 @@ class TactikaDrop(TactikaBase):
     FACT_KEY = "unforced_errors_50pct"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((-1.7, -2), (1.7, -2)), rivals=((-1.5, 8), (1.5, 8.5)))
         self.title_card("Rivales clavados atrás", color=LABEL_RIVAL)
         self.wait(1.5)
@@ -437,7 +437,7 @@ class TactikaServe(TactikaBase):
     FACT_KEY = "serve_wide_60pct_pro"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((2.0, -7), (-1.5, -5)), rivals=((-1.5, 6), (1.5, 6)))
         self.title_card("Tu saque")
         self.wait(1.0)
@@ -469,7 +469,7 @@ class TactikaPositioning(TactikaBase):
     FACT_KEY = "winning_pairs_share_court"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((-1.5, -4), (1.5, -4)), rivals=((-1.5, 5), (1.5, 5)))
         self.title_card("Moveros como pareja", color=LABEL_YOU)
         self.wait(1.5)
@@ -501,7 +501,7 @@ class TactikaDefense(TactikaBase):
     FACT_KEY = "distance_covered_1500m"
 
     def construct(self):
-        from .academic_pool import by_key
+        from videogen.padel.academic_pool import by_key
         self.build_court(you=((-1.7, -3), (1.7, -3)), rivals=((-1.5, 2), (1.5, 2)))
         self.title_card("Bombardean la red", color=LABEL_RIVAL)
         smash = self.ball_arc_3d(start=(0, 2, 2.5), peak_z=1.0, end=(-1.5, -5, 1.5))
