@@ -102,11 +102,25 @@ jobs:
             'boto3>=1.35,<2' \
             -e '${{ inputs.install_spec }}'
 
-      - name: Install Manim (solo padel-once — motor de animación)
-        if: inputs.command == 'padel-once'
+      - name: Install Manim deps (apt — ubuntu-latest y hermanos)
+        if: inputs.command == 'padel-once' && inputs.runs_on != 'bridge'
         run: |
           sudo apt-get install -y --no-install-recommends \
             build-essential libcairo2-dev libpango1.0-dev pkg-config python3-dev fonts-dejavu-core
+          pip install "manim>=0.18"
+
+      - name: Install Manim deps (brew — bridge/macOS)
+        # En el puente (Mac) no hay apt. Las deps nativas de Manim (cairo+pango
+        # para cairocffi; pkg-config para resolverlas) se instalan con brew.
+        # fonts-dejavu-core no existe en macOS: Manim CE cae a Helvetica/DejaVu
+        # del sistema si están, y el formato tactika no referencia DejaVu por
+        # nombre explícito, así que no bloquea. Si una escena nueva lo exigiera,
+        # añadir `brew install --cask font-dejavu` aquí.
+        if: inputs.command == 'padel-once' && inputs.runs_on == 'bridge'
+        run: |
+          brew list cairo >/dev/null 2>&1 || brew install cairo
+          brew list pango >/dev/null 2>&1 || brew install pango
+          brew list pkg-config >/dev/null 2>&1 || brew install pkg-config
           pip install "manim>=0.18"
 
       - name: Reconstruir secrets/.env desde GitHub Secrets

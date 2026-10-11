@@ -24,6 +24,11 @@ jobs:
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: padel-once
+      # Mientras GH Actions esté con billing failed, pádel corre en el bridge
+      # (Mac M3 Pro, 18GB, label 'bridge'). install_spec='.' evita torch/whisper
+      # (pádel no los usa) y acelera install.
+      runs_on: bridge
+      install_spec: '.'
       extra_env: |
         PADEL_FORMAT=${{ inputs.format || 'manim' }}
     secrets: inherit
