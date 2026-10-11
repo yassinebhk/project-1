@@ -53,9 +53,28 @@ jobs:
           persist-credentials: true
 
       - uses: actions/setup-python@v5
+        if: inputs.runs_on != 'bridge'
         with:
           python-version: "3.13"
           cache: "pip"
+
+      # En el puente (el Mac) setup-python no sirve: su instalador escribe en
+      # /Users/runner, que solo existe en las máquinas de GitHub, y falla con
+      # "mkdir: /Users/runner: Permission denied". Mismo tropiezo que en el CI
+      # de fintrack. Aquí el entorno se hace a mano y se reutiliza entre
+      # ejecuciones (queda fuera de _work, que el checkout limpia).
+      - name: Entorno de Python (puente)
+        if: inputs.runs_on == 'bridge'
+        run: |
+          venv="$RUNNER_WORKSPACE/../_venv-videogen"
+          interprete=$(command -v python3.13) || { echo "::error::falta python3.13 en el runner"; exit 1; }
+          if [ ! -x "$venv/bin/python" ]; then
+            rm -rf "$venv"
+            "$interprete" -m venv "$venv"
+            "$venv/bin/pip" install --quiet --upgrade pip
+          fi
+          echo "$venv/bin" >> "$GITHUB_PATH"
+          echo "Python del puente: $("$venv/bin/python" -V)"
 
       - name: Install ffmpeg + fonts
         # Si ffmpeg ya está (runner self-hosted de fintrack), saltar apt: evita el
