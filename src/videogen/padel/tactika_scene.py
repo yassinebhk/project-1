@@ -118,13 +118,16 @@ def _ball_sphere(x, y, z=0.5):
 
 
 def _label_pill(player_mobj, text, text_color=LABEL_YOU):
-    """Pastilla label sobre un jugador (2D proyectado en 3D fijo-a-cámara)."""
+    """Pastilla label sobre un jugador. Billboarded (orientación fija a cámara)
+    + se mueve CON el jugador vía add_updater (si el jugador se desplaza con
+    .animate.move_to(), la label le sigue sin tener que animarla a mano)."""
     txt = Text(text, font_size=28, color=text_color, weight=BOLD)
     bg = RoundedRectangle(width=txt.width + 0.4, height=txt.height + 0.25,
                           corner_radius=0.12, stroke_width=0,
                           fill_color=LABEL_BG, fill_opacity=0.9)
     pill = VGroup(bg, txt)
     pill.move_to(player_mobj.get_top() + OUT * 0.3)
+    pill.add_updater(lambda m, p=player_mobj: m.move_to(p.get_top() + OUT * 0.3))
     return pill
 
 
@@ -164,17 +167,22 @@ class TactikaBase(ThreeDScene):
         self.title_mobj = None
 
     def title_card(self, text, color=YELLOW, run_time=0.5):
-        """Título fijo-a-cámara en la parte superior (overlay sobre la escena 3D)."""
+        """Título fijo-a-cámara en la parte superior (overlay sobre la escena 3D).
+
+        Manim-CE idiom para ThreeDScene: add_fixed_in_frame_mobjects añade al
+        overlay fijo (no rota con cámara) pero NO está en self.mobjects, así que
+        FadeIn/FadeOut y self.remove() no funcionan sobre él. Hay que animar con
+        .set_opacity() y liberar con remove_fixed_in_frame_mobjects()."""
         t = Text(text, font_size=52, color=color, weight=BOLD)
         if t.width > 8.4:
             t.scale_to_fit_width(8.4)
         t.to_edge(UP, buff=0.35)
+        t.set_opacity(0.0)
         self.add_fixed_in_frame_mobjects(t)
-        if self.title_mobj is None:
-            self.play(FadeIn(t, shift=DOWN * 0.3), run_time=run_time)
-        else:
-            self.remove(self.title_mobj)
-            self.play(FadeIn(t, shift=DOWN * 0.3), run_time=run_time)
+        if self.title_mobj is not None:
+            self.play(self.title_mobj.animate.set_opacity(0.0), run_time=run_time * 0.5)
+            self.remove_fixed_in_frame_mobjects(self.title_mobj)
+        self.play(t.animate.set_opacity(1.0), run_time=run_time)
         self.title_mobj = t
 
     def ball_arc_3d(self, start, peak_z, end):
@@ -197,7 +205,8 @@ class TactikaBase(ThreeDScene):
     def academic_slide(self, fact: dict, hold: float = 4.0):
         """Slide fullscreen con dato académico (big number + fuente). Se superpone
         a la escena 3D con un panel sólido fijo-a-cámara. Al salir, el panel
-        desaparece y la escena 3D queda intacta debajo."""
+        desaparece y la escena 3D queda intacta debajo. Oculta temporalmente el
+        título para que no se vea encima del panel."""
         panel = Rectangle(width=9.4, height=16.4, fill_color=BG_C,
                           fill_opacity=1.0, stroke_width=0)
         big = Text(fact["big_number"] + (" " + fact["unit"] if fact.get("unit") else ""),
@@ -211,17 +220,28 @@ class TactikaBase(ThreeDScene):
             ctx.scale_to_fit_width(8.0)
         ctx.next_to(big, DOWN, buff=0.8)
         cite = Text(f"Fuente: {fact['cite_short']}", font_size=28, color="#9ca3af",
-                    slant=ITALIC)
+                    slant="ITALIC")
         if cite.width > 7.5:
             cite.scale_to_fit_width(7.5)
         cite.to_edge(DOWN, buff=0.9)
-        group = VGroup(panel, big, ctx, cite)
-        self.add_fixed_in_frame_mobjects(group)
-        self.play(FadeIn(panel), run_time=0.3)
-        self.play(FadeIn(big, scale=0.7), run_time=0.5)
-        self.play(FadeIn(ctx, shift=UP * 0.2), FadeIn(cite), run_time=0.4)
+        # Oculta título del formato táctica para evitar overlap con el panel
+        if self.title_mobj is not None:
+            self.play(self.title_mobj.animate.set_opacity(0.0), run_time=0.2)
+        # Añade en orden: panel al fondo primero, texto encima
+        for m in (panel, big, ctx, cite):
+            m.set_opacity(0.0)
+        self.add_fixed_in_frame_mobjects(panel, big, ctx, cite)
+        self.play(panel.animate.set_opacity(1.0), run_time=0.3)
+        self.play(big.animate.set_opacity(1.0), run_time=0.5)
+        self.play(ctx.animate.set_opacity(1.0), cite.animate.set_opacity(1.0), run_time=0.4)
         self.wait(hold)
-        self.play(FadeOut(group), run_time=0.4)
+        self.play(panel.animate.set_opacity(0.0), big.animate.set_opacity(0.0),
+                  ctx.animate.set_opacity(0.0), cite.animate.set_opacity(0.0),
+                  run_time=0.4)
+        self.remove_fixed_in_frame_mobjects(panel, big, ctx, cite)
+        # Restaura título si existía
+        if self.title_mobj is not None:
+            self.play(self.title_mobj.animate.set_opacity(1.0), run_time=0.2)
 
     def outro(self, recap: str, cta: str = "SIGUE PARA MÁS\nPÁDEL CON DATOS", hold: float = 3.0):
         panel = Rectangle(width=9.4, height=16.4, fill_color=BG_C,
@@ -236,11 +256,12 @@ class TactikaBase(ThreeDScene):
         if ctxt.width > 7.6:
             ctxt.scale_to_fit_width(7.6)
         ctxt.next_to(rtxt, DOWN, buff=1.3)
-        g = VGroup(panel, rtxt, ctxt)
-        self.add_fixed_in_frame_mobjects(g)
-        self.play(FadeIn(panel), run_time=0.4)
-        self.play(Write(rtxt), run_time=0.9)
-        self.play(FadeIn(ctxt, shift=UP * 0.3), run_time=0.6)
+        for m in (panel, rtxt, ctxt):
+            m.set_opacity(0.0)
+        self.add_fixed_in_frame_mobjects(panel, rtxt, ctxt)
+        self.play(panel.animate.set_opacity(1.0), run_time=0.4)
+        self.play(rtxt.animate.set_opacity(1.0), run_time=0.9)
+        self.play(ctxt.animate.set_opacity(1.0), run_time=0.6)
         self.wait(hold)
 
 

@@ -59,18 +59,52 @@ async def _edge_voice(text: str, out: Path, voice: str = EDGE_VOICE_EN) -> None:
     await edge_tts.Communicate(text, voice, rate=EDGE_RATE).save(str(out))
 
 
+def _ensure_avatar(work: Path) -> Path | None:
+    """Devuelve path al avatar narrador 'Mark'. Prioridad:
+      1. Asset manual commiteado (assets/mark_avatar.png)
+      2. Generado on-demand via Pollinations anon y cacheado por run
+      3. None → el pipeline sigue sin overlay (fallback silencioso)
+    """
+    if AVATAR_PATH.exists():
+        return AVATAR_PATH
+    cached = work / "mark_avatar.png"
+    if cached.exists() and cached.stat().st_size > 3000:
+        return cached
+    try:
+        import urllib.parse as _up
+        import urllib.request as _ur
+        prompt = ("professional male padel coach bust portrait, friendly cartoon flat vector style, "
+                  "beard, headband, polo shirt green, shoulders up, centered, plain dark background")
+        url = (f"https://image.pollinations.ai/prompt/{_up.quote(prompt)}"
+               f"?width=400&height=400&nologo=true&model=flux&seed=42")
+        req = _ur.Request(url, headers={"User-Agent": "Mozilla/5.0 padel-tactika"})
+        with _ur.urlopen(req, timeout=90) as r:
+            data = r.read()
+        if len(data) < 3000:
+            print(f"  padel: avatar Pollinations too small ({len(data)}B), skip")
+            return None
+        cached.write_bytes(data)
+        return cached
+    except Exception as e:
+        print(f"  padel: avatar fetch fail — {type(e).__name__}: {e}")
+        return None
+
+
 def _overlay_avatar(video: Path, work: Path) -> Path:
     """Añade avatar narrador 'Mark' fijo en bottom-left (formato tactika).
-    Si el PNG no existe (asset opcional), devuelve el vídeo original intacto —
-    el formato tactika sigue siendo válido sin avatar, solo pierde ese detalle."""
-    if not AVATAR_PATH.exists():
-        print(f"  padel: avatar no encontrado ({AVATAR_PATH}), salto overlay")
+    Si no hay avatar disponible (asset ni fetch), devuelve el vídeo intacto —
+    el formato tactika sigue siendo válido sin él."""
+    av = _ensure_avatar(work)
+    if not av:
+        print(f"  padel: avatar no disponible, salto overlay")
         return video
     out = work / "with_avatar.mp4"
-    # Escala el avatar a ~180px y lo posiciona abajo-izquierda con margen 32px.
-    # overlay x=32 y=H-h-32. Z-order encima del vídeo base.
-    fc = "[1:v]scale=180:-1[av];[0:v][av]overlay=32:main_h-overlay_h-32"
-    cmd = ["ffmpeg", "-y", "-i", str(video), "-i", str(AVATAR_PATH),
+    # Pollinations añade un watermark "pollinations.ai" ~95x25px en la esquina
+    # inferior-derecha incluso con nologo=true. Recorto el 15% inferior-derecho
+    # del avatar antes de escalar. Luego lo escalo a 180px y lo pego abajo-izq.
+    fc = ("[1:v]crop=iw*0.80:ih*0.85:iw*0.10:0,scale=180:-1[av];"
+          "[0:v][av]overlay=32:main_h-overlay_h-32")
+    cmd = ["ffmpeg", "-y", "-i", str(video), "-i", str(av),
            "-filter_complex", fc, "-c:v", "libx264", "-pix_fmt", "yuv420p",
            "-preset", "veryfast", "-c:a", "copy", str(out)]
     r = subprocess.run(cmd, capture_output=True, text=True, timeout=300)
