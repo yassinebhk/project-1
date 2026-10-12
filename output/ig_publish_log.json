@@ -1,12 +1,5 @@
 [
   {
-    "slug": "padel_tactic_bandeja_20260926_134657",
-    "title": "The Bandeja — Padel Tactics #padel #shorts",
-    "status": "fail_publish",
-    "container_id": "18096786080188569",
-    "ts": "2026-09-26T13:49:17.457498+00:00"
-  },
-  {
     "slug": "caso-kio-fraude-300-millones-espana",
     "title": "Caso KIO — 300M€ desvalijados y cero cárcel real · #1",
     "status": "fail_publish",
@@ -789,5 +782,13 @@
     "media_id": "17910134967552698",
     "url": "https://instagram.com/reel/17910134967552698",
     "ts": "2026-10-12T19:08:35.635651+00:00"
+  },
+  {
+    "slug": "padel_tactic_positioning_20261012_222202",
+    "title": "Move as a Pair — Padel Tactics #padel #shorts",
+    "status": "ok",
+    "media_id": "18358820590221397",
+    "url": "https://instagram.com/reel/18358820590221397",
+    "ts": "2026-10-12T22:24:20.084298+00:00"
   }
 ]
