@@ -59,6 +59,42 @@ async def _edge_voice(text: str, out: Path, voice: str = EDGE_VOICE_EN) -> None:
     await edge_tts.Communicate(text, voice, rate=EDGE_RATE).save(str(out))
 
 
+def _kokoro_voice(text: str, out: Path, lang: str = "es") -> None:
+    """Fallback TTS local vía Kokoro-onnx cuando edge-tts falla (403 Microsoft
+    bloqueando IP del runner self-hosted). Local, offline, gratis.
+
+    Descarga el modelo ~350MB la primera vez a ~/.kokoro/ y luego lo cachea.
+    Convierte WAV→MP3 con ffmpeg para mantener compat con el resto del pipeline.
+    """
+    import subprocess
+    import urllib.request
+    from kokoro_onnx import Kokoro
+    import soundfile as sf
+
+    voice = "em_alex" if lang == "es" else "am_michael"
+    model_dir = Path.home() / ".kokoro"
+    model_dir.mkdir(exist_ok=True)
+    model_path = model_dir / "kokoro-v1.0.onnx"
+    voices_path = model_dir / "voices-v1.0.bin"
+    base = "https://github.com/thewh1teagle/kokoro-onnx/releases/download/model-files-v1.0"
+    if not model_path.exists():
+        print(f"  padel: kokoro descargando modelo ~350MB → {model_path}")
+        urllib.request.urlretrieve(f"{base}/kokoro-v1.0.onnx", model_path)
+    if not voices_path.exists():
+        urllib.request.urlretrieve(f"{base}/voices-v1.0.bin", voices_path)
+
+    k = Kokoro(str(model_path), str(voices_path))
+    audio, sr = k.create(text, voice=voice, speed=1.05, lang=lang)
+    wav_tmp = out.with_suffix(".wav")
+    sf.write(str(wav_tmp), audio, sr)
+    subprocess.run(
+        ["ffmpeg", "-y", "-loglevel", "error", "-i", str(wav_tmp),
+         "-codec:a", "libmp3lame", "-b:a", "128k", str(out)],
+        check=True,
+    )
+    wav_tmp.unlink(missing_ok=True)
+
+
 def _ensure_avatar(work: Path) -> Path | None:
     """Devuelve path al avatar narrador 'Mark'. Prioridad:
       1. Asset manual commiteado (assets/mark_avatar.png)
@@ -194,8 +230,17 @@ def render_topic(topic: dict, work: Path) -> Path | None:
     try:
         asyncio.run(_edge_voice(narration, voice, voice=voice_name))
     except Exception as e:
-        print(f"  padel: voice FAIL ({e})")
-        return None
+        # edge-tts da 403 recurrente contra wss://speech.platform.bing.com
+        # en el runner self-hosted (Mac). Issue externo de Microsoft Bing
+        # bloqueando el token DRM/IP. Fallback a Kokoro local — slower pero
+        # offline y gratis. [[coste-cero-obligatorio]]
+        print(f"  padel: edge-tts FAIL ({type(e).__name__}) — fallback Kokoro local")
+        try:
+            lang = "es" if use_tactika else "en"
+            _kokoro_voice(narration, voice, lang=lang)
+        except Exception as e2:
+            print(f"  padel: kokoro FAIL también ({e2})")
+            return None
     music = _fetch_music(work)
     print(f"  padel: mux (music={'sí' if music else 'no'})")
     final = _mux(silent, voice, music, work)
