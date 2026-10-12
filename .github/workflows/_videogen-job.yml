@@ -116,12 +116,20 @@ jobs:
         # del sistema si están, y el formato tactika no referencia DejaVu por
         # nombre explícito, así que no bloquea. Si una escena nueva lo exigiera,
         # añadir `brew install --cask font-dejavu` aquí.
+        #
+        # edge-tts --upgrade: el venv del bridge es persistente, así que `pip
+        # install -e .` NO actualiza edge-tts cuando ya está instalado. Microsoft
+        # rota el token hardcoded (Sec-MS-GEC/TrustedClientToken) cada x semanas
+        # y las versiones viejas de edge-tts fallan con 403 en el websocket
+        # wss://speech.platform.bing.com. Forzar upgrade aquí mantiene al día
+        # la lib (bug 12/10 run 38292449394).
         if: inputs.command == 'padel-once' && inputs.runs_on == 'bridge'
         run: |
           brew list cairo >/dev/null 2>&1 || brew install cairo
           brew list pango >/dev/null 2>&1 || brew install pango
           brew list pkg-config >/dev/null 2>&1 || brew install pkg-config
           pip install "manim>=0.18"
+          pip install --upgrade edge-tts
 
       - name: Reconstruir secrets/.env desde GitHub Secrets
         env:
