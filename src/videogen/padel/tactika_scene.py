@@ -99,22 +99,58 @@ def _net():
     return net
 
 
-def _player_cylinder(x, y, color):
-    """Silueta jugador: cilindro vertical fino (placeholder; se reemplaza por
-    sprite PNG rotoscopiado en overlay ffmpeg con FLAG_PLAYER_SPRITES=1)."""
-    cyl = Cylinder(radius=0.4, height=1.75, direction=OUT,
-                   fill_color=color, fill_opacity=0.9, stroke_width=0)
-    cyl.move_to(np.array([x, y, 0.875]))
-    return cyl
+def _player_figure(x, y, color, side="A"):
+    """Figura humana estilizada 3D: sombra + cuerpo + hombros + cabeza + pala.
+    Mucho más reconocible que un cilindro desde la cámara isométrica.
+
+    El VGroup queda con centro Z ≈ 0.9 (parecido al cilindro antiguo z=0.875),
+    así que los `self.play(...animate.move_to([x', y', 0.875]))` del resto del
+    código siguen moviendo la figura rígida sin descuadres apreciables."""
+    SKIN = "#f5c7a0"
+    PADDLE = "#1a202c"
+    # Sombra elíptica en el suelo bajo el jugador (profundidad)
+    shadow = Ellipse(width=1.3, height=0.55, fill_color="#000000",
+                     fill_opacity=0.4, stroke_width=0)
+    shadow.move_to(np.array([x, y, 0.04]))
+    # Tronco: cilindro ancho y corto (más humano que un palo)
+    body = Cylinder(radius=0.42, height=1.1, direction=OUT,
+                    fill_color=color, fill_opacity=1.0, stroke_width=0,
+                    checkerboard_colors=[color, color],
+                    resolution=(14, 1))
+    body.move_to(np.array([x, y, 0.55]))  # z 0 → 1.1
+    # Hombros: esfera que redondea arriba del tronco
+    shoulders = Sphere(radius=0.46, resolution=(10, 10),
+                       fill_color=color, fill_opacity=1.0, stroke_width=0,
+                       checkerboard_colors=[color, color])
+    shoulders.move_to(np.array([x, y, 1.1]))
+    # Cabeza (tono piel para que destaque del tronco)
+    head = Sphere(radius=0.28, resolution=(10, 10),
+                  fill_color=SKIN, fill_opacity=1.0, stroke_width=0,
+                  checkerboard_colors=[SKIN, SKIN])
+    head.move_to(np.array([x, y, 1.55]))
+    # Pala (prism oscuro al lado — el side define si va a derecha o izquierda)
+    poff = 0.75 if side == "A" else -0.75
+    paddle = Prism(dimensions=[0.08, 0.42, 0.3], fill_color=PADDLE,
+                   fill_opacity=1.0, stroke_width=0)
+    paddle.move_to(np.array([x + poff, y, 0.95]))
+    return VGroup(shadow, body, shoulders, head, paddle)
 
 
 def _ball_sphere(x, y, z=0.5):
-    """Pelota amarilla 3D."""
-    ball = Sphere(radius=0.18, resolution=(12, 12), fill_color=BALL_C,
+    """Pelota amarilla 3D con halo exterior semi-transparente para visibilidad.
+
+    La bola sola era demasiado pequeña contra la pista azul desde cámara
+    isométrica. El halo (esfera r=0.42 opacity 0.3) la hace legible sin que
+    parezca una pelota gigante poco realista."""
+    halo = Sphere(radius=0.42, resolution=(10, 10), fill_color=BALL_C,
+                  fill_opacity=0.3, stroke_width=0,
+                  checkerboard_colors=[BALL_C, BALL_C])
+    halo.move_to(np.array([x, y, z]))
+    ball = Sphere(radius=0.26, resolution=(14, 14), fill_color=BALL_C,
                   fill_opacity=1.0, stroke_width=0,
                   checkerboard_colors=[BALL_C, BALL_C])
     ball.move_to(np.array([x, y, z]))
-    return ball
+    return VGroup(halo, ball)
 
 
 def _label_pill(player_mobj, text, text_color=LABEL_YOU):
@@ -148,8 +184,11 @@ class TactikaBase(ThreeDScene):
         net = _net()
         self.play(FadeIn(floor), FadeIn(glass), run_time=0.5)
         self.play(Create(lines), FadeIn(net), run_time=0.6)
-        self.blues = [_player_cylinder(x, y, LABEL_YOU) for x, y in you]
-        self.reds = [_player_cylinder(x, y, LABEL_RIVAL) for x, y in rivals]
+        # side A/B alterna la mano de la pala para que no se solape pareja
+        self.blues = [_player_figure(x, y, LABEL_YOU, side=("A" if i == 0 else "B"))
+                      for i, (x, y) in enumerate(you)]
+        self.reds = [_player_figure(x, y, LABEL_RIVAL, side=("A" if i == 0 else "B"))
+                     for i, (x, y) in enumerate(rivals)]
         self.play(*[FadeIn(p) for p in self.blues + self.reds], run_time=0.5)
         # Labels fijas-a-cámara (always_face_camera)
         labels_you = ["TÚ", "PAREJA"]
@@ -186,20 +225,32 @@ class TactikaBase(ThreeDScene):
         self.title_mobj = t
 
     def ball_arc_3d(self, start, peak_z, end):
-        """Trayectoria bezier 3D (parábola con pico en peak_z)."""
+        """Trayectoria bezier 3D (parábola con pico en peak_z). Línea gruesa
+        amarilla brillante para que el recorrido se lea desde cámara isométrica
+        contra pista azul (stroke_width=5 era invisible desde el ángulo picado)."""
         s = np.array(start); e = np.array(end)
         mid = (s + e) / 2
         mid[2] = peak_z
         return CubicBezier(s, s + np.array([0, 0, peak_z * 0.5]),
                            e + np.array([0, 0, peak_z * 0.5]), e,
-                           color=BALL_C, stroke_width=5)
+                           color=BALL_C, stroke_width=14)
 
-    def animate_ball(self, path, run_time=1.0, rate=linear):
-        """Añade la bola al inicio y la mueve a lo largo del path 3D."""
+    def animate_ball(self, path, run_time=1.0, rate=linear, mark_impact=True):
+        """Añade la bola al inicio y la mueve a lo largo del path 3D.
+        Si mark_impact=True, deja un dot amarillo en el end-point del arco
+        marcando el punto de bote (ayuda a seguir el recorrido entre arcos)."""
         start_pt = path.get_start()
+        end_pt = path.get_end()
         ball = _ball_sphere(start_pt[0], start_pt[1], start_pt[2])
         self.add(ball)
         self.play(Create(path), MoveAlongPath(ball, path), run_time=run_time, rate_func=rate)
+        if mark_impact:
+            # Dot amarillo en el end-point: señala punto de bote/impacto
+            impact = Sphere(radius=0.18, resolution=(8, 8), fill_color=TRAIL_C,
+                            fill_opacity=0.75, stroke_width=0,
+                            checkerboard_colors=[TRAIL_C, TRAIL_C])
+            impact.move_to(end_pt)
+            self.add(impact)
         return ball
 
     def academic_slide(self, fact: dict, hold: float = 4.0):
