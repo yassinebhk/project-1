@@ -180,5 +180,25 @@ def generate_ideas(n: int = 5, exclude_cases: list[str] | None = None) -> list[s
                 else:
                     break
         print(f"  ideas: {model} agotado, siguiente modelo… ({last_err})")
+    # Fallback final: si TODOS los Gemini se agotaron (429 en ráfaga, típico en
+    # catch-up masivo), tirar de la cascada completa (OpenRouter gemma-4 14.4k/día,
+    # nemotron, Groq) vía llm_fallback en vez de rendirse con lista vacía.
+    print("  ideas: Gemini agotado → fallback OpenRouter/Groq (llm_fallback)")
+    try:
+        from .llm_fallback import generate_json as _llm_json
+        _schema = {
+            "type": "object",
+            "properties": {"ideas": {"type": "array", "items": {"type": "string"}}},
+            "required": ["ideas"],
+        }
+        _data = _llm_json(f"{IDEAS_SYSTEM}\n\n{contents}", schema=_schema,
+                          max_tokens=2048, temperature=1.0)
+        if _data:
+            _ideas = [str(x).strip() for x in _data.get("ideas", []) if str(x).strip()]
+            if _ideas:
+                print(f"  ideas: ✅ fallback LLM rescató {len(_ideas)} ideas")
+                return _ideas[:n]
+    except Exception as e:
+        print(f"  ideas: fallback llm_fallback falló: {type(e).__name__}: {str(e)[:120]}")
     print(f"  ideas: TODOS los modelos fallaron · último error: {last_err}")
     return []
