@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T20:29:40.660019+00:00",
+  "generated_at": "2026-10-14T10:31:32.624188+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -84,6 +84,90 @@
       "hook": "Si despertaras hoy en la órbita de Marte, los océanos del planeta se convertirían en vastas extensiones de hielo sólido.",
       "angle": "La constante solar y la ley del inverso del cuadrado; cómo la distancia de 1.5 unidades astronómicas reduce la energía térmica recibida del Sol.",
       "visual": "Earth covered in ice sheets orbiting far from the sun, frozen reddish continents, astronaut looking at a tiny distant sun, frost forming on satellite camera"
+    },
+    {
+      "key": "bacterias_desaparecen_oxigeno",
+      "titulo": "¿Qué pasaría si todas las bacterias del planeta murieran hoy?",
+      "hook": "Si cada bacteria desapareciera ahora mismo, los humanos nos asfixiaríamos en menos de una semana.",
+      "angle": "Ciclos biogeoquímicos y la producción primaria de oxígeno y nitrógeno por microorganismos.",
+      "visual": "bacterias microscópicas bioluminiscentes, paisaje seco y sin vida, atmósfera gris, partículas de nitrógeno"
+    },
+    {
+      "key": "atmósfera_espesor_doble",
+      "titulo": "¿Qué pasaría si la atmósfera de la Tierra duplicara su grosor?",
+      "hook": "Si nuestra atmósfera fuera el doble de densa, ver el cielo de día sería totalmente imposible.",
+      "angle": "Dispersión de Rayleigh y cómo aumentaría la presión atmosférica al nivel del mar.",
+      "visual": "cielo morado oscuro, presión atmosférica alta, nubes densas y doradas, horizonte comprimido"
+    },
+    {
+      "key": "rayo_energia_infinita",
+      "titulo": "¿Qué pasaría si pudieras almacenar la energía de un solo rayo?",
+      "hook": "Un solo rayo de tormenta tiene suficiente energía para encender una ciudad entera por un día.",
+      "angle": "La potencia eléctrica instantánea de un rayo y la física de las descargas atmosféricas.",
+      "visual": "tormenta eléctrica violenta, rayo impactando un pararrayos, ciudad iluminada en la noche, circuito energético"
+    },
+    {
+      "key": "noche_sin_estrellas",
+      "titulo": "¿Qué pasaría si la Vía Láctea se apagara y no viéramos estrellas?",
+      "hook": "Si la luz de las estrellas tardara un segundo más en llegar, el cielo nocturno sería un abismo negro.",
+      "angle": "La velocidad finita de la luz y la radiación cósmica de fondo de microondas.",
+      "visual": "cielo nocturno totalmente negro, telescopio espacial gigante, ondas cósmicas invisibles, galaxia espiral lejana"
+    },
+    {
+      "key": "vidrio_volcanico_mundial",
+      "titulo": "¿Qué pasaría si toda la lava de la Tierra se enfriara en segundos?",
+      "hook": "Si la lava se congelara al instante, el mundo entero se cubriría de un cristal volcánico afilado.",
+      "angle": "Formación de obsidiana y las tasas de enfriamiento rápido de los silicatos fundidos.",
+      "visual": "río de lava brillante, cristalización instantánea, obsidiana negra brillante, erupción volcánica cortada"
+    },
+    {
+      "key": "marte_oxigenado",
+      "titulo": "¿Qué pasaría si pudieras respirar en la superficie de Marte?",
+      "hook": "Incluso con aire respirable, intentar caminar en Marte te rompería los huesos por su gravedad.",
+      "angle": "Relación entre la gravedad superficial, la densidad ósea y la presión atmosférica en el planeta rojo.",
+      "visual": "astronauta sin casco en Marte, paisaje rojo polvoriento, tormenta de polvo marciana, baja gravedad"
+    },
+    {
+      "key": "humanos_fosforescentes",
+      "titulo": "¿Qué pasaría si los humanos brilláramos en la oscuridad?",
+      "hook": "Si nuestros cuerpos emitieran luz como las luciérnagas, no podríamos escondernos de nosotros mismos.",
+      "angle": "Bioluminiscencia, reacciones químicas de la luciferina y la radiación infrarroja humana real.",
+      "visual": "persona brillando en la oscuridad, silueta con luz azul neón, laboratorio de biología, reacciones moleculares"
+    },
+    {
+      "key": "gravedad_luna_tierra",
+      "titulo": "¿Qué pasaría si la Luna estuviera diez veces más cerca?",
+      "hook": "Si la Luna estuviera a la distancia de un satélite artificial, las mareas arrasarían los continentes.",
+      "angle": "Fuerzas de marea gravitacionales y el límite de Roche en cuerpos celestes cercanos.",
+      "visual": "luna gigante ocupando medio cielo, olas kilométricas, maremotos planetarios, océanos distorsionados"
+    },
+    {
+      "key": "hielo_cinco_grados",
+      "titulo": "¿Qué pasaría si el agua se congelara a 5 grados positivos?",
+      "hook": "Si el agua se solidificara a cinco grados, toda la sangre de nuestras venas se convertiría en hielo.",
+      "angle": "Puntos de fusión anómalos del agua y la termodinámica de los fluidos biológicos.",
+      "visual": "vaso de agua congelándose al instante, glóbulos rojos cristalizados, paisaje ártico extremo, termómetro congelado"
+    },
+    {
+      "key": "fuego_bajo_agua",
+      "titulo": "¿Qué pasaría si intentaras encender una fogata en el fondo del mar?",
+      "hook": "A cuatro mil metros de profundidad, el fuego de una cerilla se comportaría de una forma imposible.",
+      "angle": "Chimeneas hidrotermales, fluidos supercríticos y la física de la combustión bajo presión.",
+      "visual": "fuego submarino imposible, chimenea hidrotermal negra, burbujas de gas caliente, abismo marino oscuro"
+    },
+    {
+      "key": "sol_luz_ultravioleta",
+      "titulo": "¿Qué pasaría si el Sol solo emitiera rayos ultravioleta?",
+      "hook": "Si el Sol borrara la luz visible, el día sería un desierto invisible bañado en radiación mortal.",
+      "angle": "Espectro electromagnético solar y cómo la capa de ozono filtra la radiación UV letal.",
+      "visual": "sol emitiendo rayos violetas, quemadura solar instantánea, capa de ozono brillante, desierto bajo luz invisible"
+    },
+    {
+      "key": "mes_sin_nubes",
+      "titulo": "¿Qué pasaría si la Tierra se quedara sin nubes por un mes?",
+      "hook": "Sin nubes durante treinta días, los océanos de la Tierra empezarían a hervir por el calor atrapado.",
+      "angle": "El albedo terrestre, el ciclo del agua y el control de la temperatura global por la nubosidad.",
+      "visual": "cielo azul despejado extremo, océano evaporándose, rayos solares directos, sequía global severa"
     }
   ]
 }
