@@ -263,20 +263,24 @@ def generate_json(prompt: str, schema: dict | None = None,
     Devuelve dict con datos parseados, o None si ambos fallan.
     Si schema=None, devuelve {"text": <string>}.
     """
-    data, gerr = _try_gemini_json(prompt, schema, max_tokens, temperature)
-    if data is not None:
-        return data
-    print(f"  llm: gemini fail ({gerr[:120]}) → intento openrouter")
-    data, oerr = _try_openrouter_json(prompt, schema, max_tokens, temperature)
-    if data is not None:
-        print(f"  llm: ✅ openrouter rescató el request")
-        return data
-    print(f"  llm: openrouter fail ({oerr[:120]}) → intento groq")
-    data, ferr = _try_groq_json(prompt, schema, max_tokens, temperature)
-    if data is not None:
-        print(f"  llm: ✅ groq rescató el request")
-        return data
-    print(f"  llm: ❌ tres LLMs fallaron · gemini={gerr[:60]} · openrouter={oerr[:60]} · groq={ferr[:60]}")
+    providers = [("gemini", _try_gemini_json),
+                 ("openrouter", _try_openrouter_json),
+                 ("groq", _try_groq_json)]
+    # Optimización de cuota: con LLM_CHEAP_FIRST=1 los canales "bulk" tiran primero
+    # de OpenRouter (gemma-4, 14.4k/día) y Groq, reservando la cuota de Gemini
+    # (flash-lite 500/día) para el canal flagship (WaitWhy, que NO pone el flag).
+    if os.environ.get("LLM_CHEAP_FIRST", "").strip().lower() in ("1", "true", "yes"):
+        providers = [providers[1], providers[2], providers[0]]
+    errs: dict[str, str] = {}
+    for name, fn in providers:
+        data, err = fn(prompt, schema, max_tokens, temperature)
+        if data is not None:
+            if name != providers[0][0]:
+                print(f"  llm: ✅ {name} resolvió el request")
+            return data
+        errs[name] = err or ""
+        print(f"  llm: {name} fail ({(err or '')[:100]}) → siguiente")
+    print("  llm: ❌ los 3 LLMs fallaron · " + " · ".join(f"{k}={v[:50]}" for k, v in errs.items()))
     return None
 
 
