@@ -1,13 +1,5 @@
 [
   {
-    "slug": "dividendos-impuestos-desde-cero-1",
-    "title": "Impuestos por dividendos desde el primer euro · 19% · #1",
-    "status": "ok",
-    "media_id": "17910195267502032",
-    "url": "https://instagram.com/reel/17910195267502032",
-    "ts": "2026-09-27T17:12:00.411826+00:00"
-  },
-  {
     "slug": "top-3-racionamientos-posguerra-1939",
     "title": "TOP 3 Racionamientos de posguerra · Cartilla 1939 · #1",
     "status": "ok",
@@ -791,5 +783,12 @@
     "status": "fail_publish",
     "container_id": "18099154835188569",
     "ts": "2026-10-14T22:16:59.961164+00:00"
+  },
+  {
+    "slug": "subsidio-desempleo-480-sepe-2026",
+    "title": "TOP 3 ayudas SEPE si no cobras paro · €480 · #1",
+    "status": "fail_publish",
+    "container_id": "18099162164188569",
+    "ts": "2026-10-14T23:46:04.088437+00:00"
   }
 ]
