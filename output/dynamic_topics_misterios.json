@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T19:33:09.774888+00:00",
+  "generated_at": "2026-10-14T10:19:46.998057+00:00",
   "topics": [
     {
       "key": "el_tesoro_de_oak_island",
@@ -84,6 +84,90 @@
       "hook": "Millones de metros cúbicos de roca fueron extraídos en China bajo tierra sin dejar una sola mención en libros antiguos.",
       "angle": "Investigar el complejo subterráneo de Longyou descubierto en 1992, analizando las marcas de cincel uniformes y la ausencia total de documentos sobre su excavación en las dinastías chinas.",
       "visual": "Cueva subterránea gigante artificial, pilares de piedra estriados, linterna de explorador, agua subterránea oscura"
+    },
+    {
+      "key": "manuscrito_roborz_húngaro",
+      "titulo": "El códice de Rohonc: el libro ilustrado que ningún criptógrafo ha podido descifrar",
+      "hook": "Tiene más de 200 ilustraciones de batallas imposibles y nadie en el mundo sabe qué dice.",
+      "angle": "Analizar el misterioso libro descubierto en Hungría en el siglo XIX, cuyo alfabeto supera en número de caracteres al de cualquier idioma conocido, descartando los fraudes más famosos del siglo XX.",
+      "visual": "manuscrito antiguo iluminado, lupa sobre símbolos extraños, biblioteca oscura, páginas ajadas"
+    },
+    {
+      "key": "desaparicion_expedicion_leichhardt",
+      "titulo": "Ludwig Leichhardt: el explorador alemán que se esfumó en el desierto australiano con 7 hombres",
+      "hook": "Entraron al corazón hostil de Australia en 1848 y la tierra se los tragó sin dejar un solo rastro.",
+      "angle": "Revisar la última expedición documentada de Leichhardt intentando cruzar el continente de este a oeste, y los misteriosos árboles marcados hallados décadas después.",
+      "visual": "desierto australiano árido, caravana de exploradores antigua, calavera en la arena, tormenta de polvo"
+    },
+    {
+      "key": "mapa_vinland_debate",
+      "titulo": "El mapa de Vinland: la falsificación medieval perfecta que desconcertó a la ciencia durante décadas",
+      "hook": "Demostraba que los vikingos llegaron a América antes que Colón, pero la tinta escondía un secreto brutal.",
+      "angle": "Explicar cómo la Universidad de Yale autentificó el pergamino en 1965 y cómo la tecnología moderna de rayos X descubrió el fraude químico en 2021.",
+      "visual": "mapa antiguo pergamino, análisis de laboratorio con láser, lupas y tintas, barcos vikingos en el mar"
+    },
+    {
+      "key": "monolito_gesundbrunnen",
+      "titulo": "La piedra rúnica de Kensington: ¿prueba vikinga en Minnesota o broma de granjero?",
+      "hook": "Un agricultor la encontró en 1898 atrapada en las raíces de un árbol, con una fecha imposible en América.",
+      "angle": "Exponer el debate científico documentado sobre la inscripción rúnica en territorio estadounidense y los análisis gramaticales que dividen a los historiadores.",
+      "visual": "piedra con inscripciones rúnicas, bosque denso de Minnesota, hacha de pionero, museo histórico"
+    },
+    {
+      "key": "ruinas_kuelap",
+      "titulo": "Kuelap: la fortaleza en las nubes de los Chachapoyas que los incas apenas pudieron conquistar",
+      "hook": "Construyeron murallas de 20 metros de altura sobre un abismo inexpugnable en la selva nubosa.",
+      "angle": "Detallar la ingeniería arquitectónica de la cultura Chachapoyas y los sarcófagos suspendidos en los acantilados documentados por arqueólogos.",
+      "visual": "fortaleza de piedra en la niebla, abismo en la selva peruana, murallas ciclópeas, drone sobre nubes"
+    },
+    {
+      "key": "galeona_fantasma_san_jose",
+      "titulo": "El galeón San José: el tesoro sumergido de 1708 que enfrenta a gobiernos y cazatesoros",
+      "hook": "Duerme a 600 metros de profundidad con toneladas de oro y esmeraldas que nadie se atreve a tocar.",
+      "angle": "Reportar el hallazgo oficial de los restos del galeón español frente a Cartagena de Indias y la disputa legal internacional por su carga histórica.",
+      "visual": "galeón bajo el agua, monedas de oro antiguas, cañones cubiertos de coral, submarino de exploración"
+    },
+    {
+      "key": "columna_hierro_delhi",
+      "titulo": "El pilar de hierro de Delhi: 1600 años a la intemperie sin una sola mota de óxido",
+      "hook": "Lluvias monzónicas durante 16 siglos y este metal desafía todas las leyes de la química.",
+      "angle": "Examinar la alta concentración de fósforo y la técnica de forja tradicional india que creó una capa protectora invisible de misawita.",
+      "visual": "pilar de hierro antiguo, templo en la India, primer plano de metal sin óxido, chispas de forja"
+    },
+    {
+      "key": "desaparicion_pueblo_anasazi",
+      "titulo": "El éxodo repentino de los Anasazi: por qué abandonaron sus ciudades en los acantilados",
+      "hook": "Vivieron en palacios de roca impecables durante siglos y un día decidieron vaciarlos para siempre.",
+      "angle": "Analizar los registros arqueológicos y dendrocronológicos que documentan la megasequía del siglo XIII en Mesa Verde y su migración hacia el sur.",
+      "visual": "pueblo en acantilado de piedra, cañón desértico americano, vasijas de cerámica rota, sol cenital"
+    },
+    {
+      "key": "faro_islas_flannan",
+      "titulo": "El misterio de las Islas Flannan: la bitácora final que desafía la lógica marinera",
+      "hook": "La mesa estaba servida para tres, pero el faro estaba completamente vacío y cerrado por dentro.",
+      "angle": "Revisar el informe oficial de 1900 sobre la desaparición de los guardianes y las inusuales condiciones meteorológicas registradas en el Atlántico Norte.",
+      "visual": "faro en acantilado oscuro, olas gigantes golpeando rocas, interior de cocina antigua, mesa puesta"
+    },
+    {
+      "key": "petroglifos_cerro_toro",
+      "titulo": "Los grabados rupestres de Toro Muerto: 2000 rocas esculpidas en medio del desierto peruano",
+      "hook": "Nadie sabe qué significan las miles de figuras geométricas talladas en la arena más seca del planeta.",
+      "angle": "Documentar el sitio arqueológico con mayor concentración de arte rupestre del norte de Arequipa y las teorías sobre rutas comerciales prehispánicas.",
+      "visual": "rocas talladas en desierto, sol intenso, símbolos geométricos antiguos, arqueólogo con pincel"
+    },
+    {
+      "key": "tuneles_subterraneos_cappadocia",
+      "titulo": "Derinkuyu: la ciudad subterránea de 18 pisos capaz de albergar a 20.000 personas",
+      "hook": "Oculta bajo la tierra, esta metrópolis tiene puertas de piedra gigantescas que solo se abrían desde dentro.",
+      "angle": "Describir el sistema de ventilación, pozos de agua y bodegas excavadas en la roca volcánica documentadas por el Ministerio de Cultura turco.",
+      "visual": "túneles de piedra subterráneos, puerta de roca circular, antorcha iluminando pasadizos, escaleras empinadas"
+    },
+    {
+      "key": "tuneles_bajo_tierra_escocia",
+      "titulo": "Los misteriosos pasadizos de Gilmerton: la red oculta excavada bajo Edimburgo",
+      "hook": "Kilómetros de túneles secretos bajo Escocia con muebles tallados en la misma roca viva.",
+      "angle": "Investigar los registros históricos del siglo XVIII sobre la excavación de estos pasadizos y los debates académicos sobre su propósito original.",
+      "visual": "túnel de roca subterráneo, linterna en la oscuridad, marcas de cincel en la pared, calle empedrada"
     }
   ]
 }
