@@ -314,12 +314,9 @@ def refresh_dynamic(n: int = 15) -> list[dict] | None:
             f"fuente (the real source), dataset_hint (5-8 concrete example entries + the metric), "
             f"cifra_ancla (the unit, e.g. 'USD billion', 'metres', 'titles')."
         )
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite", contents=prompt,
-            config=types.GenerateContentConfig(temperature=1.0, max_output_tokens=6000,
-                                               response_mime_type="application/json", response_schema=schema),
-        )
-        got = json.loads((resp.text or "").strip()).get("topics", [])
+        from ..llm_fallback import generate_json
+        data = generate_json(prompt, schema=schema, max_tokens=6000, temperature=1.0) or {}
+        got = data.get("topics", [])
         # dedup por key + por título (semántico) contra lo existente
         fresh: list[dict] = []
         try:

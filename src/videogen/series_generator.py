@@ -148,22 +148,8 @@ def _generate_plan(case_name: str, mode: str = "crime") -> list[dict] | None:
             f"  siguiente parte. Máx 150 chars.\n\n"
             f"Devuelve JSON con clave 'parts' = array de 5 objetos."
         )
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=1.0,
-                max_output_tokens=4000,
-                response_mime_type="application/json",
-                response_schema=schema,
-            ),
-        )
-        text = (resp.text or "").strip()
-        try:
-            data = json.loads(text)
-        except Exception:
-            print(f"  series: JSON parse fail — text[:200]={text[:200]}")
-            return None
+        from .llm_fallback import generate_json
+        data = generate_json(prompt, schema=schema, max_tokens=4000, temperature=1.0) or {}
         parts = data.get("parts") or []
         if len(parts) < 5:
             print(f"  series: solo {len(parts)} partes generadas")

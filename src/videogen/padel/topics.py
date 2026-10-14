@@ -235,12 +235,8 @@ def refresh_dynamic(n: int = 12) -> list[dict] | None:
             f"- punch: 1-2 line closing line, use \\n, max ~24 chars/line\n"
             f"- narration: a 28-32s spoken voiceover (~75 words) that flows naturally, ending with 'Follow for more padel.'\n"
         )
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite", contents=prompt,
-            config=types.GenerateContentConfig(temperature=1.0, max_output_tokens=6000,
-                                               response_mime_type="application/json", response_schema=schema),
-        )
-        data = json.loads((resp.text or "").strip())
+        from ..llm_fallback import generate_json
+        data = generate_json(prompt, schema=schema, max_tokens=6000, temperature=1.0) or {}
         topics = [t for t in data.get("topics", []) if t.get("format") in ("fact", "checklist")]
         # Filtro anti-repeat por título contra lo ya existente (por si la key es
         # nueva pero el tema es casi igual).

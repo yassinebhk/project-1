@@ -137,18 +137,8 @@ def _gemini_topics(prompt: str, temperature: float) -> list[dict] | None:
         if not key:
             return None
         client = genai.Client(api_key=key)
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=temperature,
-                max_output_tokens=5000,
-                response_mime_type="application/json",
-                response_schema=_SCHEMA,
-            ),
-        )
-        text = (resp.text or "").strip()
-        data = json.loads(text)
+        from ..llm_fallback import generate_json
+        data = generate_json(prompt, schema=_SCHEMA, max_tokens=5000, temperature=temperature) or {}
         topics = data.get("topics") or []
         return topics if len(topics) >= 3 else None
     except Exception as e:

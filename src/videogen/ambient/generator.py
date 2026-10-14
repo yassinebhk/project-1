@@ -608,17 +608,17 @@ NO emojis en title (perjudica SEO). Sí en description con moderación.
 Devuelve SOLO JSON."""
 
     try:
-        client = genai.Client(api_key=key)
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json",
-                temperature=1.0,
-                max_output_tokens=800,
-            ),
-        )
-        data = json.loads((resp.text or "{}").strip())
+        from ..llm_fallback import generate_json
+        _seo_schema = {
+            "type": "object",
+            "properties": {
+                "title": {"type": "string"},
+                "description": {"type": "string"},
+                "tags": {"type": "array", "items": {"type": "string"}},
+            },
+            "required": ["title", "description", "tags"],
+        }
+        data = generate_json(prompt, schema=_seo_schema, max_tokens=800, temperature=1.0) or {}
         if data.get("title") and data.get("description"):
             return {
                 "title": data["title"][:100],
@@ -626,7 +626,7 @@ Devuelve SOLO JSON."""
                 "tags": data.get("tags", [])[:15],
             }
     except Exception as e:
-        print(f"  ambient: Gemini SEO fail — {e}")
+        print(f"  ambient: SEO LLM fail — {e}")
 
     return {
         "title": f"{base_kw.title()} {duration_min} minutos · {modifier}",

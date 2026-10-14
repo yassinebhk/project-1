@@ -187,12 +187,9 @@ def refresh_dynamic(n: int = 12) -> list[dict] | None:
             f"problem + Stoic answer), visual (3-4 dark cinematic scene keywords: statues, storms, "
             f"candles, mountains, rain)."
         )
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite", contents=prompt,
-            config=types.GenerateContentConfig(temperature=1.0, max_output_tokens=6000,
-                                               response_mime_type="application/json", response_schema=schema),
-        )
-        got = json.loads((resp.text or "").strip()).get("topics", [])
+        from ..llm_fallback import generate_json
+        data = generate_json(prompt, schema=schema, max_tokens=6000, temperature=1.0) or {}
+        got = data.get("topics", [])
         try:
             from .. import dedup_common
             _isrep = lambda t: dedup_common.title_is_repeat(  # noqa: E731

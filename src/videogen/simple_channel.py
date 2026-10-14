@@ -161,12 +161,9 @@ def refresh_dynamic(cfg: SimpleChannelConfig, n: int = 12) -> list[dict] | None:
             f"hook (a vivid 1-sentence cold-open for 0-3s), angle (the specific verifiable content point "
             f"to cover), visual (3-4 cinematic scene keywords for stock/AI images)."
         )
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite", contents=prompt,
-            config=types.GenerateContentConfig(temperature=1.0, max_output_tokens=6000,
-                                               response_mime_type="application/json", response_schema=schema),
-        )
-        got = json.loads((resp.text or "").strip()).get("topics", [])
+        from .llm_fallback import generate_json
+        data = generate_json(prompt, schema=schema, max_tokens=6000, temperature=1.0) or {}
+        got = data.get("topics", [])
         try:
             from . import dedup_common
             _isrep = lambda t: dedup_common.title_is_repeat(  # noqa: E731

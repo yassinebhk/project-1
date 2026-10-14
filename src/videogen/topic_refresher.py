@@ -268,22 +268,8 @@ def refresh_topics_for(niche: str, n: int = 15, covered=None) -> list[dict] | No
             f"Prioriza NOVEDADES 2026 y temas long-tail infravalorados."
             + _covered_block(covered)
         )
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=1.0,
-                max_output_tokens=5000,
-                response_mime_type="application/json",
-                response_schema=schema,
-            ),
-        )
-        text = (resp.text or "").strip()
-        try:
-            data = json.loads(text)
-        except Exception as je:
-            print(f"  refresher: JSON parse fail — {je}")
-            return None
+        from .llm_fallback import generate_json
+        data = generate_json(prompt, schema=schema, max_tokens=5000, temperature=1.0) or {}
         topics = data.get("topics") or []
         # Filtro anti-repeat: descarta los que se parezcan a lo ya publicado.
         if covered:
@@ -413,22 +399,8 @@ def refresh_longform_topics_for(niche: str, n: int = 8, covered=None) -> list[di
             f"3-5 capítulos distintos."
             + _covered_block(covered)
         )
-        resp = client.models.generate_content(
-            model="gemini-3.5-flash-lite",
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                temperature=0.9,
-                max_output_tokens=4000,
-                response_mime_type="application/json",
-                response_schema=schema,
-            ),
-        )
-        text = (resp.text or "").strip()
-        try:
-            data = json.loads(text)
-        except Exception as je:
-            print(f"  refresher long {niche}: JSON parse fail — {je}")
-            return None
+        from .llm_fallback import generate_json
+        data = generate_json(prompt, schema=schema, max_tokens=4000, temperature=0.9) or {}
         topics = data.get("topics") or []
         if covered:
             try:
