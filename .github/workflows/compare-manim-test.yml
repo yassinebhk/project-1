@@ -40,3 +40,22 @@ jobs:
           TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
           COMPARE_TOPIC_KEY: ${{ inputs.topic_key }}
         run: videogen compare-test
+      - name: extraer frames para revisión
+        if: always()
+        run: |
+          MP4=$(find output/compare_test -name final.mp4 | head -1)
+          echo "mp4: $MP4"
+          if [ -n "$MP4" ]; then
+            cp "$MP4" compare_preview.mp4 || true
+            ffmpeg -y -loglevel error -ss 1.5 -i "$MP4" -frames:v 1 frame_early.jpg || true
+            ffmpeg -y -loglevel error -sseof -1.5 -i "$MP4" -frames:v 1 frame_end.jpg || true
+            ls -la frame_*.jpg compare_preview.mp4 || true
+          fi
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: compare-preview
+          path: |
+            frame_*.jpg
+            compare_preview.mp4
+          if-no-files-found: warn
