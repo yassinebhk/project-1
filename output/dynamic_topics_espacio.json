@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-04T19:42:43.803949+00:00",
+  "generated_at": "2026-10-14T10:36:19.926242+00:00",
   "topics": [
     {
       "key": "diamantes_en_neptuno",
@@ -84,6 +84,90 @@
       "hook": "En 1859 el cielo nocturno ardió en auroras boreales y los telegrafos empezaron a funcionar solos sin baterías.",
       "angle": "El impacto y la magnitud del Evento Carrington, la eyección de masa coronal más potente documentada instrumentalmente en la historia.",
       "visual": "solar flare coronal mass ejection earth auroras intense geomagnetic storm"
+    },
+    {
+      "key": "eco_solar_viento_solar",
+      "titulo": "La Tierra esquiva esto todos los días: el viento solar invisible",
+      "hook": "Cada segundo, el Sol nos dispara una tormenta invisible que destruiría nuestra atmósfera si no fuera por un escudo secreto.",
+      "angle": "Explicación del viento solar constante de la NASA y cómo la magnetosfera terrestre desvía las partículas cargadas de alta energía.",
+      "visual": "Coronal mass ejection, planet Earth magnetic field, aurora borealis, space particle storm"
+    },
+    {
+      "key": "saturno_exagono_polo_norte",
+      "titulo": "El misterioso huracán geométrico que flota en Saturno",
+      "hook": "En el polo norte de Saturno hay una tormenta gigante con forma de hexágono perfecto que lleva décadas girando.",
+      "angle": "Datos de la misión Cassini sobre la onda de Rossby que crea el patrón hexagonal persistente en la atmósfera de Saturno.",
+      "visual": "Saturn north pole hexagon, planetary vortex, Cassini spacecraft raw data, swirling gas clouds"
+    },
+    {
+      "key": "estrella_canival_canis_maioris",
+      "titulo": "La estrella gigante que se está tragando a sí misma",
+      "hook": "Esta estrella es tan descomunal que si la pusieras en el centro del sistema solar, su superficie rebasaría la órbita de Júpiter.",
+      "angle": "Dimensiones reales y el estado evolutivo avanzado de VY Canis Majoris o Stephenson 2-18 según catálogos astronómicos.",
+      "visual": "Red hypergiant star comparison, solar system scale, stellar surface turbulence, dying star"
+    },
+    {
+      "key": "luna_io_volcanes_azufre",
+      "titulo": "El cuerpo más violento del sistema solar no es un planeta",
+      "hook": "En esta luna de Júpiter los volcanes disparan fuentes de azufre a cientos de kilómetros de altura sin parar.",
+      "angle": "Mapeo de la NASA sobre la actividad volcánica extrema de Ío impulsada por las fuerzas de marea de Júpiter.",
+      "visual": "Io moon Jupiter background, active sulfur volcano plume, planetary tidal heating, rocky volcanic surface"
+    },
+    {
+      "key": "pulsar_reloj_cosmico",
+      "titulo": "El reloj más preciso del universo gira a 700 revoluciones por segundo",
+      "hook": "Hay un cadáver estelar en el espacio profundo que late con tanta precisión que supera a los mejores relojes atómicos de la Tierra.",
+      "angle": "Funcionamiento de los púlsares de milisegundo, restos de supernovas altamente magnetizados que emiten pulsos de radiación.",
+      "visual": "Spinning pulsar star, beam of light radiation, deep space grid, cosmic clock animation"
+    },
+    {
+      "key": "nube_oort_frontera_sistema_solar",
+      "titulo": "El cementerio de cometas donde termina la gravedad del Sol",
+      "hook": "A un año luz de nosotros existe una esfera invisible de billones de cometas congelados que marca el fin del sistema solar.",
+      "angle": "La estructura teórica y observaciones indirectas de la Nube de Oort y su papel como reservorio de cometas de largo período.",
+      "visual": "Oort cloud frozen comets, distant Sun as tiny star, dark interstellar space, icy debris field"
+    },
+    {
+      "key": "planeta_helado_orbitas_extremas",
+      "titulo": "El planeta helado donde un año dura 10.000 años terrestres",
+      "hook": "Existe un mundo en los confines del sistema solar cuya órbita es tan elíptica que tarda milenios en dar una sola vuelta al Sol.",
+      "angle": "Características orbitales de objetos transneptunianos extremos como Sedna y su distancia récord al perihelio.",
+      "visual": "Distant icy dwarf planet, elliptical orbit diagram, cold cosmic background, starry night sky"
+    },
+    {
+      "key": "nebulosa_del_cangrejo_remanente",
+      "titulo": "La explosión estelar que los astrónomos chinos vieron en el año 1054",
+      "hook": "Hace mil años, los astrónomos antiguos vieron aparecer una estrella tan brillante a pleno día que eclipsó a la Luna.",
+      "angle": "Registros históricos de la supernova SN 1054 y el remanente actual observado por el telescopio espacial Hubble y Chandra.",
+      "visual": "Crab nebula remnant, historical Chinese stargazers parchment, X-ray space telescope composite, expanding gas shell"
+    },
+    {
+      "key": "atmosfera_marte_ocaso_azul",
+      "titulo": "Por qué los atardeceres en Marte son de un inquietante color azul",
+      "hook": "Si estuvieras parado en la superficie roja de Marte, verías un atardecer completamente azul.",
+      "angle": "La física de la dispersión de Mie en el polvo fino de óxido de hierro en la atmósfera marciana durante la puesta de sol.",
+      "visual": "Mars blue sunset, rover perspective, dusty Martian horizon, thin pink sky"
+    },
+    {
+      "key": "anillos_uranio_inclinacion",
+      "titulo": "El planeta que rueda de costado y tiene anillos casi invisibles",
+      "hook": "Este gigante helado fue golpeado con tanta fuerza en el pasado que ahora orbita completamente tumbado de lado.",
+      "angle": "La inclinación axial extrema de 98 grados de Urano y sus tenues anillos formados por hielo oscuro.",
+      "visual": "Uranus sideways rotation, tilted planetary rings, ice giant atmosphere, dark space backdrop"
+    },
+    {
+      "key": "colision_andromeda_via_lactea",
+      "titulo": "El inevitable choque frontal que destruirá el cielo nocturno tal como lo conocemos",
+      "hook": "Nuestra galaxia viaja a más de 100 kilómetros por segundo directamente hacia un choque inevitable con su vecina más grande.",
+      "angle": "Datos cinemáticos actuales de la ESA sobre la futura colisión entre la Vía Láctea y la galaxia de Andrómeda en 4 mil millones de años.",
+      "visual": "Milky Way Andromeda collision simulation, merging galaxies, starry night sky distortion, cosmic impact"
+    },
+    {
+      "key": "temperatura_espacio_profundo_fondo",
+      "titulo": "El lugar más frío del universo está más cerca de lo que crees",
+      "hook": "Incluso en el espacio profundo más oscuro, hay un frío absoluto remanente del mismísimo nacimiento del universo.",
+      "angle": "La temperatura del Fondo Cósmico de Microondas (CMB) medida por Planck, fijada en 2.7 Kelvin por encima del cero absoluto.",
+      "visual": "Cosmic microwave background map, absolute zero thermometer scale, deep space nebula, cold cosmic void"
     }
   ]
 }
