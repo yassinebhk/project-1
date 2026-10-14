@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T09:21:15.080321+00:00",
+  "generated_at": "2026-10-14T09:32:07.418083+00:00",
   "topics": [
     {
       "key": "nubes_peso",
@@ -84,6 +84,76 @@
       "hook": "Un camaleón puede mirar hacia adelante y hacia atrás al mismo tiempo gracias a sus ojos que operan de forma independiente.",
       "angle": "Tienen un campo de visión de 360 grados y pueden procesar dos imágenes distintas de manera simultánea en su cerebro.",
       "visual": "macro ojo de camaleon girando, pantalla dividida vision doble, selva tropical borrosa, animacion optica"
+    },
+    {
+      "key": "sueno_delfines",
+      "titulo": "¿Por qué los delfines nunca se ahogan al dormir?",
+      "hook": "Un delfín solo apaga la mitad de su cerebro para dormir.",
+      "angle": "Explicación del sueño unishemisférico y cómo cierran un ojo mientras el otro sigue vigilando depredadores.",
+      "visual": "Delfin nadando de noche, ojo abierto, ondas cerebrales, oceano oscuro"
+    },
+    {
+      "key": "hongo_mayor",
+      "titulo": "El organismo gigante que se esconde bajo el bosque",
+      "hook": "El ser vivo más grande del mundo no es una ballena, es un hongo subterráneo.",
+      "angle": "El hongo de miel en Oregón que cubre kilómetros cuadrados y tiene miles de años de antigüedad.",
+      "visual": "Bosque antiguo, suelo del bosque, raices de arboles, setas de miel"
+    },
+    {
+      "key": "huella_koala",
+      "titulo": "El inesperado animal que tiene huellas dactilares idénticas a las nuestras",
+      "hook": "Los koalas cometen crímenes perfectos porque tienen huellas dactilares humanas.",
+      "angle": "Convergencia evolutiva: los koalas desarrollaron crestas epidérmicas para agarrarse a los eucaliptos, confundibles con las humanas.",
+      "visual": "Primer plano huella dactilar, koala en rama, eucalipto, lupa"
+    },
+    {
+      "key": "diamantes_neptuno",
+      "titulo": "El fenómeno extremo donde los océanos son de carbono sólido",
+      "hook": "En los gigantes helados llueven icebergs de diamante puro.",
+      "angle": "Alta presion en Urano y Neptuno que cristaliza el metano y precipita diamantes reales.",
+      "visual": "Planeta azul oscuro, tormenta de presion, diamantes cayendo, nucleo brillante"
+    },
+    {
+      "key": "cronologia_tiburones",
+      "titulo": "El animal marino que vio nacer a los anillos de Saturno",
+      "hook": "Los tiburones son más antiguos que los árboles y que los anillos de Saturno.",
+      "angle": "Los tiburones aparecieron hace más de 400 millones de años, superando múltiples extinciones masivas.",
+      "visual": "Tiburones nadando, fondo marino antiguo, anillos de saturno, fosil marino"
+    },
+    {
+      "key": "sonido_mar_profundo",
+      "titulo": "El misterioso sonido oceánico que la ciencia tardó años en descifrar",
+      "hook": "Los micrófonos submarinos captaron un sonido tan fuerte que la ciencia no supo qué era.",
+      "angle": "El evento 'Bloop', un sonido de ultra baja frecuencia registrado en 1997 que resultó ser el crujido de un iceberg al desprenderse.",
+      "visual": "Oceano profundo, sonar militar, iceberg agrietandose, espectrograma de audio"
+    },
+    {
+      "key": "tinta_calamar_vampiro",
+      "titulo": "La extraña criatura marina que no expulsa tinta para huir",
+      "hook": "Este habitante del abismo no expulsa tinta negra, sino fuegos artificiales.",
+      "angle": "El calamar vampiro expulsa una mucosidad bioluminiscente llena de esferas brillantes para desorientar en la oscuridad total.",
+      "visual": "Calamar vampiro, oscuridad abisal, particulas brillantes, tentaculos"
+    },
+    {
+      "key": "rotacion_venus",
+      "titulo": "El planeta donde el amanecer ocurre al revés",
+      "hook": "En este planeta el sol sale por el oeste y se pone por el este.",
+      "angle": "La rotación retrógrada extremadamente lenta de Venus hace que su día solar sea más largo que su año.",
+      "visual": "Atardecer en venus, nubes acidas espesas, sol brillante, rotacion lenta"
+    },
+    {
+      "key": "bacterias_estomago",
+      "titulo": "El animal indestructible que resiste los ácidos más corrosivos",
+      "hook": "Hay un animal microscópico que sobrevive al ácido estomacal más potente.",
+      "angle": "Tardígrados o ciertas bacterias extremófilas que resisten condiciones letales gracias a su criptobiosis.",
+      "visual": "Tardigrado microscopio, acido burbujeante, ADN resistente, espacio exterior"
+    },
+    {
+      "key": "cronologia_tierra_luna",
+      "titulo": "Cuando los días en la Tierra duraban apenas unas pocas horas",
+      "hook": "Hace millones de años, un día en la Tierra duraba solo 18 horas.",
+      "angle": "La Luna se aleja lentamente de la Tierra cada año, lo que frena la rotación del planeta y alarga nuestros días.",
+      "visual": "Tierra primitiva, luna gigante cerca, marea alta, rotacion rapida"
     }
   ]
 }
