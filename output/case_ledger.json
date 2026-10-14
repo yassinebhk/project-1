@@ -440,6 +440,15 @@
           "topic": "[CRIMEN] Carlos Fabra y el caso Naranjax: 4 años de cárcel por delitos fiscales tras años de impunidad en Castellón, sentencia firme del Tribunal Supremo en 2014."
         }
       ]
+    },
+    "palma_arena": {
+      "count": 1,
+      "history": [
+        {
+          "ts": "2026-10-14T11:47:21.493052+00:00",
+          "topic": "[CRIMEN] Caso Palma Arena: cómo el expresidente balear Jaume Matas desvió fondos públicos para su propia campaña, acumulando múltiples condenas firmes desde 2012"
+        }
+      ]
     }
   }
 }
