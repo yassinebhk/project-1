@@ -42,12 +42,12 @@ PODCAST_META = {
     "language": "es",
     "category": "True Crime",  # categoría iTunes válida
     "explicit": "false",
-    "site_url": "https://github.com/yassinebhk/automated-videos",
+    "site_url": "https://github.com/yassinebhk/project-1",
     # Public base URL que Spotify/Apple/iVoox usan para descargar MP3 + feed.
     # Usa jsDelivr CDN — espeja GitHub gratis, sirve con content-type
     # correcto (application/xml para .xml, audio/mpeg para .mp3). Sin setup.
     # Bandwidth ilimitado para archivos pequeños.
-    "public_base": "https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts",
+    "public_base": "https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts",
     # Cover art (1400×1400 min, JPG/PNG). Si no existe, se skip.
     "cover_relpath": "cover.jpg",
 }

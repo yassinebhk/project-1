@@ -42,10 +42,10 @@ CHANNELS = [
         "required": [],  # no requiere secrets, solo GH Pages activo
         "status_note": (
             "Requiere GitHub Pages activo. Submit URL feed:\n"
-            "   https://yassinebhk.github.io/automated-videos/podcasts/feed.xml\n"
+            "   https://yassinebhk.github.io/project-1/podcasts/feed.xml\n"
             "   Setup: docs/podcasts/README.md"
         ),
-        "setup_url": "https://github.com/yassinebhk/automated-videos/settings/pages",
+        "setup_url": "https://github.com/yassinebhk/project-1/settings/pages",
     },
     {
         "name": "🦋 Bluesky",

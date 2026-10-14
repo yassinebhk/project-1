@@ -5,19 +5,19 @@
      xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>WaitWhy — Estafas Españolas con Sentencia</title>
-    <link>https://github.com/yassinebhk/automated-videos</link>
+    <link>https://github.com/yassinebhk/project-1</link>
     <description><![CDATA[Los grandes fraudes, timos y escándalos españoles con sentencia firme, explicados en 8-12 minutos. Un caso por episodio. Fuentes: BOE, Audiencia Nacional, Tribunal Supremo. Nada inventado. También en YouTube: youtube.com/@waitwhy_ybb]]></description>
     <language>es</language>
     <copyright>© 2026 WaitWhy</copyright>
     <lastBuildDate>Wed, 30 Sep 2026 15:40:53 +0000</lastBuildDate>
-    <atom:link href="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/feed.xml" rel="self" type="application/rss+xml"/>
+    <atom:link href="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/feed.xml" rel="self" type="application/rss+xml"/>
     <itunes:author>WaitWhy</itunes:author>
     <itunes:summary><![CDATA[Los grandes fraudes, timos y escándalos españoles con sentencia firme, explicados en 8-12 minutos. Un caso por episodio. Fuentes: BOE, Audiencia Nacional, Tribunal Supremo. Nada inventado. También en YouTube: youtube.com/@waitwhy_ybb]]></itunes:summary>
     <itunes:owner>
       <itunes:name>WaitWhy</itunes:name>
       <itunes:email>waitwhy.podcast@gmail.com</itunes:email>
     </itunes:owner>
-    <itunes:image href="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/cover.jpg"/>
+    <itunes:image href="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/cover.jpg"/>
     <itunes:category text="True Crime"/>
     <itunes:explicit>false</itunes:explicit>
     <itunes:type>episodic</itunes:type>
@@ -29,7 +29,7 @@
 
 📺 YouTube: https://youtu.be/wyfmJmPXjVw]]></description>
       <pubDate>Wed, 30 Sep 2026 15:24:13 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/felix-millet-palau-musica-saqueo.mp3" length="7465773" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/felix-millet-palau-musica-saqueo.mp3" length="7465773" type="audio/mpeg"/>
       <guid isPermaLink="false">felix-millet-palau-musica-saqueo</guid>
       <itunes:duration>00:07:46</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -43,7 +43,7 @@
 
 📺 YouTube: https://youtu.be/70P5yyCYxis]]></description>
       <pubDate>Sun, 27 Sep 2026 14:22:11 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/caso-punica-francisco-granados.mp3" length="1807200" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/caso-punica-francisco-granados.mp3" length="1807200" type="audio/mpeg"/>
       <guid isPermaLink="false">caso-punica-francisco-granados</guid>
       <itunes:duration>00:05:01</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -57,7 +57,7 @@
 
 📺 YouTube: https://youtu.be/i5iWwzhv_yw]]></description>
       <pubDate>Sun, 27 Sep 2026 12:48:33 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/caso-blesa-tarjetas-black.mp3" length="2197584" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/caso-blesa-tarjetas-black.mp3" length="2197584" type="audio/mpeg"/>
       <guid isPermaLink="false">caso-blesa-tarjetas-black</guid>
       <itunes:duration>00:06:05</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -71,7 +71,7 @@
 
 📺 YouTube: https://youtu.be/RiAZYzyOiqU]]></description>
       <pubDate>Sun, 20 Sep 2026 16:54:56 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/ceuta-melilla-origen-historico-siglos-xv-xvi.mp3" length="3071664" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/ceuta-melilla-origen-historico-siglos-xv-xvi.mp3" length="3071664" type="audio/mpeg"/>
       <guid isPermaLink="false">ceuta-melilla-origen-historico-siglos-xv-xvi</guid>
       <itunes:duration>00:08:31</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -85,7 +85,7 @@
 
 📺 YouTube: https://youtu.be/855l0ykEBWw]]></description>
       <pubDate>Wed, 16 Sep 2026 13:46:52 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/operacion-ballena-blanca-2005.mp3" length="3171744" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/operacion-ballena-blanca-2005.mp3" length="3171744" type="audio/mpeg"/>
       <guid isPermaLink="false">operacion-ballena-blanca-2005</guid>
       <itunes:duration>00:08:47</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -99,7 +99,7 @@
 
 📺 YouTube: https://youtu.be/wL4cblxyEVQ]]></description>
       <pubDate>Mon, 14 Sep 2026 14:19:44 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/caso-malaya-juan-antonio-roca.mp3" length="1808784" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/caso-malaya-juan-antonio-roca.mp3" length="1808784" type="audio/mpeg"/>
       <guid isPermaLink="false">caso-malaya-juan-antonio-roca</guid>
       <itunes:duration>00:05:00</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -113,7 +113,7 @@
 
 📺 YouTube: https://youtu.be/ozg5KTLbyu4]]></description>
       <pubDate>Wed, 09 Sep 2026 12:52:28 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/fraude-camboya-mallorca.mp3" length="7787565" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/fraude-camboya-mallorca.mp3" length="7787565" type="audio/mpeg"/>
       <guid isPermaLink="false">fraude-camboya-mallorca</guid>
       <itunes:duration>00:08:06</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -127,7 +127,7 @@
 
 📺 YouTube: https://youtu.be/GWS5zqrQt1M]]></description>
       <pubDate>Sun, 06 Sep 2026 16:06:40 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/caso-3-percent-cdc-comisiones.mp3" length="8023725" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/caso-3-percent-cdc-comisiones.mp3" length="8023725" type="audio/mpeg"/>
       <guid isPermaLink="false">caso-3-percent-cdc-comisiones</guid>
       <itunes:duration>00:08:21</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -141,7 +141,7 @@
 
 📺 YouTube: https://youtu.be/HwvfHJNQJr8]]></description>
       <pubDate>Sun, 30 Aug 2026 13:27:04 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/tarjetas-black-blesa-rato.mp3" length="9185325" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/tarjetas-black-blesa-rato.mp3" length="9185325" type="audio/mpeg"/>
       <guid isPermaLink="false">tarjetas-black-blesa-rato</guid>
       <itunes:duration>00:09:34</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -155,7 +155,7 @@
 
 📺 YouTube: https://youtu.be/c-CH_xvHPdk]]></description>
       <pubDate>Wed, 26 Aug 2026 08:50:31 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/innova-farma-fraude-sanitario.mp3" length="10217517" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/innova-farma-fraude-sanitario.mp3" length="10217517" type="audio/mpeg"/>
       <guid isPermaLink="false">innova-farma-fraude-sanitario</guid>
       <itunes:duration>00:10:38</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -169,7 +169,7 @@
 
 📺 YouTube: https://youtu.be/TVgly3qiH-c]]></description>
       <pubDate>Mon, 24 Aug 2026 10:33:13 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/nueva-rumasa-estafa-ruiz-mateos-hijos.mp3" length="8496813" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/nueva-rumasa-estafa-ruiz-mateos-hijos.mp3" length="8496813" type="audio/mpeg"/>
       <guid isPermaLink="false">nueva-rumasa-estafa-ruiz-mateos-hijos</guid>
       <itunes:duration>00:05:08</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -183,7 +183,7 @@
 
 📺 YouTube: https://youtu.be/eCu9fOBjLL0]]></description>
       <pubDate>Sun, 16 Aug 2026 08:18:33 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/filesa-trama-socialista-desvio-400-millones.mp3" length="5711277" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/filesa-trama-socialista-desvio-400-millones.mp3" length="5711277" type="audio/mpeg"/>
       <guid isPermaLink="false">filesa-trama-socialista-desvio-400-millones</guid>
       <itunes:duration>00:03:27</itunes:duration>
       <itunes:explicit>false</itunes:explicit>
@@ -197,7 +197,7 @@
 
 📺 YouTube: https://youtu.be/C2RppnjqNVU]]></description>
       <pubDate>Mon, 10 Aug 2026 11:05:10 +0000</pubDate>
-      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/automated-videos@main/docs/podcasts/el-pocero-4000-millones-seseña.mp3" length="5972013" type="audio/mpeg"/>
+      <enclosure url="https://cdn.jsdelivr.net/gh/yassinebhk/project-1@main/docs/podcasts/el-pocero-4000-millones-seseña.mp3" length="5972013" type="audio/mpeg"/>
       <guid isPermaLink="false">el-pocero-4000-millones-seseña</guid>
       <itunes:duration>00:03:36</itunes:duration>
       <itunes:explicit>false</itunes:explicit>

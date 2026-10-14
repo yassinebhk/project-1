@@ -150,7 +150,7 @@ def _try_openrouter_json(prompt: str, schema: dict | None,
                     "Authorization": f"Bearer {key}",
                     "Content-Type": "application/json",
                     # Recomendado por OpenRouter para tracking/rankings
-                    "HTTP-Referer": "https://github.com/yassinebhk/automated-videos",
+                    "HTTP-Referer": "https://github.com/yassinebhk/project-1",
                     "X-Title": "videogen automated-videos",
                 },
                 json=body, timeout=60,

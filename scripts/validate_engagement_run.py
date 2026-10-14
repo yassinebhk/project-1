@@ -88,7 +88,7 @@ def main() -> int:
         print("  ✅ Todos los engagement corrieron. Chequea Telegram si hubo trabajo real.")
     elif ok == 0:
         print("  🔴 NINGUNO corrió. Probable el catchup 11 UTC no se disparó o falló al inicio.")
-        print("     → Revisar: https://github.com/yassinebhk/automated-videos/actions")
+        print("     → Revisar: https://github.com/yassinebhk/project-1/actions")
     else:
         print(f"  🟡 Parcial. Los {fail} faltantes tienen error de token o bug.")
         print("     → Ver logs del run en Actions para el detalle.")

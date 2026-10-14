@@ -2,7 +2,7 @@
 
 Feed RSS de podcast generado automáticamente a partir de los long-form del canal YouTube [@waitwhy_ybb](https://youtube.com/@waitwhy_ybb).
 
-- **Feed URL público:** `https://yassinebhk.github.io/automated-videos/podcasts/feed.xml`
+- **Feed URL público:** `https://yassinebhk.github.io/project-1/podcasts/feed.xml`
 - **Cover art:** `cover.jpg` (1400×1400, requisito Apple/Spotify)
 - **Episodios:** `<slug>.mp3` + `<slug>.json` (metadata)
 
@@ -10,9 +10,9 @@ Feed RSS de podcast generado automáticamente a partir de los long-form del cana
 
 ### 1. Activar GitHub Pages (2 min)
 
-En GitHub: `Settings` → `Pages` → Source: `Deploy from a branch` → Branch: `main`, folder: `/docs`. Guarda. La URL pública será `https://yassinebhk.github.io/automated-videos/podcasts/feed.xml` en <5 min.
+En GitHub: `Settings` → `Pages` → Source: `Deploy from a branch` → Branch: `main`, folder: `/docs`. Guarda. La URL pública será `https://yassinebhk.github.io/project-1/podcasts/feed.xml` en <5 min.
 
-Verifica que carga: `curl https://yassinebhk.github.io/automated-videos/podcasts/feed.xml` debe devolver XML.
+Verifica que carga: `curl https://yassinebhk.github.io/project-1/podcasts/feed.xml` debe devolver XML.
 
 ### 2. Spotify Podcasters (10 min)
 

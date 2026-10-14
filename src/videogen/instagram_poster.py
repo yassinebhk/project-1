@@ -69,7 +69,7 @@ REELS_HOST_DIR = ROOT / "docs" / "reels"
 # jsDelivr devolvía 403 Forbidden al fetch de Meta (User-Agent bloqueado).
 # GH Pages es más confiable para IG API. Espera 60s para que Pages
 # rebuilde tras push.
-PUBLIC_REELS_BASE = "https://yassinebhk.github.io/automated-videos/reels"
+PUBLIC_REELS_BASE = "https://yassinebhk.github.io/project-1/reels"
 
 # Instagram Business Login usa graph.instagram.com (v21+).
 # El endpoint clásico graph.facebook.com/v21.0 es para "Facebook Login for

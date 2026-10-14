@@ -20,7 +20,7 @@ import os
 import urllib.request
 from datetime import datetime, timezone, timedelta
 
-REPO = "yassinebhk/automated-videos"
+REPO = "yassinebhk/project-1"
 GH_API = "https://api.github.com"
 
 # Workflows que NO se re-intentan (mantenimiento / ya reintentan solos)

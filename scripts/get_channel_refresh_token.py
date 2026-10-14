@@ -103,7 +103,7 @@ def main() -> None:
     print()
     print("=" * 62)
     print("👉 URL para añadir/actualizar secrets:")
-    print("   https://github.com/yassinebhk/automated-videos/settings/secrets/actions")
+    print("   https://github.com/yassinebhk/project-1/settings/secrets/actions")
     print()
     print("   Para el canal IA_Autonomos_ES son:")
     print("     - YT_IA_CLIENT_ID")

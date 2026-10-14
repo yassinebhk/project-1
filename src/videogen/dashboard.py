@@ -28,7 +28,7 @@ ROOT = Path(__file__).resolve().parents[2]
 OUTPUT = ROOT / "output"
 DOCS = ROOT / "docs"
 WORKFLOWS = ROOT / ".github" / "workflows"
-PAGES_BASE = "https://yassinebhk.github.io/automated-videos"
+PAGES_BASE = "https://yassinebhk.github.io/project-1"
 
 # ── Registro de canales: única fuente de verdad para nombres/handles/estado ──
 # platform_key  = clave usada en stats_history.jsonl (None si aún no se snapshotea)
