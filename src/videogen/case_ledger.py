@@ -122,6 +122,19 @@ INFRAUTILIZADOS: list[dict] = [
     {"key": "voxpopuli", "name": "Voxpopuli fraude",
      "aliases": ["voxpopuli"],
      "hint": "Fraude periodismo, 2019"},
+    # Añadidos 14/10/26 — sentencia FIRME verificada (web) para respetar veracidad.
+    {"key": "noos", "name": "Caso Nóos (Urdangarin)",
+     "aliases": ["nóos", "noos", "urdangarin", "instituto nóos", "instituto noos"],
+     "hint": "Urdangarin + Diego Torres, desvío de fondos públicos vía Instituto Nóos, STS 2018 (5 años 10 meses)"},
+    {"key": "palma_arena", "name": "Palma Arena (Jaume Matas)",
+     "aliases": ["palma arena", "jaume matas", "matas"],
+     "hint": "Jaume Matas, caso Palma Arena (Baleares), condena firme"},
+    {"key": "fabra", "name": "Carlos Fabra (Naranjax)",
+     "aliases": ["carlos fabra", "naranjax"],
+     "hint": "Carlos Fabra (Castellón), 4 años de cárcel por delito fiscal, STS 2014"},
+    {"key": "pretoria", "name": "Caso Pretoria",
+     "aliases": ["pretoria", "operación pretoria", "operacion pretoria", "alavedra", "prenafeta"],
+     "hint": "Urbanismo/comisiones Catalunya, Alavedra y Prenafeta condenados (conformidad), AN 2018"},
 ]
 
 
