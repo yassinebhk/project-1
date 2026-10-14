@@ -1604,6 +1604,17 @@ def compare_test_cmd():
     print(json.dumps({"status": "ok", "topic": topic["key"], "mp4": str(final), "telegram": sent}))
 
 
+@cli.command(name="compare-once")
+def compare_once_cmd():
+    """Genera + sube 1 comparación de escala (Manim) al canal Scale Compare (YT_COMPARE).
+    Sin YT_COMPARE_REFRESH_TOKEN hace no-op (render OK, no sube)."""
+    from .compare import pipeline as cpipe
+    result = cpipe.run_once()
+    print(json.dumps(result, indent=2, ensure_ascii=False))
+    if result.get("status") not in ("ok", "no_channel"):
+        raise SystemExit(1)
+
+
 @cli.command(name="stoic-longform")
 def stoic_longform_cmd():
     """Genera + (si hay canal YT_STOIC) sube 1 long-form estoico (~10 min)."""

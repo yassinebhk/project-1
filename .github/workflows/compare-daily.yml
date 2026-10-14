@@ -1,0 +1,24 @@
+name: Scale Compare daily (comparaciones de escala — Manim, EN)
+
+# Canal de comparaciones de escala animadas (barras proporcionales a datos reales).
+# Visual validado 14/10. Sube a YT_COMPARE (Short) vía compare-once.
+# El reusable instala manim para compare-once (igual que padel-once).
+# LLM_CHEAP_FIRST=1 reserva la cuota de Gemini al flagship.
+# Si el scheduler GH skipea, dispáralo a mano (Run workflow).
+
+on:
+  schedule:
+    - cron: "7 18 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  compare:
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: compare-once
+      extra_env: |
+        LLM_CHEAP_FIRST=1
+    secrets: inherit

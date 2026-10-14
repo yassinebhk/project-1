@@ -103,7 +103,7 @@ jobs:
             -e '${{ inputs.install_spec }}'
 
       - name: Install Manim deps (apt — ubuntu-latest y hermanos)
-        if: inputs.command == 'padel-once' && inputs.runs_on != 'bridge'
+        if: (inputs.command == 'padel-once' || inputs.command == 'compare-once') && inputs.runs_on != 'bridge'
         run: |
           sudo apt-get install -y --no-install-recommends \
             build-essential libcairo2-dev libpango1.0-dev pkg-config python3-dev fonts-dejavu-core
@@ -123,7 +123,7 @@ jobs:
         # y las versiones viejas de edge-tts fallan con 403 en el websocket
         # wss://speech.platform.bing.com. Forzar upgrade aquí mantiene al día
         # la lib (bug 12/10 run 38292449394).
-        if: inputs.command == 'padel-once' && inputs.runs_on == 'bridge'
+        if: (inputs.command == 'padel-once' || inputs.command == 'compare-once') && inputs.runs_on == 'bridge'
         run: |
           brew list cairo >/dev/null 2>&1 || brew install cairo
           brew list pango >/dev/null 2>&1 || brew install pango
