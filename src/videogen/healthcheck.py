@@ -275,6 +275,10 @@ YT_CHANNELS = [
     ("YT_RANKINGS", "Global Rankings EN"),
     ("YT_SATISFYING", "Infinite Fractals"),
     ("YT_PADEL", "Pádel Pro ES"),
+    ("YT_SCAMS", "Alerta Estafas"),
+    ("YT_AINEWS", "AI Decoded"),
+    ("YT_BUSINESS", "Money Machines"),
+    ("YT_GEOGRAPHY", "Map Decoded"),
 ]
 
 

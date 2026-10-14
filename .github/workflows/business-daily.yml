@@ -1,0 +1,23 @@
+name: Money Machines daily (business breakdowns — EN)
+
+# Canal nicho negocio/dinero (cómo ganan dinero las empresas, datos públicos, sin
+# consejo). simple_channel factory. NO-OP hasta crear canal YT + secrets YT_BUSINESS_*.
+# LLM_CHEAP_FIRST=1 → gemma-4/Groq primero (reserva Gemini al flagship).
+# Si el scheduler GH skipea, catchup-all-channels (20:37 UTC) lo rescata.
+
+on:
+  schedule:
+    - cron: "37 15 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  business:
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug business
+      extra_env: |
+        LLM_CHEAP_FIRST=1
+    secrets: inherit

@@ -58,6 +58,10 @@ CHANNELS: list[dict] = [
     dict(key="trabajos",   name="CuriosLaboral ES",  pk=None,               handle="@CuriosLaboral_ES",cat="Curiosidades laborales",  status="paused", lang="ES", group="extra"),
     dict(key="criminopatia", name="Criminopatía",    pk=None,               handle="@Criminopatia_ES", cat="Criminología",            status="paused", lang="ES", group="extra"),
     dict(key="rankings_en", name="Global Rankings",  pk="youtube_rankings_en",               handle=None,               cat="Rankings (EN)",           status="paused", lang="EN", group="extra"),
+    dict(key="scams",     name="Alerta Estafas",    pk="youtube_scams",     handle=None, cat="Estafas y seguridad",     status="active", lang="ES", group="extra"),
+    dict(key="ainews",    name="AI Decoded",        pk="youtube_ainews",    handle=None, cat="IA explicada (EN)",        status="active", lang="EN", group="extra"),
+    dict(key="business",  name="Money Machines",    pk="youtube_business",  handle=None, cat="Negocio / dinero (EN)",    status="active", lang="EN", group="extra"),
+    dict(key="geography", name="Map Decoded",       pk="youtube_geography", handle=None, cat="Geografia (EN)",           status="active", lang="EN", group="extra"),
     # Tanda 02/10 — nuevos canales. Los 3 VIVOS van a 'core' (canales activos reales →
     # se renderizan en "Tus canales"); los 4 pre-cableados a 'extra'. OJO: el index.html
     # solo pinta group 'core' y 'extra' (NO 'nuevos'). Ver [[tanda-canales-02-10]].

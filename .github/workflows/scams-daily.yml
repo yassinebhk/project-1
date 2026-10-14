@@ -1,0 +1,23 @@
+name: Scams daily (Alerta Estafas — ES)
+
+# Canal nicho estafas/ciberfraude (enfoque defensivo). simple_channel factory.
+# NO-OP hasta crear canal YT + secrets YT_SCAMS_REFRESH_TOKEN/CLIENT_ID/CLIENT_SECRET.
+# LLM_CHEAP_FIRST=1 → tira de gemma-4/Groq y reserva la cuota de Gemini al flagship.
+# Si el scheduler GH skipea, catchup-all-channels (20:37 UTC) lo rescata.
+
+on:
+  schedule:
+    - cron: "17 12 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  scams:
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug scams
+      extra_env: |
+        LLM_CHEAP_FIRST=1
+    secrets: inherit
