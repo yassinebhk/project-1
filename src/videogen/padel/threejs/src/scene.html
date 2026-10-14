@@ -1,0 +1,960 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Padel Tactika 3D (v7)</title>
+<style>
+  html,body { margin:0; padding:0; background:#0a1420; overflow:hidden;
+    font-family: -apple-system, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  }
+  canvas { display:block; }
+  #stage { position:relative; width:1080px; height:1920px; background:#0a1420; }
+  /* Logo TACTIKA arriba central */
+  #brand {
+    position:absolute; top:40px; left:0; right:0;
+    display:flex; align-items:center; justify-content:center; gap:14px;
+    color:#ffffff; font-size:34px; font-weight:900; letter-spacing:4px;
+    opacity:0.95; z-index:10;
+  }
+  #brand .bar { width:45px; height:6px; background:#20d49a; }
+  /* TikTok @tactikapadel esquina arriba izquierda */
+  #tt {
+    position:absolute; top:45px; left:40px;
+    display:flex; align-items:center; gap:8px;
+    color:#ffffff; font-size:26px; font-weight:800; z-index:10;
+  }
+  #tt .ic {
+    width:38px; height:38px; background:#000; border-radius:8px;
+    display:inline-flex; align-items:center; justify-content:center;
+    font-size:22px; font-weight:900;
+  }
+  #tt .ic .n { color:#25f4ee; }
+  /* Pastillas con nombres sobre cada jugador */
+  .plabel {
+    position:absolute; transform:translate(-50%, -100%);
+    background: rgba(14, 22, 36, 0.92);
+    color:#ffffff; font-weight:800; font-size:26px;
+    padding: 8px 16px; border-radius: 9px;
+    white-space:nowrap; letter-spacing:0.3px;
+    border-left: 5px solid #ef4444;
+    box-shadow: 0 4px 14px rgba(0,0,0,0.5);
+    pointer-events:none; z-index:5;
+  }
+  .plabel.us { border-left-color: #20d49a; }
+  /* Overlay central grande (como "CÓMO SUBIR A LA RED" del ref) */
+  #centralTitle {
+    position:absolute; top:460px; left:0; right:0; text-align:center;
+    color:#ffffff; font-size:84px; font-weight:900; letter-spacing:-1.5px;
+    line-height:1.05;
+    text-shadow: 0 4px 24px rgba(0,0,0,0.95);
+    opacity:0; z-index:8;
+  }
+  #centralTitle .hi { color:#20d49a; display:block; margin-top:14px; }
+  /* Avatar Mark coach — bottom-left */
+  #coach {
+    position:absolute; bottom:0; left:30px;
+    width: 300px; height: 360px;
+    pointer-events:none; overflow:hidden; z-index:7;
+  }
+  #coach img { width:100%; height:auto; display:block;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
+    clip-path: inset(0 0 7% 0);
+  }
+  #narr {
+    position:absolute; bottom:120px; right:50px;
+    max-width: 500px;
+    color:#ffffff; font-weight:800; font-size:38px;
+    line-height:1.15; text-align:left;
+    text-shadow: 0 3px 10px rgba(0,0,0,0.9); z-index:7;
+  }
+  #narr .who { color:#9ca3af; font-size:24px; font-weight:600;
+    display:block; margin-bottom:8px;
+  }
+  /* Portada (0-1.8s) y outro (final 1.5s) — pantalla casi completa */
+  #cover, #outro {
+    position:absolute; top:0; left:0; right:0; bottom:0;
+    background: linear-gradient(180deg, #060b14 0%, #0a1420 55%, #060b14 100%);
+    display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; color:#ffffff; padding:80px;
+    opacity:0; pointer-events:none; z-index:20;
+  }
+  #cover .big {
+    font-size:140px; font-weight:900; letter-spacing:6px; margin-bottom:40px;
+    color:#ffffff;
+  }
+  #cover .big .hi { color:#20d49a; }
+  #cover .sub { font-size:60px; font-weight:800; line-height:1.1;
+    max-width:850px; color:#ffffff;
+  }
+  #cover .sub .hi { color:#20d49a; }
+  #cover .tag { position:absolute; bottom:80px; left:0; right:0;
+    color:#9ca3af; font-size:34px; font-weight:700;
+  }
+  #outro .big {
+    font-size:96px; font-weight:900; line-height:1.05; margin-bottom:40px;
+    max-width:950px;
+  }
+  #outro .big .hi { color:#20d49a; display:block; margin-top:14px; }
+  #outro .cta {
+    display:inline-block; background:#20d49a; color:#060b14;
+    padding:28px 60px; border-radius:20px; font-size:48px; font-weight:900;
+    letter-spacing:1px; margin-top:30px;
+  }
+  #outro .tag { position:absolute; bottom:80px; left:0; right:0;
+    color:#20d49a; font-size:38px; font-weight:800;
+  }
+</style>
+</head>
+<body>
+<div id="stage">
+  <canvas id="c" width="1080" height="1920"></canvas>
+  <div id="brand"><span class="bar"></span><span>TACTIKA</span><span class="bar"></span></div>
+  <div id="tt"><span class="ic"><span class="n">◆</span></span><span>@tactikapadel</span></div>
+  <div id="centralTitle"></div>
+  <div class="plabel us" id="pl0" style="display:none">Tú</div>
+  <div class="plabel us" id="pl1" style="display:none">Pareja</div>
+  <div class="plabel" id="pl2" style="display:none">Rival A</div>
+  <div class="plabel" id="pl3" style="display:none">Rival B</div>
+  <div id="coach"><img src="../assets/mark_avatar.png" alt=""></div>
+  <div id="narr"><span class="who">Mark — Entrenador</span><span id="narrText"></span></div>
+  <!-- Portada (0-1.8s) y outro (final 1.5s) overlays -->
+  <div id="cover">
+    <div class="big">TAC<span class="hi">TIKA</span></div>
+    <div class="sub" id="coverSub">¿Cómo subir<br><span class="hi">a la red?</span></div>
+    <div class="tag">@tactikapadel · pádel táctico</div>
+  </div>
+  <div id="outro">
+    <div class="big">¿Te ha servido?<span class="hi">Sígueme para más tácticas</span></div>
+    <div class="cta">@tactikapadel</div>
+    <div class="tag">Pádel táctico • Semanalmente</div>
+  </div>
+</div>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://unpkg.com/three@0.168.0/build/three.module.js",
+    "three/addons/": "https://unpkg.com/three@0.168.0/examples/jsm/"
+  }
+}
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+
+const COURT_W = 10, COURT_L = 20, WALL_H = 3;
+const BLUE = 0x20d49a;   // verde Tú/Pareja (polo verde)
+const RED  = 0xff5a4e;   // rojo coral Rival A/B
+const BALL_C = 0xffd93b;
+const FLOOR_C = 0x1f6e8c;
+const GLASS_C = 0x9fd4e8;
+
+const renderer = new THREE.WebGLRenderer({
+  canvas: document.getElementById('c'),
+  antialias: true,
+  preserveDrawingBuffer: true,
+});
+renderer.setSize(1080, 1920);
+renderer.setClearColor(0x0a1420, 1);
+renderer.shadowMap.enabled = true;
+renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+renderer.outputColorSpace = THREE.SRGBColorSpace;
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+
+const scene = new THREE.Scene();
+scene.fog = new THREE.Fog(0x0a1420, 60, 130);
+
+// Fondo MINIMALISTA: exterior de pista pádel visto desde fuera. Navy liso,
+// con pequeña franja superior "TACTIKA" discreta y 2 luces LED laterales
+// tenues (como focos de arena). NADA de audiencia (user lo pidió explícito).
+function makeStadiumBackdrop(w, h) {
+  const cnv = document.createElement('canvas');
+  cnv.width = w; cnv.height = h;
+  const ctx = cnv.getContext('2d');
+  // Fondo con gradiente navy sutil (más oscuro arriba, un pelín claro abajo)
+  const grad = ctx.createLinearGradient(0, 0, 0, h);
+  grad.addColorStop(0,    '#070d18');
+  grad.addColorStop(0.6,  '#0a1420');
+  grad.addColorStop(1,    '#0d1a28');
+  ctx.fillStyle = grad; ctx.fillRect(0, 0, w, h);
+  // Franja superior tipo "scoreboard billboard" con TACTIKA repetido discreto
+  const bandY = h * 0.10, bandH = h * 0.05;
+  ctx.fillStyle = 'rgba(14, 26, 42, 0.9)';
+  ctx.fillRect(0, bandY, w, bandH);
+  ctx.font = `800 ${bandH * 0.42}px -apple-system, Arial, sans-serif`;
+  ctx.textAlign = 'center';
+  ctx.textBaseline = 'middle';
+  // Solo 3 repeticiones TACTIKA (antes 6 eran demasiadas → se achataba)
+  const nameSpacing = w / 3;
+  for (let i = 0; i < 3; i++) {
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.6)';
+    ctx.fillText('TACTIKA', (i + 0.5) * nameSpacing, bandY + bandH / 2);
+    if (i < 2) {
+      ctx.fillStyle = 'rgba(32, 212, 154, 0.6)';
+      ctx.fillRect((i + 1) * nameSpacing - 14, bandY + bandH * 0.32, 28, bandH * 0.36);
+    }
+  }
+  // 2 focos cálidos tenues arriba (suaves)
+  for (let i = 0; i < 2; i++) {
+    const cx = (i + 0.5) * (w / 2);
+    const cy = h * 0.22;
+    const g = ctx.createRadialGradient(cx, cy, 0, cx, cy, h * 0.30);
+    g.addColorStop(0, 'rgba(255, 220, 170, 0.30)');
+    g.addColorStop(1, 'rgba(255, 180, 120, 0)');
+    ctx.fillStyle = g; ctx.fillRect(0, 0, w, h);
+  }
+  return cnv;
+}
+const stadiumCanvas = makeStadiumBackdrop(2048, 1152);
+const stadiumTex = new THREE.CanvasTexture(stadiumCanvas);
+stadiumTex.colorSpace = THREE.SRGBColorSpace;
+stadiumTex.needsUpdate = true;
+scene.background = stadiumTex;
+
+const camera = new THREE.PerspectiveCamera(38, 1080/1920, 0.1, 200);
+camera.position.set(0, 20, -28);
+camera.lookAt(0, 0.5, 2.0);
+
+scene.add(new THREE.HemisphereLight(0xa8c6ff, 0x202428, 0.8));
+const key = new THREE.DirectionalLight(0xffffff, 2.6);
+key.position.set(10, 22, -8); key.castShadow = true;
+key.shadow.mapSize.width = 2048; key.shadow.mapSize.height = 2048;
+key.shadow.camera.near = 1; key.shadow.camera.far = 60;
+key.shadow.camera.left = -16; key.shadow.camera.right = 16;
+key.shadow.camera.top = 16; key.shadow.camera.bottom = -16;
+key.shadow.bias = -0.0005;
+scene.add(key);
+const fill = new THREE.DirectionalLight(0x9bb8ff, 0.6);
+fill.position.set(-12, 10, 8); scene.add(fill);
+const rim = new THREE.DirectionalLight(0xffd48a, 1.2);
+rim.position.set(-4, 14, 18); scene.add(rim);
+
+// Pista
+const floor = new THREE.Mesh(
+  new THREE.PlaneGeometry(COURT_W, COURT_L),
+  new THREE.MeshStandardMaterial({ color: FLOOR_C, roughness: 0.5, metalness: 0.1 })
+);
+floor.rotation.x = -Math.PI/2; floor.receiveShadow = true;
+scene.add(floor);
+
+function makeLine(x1, z1, x2, z2, width = 0.08) {
+  const dx = x2-x1, dz = z2-z1;
+  const len = Math.sqrt(dx*dx + dz*dz);
+  const g = new THREE.BoxGeometry(len, 0.02, width);
+  const line = new THREE.Mesh(g, new THREE.MeshStandardMaterial({color: 0xffffff}));
+  line.position.set((x1+x2)/2, 0.015, (z1+z2)/2);
+  line.rotation.y = -Math.atan2(dz, dx);
+  return line;
+}
+const linesGroup = new THREE.Group();
+linesGroup.add(makeLine(-5,-10, 5,-10));
+linesGroup.add(makeLine(5,-10, 5,10));
+linesGroup.add(makeLine(5,10, -5,10));
+linesGroup.add(makeLine(-5,10, -5,-10));
+linesGroup.add(makeLine(-5,0, 5,0, 0.12));
+linesGroup.add(makeLine(-5,-3, 5,-3));
+linesGroup.add(makeLine(-5,3, 5,3));
+linesGroup.add(makeLine(0,-3, 0,3));
+scene.add(linesGroup);
+
+// Cristales + marco plateado
+const glassMat = new THREE.MeshPhysicalMaterial({
+  color: GLASS_C, transparent: true, opacity: 0.5,
+  roughness: 0.08, metalness: 0.0, transmission: 0.5,
+  clearcoat: 0.6, clearcoatRoughness: 0.1, side: THREE.DoubleSide
+});
+const wallBack = new THREE.Mesh(new THREE.BoxGeometry(COURT_W, WALL_H, 0.14), glassMat);
+wallBack.position.set(0, WALL_H/2, 10); scene.add(wallBack);
+const wallFront = wallBack.clone(); wallFront.position.z = -10; scene.add(wallFront);
+const wallR = new THREE.Mesh(new THREE.BoxGeometry(0.14, 2.2, COURT_L), glassMat);
+wallR.position.set(5, 1.1, 0); scene.add(wallR);
+const wallL = wallR.clone(); wallL.position.x = -5; scene.add(wallL);
+const borderMat = new THREE.MeshStandardMaterial({color: 0x111827, roughness: 0.7, metalness: 0.3});
+function border(x, z, len, horiz) {
+  const g = horiz ? new THREE.BoxGeometry(len, 0.18, 0.3) : new THREE.BoxGeometry(0.3, 0.18, len);
+  const m = new THREE.Mesh(g, borderMat);
+  m.position.set(x, 0.09, z); m.receiveShadow = true;
+  return m;
+}
+scene.add(border(0, 10, COURT_W + 0.3, true));
+scene.add(border(0, -10, COURT_W + 0.3, true));
+scene.add(border(5, 0, COURT_L, false));
+scene.add(border(-5, 0, COURT_L, false));
+const frameMat = new THREE.MeshStandardMaterial({color: 0x8a94a3, roughness: 0.35, metalness: 0.9});
+function hBeam(x, z, len, axis) {
+  const g = axis === 'x'
+    ? new THREE.BoxGeometry(len, 0.14, 0.16)
+    : new THREE.BoxGeometry(0.16, 0.14, len);
+  const m = new THREE.Mesh(g, frameMat);
+  m.position.set(x, WALL_H, z); m.castShadow = true;
+  return m;
+}
+scene.add(hBeam(0, 10, COURT_W, 'x'));
+scene.add(hBeam(0, -10, COURT_W, 'x'));
+scene.add(hBeam(5, 0, COURT_L, 'z'));
+scene.add(hBeam(-5, 0, COURT_L, 'z'));
+function post(x, z) {
+  const g = new THREE.BoxGeometry(0.16, WALL_H + 0.1, 0.16);
+  const m = new THREE.Mesh(g, frameMat);
+  m.position.set(x, (WALL_H + 0.1)/2, z); m.castShadow = true;
+  return m;
+}
+[[5,10],[-5,10],[5,-10],[-5,-10]].forEach(([x,z]) => scene.add(post(x,z)));
+
+// Red con malla
+const netCanvas = document.createElement('canvas');
+netCanvas.width = 256; netCanvas.height = 32;
+const nctx = netCanvas.getContext('2d');
+nctx.fillStyle = '#0d1420'; nctx.fillRect(0, 0, 256, 32);
+nctx.strokeStyle = '#1a2a3a'; nctx.lineWidth = 1.0;
+for (let i = 0; i < 256; i += 6) { nctx.beginPath(); nctx.moveTo(i, 0); nctx.lineTo(i, 32); nctx.stroke(); }
+for (let j = 0; j < 32; j += 4) { nctx.beginPath(); nctx.moveTo(0, j); nctx.lineTo(256, j); nctx.stroke(); }
+const netTex = new THREE.CanvasTexture(netCanvas);
+netTex.wrapS = netTex.wrapT = THREE.RepeatWrapping;
+netTex.repeat.set(5, 1);
+const net = new THREE.Mesh(
+  new THREE.PlaneGeometry(COURT_W, 0.9),
+  new THREE.MeshStandardMaterial({ map: netTex, color: 0x0d1420, roughness: 0.9, transparent: true, opacity: 0.92, side: THREE.DoubleSide })
+);
+net.position.set(0, 0.45, 0); scene.add(net);
+const netTop = new THREE.Mesh(
+  new THREE.BoxGeometry(COURT_W, 0.08, 0.09),
+  new THREE.MeshStandardMaterial({color: 0xf1f5f9, roughness: 0.5})
+);
+netTop.position.set(0, 0.90, 0); scene.add(netTop);
+
+// Zona táctica dashed naranja
+const dashMat = new THREE.LineDashedMaterial({color: 0xff8a3d, dashSize: 0.5, gapSize: 0.35, linewidth: 4});
+function makeDashRect(x1, z1, x2, z2) {
+  const y = 0.035;
+  const pts = [
+    new THREE.Vector3(x1, y, z1), new THREE.Vector3(x2, y, z1),
+    new THREE.Vector3(x2, y, z1), new THREE.Vector3(x2, y, z2),
+    new THREE.Vector3(x2, y, z2), new THREE.Vector3(x1, y, z2),
+    new THREE.Vector3(x1, y, z2), new THREE.Vector3(x1, y, z1),
+  ];
+  const g = new THREE.BufferGeometry().setFromPoints(pts);
+  const line = new THREE.LineSegments(g, dashMat);
+  line.computeLineDistances();
+  return line;
+}
+
+// Bola
+const ball = new THREE.Mesh(
+  new THREE.SphereGeometry(0.18, 32, 32),
+  new THREE.MeshStandardMaterial({ color: BALL_C, emissive: BALL_C, emissiveIntensity: 0.5, roughness: 0.35 })
+);
+ball.castShadow = true; ball.position.set(0, 1, 0); scene.add(ball);
+
+// Trail
+const MAX_TRAIL = 40;
+const trailPos = new Float32Array(MAX_TRAIL * 3);
+const trailGeo = new THREE.BufferGeometry();
+trailGeo.setAttribute('position', new THREE.BufferAttribute(trailPos, 3));
+const trail = new THREE.Line(trailGeo, new THREE.LineBasicMaterial({color: BALL_C, linewidth: 4, transparent: true, opacity: 0.9}));
+scene.add(trail);
+const trailPoints = [];
+
+// UAL character
+const loader = new GLTFLoader();
+let UAL_CLIPS = null;
+async function loadUALAnimations() {
+  if (UAL_CLIPS) return UAL_CLIPS;
+  const gltf = await new Promise((res, rej) => loader.load('../assets/ual/UAL1_Standard.glb', res, undefined, rej));
+  UAL_CLIPS = gltf.animations || [];
+  return UAL_CLIPS;
+}
+function findClip(clips, pattern) { return clips.find(c => pattern.test(c.name)); }
+function makeRacket() {
+  const g = new THREE.Group();
+  const grip = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.025, 0.025, 0.22, 8),
+    new THREE.MeshStandardMaterial({color: 0x1a1a1a, roughness: 0.9})
+  );
+  grip.position.y = -0.11; g.add(grip);
+  const head = new THREE.Mesh(
+    new THREE.BoxGeometry(0.22, 0.28, 0.015),
+    new THREE.MeshStandardMaterial({color: 0xf5c518, roughness: 0.4, metalness: 0.3})
+  );
+  head.position.y = 0.14; g.add(head);
+  g.scale.set(1.6, 1.6, 1.6);
+  return g;
+}
+const mixers = [];
+const playerActions = [];
+// ─────────── PlayerFigure: construcción con geometrías Three.js ───────────
+// Reemplaza UAL character. Es un "jugador cartoon minimalista" con:
+//   - Cabeza (esfera color piel)
+//   - Polo (cilindro corto + aros manga color del equipo)
+//   - Shorts (cilindro corto color negro)
+//   - Piernas (dos cilindros color piel)
+//   - Brazos (dos cilindros color del equipo arriba, piel abajo)
+//   - Raqueta en mano derecha
+// Totalmente controlado, sin dependencia de modelos externos. Idle = bob
+// vertical suave aplicado al group entero.
+function makePlayerFigure(colorHex) {
+  const SKIN = 0xd8a890;      // color piel
+  const SHORTS = 0x1a1a1a;    // shorts negros
+  const SHOES = 0xffffff;     // zapatillas blancas
+  const fig = new THREE.Group();
+  // Cabeza
+  const head = new THREE.Mesh(
+    new THREE.SphereGeometry(0.22, 24, 20),
+    new THREE.MeshStandardMaterial({ color: SKIN, roughness: 0.8 })
+  );
+  head.position.y = 1.9;
+  head.castShadow = true;
+  fig.add(head);
+  // Pelo (semicírculo encima de la cabeza, oscuro)
+  const hair = new THREE.Mesh(
+    new THREE.SphereGeometry(0.22, 20, 10, 0, Math.PI * 2, 0, Math.PI / 2),
+    new THREE.MeshStandardMaterial({ color: 0x2a1a0e, roughness: 0.9 })
+  );
+  hair.position.y = 1.92;
+  hair.scale.set(1.02, 0.9, 1.02);
+  fig.add(hair);
+  // Polo (torso): cilindro corto con color del equipo
+  const polo = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.32, 0.36, 0.65, 16),
+    new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.55 })
+  );
+  polo.position.y = 1.42;
+  polo.castShadow = true;
+  fig.add(polo);
+  // Cuello polo (anillo más oscuro)
+  const collar = new THREE.Mesh(
+    new THREE.TorusGeometry(0.14, 0.03, 8, 16),
+    new THREE.MeshStandardMaterial({ color: 0xf8f8f8, roughness: 0.6 })
+  );
+  collar.rotation.x = Math.PI / 2;
+  collar.position.y = 1.73;
+  fig.add(collar);
+  // Shorts
+  const shorts = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.34, 0.3, 0.35, 16),
+    new THREE.MeshStandardMaterial({ color: SHORTS, roughness: 0.7 })
+  );
+  shorts.position.y = 0.95;
+  shorts.castShadow = true;
+  fig.add(shorts);
+  // Pierna izquierda
+  const legL = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.08, 0.08, 0.65, 10),
+    new THREE.MeshStandardMaterial({ color: SKIN, roughness: 0.8 })
+  );
+  legL.position.set(-0.14, 0.45, 0);
+  legL.castShadow = true;
+  fig.add(legL);
+  const legR = legL.clone(); legR.position.x = 0.14; fig.add(legR);
+  // Zapatillas
+  const shoeL = new THREE.Mesh(
+    new THREE.BoxGeometry(0.14, 0.08, 0.22),
+    new THREE.MeshStandardMaterial({ color: SHOES, roughness: 0.5 })
+  );
+  shoeL.position.set(-0.14, 0.08, 0.03);
+  shoeL.castShadow = true;
+  fig.add(shoeL);
+  const shoeR = shoeL.clone(); shoeR.position.x = 0.14; fig.add(shoeR);
+  // Brazo izquierdo (ligeramente separado del cuerpo, pose idle)
+  const armLUpper = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.07, 0.07, 0.42, 10),
+    new THREE.MeshStandardMaterial({ color: colorHex, roughness: 0.6 })
+  );
+  armLUpper.position.set(-0.42, 1.48, 0);
+  armLUpper.rotation.z = 0.25;  // separado del cuerpo
+  armLUpper.castShadow = true;
+  fig.add(armLUpper);
+  const armLLower = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.065, 0.065, 0.4, 10),
+    new THREE.MeshStandardMaterial({ color: SKIN, roughness: 0.8 })
+  );
+  armLLower.position.set(-0.55, 1.08, 0);
+  armLLower.rotation.z = 0.1;
+  armLLower.castShadow = true;
+  fig.add(armLLower);
+  // Brazo derecho con raqueta en la mano
+  const armRUpper = armLUpper.clone();
+  armRUpper.position.x = 0.42;
+  armRUpper.rotation.z = -0.25;
+  fig.add(armRUpper);
+  const armRLower = armLLower.clone();
+  armRLower.position.x = 0.55;
+  armRLower.rotation.z = -0.1;
+  fig.add(armRLower);
+  // Raqueta: pala amarilla + mango oscuro al final del brazo derecho
+  const grip = new THREE.Mesh(
+    new THREE.CylinderGeometry(0.025, 0.025, 0.18, 8),
+    new THREE.MeshStandardMaterial({ color: 0x1a1a1a })
+  );
+  grip.position.set(0.6, 0.86, 0.05);
+  grip.rotation.z = -0.1;
+  fig.add(grip);
+  const paddle = new THREE.Mesh(
+    new THREE.BoxGeometry(0.22, 0.28, 0.02),
+    new THREE.MeshStandardMaterial({ color: 0xf5c518, roughness: 0.4, metalness: 0.3 })
+  );
+  paddle.position.set(0.65, 0.6, 0.05);
+  paddle.rotation.z = -0.1;
+  paddle.castShadow = true;
+  fig.add(paddle);
+  return fig;
+}
+
+function loadSoldierInstance(colorHex) {
+  return new Promise((resolve) => {
+    const model = makePlayerFigure(colorHex);
+    const anims = [];
+    resolve({ model });
+  });
+  // Código UAL legacy mantenido debajo pero no ejecutado (early return arriba)
+  return new Promise((resolve, reject) => {
+    loader.load('../assets/ual/Superhero_Male_FullBody.gltf', (gltf) => {
+      const model = gltf.scene;
+      model.scale.set(1.3, 1.3, 1.3);
+      const tintColor = new THREE.Color(colorHex);
+      tintColor.lerp(new THREE.Color(0xffffff), 0.0);  // 100% color (puro)
+      model.traverse(c => {
+        if (c.isMesh || c.isSkinnedMesh) {
+          if (c.material) {
+            c.material = c.material.clone();
+            if (c.material.color) c.material.color.copy(tintColor);
+            if ('metalness' in c.material) c.material.metalness = 0.05;
+            if ('roughness' in c.material) c.material.roughness = 0.7;
+          }
+          c.castShadow = true; c.frustumCulled = false;
+        }
+      });
+      let rightHand = null;
+      model.traverse(c => {
+        if (c.isBone && /righthand|hand_r|right_hand/i.test(c.name) && !/thumb|index|middle|ring|pinky|finger/i.test(c.name)) {
+          rightHand = c;
+        }
+      });
+      if (rightHand) {
+        const racket = makeRacket();
+        racket.position.set(0.03, 0.06, 0);
+        racket.rotation.set(0, 0, Math.PI / 2 + 0.3);
+        racket.traverse(m => { if (m.isMesh) m.castShadow = true; });
+        rightHand.add(racket);
+      }
+      const mixer = new THREE.AnimationMixer(model);
+      // UAL (Superhero_Male) usa clips de UAL1_Standard.glb precargados.
+      const anims = UAL_CLIPS || gltf.animations || [];
+      const idleClip = findClip(anims, /^Idle_Loop$/i) || anims[0];
+      const walkClip = findClip(anims, /^Walk_Loop$/i);
+      const jogClip = findClip(anims, /^Jog.*Loop$/i);
+      const sprintClip = findClip(anims, /^Sprint_Loop$/i);
+      const idleAction = idleClip ? mixer.clipAction(idleClip) : null;
+      const walkAction = walkClip ? mixer.clipAction(walkClip) : null;
+      const jogAction  = jogClip ? mixer.clipAction(jogClip) : null;
+      const sprintAction = sprintClip ? mixer.clipAction(sprintClip) : null;
+      if (idleAction) { idleAction.setEffectiveWeight(1.0); idleAction.play(); }
+      if (walkAction) { walkAction.setEffectiveWeight(0.0); walkAction.play(); }
+      if (jogAction)  { jogAction.setEffectiveWeight(0.0);  jogAction.play(); }
+      if (sprintAction) { sprintAction.setEffectiveWeight(0.0); sprintAction.play(); }
+      mixers.push(mixer);
+      playerActions.push({ mixer, idle: idleAction, walk: walkAction, jog: jogAction, sprint: sprintAction });
+      resolve({ model });
+    }, undefined, reject);
+  });
+}
+
+// ─────────── Tácticas ───────────
+const TACTICS = {
+  lob: {
+    duration: 11.0,
+    centralTitle: ["CÓMO HACER", "UN GLOBO"],
+    centralShow: [0, 3.5],
+    zone: [-4.5, 5.5, 4.5, 9.5],
+    players: [
+      {k:[{t:0,x:1.7,z:-7},{t:8,x:1.7,z:-7},{t:11,x:1.7,z:-2}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:-1.7,z:-7},{t:8,x:-1.7,z:-7},{t:11,x:-1.7,z:-2}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:1.5,z:1.8},{t:3,x:1.5,z:2.2},{t:6,x:1.5,z:7.5},{t:11,x:1.5,z:7.5}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:-1.5,z:1.8},{t:3,x:-1.5,z:2.2},{t:6,x:-1.5,z:7.5},{t:11,x:-1.5,z:7.5}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:1.7,y:0.8,z:-6.5},{t:0.4,x:1.6,y:1.6,z:-5.5},
+      {t:3.2,x:0.5,y:7.5,z:2.0},{t:5.0,x:0,y:0.35,z:7.5},
+      {t:5.9,x:-0.3,y:2.8,z:9.2},{t:7.0,x:-0.5,y:0.3,z:7.0},
+      {t:11,x:-0.5,y:0.3,z:7.0}
+    ],
+    narration: [
+      {t:0,text:"El globo. Para subir a la red."},
+      {t:3.5,text:"Elévala profunda sobre ellos."},
+      {t:7.0,text:"Fuerza su retroceso al fondo."},
+      {t:10.0,text:"Tú avanzas y dominas."}
+    ]
+  },
+  bandeja: {
+    duration: 11.0,
+    centralTitle: ["LA", "BANDEJA"],
+    centralShow: [0, 3.5],
+    zone: [-3.5, 3.0, 3.5, 6.0],
+    players: [
+      {k:[{t:0,x:1.6,z:-2.3},{t:11,x:1.6,z:-2.3}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:-1.7,z:-2.3},{t:11,x:-1.7,z:-2.3}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:1.5,z:7.5},{t:4.5,x:1.5,z:7.5},{t:7,x:1.5,z:8.5},{t:11,x:1.5,z:8.5}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:-1.5,z:7.5},{t:4.5,x:-1.5,z:7.5},{t:7,x:-1.5,z:8.5},{t:11,x:-1.5,z:8.5}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:1.5,y:0.5,z:7.5},{t:0.4,x:1.4,y:1.8,z:6.0},
+      {t:2.4,x:1,y:6.5,z:-1.0},{t:3.3,x:1.4,y:2.8,z:-2.3},
+      {t:4.6,x:-0.5,y:0.35,z:4.5},{t:5.5,x:-1,y:1.2,z:6.5},
+      {t:6.5,x:-1.3,y:0.3,z:7.5},{t:11,x:-1.3,y:0.3,z:7.5}
+    ],
+    narration: [
+      {t:0,text:"La bandeja. Si te globean."},
+      {t:3.5,text:"No retrocedas, golpea descendente."},
+      {t:7.0,text:"Cae profunda sin perder la red."},
+      {t:10.0,text:"Mantienes el control."}
+    ]
+  },
+  back_wall: {
+    duration: 12.0,
+    centralTitle: ["LA PARED", "DE FONDO"],
+    centralShow: [0, 3.5],
+    zone: [-4.5, -1.0, 4.5, 2.0],
+    players: [
+      {k:[{t:0,x:1.5,z:-7.5},{t:2.5,x:1.3,z:-8.5},{t:4.5,x:1.3,z:-8.5},{t:12,x:1.3,z:-7.5}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:-1.5,z:-7.5},{t:12,x:-1.5,z:-7.5}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:1.5,z:2.5},{t:12,x:1.5,z:2.5}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:-1.5,z:2.5},{t:12,x:-1.5,z:2.5}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:1.5,y:0.5,z:3.0},{t:0.5,x:1.5,y:2.5,z:0.0},
+      {t:1.8,x:1.4,y:0.35,z:-6.5},{t:2.5,x:1.3,y:1.8,z:-9.0},
+      {t:3.5,x:1.3,y:0.9,z:-7.5},{t:4.2,x:1.3,y:1.2,z:-7.5},
+      {t:5.5,x:-0.5,y:3.0,z:-2.0},{t:7.0,x:-0.5,y:0.35,z:1.5},
+      {t:12,x:-0.5,y:0.3,z:1.5}
+    ],
+    narration: [
+      {t:0,text:"La pared de fondo es tu aliada."},
+      {t:3.5,text:"Deja que bote suelo y pared."},
+      {t:7.0,text:"Esperas con pala baja."},
+      {t:10.0,text:"Devuelves con control."}
+    ]
+  },
+  smash: {
+    duration: 11.0,
+    centralTitle: ["EL", "REMATE"],
+    centralShow: [0, 3.5],
+    zone: [-4.5, 4.0, 4.5, 9.5],
+    players: [
+      {k:[{t:0,x:1.5,z:-2.5},{t:2.5,x:0.5,z:-2.8},{t:4,x:0.5,z:-2.8},{t:11,x:1.5,z:-2.5}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:-1.5,z:-2.5},{t:11,x:-1.5,z:-2.5}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:1.5,z:7.5},{t:5,x:1.5,z:8.5},{t:11,x:1.5,z:8.5}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:-1.5,z:7.5},{t:5,x:-1.5,z:8.5},{t:11,x:-1.5,z:8.5}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:-0.5,y:0.5,z:7.5},{t:0.4,x:-0.3,y:2.5,z:5.0},
+      {t:2.2,x:0.3,y:5.5,z:-1.5},{t:3.0,x:0.5,y:3.8,z:-2.5},
+      {t:4.2,x:-3.5,y:0.35,z:7.0},{t:5.2,x:-4.2,y:1.5,z:9.3},
+      {t:6.5,x:-3.8,y:0.3,z:7.5},{t:11,x:-3.8,y:0.3,z:7.5}
+    ],
+    narration: [
+      {t:0,text:"El remate. Elige el ángulo."},
+      {t:3.5,text:"Cruza la bola profunda."},
+      {t:7.0,text:"Fuerza sin ángulo es error."},
+      {t:10.0,text:"Ángulo gana puntos."}
+    ]
+  },
+  drop_shot: {
+    duration: 11.0,
+    centralTitle: ["LA", "DEJADA"],
+    centralShow: [0, 3.5],
+    zone: [-3, 0.3, 3, 2.5],
+    players: [
+      {k:[{t:0,x:1.5,z:-2.5},{t:11,x:1.5,z:-2.5}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:-1.5,z:-2.5},{t:11,x:-1.5,z:-2.5}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:1.5,z:8.5},{t:5,x:1.5,z:7.0},{t:11,x:1.5,z:7.0}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:-1.5,z:8.5},{t:5,x:-1.5,z:7.0},{t:11,x:-1.5,z:7.0}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:-1,y:0.5,z:8.0},{t:0.6,x:-0.5,y:2.0,z:4.0},
+      {t:2.0,x:1,y:3.5,z:-2.0},{t:3.0,x:1.2,y:2.5,z:-2.3},
+      {t:4.5,x:0.5,y:0.3,z:1.2},{t:5.5,x:0.3,y:0.5,z:2.0},
+      {t:11,x:0.3,y:0.3,z:2.0}
+    ],
+    narration: [
+      {t:0,text:"La dejada. Sorpresa."},
+      {t:3.5,text:"Rivales lejos: tacto suave."},
+      {t:7.0,text:"La bola muere en la red."},
+      {t:10.0,text:"Punto para ti."}
+    ]
+  },
+  serve: {
+    duration: 11.0,
+    centralTitle: ["EL", "SAQUE"],
+    centralShow: [0, 3.5],
+    zone: [-4.5, 1.0, -0.3, 6.0],
+    players: [
+      {k:[{t:0,x:-3,z:-7.5},{t:11,x:-3,z:-7.5}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:2.5,z:-7.5},{t:11,x:2.5,z:-7.5}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:-3,z:7.5},{t:11,x:-3,z:7.5}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:3,z:7.5},{t:11,x:3,z:7.5}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:-3,y:1.2,z:-7.3},{t:0.4,x:-3,y:2.2,z:-7.0},
+      {t:0.6,x:-3,y:0.3,z:-7.3},{t:0.9,x:-3,y:1.3,z:-7.0},
+      {t:1.2,x:-2.5,y:1.8,z:-5.0},{t:3.0,x:-2,y:0.35,z:3.5},
+      {t:4.5,x:-1.5,y:1.2,z:7.5},{t:11,x:-1.5,y:0.3,z:7.5}
+    ],
+    narration: [
+      {t:0,text:"El saque. Siempre bajo."},
+      {t:3.5,text:"Cruzado, buscando los pies."},
+      {t:7.0,text:"Devolución débil, tú al mando."},
+      {t:10.0,text:"Saque bajo igual saque efectivo."}
+    ]
+  },
+  positioning: {
+    duration: 11.0,
+    centralTitle: ["LA", "POSICIÓN"],
+    centralShow: [0, 3.5],
+    zone: [-4.5, -4.0, 4.5, -1.0],
+    players: [
+      {k:[{t:0,x:1.7,z:-7},{t:4,x:1.7,z:-4},{t:8,x:1.7,z:-2},{t:11,x:1.7,z:-2}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:-1.7,z:-7},{t:4,x:-1.7,z:-4},{t:8,x:-1.7,z:-2},{t:11,x:-1.7,z:-2}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:1.5,z:2},{t:4,x:1.5,z:4},{t:8,x:1.5,z:7},{t:11,x:1.5,z:7}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:-1.5,z:2},{t:4,x:-1.5,z:4},{t:8,x:-1.5,z:7},{t:11,x:-1.5,z:7}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:1.5,y:1.0,z:1.5},{t:0.8,x:1.5,y:3.0,z:-3.0},
+      {t:1.8,x:1.5,y:0.35,z:-6.0},{t:3.0,x:1.5,y:2.0,z:-3.0},
+      {t:4.0,x:0,y:3.0,z:1.0},{t:5.0,x:-1,y:0.35,z:5.0},
+      {t:7.0,x:0,y:3.0,z:-2.0},{t:9.0,x:1,y:3.0,z:3.0},
+      {t:11,x:1,y:0.3,z:5.0}
+    ],
+    narration: [
+      {t:0,text:"El posicionamiento es clave."},
+      {t:3.5,text:"Siempre juntos, en paralelo."},
+      {t:7.0,text:"Avanzáis y retrocedéis como uno."},
+      {t:10.0,text:"Juntos ganáis. Separados perdéis."}
+    ]
+  },
+  defense: {
+    duration: 11.0,
+    centralTitle: ["LA", "DEFENSA"],
+    centralShow: [0, 3.5],
+    zone: [-2.5, 7.0, 2.5, 9.5],
+    players: [
+      {k:[{t:0,x:1.7,z:-7.5},{t:11,x:1.7,z:-7.5}], color: BLUE, label:'Tú'},
+      {k:[{t:0,x:-1.7,z:-7.5},{t:11,x:-1.7,z:-7.5}], color: BLUE, label:'Pareja'},
+      {k:[{t:0,x:1.5,z:2.0},{t:11,x:1.5,z:2.0}], color: RED, label:'Rival A'},
+      {k:[{t:0,x:-1.5,z:2.0},{t:11,x:-1.5,z:2.0}], color: RED, label:'Rival B'}
+    ],
+    ball: [
+      {t:0,x:0,y:0.5,z:2.3},{t:0.4,x:-0.2,y:2.2,z:-2.0},
+      {t:1.5,x:-0.5,y:0.35,z:-7.5},{t:2.3,x:-0.3,y:1.6,z:-7.4},
+      {t:3.0,x:0,y:3.5,z:-6.0},{t:4.5,x:0,y:5.5,z:-2.0},
+      {t:5.5,x:0,y:6.0,z:1.5},{t:6.8,x:0,y:3.5,z:5.5},
+      {t:7.8,x:0,y:0.35,z:8.0},{t:11,x:0,y:0.3,z:8.0}
+    ],
+    narration: [
+      {t:0,text:"La defensa. Rivales en la red."},
+      {t:3.5,text:"Levanta la bola. Alta y profunda."},
+      {t:7.0,text:"Al centro, dudan quién golpea."},
+      {t:10.0,text:"Defensa paciente, punto ganado."}
+    ]
+  }
+};
+
+const params = new URLSearchParams(location.search);
+const sceneName = params.get('scene') || 'lob';
+const tactic = TACTICS[sceneName];
+if (!tactic) throw new Error('Scene not found: ' + sceneName);
+
+// Zona táctica + impact markers
+if (tactic.zone) scene.add(makeDashRect(tactic.zone[0], tactic.zone[1], tactic.zone[2], tactic.zone[3]));
+// Impact marker: SOLO 1 bote válido por jugada (en pádel 2 botes = punto).
+// Lógica: localizo el PICO de altura del arco, y marco el primer keyframe
+// con y<=0.5 después de él. Antes dibujaba todos los botes de la secuencia
+// → "parecía que había varios rebotes sin sentido" (user feedback).
+const IMPACT_C = 0xff8a3d;
+let peakIdx = 0, peakY = 0;
+tactic.ball.forEach((kf, idx) => {
+  if ((kf.y || 0) > peakY) { peakY = kf.y || 0; peakIdx = idx; }
+});
+for (let idx = peakIdx + 1; idx < tactic.ball.length; idx++) {
+  const kf = tactic.ball[idx];
+  if ((kf.y || 0) <= 0.5) {
+    const ring = new THREE.Mesh(
+      new THREE.RingGeometry(0.22, 0.52, 48),
+      new THREE.MeshBasicMaterial({color: IMPACT_C, transparent: true, opacity: 0.85, side: THREE.DoubleSide})
+    );
+    ring.rotation.x = -Math.PI/2; ring.position.set(kf.x, 0.028, kf.z);
+    scene.add(ring);
+    break;
+  }
+}
+
+// Preload UAL anims + 4 instancias
+// v11: ya no necesitamos UAL anims (PlayerFigure es geometría pura)
+// await loadUALAnimations();
+const playerMeshes = [];
+for (let i = 0; i < tactic.players.length; i++) {
+  const pdef = tactic.players[i];
+  const inst = await loadSoldierInstance(pdef.color);
+  const ring = new THREE.Mesh(
+    new THREE.RingGeometry(0.6, 0.85, 48),
+    new THREE.MeshBasicMaterial({color: pdef.color, side: THREE.DoubleSide, transparent: true, opacity: 0.95})
+  );
+  ring.rotation.x = -Math.PI/2; ring.position.y = 0.045;
+  const haloInner = new THREE.Mesh(
+    new THREE.RingGeometry(0.98, 1.1, 48),
+    new THREE.MeshBasicMaterial({color: pdef.color, side: THREE.DoubleSide, transparent: true, opacity: 0.5})
+  );
+  haloInner.rotation.x = -Math.PI/2; haloInner.position.y = 0.04;
+  const wrapper = new THREE.Group();
+  wrapper.add(ring); wrapper.add(haloInner); wrapper.add(inst.model);
+  wrapper.position.set(pdef.k[0].x, 0, pdef.k[0].z);
+  wrapper.rotation.y = pdef.color === BLUE ? 0 : Math.PI;
+  scene.add(wrapper);
+  playerMeshes.push(wrapper);
+}
+
+// Setup overlays
+const elTitle = document.getElementById('centralTitle');
+if (tactic.centralTitle) {
+  elTitle.innerHTML = tactic.centralTitle[0] + '<span class="hi">' + tactic.centralTitle[1] + '</span>';
+}
+// Portada pregunta por táctica
+const elCover = document.getElementById('cover');
+const elCoverSub = document.getElementById('coverSub');
+if (tactic.centralTitle) {
+  elCoverSub.innerHTML = '¿' + tactic.centralTitle[0] + '<br><span class="hi">' + tactic.centralTitle[1] + '?</span>';
+}
+const elOutro = document.getElementById('outro');
+const plabels = [0,1,2,3].map(i => document.getElementById('pl' + i));
+plabels.forEach((el, i) => { if (el && tactic.players[i]) el.textContent = tactic.players[i].label; });
+const elNarr = document.getElementById('narrText');
+
+function lerp(a,b,t) { return a+(b-a)*t; }
+function interpXZ(frames, t) {
+  if (t <= frames[0].t) return {x: frames[0].x, z: frames[0].z};
+  if (t >= frames[frames.length-1].t) { const f = frames[frames.length-1]; return {x:f.x, z:f.z}; }
+  for (let i=0; i<frames.length-1; i++) {
+    if (t >= frames[i].t && t <= frames[i+1].t) {
+      const a=frames[i], b=frames[i+1];
+      const r=(t-a.t)/(b.t-a.t), s=r*r*(3-2*r);
+      return {x: lerp(a.x,b.x,s), z: lerp(a.z,b.z,s)};
+    }
+  }
+  return {x: frames[frames.length-1].x, z: frames[frames.length-1].z};
+}
+function interpBall(frames, t) {
+  if (t <= frames[0].t) return {x:frames[0].x, y:frames[0].y||0, z:frames[0].z};
+  if (t >= frames[frames.length-1].t) { const f = frames[frames.length-1]; return {x:f.x, y:f.y||0, z:f.z}; }
+  for (let i=0; i<frames.length-1; i++) {
+    if (t >= frames[i].t && t <= frames[i+1].t) {
+      const a=frames[i], b=frames[i+1];
+      const r=(t-a.t)/(b.t-a.t);
+      const ya=a.y||0, yb=b.y||0;
+      const amp=Math.max(0,(ya+yb)*0.15);
+      const y=ya*(1-r)+yb*r+4*amp*r*(1-r);
+      return {x: lerp(a.x,b.x,r), y, z: lerp(a.z,b.z,r)};
+    }
+  }
+  const f=frames[frames.length-1]; return {x:f.x, y:f.y||0, z:f.z};
+}
+
+// Duración total = portada 1.8s + jugada + outro 1.5s
+const COVER_DUR = 1.8;
+const OUTRO_DUR = 1.5;
+window.getDuration = () => tactic.duration + COVER_DUR + OUTRO_DUR;
+let __lastT = -1;
+const __lastPos = new Map();
+const vTmp = new THREE.Vector3();
+
+window.renderFrame = (tRaw) => {
+  // Offset: cover [0, COVER_DUR], jugada [COVER_DUR, COVER_DUR+tactic.duration], outro [...]
+  const t = Math.max(0, Math.min(tactic.duration, tRaw - COVER_DUR));
+  const dt = __lastT < 0 ? (1/30) : Math.max(1e-6, tRaw - __lastT);
+  __lastT = tRaw;
+  // Fade cover (0 → COVER_DUR)
+  let coverA = 0;
+  if (tRaw < COVER_DUR - 0.5) coverA = 1;
+  else if (tRaw < COVER_DUR) coverA = (COVER_DUR - tRaw) / 0.5;
+  elCover.style.opacity = String(coverA);
+  // Fade outro (duration-outro → duration)
+  const outroStart = COVER_DUR + tactic.duration;
+  let outroA = 0;
+  if (tRaw > outroStart + 0.5) outroA = 1;
+  else if (tRaw > outroStart) outroA = (tRaw - outroStart) / 0.5;
+  elOutro.style.opacity = String(outroA);
+  mixers.forEach(m => m.update(dt));
+
+  playerMeshes.forEach((wrapper, i) => {
+    const pdef = tactic.players[i];
+    const pos = interpXZ(pdef.k, t);
+    const prev = __lastPos.get(wrapper) || pos;
+    const dx = pos.x - prev.x;
+    const dz = pos.z - prev.z;
+    const speed = Math.sqrt(dx*dx + dz*dz) / dt;
+    wrapper.position.set(pos.x, 0, pos.z);
+    __lastPos.set(wrapper, {x:pos.x, z:pos.z});
+    const act = playerActions[i];
+    if (act && act.idle) {
+      let wIdle=0, wWalk=0, wJog=0, wSprint=0;
+      if (speed < 0.3) wIdle = 1;
+      else if (speed < 1.5) { wWalk = (speed-0.3)/1.2; wIdle = 1-wWalk; }
+      else if (speed < 3.0) { wJog = (speed-1.5)/1.5; wWalk = 1-wJog; }
+      else { wSprint = Math.min(1,(speed-3.0)/2.0); wJog = 1-wSprint; }
+      act.idle.setEffectiveWeight(wIdle);
+      if (act.walk) act.walk.setEffectiveWeight(wWalk);
+      if (act.jog) act.jog.setEffectiveWeight(wJog);
+      if (act.sprint) act.sprint.setEffectiveWeight(wSprint);
+    }
+    wrapper.rotation.y = pdef.color === BLUE ? 0 : Math.PI;
+  });
+  const bp = interpBall(tactic.ball, t);
+  ball.position.set(bp.x, bp.y, bp.z);
+  trailPoints.push([bp.x, bp.y, bp.z]);
+  if (trailPoints.length > MAX_TRAIL) trailPoints.shift();
+  for (let i=0; i<MAX_TRAIL; i++) {
+    const p = trailPoints[i] || trailPoints[0] || [bp.x,bp.y,bp.z];
+    trailPos[i*3]=p[0]; trailPos[i*3+1]=p[1]; trailPos[i*3+2]=p[2];
+  }
+  trailGeo.attributes.position.needsUpdate = true;
+  trailGeo.setDrawRange(0, Math.min(trailPoints.length, MAX_TRAIL));
+
+  // Pastillas 3D→2D
+  playerMeshes.forEach((wrapper, i) => {
+    const label = plabels[i];
+    if (!label) return;
+    vTmp.set(wrapper.position.x, 2.6, wrapper.position.z);
+    vTmp.project(camera);
+    const x2 = (vTmp.x * 0.5 + 0.5) * 1080;
+    const y2 = (-vTmp.y * 0.5 + 0.5) * 1920;
+    if (vTmp.z > 1 || x2 < -50 || x2 > 1130 || y2 < -50 || y2 > 1970) {
+      label.style.display = 'none';
+    } else {
+      label.style.display = 'block';
+      label.style.left = x2 + 'px'; label.style.top = y2 + 'px';
+    }
+  });
+
+  // Overlay central fade
+  if (tactic.centralShow) {
+    const [tin, tout] = tactic.centralShow;
+    const fadeIn=0.4, fadeOut=0.6;
+    let a=0;
+    if (t < tin) a = 0;
+    else if (t < tin+fadeIn) a = (t-tin)/fadeIn;
+    else if (t < tout-fadeOut) a = 1;
+    else if (t < tout) a = (tout-t)/fadeOut;
+    else a = 0;
+    elTitle.style.opacity = String(a);
+  }
+  // Narración
+  if (tactic.narration) {
+    let cur = tactic.narration[0];
+    for (const n of tactic.narration) { if (t >= n.t) cur = n; else break; }
+    if (elNarr.textContent !== cur.text) elNarr.textContent = cur.text;
+  }
+  renderer.render(scene, camera);
+  return true;
+};
+window.__ready = true;
+console.log('[scene.html v7] ready. scene=' + sceneName);
+</script>
+</body>
+</html>

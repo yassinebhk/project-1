@@ -1,0 +1,14 @@
+{
+  "name": "padel-threejs-renderer",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Pádel táctica 3D render via three.js + puppeteer headless",
+  "scripts": {
+    "render": "node src/render.js"
+  },
+  "dependencies": {
+    "puppeteer": "^23.0.0",
+    "three": "^0.168.0"
+  }
+}

@@ -10,11 +10,11 @@ on:
   workflow_dispatch:
     inputs:
       format:
-        description: "Formato de render (manim=2D clásico, tactika=3D isométrico réplica @tactikapadel)"
+        description: "Formato de render (threejs=3D cartoon tactikapadel-style [default], manim=2D clásico, tactika=3D isométrico viejo)"
         type: choice
         required: false
-        default: "manim"
-        options: [manim, tactika]
+        default: "threejs"
+        options: [threejs, manim, tactika]
 
 permissions:
   contents: write
@@ -30,5 +30,5 @@ jobs:
       runs_on: ubuntu-latest
       install_spec: '.'
       extra_env: |
-        PADEL_FORMAT=${{ inputs.format || 'manim' }}
+        PADEL_FORMAT=${{ inputs.format || 'threejs' }}
     secrets: inherit

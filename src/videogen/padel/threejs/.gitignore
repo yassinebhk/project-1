@@ -1,0 +1,14 @@
+# Runtime
+node_modules/
+output/
+.puppeteer-cache/
+package-lock.json
+
+# Assets no usados por v13 (PlayerFigure es geometría pura + canvas fondo).
+# El único asset requerido es mark_avatar.png.
+assets/ual/
+assets/sprites/
+assets/Michelle.glb
+assets/Soldier.glb
+assets/quaternius_universal.zip
+assets/stadium_bg.jpg

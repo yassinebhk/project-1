@@ -27,6 +27,7 @@ PADEL_FORMAT = os.environ.get("PADEL_FORMAT", "manim").strip().lower()
 
 MANIM_SCENE_FILE = Path(__file__).parent / "manim_scene.py"
 TACTIKA_SCENE_FILE = Path(__file__).parent / "tactika_scene.py"
+THREEJS_DIR = Path(__file__).parent / "threejs"
 
 # Voz: tactika narra en español (coincide con audiencia pádel ES hispanohablante);
 # el formato manim viejo mantiene inglés para no romper los vídeos ya alineados.
@@ -34,6 +35,43 @@ EDGE_VOICE_EN = "en-US-GuyNeural"
 EDGE_VOICE_ES = "es-ES-AlvaroNeural"
 EDGE_RATE = "-6%"
 AVATAR_PATH = Path(__file__).parent / "assets" / "mark_avatar.png"
+
+
+def _render_threejs(tactic_key: str, work: Path) -> Path | None:
+    """Renderiza una táctica con el pipeline Three.js (puppeteer frame-by-frame).
+
+    Usa el runner Node en `src/videogen/padel/threejs/`:
+      - scene.html carga Three.js, UAL character + 43 anims, overlays HTML
+      - render.js (puppeteer) captura 540 PNGs @30fps → ffmpeg → mp4 1080x1920
+
+    Devuelve path al mp4 mudo (voz y música se añaden fuera, como el flujo
+    manim). Si npm no está disponible o falla, devuelve None y el pipeline
+    cae al formato que haya puesto el caller como fallback.
+    """
+    out_mp4 = work / f"threejs_{tactic_key}.mp4"
+    env = dict(os.environ)
+    env["SCENE"] = tactic_key
+    env["OUT_MP4"] = str(out_mp4)
+    env["FPS"] = env.get("FPS", "30")
+    # Asegura node_modules instalados — solo primera vez
+    nm = THREEJS_DIR / "node_modules"
+    if not nm.exists():
+        print(f"  padel/threejs: primera vez — npm install (cache $TMPDIR)")
+        r = subprocess.run(
+            ["npm", "install", "--cache", os.environ.get("TMPDIR", "/tmp") + "/npm-cache-padel"],
+            cwd=str(THREEJS_DIR), capture_output=True, text=True, timeout=600, env=env,
+        )
+        if r.returncode != 0:
+            print(f"  padel/threejs: npm install FAIL\n{r.stderr[-1500:]}")
+            return None
+    r = subprocess.run(
+        ["npm", "run", "render"], cwd=str(THREEJS_DIR),
+        capture_output=True, text=True, timeout=1500, env=env,
+    )
+    if r.returncode != 0 or not out_mp4.exists():
+        print(f"  padel/threejs: render FAIL\n{r.stderr[-1500:]}\n{r.stdout[-500:]}")
+        return None
+    return out_mp4
 
 
 def _render_manim(scene_class: str, scene_file: Path, topic_env: str | None = None) -> Path | None:
@@ -205,25 +243,83 @@ def render_topic(topic: dict, work: Path) -> Path | None:
     from . import manim_scene
     fmt = topic.get("format", "tactic")
     topic_env = None
-    use_tactika = PADEL_FORMAT == "tactika" and fmt == "tactic"
+    # Modos de formato pádel:
+    #   PADEL_FORMAT=threejs → nueva réplica @tactikapadel completa (3D realista,
+    #     avatar Mark + pastillas + fondo gradas + narración timeline). Solo
+    #     aplicable a tactics; falls back a manim para fact/compare/checklist.
+    #   PADEL_FORMAT=tactika → formato 3D isométrico manim (viejo).
+    #   PADEL_FORMAT=manim (default) → 2D top-down manim original.
+    # Modo threejs: por ahora solo la táctica 'lob' tiene scene definida en
+    # scene.html; el resto (bandeja/back_wall/smash/drop_shot/serve/positioning/
+    # defense) cae a manim/tactika hasta que se amplíe TACTICS en scene.html.
+    THREEJS_SUPPORTED = {"lob", "bandeja", "back_wall", "smash", "drop_shot", "serve", "positioning", "defense"}
+    use_threejs = (PADEL_FORMAT == "threejs"
+                   and fmt == "tactic"
+                   and topic.get("tactic") in THREEJS_SUPPORTED)
+    use_tactika = PADEL_FORMAT == "tactika" and fmt == "tactic" and not use_threejs
     scene_file = TACTIKA_SCENE_FILE if use_tactika else MANIM_SCENE_FILE
-    voice_name = EDGE_VOICE_ES if use_tactika else EDGE_VOICE_EN
+    voice_name = EDGE_VOICE_ES if (use_tactika or use_threejs) else EDGE_VOICE_EN
 
     if fmt == "tactic":
-        if use_tactika:
+        tactic_key = topic["tactic"]
+        if use_threejs:
+            # scene.html tiene narración embedded sincronizada por timeline;
+            # aquí mantenemos el concat de bullets por táctica para que TTS
+            # genere audio alineado (el pipeline threejs no lo lee del HTML).
+            # Las bullets deben coincidir con las de scene.html → TACTICS[t].narration
+            THREEJS_NARRATION = {
+                "lob": ("El globo. Clave cuando dominan la red. Elévala profunda por encima de ellos. "
+                        "Los fuerza a retroceder al fondo. Mientras recuperan posición, tú avanzas a la red. "
+                        "Controlar la red, es controlar el punto."),
+                "bandeja": ("La bandeja. Tu respuesta cuando te globean. No retrocedas: salta y golpea descendente. "
+                            "La pelota cae profunda sin perder la red. Impides que recuperen la posición. "
+                            "La bandeja mantiene el control de la red."),
+                "back_wall": ("La pared de fondo es tu aliada. Deja que bote primero el suelo, luego la pared. "
+                              "Esperas el rebote con pala baja. Devuelves con control, no con fuerza. "
+                              "Dominar la pared es dominar el fondo."),
+                "smash": ("El remate. El golpe definitivo. No vayas con todo: elige el ángulo. "
+                          "Cruza la bola o busca la pared de fondo. Fuerza sin ángulo es error asegurado. "
+                          "Ángulo gana puntos. Fuerza los regala."),
+                "drop_shot": ("La dejada. El golpe de sorpresa. Rivales lejos de la red: oportunidad. "
+                              "Tacto suave, bola muy cerca de la red. No pueden llegar. Punto para ti. "
+                              "Timing y suavidad, fórmula ganadora."),
+                "serve": ("El saque. Tu primer movimiento del punto. Siempre bajo. Siempre cruzado. "
+                          "Busca los pies, no el espacio. Devolución débil igual a tú con control. "
+                          "Saque bajo igual a saque efectivo."),
+                "positioning": ("El posicionamiento es el ochenta por ciento del pádel. Siempre juntos. Siempre en paralelo. "
+                                "Nunca uno arriba y otro atrás. Avanzáis y retrocedéis como una unidad. "
+                                "Juntos ganáis más. Separados perdéis más."),
+                "defense": ("Rivales en la red. Toca defender. Levanta la bola. Alta y profunda. "
+                            "Al centro: dudan quién la golpea. Esperas tu oportunidad para subir. "
+                            "Defensa paciente, punto ganado."),
+            }
+            narration = THREEJS_NARRATION.get(tactic_key, THREEJS_NARRATION["lob"])
+            scene = tactic_key
+        elif use_tactika:
             from . import tactika_scene
-            scene = tactika_scene.TACTIKA_TACTICS[topic["tactic"]]["scene"]
+            scene = tactika_scene.TACTIKA_TACTICS[tactic_key]["scene"]
             narration = tactika_scene.narration_for(scene)
         else:
-            scene = manim_scene.TACTICS[topic["tactic"]]["scene"]
+            scene = manim_scene.TACTICS[tactic_key]["scene"]
             narration = manim_scene.narration_for(scene)
     else:
         scene = manim_scene.FORMAT_SCENES[fmt]
         narration = topic.get("narration") or manim_scene.narration_for(scene)
         topic_env = _json.dumps(topic, ensure_ascii=False)
     work.mkdir(parents=True, exist_ok=True)
-    print(f"  padel: render Manim {scene} (format={fmt}, mode={'tactika-3D' if use_tactika else 'classic-2D'})")
-    silent = _render_manim(scene, scene_file, topic_env=topic_env)
+    mode_label = "threejs-tactika" if use_threejs else ("tactika-3D" if use_tactika else "classic-2D")
+    print(f"  padel: render {scene} (format={fmt}, mode={mode_label})")
+    if use_threejs:
+        silent = _render_threejs(topic["tactic"], work)
+        if not silent:
+            # Fallback a manim si threejs falla (p.ej. puppeteer sin Chrome en
+            # el runner, o npm install roto). Mantiene el pipeline funcional
+            # aunque la rama 3D nueva falle en producción.
+            print(f"  padel/threejs: FAIL → fallback a manim scene")
+            fallback_scene = manim_scene.TACTICS[topic["tactic"]]["scene"]
+            silent = _render_manim(fallback_scene, MANIM_SCENE_FILE)
+    else:
+        silent = _render_manim(scene, scene_file, topic_env=topic_env)
     if not silent:
         return None
     voice = work / "voice.mp3"
@@ -236,7 +332,7 @@ def render_topic(topic: dict, work: Path) -> Path | None:
         # offline y gratis. [[coste-cero-obligatorio]]
         print(f"  padel: edge-tts FAIL ({type(e).__name__}) — fallback Kokoro local")
         try:
-            lang = "es" if use_tactika else "en"
+            lang = "es" if (use_tactika or use_threejs) else "en"
             _kokoro_voice(narration, voice, lang=lang)
         except Exception as e2:
             print(f"  padel: kokoro FAIL también ({e2})")
@@ -244,7 +340,8 @@ def render_topic(topic: dict, work: Path) -> Path | None:
     music = _fetch_music(work)
     print(f"  padel: mux (music={'sí' if music else 'no'})")
     final = _mux(silent, voice, music, work)
-    # Overlay avatar narrador solo en tactika (si el PNG existe).
+    # Overlay avatar narrador: solo en tactika manim (threejs ya tiene al avatar
+    # Mark incrustado en el DOM capturado por puppeteer, no hay que remuxar).
     if use_tactika and final:
         final = _overlay_avatar(final, work)
     return final
