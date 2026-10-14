@@ -70,3 +70,6 @@ music/*.mp3
 *.log
 # reels servidos ahora por Cloudflare R2, no por Pages (rompía el build >1GB)
 docs/reels/
+
+# Node deps (Vercel reinstala desde package.json/lock)
+node_modules/
