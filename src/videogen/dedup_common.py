@@ -165,6 +165,16 @@ NON_NOUNS_STOP: set[str] = {
     "para", "sin", "con", "sobre", "todo", "todos", "tras",
     "esto", "esta", "está", "aún", "muy", "van", "hay",
     "www", "com", "net", "org",
+    # Interrogativos + genéricos Vía-2 (curiosidad con cifra) y judiciales genéricos.
+    # Bug 14/10: "¿Cuánto gana…?" se rechazaba por compartir "cuánto"/"supremo"
+    # con títulos recientes → ideas Vía-2 válidas descartadas. Ninguna distingue
+    # un caso concreto; el nombre propio real (Roldán, KIO, Estepona…) sí queda.
+    "cuánto", "cuánta", "cuántos", "cuántas", "cuándo", "dónde",
+    "cuál", "cuáles", "qué", "quién", "quiénes", "cómo",
+    "supremo", "tribunal", "audiencia", "nacional",
+    "mundo", "dinero", "país", "países", "historia", "vida", "verdad",
+    "real", "realmente", "segundo", "segundos", "minuto", "minutos",
+    "gana", "cuesta", "paga", "cobra", "vale", "precio", "coste",
 }
 
 # Regex que captura nombres propios (MixedCase y ALLCAPS con >= 3 chars).
