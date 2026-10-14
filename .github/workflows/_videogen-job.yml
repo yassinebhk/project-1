@@ -216,6 +216,21 @@ jobs:
           YT_PADEL_REFRESH_TOKEN: ${{ secrets.YT_PADEL_REFRESH_TOKEN }}
           YT_PADEL_CLIENT_ID:     ${{ secrets.YT_PADEL_CLIENT_ID }}
           YT_PADEL_CLIENT_SECRET: ${{ secrets.YT_PADEL_CLIENT_SECRET }}
+          YT_SCAMS_REFRESH_TOKEN:     ${{ secrets.YT_SCAMS_REFRESH_TOKEN }}
+          YT_SCAMS_CLIENT_ID:         ${{ secrets.YT_SCAMS_CLIENT_ID }}
+          YT_SCAMS_CLIENT_SECRET:     ${{ secrets.YT_SCAMS_CLIENT_SECRET }}
+          YT_AINEWS_REFRESH_TOKEN:    ${{ secrets.YT_AINEWS_REFRESH_TOKEN }}
+          YT_AINEWS_CLIENT_ID:        ${{ secrets.YT_AINEWS_CLIENT_ID }}
+          YT_AINEWS_CLIENT_SECRET:    ${{ secrets.YT_AINEWS_CLIENT_SECRET }}
+          YT_BUSINESS_REFRESH_TOKEN:  ${{ secrets.YT_BUSINESS_REFRESH_TOKEN }}
+          YT_BUSINESS_CLIENT_ID:      ${{ secrets.YT_BUSINESS_CLIENT_ID }}
+          YT_BUSINESS_CLIENT_SECRET:  ${{ secrets.YT_BUSINESS_CLIENT_SECRET }}
+          YT_GEOGRAPHY_REFRESH_TOKEN: ${{ secrets.YT_GEOGRAPHY_REFRESH_TOKEN }}
+          YT_GEOGRAPHY_CLIENT_ID:     ${{ secrets.YT_GEOGRAPHY_CLIENT_ID }}
+          YT_GEOGRAPHY_CLIENT_SECRET: ${{ secrets.YT_GEOGRAPHY_CLIENT_SECRET }}
+          YT_COMPARE_REFRESH_TOKEN:   ${{ secrets.YT_COMPARE_REFRESH_TOKEN }}
+          YT_COMPARE_CLIENT_ID:       ${{ secrets.YT_COMPARE_CLIENT_ID }}
+          YT_COMPARE_CLIENT_SECRET:   ${{ secrets.YT_COMPARE_CLIENT_SECRET }}
           PIXABAY_API_KEY:          ${{ secrets.PIXABAY_API_KEY }}
           REDDIT_CLIENT_ID:     ${{ secrets.REDDIT_CLIENT_ID }}
           REDDIT_CLIENT_SECRET: ${{ secrets.REDDIT_CLIENT_SECRET }}
@@ -422,6 +437,21 @@ jobs:
           YT_PADEL_REFRESH_TOKEN: ${{ secrets.YT_PADEL_REFRESH_TOKEN }}
           YT_PADEL_CLIENT_ID:     ${{ secrets.YT_PADEL_CLIENT_ID }}
           YT_PADEL_CLIENT_SECRET: ${{ secrets.YT_PADEL_CLIENT_SECRET }}
+          YT_SCAMS_REFRESH_TOKEN:     ${{ secrets.YT_SCAMS_REFRESH_TOKEN }}
+          YT_SCAMS_CLIENT_ID:         ${{ secrets.YT_SCAMS_CLIENT_ID }}
+          YT_SCAMS_CLIENT_SECRET:     ${{ secrets.YT_SCAMS_CLIENT_SECRET }}
+          YT_AINEWS_REFRESH_TOKEN:    ${{ secrets.YT_AINEWS_REFRESH_TOKEN }}
+          YT_AINEWS_CLIENT_ID:        ${{ secrets.YT_AINEWS_CLIENT_ID }}
+          YT_AINEWS_CLIENT_SECRET:    ${{ secrets.YT_AINEWS_CLIENT_SECRET }}
+          YT_BUSINESS_REFRESH_TOKEN:  ${{ secrets.YT_BUSINESS_REFRESH_TOKEN }}
+          YT_BUSINESS_CLIENT_ID:      ${{ secrets.YT_BUSINESS_CLIENT_ID }}
+          YT_BUSINESS_CLIENT_SECRET:  ${{ secrets.YT_BUSINESS_CLIENT_SECRET }}
+          YT_GEOGRAPHY_REFRESH_TOKEN: ${{ secrets.YT_GEOGRAPHY_REFRESH_TOKEN }}
+          YT_GEOGRAPHY_CLIENT_ID:     ${{ secrets.YT_GEOGRAPHY_CLIENT_ID }}
+          YT_GEOGRAPHY_CLIENT_SECRET: ${{ secrets.YT_GEOGRAPHY_CLIENT_SECRET }}
+          YT_COMPARE_REFRESH_TOKEN:   ${{ secrets.YT_COMPARE_REFRESH_TOKEN }}
+          YT_COMPARE_CLIENT_ID:       ${{ secrets.YT_COMPARE_CLIENT_ID }}
+          YT_COMPARE_CLIENT_SECRET:   ${{ secrets.YT_COMPARE_CLIENT_SECRET }}
           PIXABAY_API_KEY:          ${{ secrets.PIXABAY_API_KEY }}
           FREESOUND_API_KEY:        ${{ secrets.FREESOUND_API_KEY }}
           # Cloudflare R2 — host fiable para los mp4 de IG (fix fail_container_ready)
