@@ -62,6 +62,7 @@ CHANNELS: list[dict] = [
     dict(key="ainews",    name="AI Decoded",        pk="youtube_ainews",    handle=None, cat="IA explicada (EN)",        status="active", lang="EN", group="extra"),
     dict(key="business",  name="Money Machines",    pk="youtube_business",  handle=None, cat="Negocio / dinero (EN)",    status="active", lang="EN", group="extra"),
     dict(key="geography", name="Map Decoded",       pk="youtube_geography", handle=None, cat="Geografia (EN)",           status="active", lang="EN", group="extra"),
+    dict(key="compare",   name="Scale Compare",     pk="youtube_compare",   handle=None, cat="Comparaciones de escala (EN)", status="active", lang="EN", group="extra"),
     # Tanda 02/10 — nuevos canales. Los 3 VIVOS van a 'core' (canales activos reales →
     # se renderizan en "Tus canales"); los 4 pre-cableados a 'extra'. OJO: el index.html
     # solo pinta group 'core' y 'extra' (NO 'nuevos'). Ver [[tanda-canales-02-10]].

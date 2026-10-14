@@ -713,6 +713,7 @@ def snapshot_all(progress=lambda m: None) -> dict[str, int]:
                           ("youtube_ainews", lambda: _snapshot_channel_generic("YT_AINEWS", "youtube_ainews") if os.environ.get("YT_AINEWS_REFRESH_TOKEN") else []),
                           ("youtube_business", lambda: _snapshot_channel_generic("YT_BUSINESS", "youtube_business") if os.environ.get("YT_BUSINESS_REFRESH_TOKEN") else []),
                           ("youtube_geography", lambda: _snapshot_channel_generic("YT_GEOGRAPHY", "youtube_geography") if os.environ.get("YT_GEOGRAPHY_REFRESH_TOKEN") else []),
+                          ("youtube_compare", lambda: _snapshot_channel_generic("YT_COMPARE", "youtube_compare") if os.environ.get("YT_COMPARE_REFRESH_TOKEN") else []),
                           ("instagram", snapshot_instagram),
                           ("threads", snapshot_threads),
                           ("tiktok", snapshot_tiktok),

@@ -279,6 +279,7 @@ YT_CHANNELS = [
     ("YT_AINEWS", "AI Decoded"),
     ("YT_BUSINESS", "Money Machines"),
     ("YT_GEOGRAPHY", "Map Decoded"),
+    ("YT_COMPARE", "Scale Compare"),
 ]
 
 
