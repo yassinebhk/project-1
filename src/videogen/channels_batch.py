@@ -323,7 +323,177 @@ DATOS = SimpleChannelConfig(
 )
 
 
-BATCH: list[SimpleChannelConfig] = [MISTERIOS, SESGOS, FILOSOFIA, CURIOSIDADES, ESPACIO, DATOS]
+# ───────────────────────── 7) Estafas y seguridad online (ES) ─────────────────────────
+# Dedup vs WaitWhy: NO corrupción política; aquí estafas/ciberfraude MODERNOS, enfoque
+# defensivo (cómo funciona + cómo protegerte). Fuentes: INCIBE/OSI/Policía/INTERPOL.
+SCAMS = SimpleChannelConfig(
+    slug="scams", prefix="YT_SCAMS", display_name="Alerta Estafas",
+    platform_key="youtube_scams", lang="es", system_prompt_file="batch_es_system.md",
+    tone="divulgación de seguridad: directo y útil, cómo funciona la estafa y cómo protegerte; sin alarmismo ni culpar a personas concretas",
+    category_id="27", emoji="🚨", cross_teaser="🚨 Alerta estafa", refresh_interval_days=10,
+    theme_desc=("A Spanish faceless channel explaining how modern scams and cyber-fraud work "
+                "and how to protect yourself: phishing, pig-butchering, SIM-swap, vishing, "
+                "QR/quishing, fake tech support, romance scams, OTP social engineering. "
+                "Defensive/educational, never a how-to-commit."),
+    veracity_rules=("- Only REAL, documented scam mechanics with a citable source (INCIBE, OSI, "
+                    "Policía/Guardia Civil, INTERPOL, bank advisories). Defensive framing ONLY: "
+                    "how it works + how to protect yourself. NEVER instructions to commit fraud. "
+                    "Do NOT accuse named people/companies. No financial advice."),
+    seed=[
+        {"key": "phishing", "titulo": "Cómo un email de phishing vacía tu cuenta en 2 minutos",
+         "hook": "Ese correo de 'tu banco' no es de tu banco.",
+         "angle": "Phishing: suplantan a una entidad para robar credenciales; señales: urgencia, enlace falso, dominio raro. Fuente: INCIBE/OSI.",
+         "visual": "email falso de banco, candado roto, cursor sobre enlace sospechoso"},
+        {"key": "pig_butchering", "titulo": "La estafa del 'cerdo cebado': amor y cripto",
+         "hook": "Te enamoran durante semanas. Luego viene la 'inversión'.",
+         "angle": "Pig butchering: relación falsa + plataforma cripto falsa con ganancias ficticias hasta que te vacían. Fuente: INTERPOL / FBI IC3.",
+         "visual": "chat de móvil con corazones, gráfico cripto falso subiendo, cartera vacía"},
+        {"key": "sim_swap", "titulo": "SIM swapping: cómo te roban el móvil sin tocarlo",
+         "hook": "De repente te quedas sin cobertura. Es el primer síntoma.",
+         "angle": "El atacante duplica tu SIM para recibir tus SMS y saltarse el 2FA. Fuente: INCIBE/OSI; usa 2FA por app, no SMS.",
+         "visual": "tarjeta SIM duplicada, móvil sin señal, código 2FA interceptado"},
+        {"key": "quishing", "titulo": "El QR del parquímetro que te roba la tarjeta",
+         "hook": "Escaneas un QR para pagar y acabas en una web falsa.",
+         "angle": "Quishing: QR manipulados que llevan a webs de pago fraudulentas. Fuente: OSI; verifica la URL tras escanear.",
+         "visual": "pegatina QR sobre un parquímetro, web de pago falsa, móvil escaneando"},
+        {"key": "fake_support", "titulo": "La llamada de 'soporte técnico' que te instala un ladrón",
+         "hook": "'Su ordenador tiene un virus' — y te piden instalar un programa.",
+         "angle": "Soporte técnico falso: te hacen instalar software de control remoto para robar. Fuente: OSI; ninguna empresa real llama así.",
+         "visual": "ventana de acceso remoto, teléfono con número oculto, pantalla controlada"},
+        {"key": "vishing_otp", "titulo": "Por qué nunca debes dar el código que te llega por SMS",
+         "hook": "Si te piden 'el código de 6 dígitos', cuelga.",
+         "angle": "Ingeniería social del OTP: te llaman fingiendo ser el banco para que cantes el código. Fuente: INCIBE; el banco nunca lo pide.",
+         "visual": "SMS con código, llamada entrante 'Banco', mano dudando"},
+    ],
+)
+
+# ───────────────────────── 8) AI explained / weekly (EN) ─────────────────────────
+# Dedup vs AI Tools Weekly: aquí CONCEPTOS/novedades de IA (cómo funciona), no reseñas de
+# herramientas. Seeds evergreen (sin fecha) para no envejecer; news en vivo vía RSS = mejora futura.
+AINEWS = SimpleChannelConfig(
+    slug="ainews", prefix="YT_AINEWS", display_name="AI Decoded",
+    platform_key="youtube_ainews", lang="en", system_prompt_file="batch_en_system.md",
+    tone="clear, concrete tech explainer; concepts + why they matter; no hype",
+    category_id="28", emoji="🤖", cross_teaser="🤖 AI decoded", refresh_interval_days=7,
+    theme_desc=("An English faceless channel explaining AI concepts, milestones and developments "
+                "for a general audience: how LLMs work, agents, open vs closed models, context "
+                "windows, hallucinations, RAG, training vs inference, AI safety. Explainers, "
+                "not tool reviews."),
+    veracity_rules=("- Cite the concrete source (paper, official announcement, docs). No hype or "
+                    "unverified capability claims; label speculation. No financial advice "
+                    "(no 'buy NVIDIA'). Explain, don't predict."),
+    seed=[
+        {"key": "next_token", "titulo": "How ChatGPT actually works (it just predicts the next word)",
+         "hook": "It doesn't 'know' anything. It predicts one token at a time.",
+         "angle": "LLMs are next-token predictors; the Transformer let this scale. Source: 'Attention Is All You Need' (Vaswani et al., 2017).",
+         "visual": "text completing word by word, transformer diagram, probability bars"},
+        {"key": "ai_agent", "titulo": "What an 'AI agent' really is (and why everyone builds them)",
+         "hook": "A chatbot answers. An agent acts.",
+         "angle": "An AI agent loops: plan → use tools → observe → repeat, to do multi-step tasks. Source: public tool-use/function-calling docs.",
+         "visual": "loop diagram plan-act-observe, tool icons, terminal running"},
+        {"key": "hallucination", "titulo": "Why AI confidently makes things up",
+         "hook": "It's not lying. It's doing exactly what it was trained to do.",
+         "angle": "Hallucinations: predicting plausible text without grounding; reduced with retrieval/citations. Source: model-provider docs + grounding research.",
+         "visual": "confident wrong answer, fabricated citation, question mark"},
+        {"key": "context_window", "titulo": "What a 'context window' is (the AI's short-term memory)",
+         "hook": "The AI forgets everything outside its context window.",
+         "angle": "Context window = max tokens attended at once; bigger = more input but more compute. Source: model-provider specs.",
+         "visual": "sliding window over text, token counter, memory fading"},
+        {"key": "open_vs_closed", "titulo": "Open vs closed AI models: the real difference",
+         "hook": "Some AIs you can download. Others you can only rent.",
+         "angle": "Open-weight models ship weights you can run; closed models are API-only. Source: official model licenses/announcements.",
+         "visual": "download icon vs cloud lock, weights file, API endpoint"},
+        {"key": "rag", "titulo": "The trick that stops AI from making things up (RAG)",
+         "hook": "How you make AI answer from YOUR documents.",
+         "angle": "Retrieval-Augmented Generation fetches relevant text and feeds it in so answers are grounded + citable. Source: RAG paper (Lewis et al., 2020).",
+         "visual": "search over documents, retrieved snippets, grounded answer"},
+    ],
+)
+
+# ───────────────────────── 9) Business / money breakdowns (EN) ─────────────────────────
+# Cómo ganan dinero las empresas (datos públicos). NO consejo de inversión (no YMYL).
+BUSINESS = SimpleChannelConfig(
+    slug="business", prefix="YT_BUSINESS", display_name="Money Machines",
+    platform_key="youtube_business", lang="en", system_prompt_file="batch_en_system.md",
+    tone="sharp business explainer, concrete numbers from public filings; analytical, no advice",
+    category_id="27", emoji="💰", cross_teaser="💰 How it profits", refresh_interval_days=14,
+    theme_desc=("An English faceless channel explaining how companies and products actually make "
+                "money, and why businesses rise or fall, using public financials. 'How the "
+                "business works', never investment advice."),
+    veracity_rules=("- Use PUBLIC data (annual reports, SEC 10-K, reputable press) and cite it on "
+                    "screen. No stock tips, price targets or predictions (no YMYL). Don't assert "
+                    "unproven claims about a company's intent."),
+    seed=[
+        {"key": "ikea_maze", "titulo": "Why IKEA is built like a maze (it makes you spend more)",
+         "hook": "You can't take a shortcut in IKEA. That's on purpose.",
+         "angle": "IKEA's one-way layout maximizes product exposure (the 'Gruen effect'). Source: retail-design analysis / reputable press.",
+         "visual": "IKEA floor-plan arrows, showroom maze, full cart"},
+        {"key": "costco_membership", "titulo": "Costco barely profits on what it sells — here's the real engine",
+         "hook": "Costco makes most of its profit before you buy anything.",
+         "angle": "Membership fees make up the bulk of Costco's operating income; goods sell near cost. Source: Costco annual report (10-K).",
+         "visual": "membership card, warehouse aisles, receipt near cost"},
+        {"key": "spotify_payout", "titulo": "Why Spotify pays artists so little per stream",
+         "hook": "One stream pays a fraction of a cent. Here's why.",
+         "angle": "Spotify pays ~2/3 of revenue to rights holders via a pooled pro-rata model; per-stream is tiny. Source: Spotify 'Loud & Clear' / annual report.",
+         "visual": "stream counter, tiny coin, revenue pie split"},
+        {"key": "printer_ink", "titulo": "Why printers are cheap but ink costs more than perfume",
+         "hook": "They basically give you the printer for free.",
+         "angle": "Razor-and-blades model: cheap hardware, profit on consumables (ink). Source: industry/press analysis.",
+         "visual": "cheap printer price tag, expensive ink cartridge, perfume comparison"},
+        {"key": "amazon_aws", "titulo": "Amazon's real money machine isn't the store — it's AWS",
+         "hook": "The shopping site barely profits. The cloud carries it.",
+         "angle": "AWS provides the majority of Amazon's operating income despite smaller revenue. Source: Amazon annual report (10-K) segment data.",
+         "visual": "store box vs server racks, operating-income bar chart"},
+        {"key": "free_apps", "titulo": "How 'free' apps actually make money off you",
+         "hook": "If it's free, the product is your attention — or your data.",
+         "angle": "Free apps monetize via ads, in-app purchases, subscriptions or data. Source: app-economy reports.",
+         "visual": "app store 'free', ad banner, in-app purchase popup"},
+    ],
+)
+
+# ───────────────────────── 10) Geography / geopolitics explainer (EN) ─────────────────────────
+# Por qué el mapa es como es / por qué unos países son ricos. Evergreen, SIN conflictos vivos.
+GEOGRAPHY = SimpleChannelConfig(
+    slug="geography", prefix="YT_GEOGRAPHY", display_name="Map Decoded",
+    platform_key="youtube_geography", lang="en", system_prompt_file="batch_en_system.md",
+    tone="curious geography/economics explainer; factual, evergreen, no live conflicts or taking sides",
+    category_id="27", emoji="🗺️", cross_teaser="🗺️ Map decoded", refresh_interval_days=14,
+    theme_desc=("An English faceless channel explaining why the world map looks the way it does "
+                "and why some places are rich or poor: geography, history, economics, climate. "
+                "Evergreen; avoid live geopolitical conflicts."),
+    veracity_rules=("- Factual geography/history/economics with a citable source (World Bank, UN, "
+                    "Britannica, Köppen climate). Evergreen ONLY: NO live conflicts, NO taking "
+                    "political sides, NO sensitive current events."),
+    seed=[
+        {"key": "ru_timezones", "titulo": "Why Russia has 11 time zones",
+         "hook": "When it's breakfast in one part of Russia, it's already midnight in another.",
+         "angle": "Russia spans ~11 time zones due to its east-west extent (~9,000 km). Source: Britannica / official time-zone data.",
+         "visual": "map of Russia with time-zone bands, clocks, sunrise and sunset"},
+        {"key": "netherlands_sea", "titulo": "Why the Netherlands pumped the sea out to make land",
+         "hook": "They didn't find this land. They drained it.",
+         "angle": "Polders reclaimed from the sea, kept dry by dikes and pumps; large areas would flood without them. Source: Dutch government / Britannica.",
+         "visual": "dikes, polder grid, pumping station, sea-level line"},
+        {"key": "singapore_rich", "titulo": "How Singapore got rich with almost no resources",
+         "hook": "No oil, no farmland, barely any water — yet one of the richest.",
+         "angle": "A strategic port plus trade, manufacturing, finance and governance drove growth. Source: World Bank GDP-per-capita data.",
+         "visual": "port cranes, skyline, shipping-lane map"},
+        {"key": "mercator", "titulo": "Why Africa looks small on your map (it isn't)",
+         "hook": "Greenland looks as big as Africa. Africa is ~14x bigger.",
+         "angle": "The Mercator projection inflates areas near the poles; Africa ~30.4M km² vs Greenland ~2.2M. Source: cartography / area figures.",
+         "visual": "Mercator vs true-size overlay, Africa swallowing Greenland"},
+        {"key": "canada_border", "titulo": "Why almost all Canadians live near the US border",
+         "hook": "The world's 2nd-biggest country is mostly empty.",
+         "angle": "Most of Canada's population lives within ~150 km of the US border, driven by climate and arable land. Source: Statistics Canada.",
+         "visual": "Canada population-density map, thin southern strip, cold north"},
+        {"key": "chile_shape", "titulo": "Why Chile is so absurdly long and thin",
+         "hook": "~4,300 km long, ~350 km wide at most.",
+         "angle": "Chile is hemmed between the Andes and the Pacific, stretching along the coast. Source: Britannica / geography.",
+         "visual": "map of Chile, Andes wall, Pacific coast"},
+    ],
+)
+
+BATCH: list[SimpleChannelConfig] = [MISTERIOS, SESGOS, FILOSOFIA, CURIOSIDADES, ESPACIO, DATOS,
+                                    SCAMS, AINEWS, BUSINESS, GEOGRAPHY]
 
 
 def by_slug(slug: str) -> SimpleChannelConfig | None:
