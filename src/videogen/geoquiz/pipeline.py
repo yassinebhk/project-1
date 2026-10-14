@@ -103,9 +103,13 @@ def _pick_from_tier(led: dict, tier: int, modes: list[str], n: int) -> list[tupl
 def _pick_candidates(led: dict) -> list[tuple]:
     """Pick 10 preguntas = 3 fácil + 4 medio + 3 difícil con mezcla de 4+ modos.
     Devuelve [(country_tuple, mode), ...]."""
-    modes_easy = ["flag", "capital"]           # fáciles sólo con bandera o capital
+    # NOTA 14/10: "monument" descartado del pick activo — Wikimedia Commons tiene
+    # thumbnail sizes impredecibles por archivo (algunos aceptan /500px/, otros
+    # /640px/ etc.) → fallos aleatorios 400/404. Pool data.MONUMENTS se conserva
+    # para re-activar cuando migremos a Wikimedia Commons API con resolver dinámico.
+    modes_easy = ["flag", "capital"]
     modes_mid = ["flag", "capital", "silhouette"]
-    modes_hard = ["flag", "capital", "silhouette", "monument", "fact"]
+    modes_hard = ["flag", "capital", "silhouette", "fact"]
     out = []
     out += _pick_from_tier(led, 1, modes_easy, 3)
     out += _pick_from_tier(led, 2, modes_mid, 4)

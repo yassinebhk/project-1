@@ -70,10 +70,12 @@ def _base() -> Image.Image:
 
 
 def _paste_image(img: Image.Image, src: Path, cy: int, max_w: int = 820, max_h: int = 820,
-                 frame: bool = True, transparent_ok: bool = False) -> None:
+                 frame: bool = True, transparent_ok: bool = False,
+                 tint_rgb: tuple[int, int, int] | None = None) -> None:
     """Pega imagen (bandera/monumento/silueta) centrada horizontalmente, altura cy.
     frame=True añade marco blanco (solo para rect photos). transparent_ok=True conserva
-    transparencia (siluetas PNG)."""
+    transparencia (siluetas PNG). tint_rgb colorea el alpha de la silueta (ej. cyan para
+    legibilidad sobre fondo navy — mapsicon devuelve siluetas negras)."""
     try:
         if transparent_ok:
             fl = Image.open(src).convert("RGBA")
@@ -85,6 +87,10 @@ def _paste_image(img: Image.Image, src: Path, cy: int, max_w: int = 820, max_h: 
     r = min(max_w / fl.width, max_h / fl.height)
     fw, fh = int(fl.width * r), int(fl.height * r)
     fl = fl.resize((fw, fh), Image.LANCZOS)
+    # Tint: reemplaza el color pintado por tint_rgb manteniendo alpha
+    if transparent_ok and tint_rgb is not None:
+        base = Image.new("RGBA", fl.size, tint_rgb + (255,))
+        fl = Image.composite(base, Image.new("RGBA", fl.size, (0, 0, 0, 0)), fl.split()[3])
     x = (W - fw) // 2
     y = cy - fh // 2
     d = ImageDraw.Draw(img)
@@ -146,7 +152,8 @@ def _frame_round(path: Path, asset: Path | None, mode: str, text_payload: str,
     elif mode == "monument" and asset:
         _paste_image(img, asset, 900, max_w=820, max_h=820, frame=True)
     elif mode == "silhouette" and asset:
-        _paste_image(img, asset, 900, max_w=820, max_h=820, frame=False, transparent_ok=True)
+        _paste_image(img, asset, 900, max_w=820, max_h=820, frame=False, transparent_ok=True,
+                     tint_rgb=ACCENT)  # cyan sobre fondo navy
     elif mode == "capital":
         # Texto grande centrado con la capital
         _text_center(d, W // 2, 760, "Capital:", _font(60), MUTED)
@@ -190,20 +197,38 @@ def _frame_outro(path: Path) -> None:
     img.save(path)
 
 
-def _download_url(url: str, dest: Path) -> Path | None:
+def _download_url(url: str, dest: Path, attempts: int = 4) -> Path | None:
+    """Descarga con reintento + requests (mejor manejo IncompleteRead que urllib
+    stock). Antes se perdían preguntas silenciosamente contra CDN flakey."""
+    import time as _time
     if dest.exists() and dest.stat().st_size > 1000:
         return dest
     dest.parent.mkdir(parents=True, exist_ok=True)
-    try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        data = urllib.request.urlopen(req, timeout=25).read()
-        if len(data) < 500:
-            return None
-        dest.write_bytes(data)
-        return dest
-    except Exception as e:
-        print(f"  geoquiz: download {url[-60:]} fail ({type(e).__name__})")
-        return None
+    last_err = None
+    # Wikimedia bloquea Mozilla/5.0 genérico. Usar UA con nombre de app + URL
+    # (Wikimedia Foundation User-Agent policy requires identifiable UA).
+    headers = {"User-Agent": "GeoQuizBot/1.0 (https://github.com/yassinebhk; contact: 72581389+yassinebhk@users.noreply.github.com)"}
+    for i in range(attempts):
+        try:
+            try:
+                import requests
+                r = requests.get(url, headers=headers, timeout=30, stream=False)
+                r.raise_for_status()
+                data = r.content
+            except ImportError:
+                req = urllib.request.Request(url, headers=headers)
+                data = urllib.request.urlopen(req, timeout=30).read()
+            if len(data) < 500:
+                last_err = f"too small ({len(data)}B)"
+                _time.sleep(0.6 * (i + 1))
+                continue
+            dest.write_bytes(data)
+            return dest
+        except Exception as e:
+            last_err = f"{type(e).__name__}: {str(e)[:80]}"
+            _time.sleep(0.8 * (i + 1))
+    print(f"  geoquiz: download {url[-80:]} fail tras {attempts} intentos ({last_err})")
+    return None
 
 
 def _download_flag(iso2: str, dest: Path) -> Path | None:
