@@ -705,6 +705,10 @@ def snapshot_all(progress=lambda m: None) -> dict[str, int]:
                           ("youtube_curiosidades", lambda: _snapshot_channel_generic("YT_CURIOSIDADES", "youtube_curiosidades") if os.environ.get("YT_CURIOSIDADES_REFRESH_TOKEN") else []),
                           ("youtube_espacio", lambda: _snapshot_channel_generic("YT_ESPACIO", "youtube_espacio") if os.environ.get("YT_ESPACIO_REFRESH_TOKEN") else []),
                           ("youtube_geoquiz", lambda: _snapshot_channel_generic("YT_GEOQUIZ", "youtube_geoquiz") if os.environ.get("YT_GEOQUIZ_REFRESH_TOKEN") else []),
+                          # Canales extra con canal YT propio (se censan si tienen YT_<X>_REFRESH_TOKEN).
+                          ("youtube_padel", lambda: _snapshot_channel_generic("YT_PADEL", "youtube_padel") if os.environ.get("YT_PADEL_REFRESH_TOKEN") else []),
+                          ("youtube_satisfying", lambda: _snapshot_channel_generic("YT_SATISFYING", "youtube_satisfying") if os.environ.get("YT_SATISFYING_REFRESH_TOKEN") else []),
+                          ("youtube_rankings_en", lambda: _snapshot_channel_generic("YT_RANKINGS", "youtube_rankings_en") if os.environ.get("YT_RANKINGS_REFRESH_TOKEN") else []),
                           ("instagram", snapshot_instagram),
                           ("threads", snapshot_threads),
                           ("tiktok", snapshot_tiktok),

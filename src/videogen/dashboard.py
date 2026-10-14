@@ -53,11 +53,11 @@ CHANNELS: list[dict] = [
     dict(key="tax",        name="TaxHack (→ Cosmos)", pk="youtube_tax",     handle=None,               cat="Fiscalidad — reconvertido a Cosmos 04/10", status="paused", lang="ES", group="extra"),
     dict(key="legal",      name="TusDerechos ES",    pk="youtube_legal",    handle="@TusDerechos_ES",  cat="Derecho laboral",         status="active", lang="ES", group="core"),
     dict(key="ambient",    name="MenteEnCalma",      pk="youtube_ambient",  handle=None,               cat="Relax / binaural",        status="active", lang="ES", group="core"),
-    dict(key="padel",      name="Pádel",             pk=None,               handle=None,               cat="Pádel (Manim)",           status="active", lang="ES", group="extra"),
-    dict(key="satisfying", name="Infinite Fractals", pk=None,               handle=None,               cat="Satisfying / hipnótico",  status="active", lang="EN", group="extra"),
+    dict(key="padel",      name="Pádel Pro ES",             pk="youtube_padel",               handle="@PadelProES",               cat="Pádel (Manim)",           status="active", lang="ES", group="extra"),
+    dict(key="satisfying", name="Infinite Fractals", pk="youtube_satisfying",               handle=None,               cat="Satisfying / hipnótico",  status="active", lang="EN", group="extra"),
     dict(key="trabajos",   name="CuriosLaboral ES",  pk=None,               handle="@CuriosLaboral_ES",cat="Curiosidades laborales",  status="paused", lang="ES", group="extra"),
     dict(key="criminopatia", name="Criminopatía",    pk=None,               handle="@Criminopatia_ES", cat="Criminología",            status="paused", lang="ES", group="extra"),
-    dict(key="rankings_en", name="Global Rankings",  pk=None,               handle=None,               cat="Rankings (EN)",           status="paused", lang="EN", group="extra"),
+    dict(key="rankings_en", name="Global Rankings",  pk="youtube_rankings_en",               handle=None,               cat="Rankings (EN)",           status="paused", lang="EN", group="extra"),
     # Tanda 02/10 — nuevos canales. Los 3 VIVOS van a 'core' (canales activos reales →
     # se renderizan en "Tus canales"); los 4 pre-cableados a 'extra'. OJO: el index.html
     # solo pinta group 'core' y 'extra' (NO 'nuevos'). Ver [[tanda-canales-02-10]].
