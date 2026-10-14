@@ -27,7 +27,7 @@ jobs:
       # Mientras GH Actions esté con billing failed, pádel corre en el bridge
       # (Mac M3 Pro, 18GB, label 'bridge'). install_spec='.' evita torch/whisper
       # (pádel no los usa) y acelera install.
-      runs_on: bridge
+      runs_on: ubuntu-latest
       install_spec: '.'
       extra_env: |
         PADEL_FORMAT=${{ inputs.format || 'manim' }}

@@ -26,7 +26,7 @@ jobs:
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: geoquiz-once
-      runs_on: bridge
+      runs_on: ubuntu-latest
       install_spec: "."
       extra_env: ${{ inputs.force && 'GEOQUIZ_PER_DAY=9' || '' }}
     secrets: inherit
