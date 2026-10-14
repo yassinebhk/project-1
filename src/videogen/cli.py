@@ -1564,6 +1564,46 @@ def batch_longform_cmd(slug: str):
         raise SystemExit(1)
 
 
+@cli.command(name="compare-test")
+def compare_test_cmd():
+    """Renderiza 1 comparación de escala (Manim) y la MANDA A TELEGRAM para validar
+    el visual. NO sube a YouTube — solo para iterar el formato antes de cablear el canal."""
+    import os as _os
+    from pathlib import Path as _Path
+    from datetime import datetime, timezone
+    from .config import ROOT as _ROOT
+    from .compare import topics as ctopics, render as crender
+    topic = ctopics.pick_topic()
+    ts = datetime.now(timezone.utc).strftime("%Y%m%d_%H%M%S")
+    work = _ROOT / "output" / "compare_test" / f"{topic['key']}_{ts}"
+    print(f"compare-test: rendering '{topic['key']}' ({topic['title']}) …")
+    final = crender.render_topic(topic, work)
+    if not final or not _Path(final).exists():
+        print(json.dumps({"status": "render_fail", "topic": topic["key"]}))
+        raise SystemExit(1)
+    tok = _os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
+    chat = _os.environ.get("TELEGRAM_CHAT_ID", "").strip()
+    sent = False
+    if tok and chat:
+        try:
+            import requests as _rq
+            with open(final, "rb") as fh:
+                r = _rq.post(
+                    f"https://api.telegram.org/bot{tok}/sendVideo",
+                    data={"chat_id": chat,
+                          "caption": (f"🧪 Scale Compare TEST — {topic['title']}\n"
+                                      "Revisa el visual (barras a escala). Iteramos si hace falta.")},
+                    files={"video": fh}, timeout=180,
+                )
+            sent = r.status_code == 200
+            print(f"telegram sendVideo: HTTP {r.status_code}")
+        except Exception as e:
+            print(f"telegram send fail: {type(e).__name__}: {e}")
+    else:
+        print("(sin TELEGRAM_BOT_TOKEN/CHAT_ID → no se envía)")
+    print(json.dumps({"status": "ok", "topic": topic["key"], "mp4": str(final), "telegram": sent}))
+
+
 @cli.command(name="stoic-longform")
 def stoic_longform_cmd():
     """Genera + (si hay canal YT_STOIC) sube 1 long-form estoico (~10 min)."""

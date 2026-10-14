@@ -1,0 +1,42 @@
+name: Compare Manim test (validar visual → Telegram, NO sube a YT)
+
+# Render de prueba de una comparación de escala (Manim) → se MANDA A TELEGRAM para
+# que valides el visual ANTES de cablear el canal. NO sube a ningún canal de YouTube.
+# Dispáralo a mano (Run workflow). topic_key opcional para forzar un topic concreto.
+
+on:
+  workflow_dispatch:
+    inputs:
+      topic_key:
+        description: "Topic (planets|tall_buildings|fastest_animals|largest_countries|ocean_trenches|biggest_animals) — vacío = rota"
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  render:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: system deps (cairo/pango/ffmpeg)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y --no-install-recommends ffmpeg build-essential \
+            libcairo2-dev libpango1.0-dev pkg-config python3-dev fonts-dejavu-core
+      - name: install videogen + manim + edge-tts
+        run: |
+          pip install --upgrade pip
+          pip install -e .
+          pip install "manim>=0.18" edge-tts requests
+      - name: render + enviar a Telegram
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          COMPARE_TOPIC_KEY: ${{ inputs.topic_key }}
+        run: videogen compare-test

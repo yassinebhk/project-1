@@ -48,6 +48,7 @@ output/**
 !output/dynamic_topics_business.json
 !output/geography_ledger.json
 !output/dynamic_topics_geography.json
+!output/compare_ledger.json
 # Ranking datasets (World Bank refresh semanal)
 !output/ranking_datasets/
 !output/ranking_datasets/**
