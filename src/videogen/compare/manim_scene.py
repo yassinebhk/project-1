@@ -103,9 +103,11 @@ class ScaleCompare(Scene):
                 nm.scale_to_fit_width(7.6)
             nm.move_to([left_x, y + row_h * 0.30, 0], aligned_edge=LEFT)
 
-            bar = Rectangle(width=w, height=row_h * 0.46, fill_color=color,
+            bar = Rectangle(width=w, height=row_h * 0.52, fill_color=color,
                             fill_opacity=1.0, stroke_width=0)
-            bar.move_to([left_x + w / 2, y - row_h * 0.10, 0], aligned_edge=LEFT)
+            # Todas las barras arrancan del MISMO borde izquierdo (left_x) para que la
+            # comparación proporcional se lea bien.
+            bar.move_to([left_x, y - row_h * 0.10, 0], aligned_edge=LEFT)
 
             vl = Text(_fmt(val, unit), font_size=28, color=color, weight=BOLD)
             vl.next_to(bar, RIGHT, buff=0.18)
