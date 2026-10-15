@@ -1,0 +1,24 @@
+name: Persuasion daily (Mind Signals — EN)
+
+# Persuasión y lenguaje corporal basado en EVIDENCIA (desmonta mitos, enfoque defensivo).
+# simple_channel factory. NO-OP (status:no_channel, cero cuota LLM) hasta crear canal YT +
+# secrets YT_PERSUASION_REFRESH_TOKEN/CLIENT_ID/CLIENT_SECRET.
+# LLM_CHEAP_FIRST=1 → gemma-4/Groq primero y reserva la cuota de Gemini al flagship.
+# Piggyback real: también en catchup-all-channels (cron-job.org 4×/día) por si GH skipea.
+
+on:
+  schedule:
+    - cron: "31 15 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  persuasion:
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug persuasion
+      extra_env: |
+        LLM_CHEAP_FIRST=1
+    secrets: inherit

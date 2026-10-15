@@ -427,7 +427,7 @@ function sparkSVG(pts,color,w=96,h=30){
 let DATA=null,CHARTS=[],STATE={sec:'resumen',agView:'cal',filters:{content:1,longform:1,social:1,ops:0},pausedOn:0};
 const clearCharts=()=>{CHARTS.forEach(c=>{try{c.destroy()}catch(e){}});CHARTS=[]};
 function deltaChip(d,sfx=''){if(d==null)return '<span class="chip">—</span>';if(d===0)return `<span class="chip">±0${sfx}</span>`;const u=d>0;return `<span class="chip ${u?'up':'down'}">${u?'▲':'▼'} ${short(Math.abs(d))}${sfx}</span>`}
-function statusPill(s){return `<span class="pill ${s==='active'?'active':'paused'} dot">${s==='active'?'Activo':'Pausa'}</span>`}
+function statusPill(s){const lbl=s==='active'?'Activo':s==='setup'?'Pendiente':'Pausa';return `<span class="pill ${s==='active'?'active':'paused'} dot">${lbl}</span>`}
 
 /* ── charts ── */
 function baseOpts(){

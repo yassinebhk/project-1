@@ -63,6 +63,10 @@ CHANNELS: list[dict] = [
     dict(key="business",     name="Money Machines",      pk="youtube_business",   handle="@money_machines_en",      cat="Negocio / dinero (EN)",      status="active", lang="EN", group="core"),
     dict(key="geography",    name="Map Decoded",         pk="youtube_geography",  handle="@map_pecoded",            cat="Geografía (EN)",             status="active", lang="EN", group="core"),
     dict(key="compare",      name="Scale Compare",       pk="youtube_compare",    handle="@scale_compare",          cat="Comparaciones de escala (EN)", status="active", lang="EN", group="core"),
+    # Pre-cableados 15/10: NO-OP hasta crear canal YT + secrets YT_<X>_*. group="extra" = sección "sin canal YT dedicado".
+    dict(key="truecrime",    name="Convicted (True Crime EN)", pk="youtube_truecrime", handle="(pendiente)",        cat="True crime EN (fraude/corrupción, clon WaitWhy)", status="setup", lang="EN", group="extra"),
+    dict(key="howmade",      name="Factory Decoded",     pk="youtube_howmade",    handle="(pendiente)",             cat="Cómo se fabrica X (EN)",     status="setup", lang="EN", group="extra"),
+    dict(key="persuasion",   name="Mind Signals",        pk="youtube_persuasion", handle="(pendiente)",             cat="Persuasión y lenguaje corporal (EN)", status="setup", lang="EN", group="extra"),
 ]
 
 # IG whitelist (otra sesión 21/09): solo canales afines a true crime ES suben a

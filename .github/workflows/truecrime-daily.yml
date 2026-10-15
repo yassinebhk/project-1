@@ -1,0 +1,24 @@
+name: True Crime daily (Convicted — EN)
+
+# Clon EN del formato ganador de WaitWhy (fraude/corrupción con condena firme).
+# simple_channel factory. NO-OP (status:no_channel, cero cuota LLM) hasta crear canal YT +
+# secrets YT_TRUECRIME_REFRESH_TOKEN/CLIENT_ID/CLIENT_SECRET.
+# LLM_CHEAP_FIRST=1 → gemma-4/Groq primero y reserva la cuota de Gemini al flagship.
+# Piggyback real: también en catchup-all-channels (cron-job.org 4×/día) por si GH skipea.
+
+on:
+  schedule:
+    - cron: "23 11 * * *"
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  truecrime:
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug truecrime
+      extra_env: |
+        LLM_CHEAP_FIRST=1
+    secrets: inherit

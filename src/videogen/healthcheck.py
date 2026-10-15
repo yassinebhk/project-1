@@ -278,6 +278,9 @@ YT_CHANNELS = [
     ("YT_BUSINESS", "Money Machines"),
     ("YT_GEOGRAPHY", "Map Decoded"),
     ("YT_COMPARE", "Scale Compare"),
+    ("YT_TRUECRIME", "Convicted (True Crime EN)"),
+    ("YT_HOWMADE", "Factory Decoded"),
+    ("YT_PERSUASION", "Mind Signals"),
 ]
 
 

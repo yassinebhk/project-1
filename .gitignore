@@ -49,6 +49,12 @@ output/**
 !output/geography_ledger.json
 !output/dynamic_topics_geography.json
 !output/compare_ledger.json
+!output/truecrime_ledger.json
+!output/dynamic_topics_truecrime.json
+!output/howmade_ledger.json
+!output/dynamic_topics_howmade.json
+!output/persuasion_ledger.json
+!output/dynamic_topics_persuasion.json
 # Ranking datasets (World Bank refresh semanal)
 !output/ranking_datasets/
 !output/ranking_datasets/**

@@ -211,12 +211,72 @@ jobs:
       command: geoquiz-once
     secrets: inherit
 
+  # ─── Canales simple_channel EN enganchados a la cadena de SHORTS (piggyback fiable
+  # vía cron-job.org 4×/día). Antes dependían SOLO del cron interno de GH (poco fiable,
+  # [[workflow-cron-siempre-piggyback-o-cronjob-org]]). El cap diario (shorts_per_day=1)
+  # hace que las corridas extra hagan skip. No-op (status:no_channel) sin canal/secrets. ───
+  scams_short:
+    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
+    needs: [geoquiz_short]
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug scams
+    secrets: inherit
+
+  ainews_short:
+    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
+    needs: [scams_short]
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug ainews
+    secrets: inherit
+
+  business_short:
+    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
+    needs: [ainews_short]
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug business
+    secrets: inherit
+
+  geography_short:
+    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
+    needs: [business_short]
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug geography
+    secrets: inherit
+
+  truecrime_short:
+    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
+    needs: [geography_short]
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug truecrime
+    secrets: inherit
+
+  howmade_short:
+    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
+    needs: [truecrime_short]
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug howmade
+    secrets: inherit
+
+  persuasion_short:
+    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
+    needs: [howmade_short]
+    uses: ./.github/workflows/_videogen-job.yml
+    with:
+      command: batch-once --slug persuasion
+    secrets: inherit
+
   # Long-form de Stoic + Mente Racional: enganchados a la cadena de SHORTS (corre
   # 4-5×/día vía cron-job.org, fiable). La puerta por día de la semana en el código
   # (run_longform) hace que solo generen 1×/semana en su día fijo. No-op sin canal.
   stoic_long:
     if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
-    needs: [geoquiz_short]
+    needs: [persuasion_short]
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: stoic-longform

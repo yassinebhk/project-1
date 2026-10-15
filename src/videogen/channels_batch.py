@@ -492,8 +492,172 @@ GEOGRAPHY = SimpleChannelConfig(
     ],
 )
 
+# ───────────────────────── 11) True crime EN (clon de WaitWhy en inglés) ─────────────────────────
+# La apuesta de mayor EV: true crime es el ÚNICO formato probado (WaitWhy flagship). En EN el
+# mercado es enorme y el RPM más alto. Replica el nicho GANADOR de WaitWhy (fraude/corrupción
+# económico-financiera, [[waitwhy-nicho-ganador-corrupcion-fraude-es]]) con casos internacionales
+# CON SENTENCIA FIRME. Veracidad crítica (riesgo legal/difamación): solo condenas finales,
+# públicas y documentadas. [[veracidad-obligatoria]]
+TRUECRIME = SimpleChannelConfig(
+    slug="truecrime", prefix="YT_TRUECRIME", display_name="Convicted",
+    platform_key="youtube_truecrime", lang="en", system_prompt_file="batch_en_system.md",
+    tone="sober true-crime narration: tense and gripping but factual, never sensationalist; the crime, the trail, the verdict",
+    category_id="27", emoji="⚖️", cross_teaser="⚖️ Convicted", refresh_interval_days=10,
+    theme_desc=("An English faceless true-crime channel on major financial and corporate crime: "
+                "frauds, Ponzi schemes, corruption and white-collar takedowns that ended in a "
+                "FINAL conviction. International, documented cases — the scheme, how it unraveled, "
+                "the sentence."),
+    veracity_rules=("- ONLY real cases with a FINAL conviction/sentence on public record (court "
+                    "records, DOJ/SEC, reputable press). State the actual sentence and CITE the "
+                    "source on screen. Name only public figures convicted in a final judgment. "
+                    "NO speculation about guilt, NO unproven allegations, NO ongoing/acquitted "
+                    "cases, NO private victim details, NO gore. Facts only."),
+    seed=[
+        {"key": "madoff", "titulo": "Bernie Madoff: the $65 billion lie that lasted decades",
+         "hook": "It was the biggest Ponzi scheme in history — and it ran in plain sight.",
+         "angle": "Bernie Madoff ran a ~$65B Ponzi scheme; pleaded guilty in 2009 and was sentenced to 150 years. Source: US DOJ / SEC.",
+         "visual": "Wall Street facade, falling stock ticker, courthouse steps, handcuffs"},
+        {"key": "theranos", "titulo": "Theranos: the blood-test startup built on a fake machine",
+         "hook": "A $9 billion company — and its core technology never worked.",
+         "angle": "Elizabeth Holmes (Theranos) was convicted of fraud in 2022 and sentenced to ~11 years. Source: US DOJ.",
+         "visual": "lab vials, broken device, Silicon Valley office, verdict headline"},
+        {"key": "ftx", "titulo": "FTX: how a crypto giant collapsed in a week",
+         "hook": "One of the biggest crypto exchanges vanished almost overnight.",
+         "angle": "Sam Bankman-Fried (FTX) was convicted of fraud in 2023 and sentenced to 25 years. Source: US DOJ.",
+         "visual": "crypto charts crashing, empty office, courtroom sketch"},
+        {"key": "enron", "titulo": "Enron: the energy giant that faked its own success",
+         "hook": "It was 'America's most innovative company' — until the books were opened.",
+         "angle": "Enron collapsed in 2001 on accounting fraud; Jeffrey Skilling was convicted in 2006. Source: US DOJ.",
+         "visual": "corporate tower, shredded documents, stock collapse graph"},
+        {"key": "stanford", "titulo": "Allen Stanford: the $7 billion certificate-of-deposit fraud",
+         "hook": "He sold 'safe' deposits that were anything but.",
+         "angle": "Allen Stanford ran a ~$7B Ponzi scheme; convicted in 2012 and sentenced to 110 years. Source: US DOJ / SEC.",
+         "visual": "offshore bank, Caribbean island, fake certificates, gavel"},
+        {"key": "anna_delvey", "titulo": "Anna 'Delvey': the fake heiress who fooled New York",
+         "hook": "She posed as a German heiress to con banks and hotels.",
+         "angle": "Anna Sorokin ('Delvey') was convicted of grand larceny and theft of services in 2019. Source: New York State court / reputable press.",
+         "visual": "luxury hotel lobby, designer bags, unpaid bills, courtroom"},
+        {"key": "galleon", "titulo": "Raj Rajaratnam: the insider-trading ring worth millions",
+         "hook": "He traded on secrets whispered over the phone — and got caught on tape.",
+         "angle": "Raj Rajaratnam (Galleon Group) was convicted of insider trading in 2011 and sentenced to 11 years. Source: US DOJ / SEC.",
+         "visual": "trading floor, wiretap waveform, phone call, handcuffs"},
+        {"key": "belfort", "titulo": "Jordan Belfort: the 'Wolf of Wall Street' pump-and-dump",
+         "hook": "The real story behind the movie — and the real sentence.",
+         "angle": "Jordan Belfort (Stratton Oakmont) pleaded guilty to securities fraud and money laundering in 1999. Source: US DOJ.",
+         "visual": "boiler-room phones, penny-stock chart, yacht, courtroom"},
+    ],
+)
+
+# ───────────────────────── 12) How it's made / cómo se fabrica (EN) ─────────────────────────
+# Faceless, visual, evergreen y sin riesgo legal/YMYL. Familia 'Decoded' (AI Decoded, Map Decoded).
+# Evitamos el nombre registrado "How It's Made" (marca TV) → "Factory Decoded".
+HOWMADE = SimpleChannelConfig(
+    slug="howmade", prefix="YT_HOWMADE", display_name="Factory Decoded",
+    platform_key="youtube_howmade", lang="en", system_prompt_file="batch_en_system.md",
+    tone="calm, satisfying process explainer; step by step, concrete and precise; no filler",
+    category_id="28", emoji="🏭", cross_teaser="🏭 How it's made", refresh_interval_days=14,
+    theme_desc=("An English faceless channel explaining how everyday objects and materials are "
+                "manufactured, step by step: the real industrial process from raw material to "
+                "finished product. Visual, satisfying, evergreen."),
+    veracity_rules=("- Describe the REAL manufacturing process from reputable sources "
+                    "(manufacturers, industry bodies, Britannica/encyclopedias). Do NOT invent or "
+                    "guess steps; if a detail varies by maker, say so. Evergreen only. Cite the "
+                    "source of the process on screen."),
+    seed=[
+        {"key": "glass", "titulo": "How flat glass is made (it floats on molten metal)",
+         "hook": "Window glass is poured onto a bath of liquid tin.",
+         "angle": "Float-glass process: molten glass floats on molten tin to form a perfectly flat sheet (Pilkington process). Source: Britannica / industry.",
+         "visual": "molten glass ribbon, tin bath glow, cooling sheet, cutting line"},
+        {"key": "pencil", "titulo": "How a pencil is made (there's no lead in it)",
+         "hook": "The 'lead' is actually graphite mixed with clay.",
+         "angle": "Graphite + clay fired into a core, glued between two cedar slats, shaped and painted. Source: manufacturer / Britannica.",
+         "visual": "graphite-clay paste, cedar slats, grooved wood, paint line"},
+        {"key": "chocolate", "titulo": "How chocolate is made (from bitter bean to sweet bar)",
+         "hook": "The raw cacao bean tastes nothing like chocolate.",
+         "angle": "Bean to bar: ferment, dry, roast, grind to liquor, conch, temper, mold. Source: industry / food-science references.",
+         "visual": "cacao pods, roasting beans, conching machine, molded bars"},
+        {"key": "mirror", "titulo": "How a mirror is made (a sheet of glass + a metal coat)",
+         "hook": "A mirror is just glass with a very thin layer of silver.",
+         "angle": "Silvering: a reflective metal layer (silver/aluminum) is deposited on glass and sealed. Source: Britannica / industry.",
+         "visual": "glass sheet, silvering spray, reflective coat, backing paint"},
+        {"key": "paper", "titulo": "How paper is made from a tree",
+         "hook": "It starts as wood chips and ends as a smooth sheet.",
+         "angle": "Pulping wood into fibers, screening into a mat, pressing and drying into paper. Source: industry / Britannica.",
+         "visual": "wood chips, pulp slurry, rolling press, drying rollers"},
+        {"key": "can", "titulo": "How an aluminum can is made from a flat disc",
+         "hook": "A whole can is drawn from one small circle of metal.",
+         "angle": "Drawing-and-ironing: a flat aluminum disc is cupped, stretched into a wall, trimmed and shaped. Source: industry.",
+         "visual": "aluminum sheet, punched discs, drawn cup, finished can line"},
+        {"key": "matches", "titulo": "How a match is made (chemistry on a stick)",
+         "hook": "The spark comes from two chemicals that must meet.",
+         "angle": "Match head (oxidizer + binder) ignites by friction against a striker strip (red phosphorus). Source: Britannica / chemistry references.",
+         "visual": "match splints, dipping heads, striker strip, ignition"},
+        {"key": "jeans", "titulo": "How jeans are made (and why they're blue)",
+         "hook": "Denim gets its color from one very old dye: indigo.",
+         "angle": "Cotton is woven into denim, dyed with indigo, cut and sewn into jeans. Source: industry / textile references.",
+         "visual": "cotton yarn, indigo dye vat, denim loom, sewing line"},
+    ],
+)
+
+# ───────────────────────── 13) Persuasión y lenguaje corporal basado en evidencia (EN) ─────────────────────────
+# Adyacente a Mente Racional (sesgos) pero DISTINTO: sesgos = tus propios sesgos cognitivos;
+# aquí = influencia social + comunicación no verbal (cómo te influyen los demás y qué dice de
+# verdad el lenguaje corporal). ANTI pseudociencia: NADA de "dark psychology" ni mitos (Mehrabian
+# 7%, "brazos cruzados = mentira"); solo evidencia revisada + desmontar mitos. Enfoque defensivo
+# (reconocer la influencia sobre ti), nunca "cómo manipular". [[veracidad-obligatoria]]
+PERSUASION = SimpleChannelConfig(
+    slug="persuasion", prefix="YT_PERSUASION", display_name="Mind Signals",
+    platform_key="youtube_persuasion", lang="en", system_prompt_file="batch_en_system.md",
+    tone="evidence-based psychology explainer; myth-busting, defensive ('spot it when it's used on you'), never a manipulation how-to",
+    category_id="27", emoji="🧩", cross_teaser="🧩 Mind signals", refresh_interval_days=10,
+    theme_desc=("An English faceless channel on the evidence-based psychology of persuasion, "
+                "influence and nonverbal communication: how people really influence each other, "
+                "what body language actually shows (and the popular myths), framed defensively so "
+                "viewers can recognize it — never a manipulation how-to."),
+    veracity_rules=("- ONLY established, peer-reviewed findings tied to NAMED research (Cialdini, "
+                    "Asch, Ekman with caveats, Chartrand & Bargh, DePaulo). Actively DEBUNK popular "
+                    "myths (Mehrabian '7%-38%-55%', 'crossed arms = lying', NLP eye-direction). "
+                    "Defensive framing only ('recognize it when used on you'); NEVER 'how to "
+                    "manipulate'. NO 'dark psychology', NO pseudoscience. Cite the study on screen."),
+    seed=[
+        {"key": "mehrabian_myth", "titulo": "The '93% of communication is body language' myth",
+         "hook": "That famous stat is real research — used completely wrong.",
+         "angle": "Mehrabian's 7-38-55 figures came from narrow studies on feelings about single words, NOT all communication. Source: Mehrabian & Wiener (1967).",
+         "visual": "the 7-38-55 pie, a big red 'myth' stamp, original study page"},
+        {"key": "cialdini_six", "titulo": "The 6 triggers that make you say yes",
+         "hook": "Persuasion isn't magic — it's six repeatable principles.",
+         "angle": "Cialdini's principles: reciprocity, commitment, social proof, authority, liking, scarcity. Source: Cialdini, 'Influence' (1984).",
+         "visual": "six labeled icons, a checklist, a hand shaking"},
+        {"key": "lie_detection", "titulo": "Can you really spot a liar from body language? (No)",
+         "hook": "People detect lies barely better than a coin flip.",
+         "angle": "Meta-analysis: average lie-detection accuracy is ~54%, and 'tells' like gaze aversion are unreliable. Source: DePaulo et al. (2003).",
+         "visual": "coin flip, crossed-out 'tells', 54% accuracy bar"},
+        {"key": "reciprocity", "titulo": "Why a free sample makes you buy",
+         "hook": "A tiny gift creates a surprisingly strong urge to give back.",
+         "angle": "Reciprocity: an unsolicited favor increases compliance (the classic soda-then-raffle study). Source: Regan (1971) / Cialdini.",
+         "visual": "free sample tray, a gift, a wallet opening"},
+        {"key": "foot_in_door", "titulo": "The 'foot in the door' technique",
+         "hook": "Say yes to something small and you'll likely say yes to something big.",
+         "angle": "A small initial request raises compliance with a larger later one. Source: Freedman & Fraser (1966).",
+         "visual": "a small checkbox, then a big one, a door opening"},
+        {"key": "social_proof", "titulo": "Why we copy the crowd (even when it's wrong)",
+         "hook": "People will agree with an obviously wrong group — just to fit in.",
+         "angle": "Conformity: many participants matched clearly wrong group answers on a line task. Source: Asch conformity experiments (1951).",
+         "visual": "line-length cards, a crowd, one person caving"},
+        {"key": "mirroring", "titulo": "The 'chameleon effect': why we mirror each other",
+         "hook": "We unconsciously copy the posture of people we talk to.",
+         "angle": "Mimicking a partner's mannerisms happens automatically and increases liking. Source: Chartrand & Bargh (1999).",
+         "visual": "two people mirroring posture, synced gestures"},
+        {"key": "scarcity", "titulo": "Why 'only 2 left' makes you want it more",
+         "hook": "The same item feels more valuable when it's scarce.",
+         "angle": "Scarcity raises perceived value; cookies were rated higher when supply looked limited. Source: Worchel et al. (1975) / Cialdini.",
+         "visual": "'only 2 left' tag, a countdown, a crowded checkout"},
+    ],
+)
+
 BATCH: list[SimpleChannelConfig] = [MISTERIOS, SESGOS, FILOSOFIA, CURIOSIDADES, ESPACIO, DATOS,
-                                    SCAMS, AINEWS, BUSINESS, GEOGRAPHY]
+                                    SCAMS, AINEWS, BUSINESS, GEOGRAPHY,
+                                    TRUECRIME, HOWMADE, PERSUASION]
 
 
 def by_slug(slug: str) -> SimpleChannelConfig | None:
