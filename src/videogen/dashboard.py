@@ -43,36 +43,26 @@ CH_COLORS = [
 # group="core" = los 10 canales YouTube reales del usuario; "extra" = líneas de
 # contenido / experimentales (sin canal YT dedicado o en evaluación).
 CHANNELS: list[dict] = [
-    dict(key="waitwhy",    name="WaitWhy",           pk="youtube",          handle="@waitwhy_ybb",     cat="True crime / corrupción", status="active", lang="ES", group="core", flagship=True),
-    dict(key="ayudas",     name="AyudaGob",          pk="youtube_ayudas",   handle="@AyudaGob_es",     cat="Ayudas y subvenciones",   status="active", lang="ES", group="core"),
-    dict(key="motor",      name="Motor60s (→ Enigmas)", pk="youtube_motor", handle=None,               cat="Motor — reconvertido a Enigmas 04/10", status="paused", lang="ES", group="extra"),
-    dict(key="pov",        name="TiempoAtrás ES",    pk="youtube_pov",      handle="@TiempoAtras_ES",  cat="Historia / POV",          status="active", lang="ES", group="core"),
-    dict(key="ranking",    name="TopRanking ES",     pk="youtube_ranking",  handle="@TopRanking_ES",   cat="Rankings / datos",        status="active", lang="ES", group="core"),
-    dict(key="ia",         name="Datos Increíbles",  pk="youtube_ia",       handle=None,               cat="Datos / curiosidades (ex-IA Autónomos)", status="active", lang="ES", group="core"),
-    dict(key="aitools",    name="AI Tools Weekly",   pk="youtube_aitools",  handle=None,               cat="AI tools",                status="active", lang="EN", group="core"),
-    dict(key="tax",        name="TaxHack (→ Cosmos)", pk="youtube_tax",     handle=None,               cat="Fiscalidad — reconvertido a Cosmos 04/10", status="paused", lang="ES", group="extra"),
-    dict(key="legal",      name="TusDerechos ES",    pk="youtube_legal",    handle="@TusDerechos_ES",  cat="Derecho laboral",         status="active", lang="ES", group="core"),
-    dict(key="ambient",    name="MenteEnCalma",      pk="youtube_ambient",  handle=None,               cat="Relax / binaural",        status="active", lang="ES", group="core"),
-    dict(key="padel",      name="Pádel Pro ES",             pk="youtube_padel",               handle="@PadelProES",               cat="Pádel (Manim)",           status="active", lang="ES", group="extra"),
-    dict(key="satisfying", name="Infinite Fractals", pk="youtube_satisfying",               handle=None,               cat="Satisfying / hipnótico",  status="active", lang="EN", group="extra"),
-    dict(key="trabajos",   name="CuriosLaboral ES",  pk=None,               handle="@CuriosLaboral_ES",cat="Curiosidades laborales",  status="paused", lang="ES", group="extra"),
-    dict(key="criminopatia", name="Criminopatía",    pk=None,               handle="@Criminopatia_ES", cat="Criminología",            status="paused", lang="ES", group="extra"),
-    dict(key="rankings_en", name="Global Rankings",  pk="youtube_rankings_en",               handle=None,               cat="Rankings (EN)",           status="paused", lang="EN", group="extra"),
-    dict(key="scams",     name="Alerta Estafas",    pk="youtube_scams",     handle=None, cat="Estafas y seguridad",     status="active", lang="ES", group="extra"),
-    dict(key="ainews",    name="AI Decoded",        pk="youtube_ainews",    handle=None, cat="IA explicada (EN)",        status="active", lang="EN", group="extra"),
-    dict(key="business",  name="Money Machines",    pk="youtube_business",  handle=None, cat="Negocio / dinero (EN)",    status="active", lang="EN", group="extra"),
-    dict(key="geography", name="Map Decoded",       pk="youtube_geography", handle=None, cat="Geografia (EN)",           status="active", lang="EN", group="extra"),
-    dict(key="compare",   name="Scale Compare",     pk="youtube_compare",   handle=None, cat="Comparaciones de escala (EN)", status="active", lang="EN", group="extra"),
-    # Tanda 02/10 — nuevos canales. Los 3 VIVOS van a 'core' (canales activos reales →
-    # se renderizan en "Tus canales"); los 4 pre-cableados a 'extra'. OJO: el index.html
-    # solo pinta group 'core' y 'extra' (NO 'nuevos'). Ver [[tanda-canales-02-10]].
-    dict(key="stoic",       name="Stoic Mind",        pk="youtube_stoic",       handle=None, cat="Estoicismo (EN)",          status="active", lang="EN", group="core"),
-    dict(key="sesgos",      name="Mente Racional",    pk="youtube_sesgos",      handle=None, cat="Sesgos cognitivos",        status="active", lang="ES", group="core"),
-    dict(key="curiosidades", name="¿Qué Pasaría Si?", pk="youtube_curiosidades", handle=None, cat="Curiosidades / ciencia",  status="active", lang="ES", group="core"),
-    dict(key="misterios",   name="Enigmas sin Resolver", pk="youtube_misterios", handle=None, cat="Misterios (ex-Motor60s)",  status="active", lang="ES", group="core"),
-    dict(key="filosofia",   name="Abismo",            pk="youtube_filosofia",   handle=None, cat="Filosofía profunda",       status="paused", lang="ES", group="extra"),
-    dict(key="espacio",     name="Cosmos",            pk="youtube_espacio",     handle=None, cat="Astronomía (ex-TaxHack)",   status="active", lang="ES", group="core"),
-    dict(key="geoquiz",     name="GeoQuiz",           pk="youtube_geoquiz",     handle=None, cat="Geografía / quiz",         status="paused", lang="EN", group="extra"),
+    # 19 canales YouTube REALES (cuenta youtubevideos308). Nombres + handles verificados 15/10.
+    dict(key="waitwhy",      name="WaitWhy",             pk="youtube",            handle="@waitwhy_ybb",            cat="True crime / corrupción ES", status="active", lang="ES", group="core", flagship=True),
+    dict(key="legal",        name="TusDerechos ES",      pk="youtube_legal",      handle="@TusDerechos_ES",         cat="Derecho laboral",            status="active", lang="ES", group="core"),
+    dict(key="pov",          name="TiempoAtras ES",      pk="youtube_pov",        handle="@TiempoAtrasES",          cat="Historia / POV",             status="active", lang="ES", group="core"),
+    dict(key="ambient",      name="MenteEnCalma",        pk="youtube_ambient",    handle="@MenteEnCalma_ES",        cat="Relax / ambient",            status="active", lang="ES", group="core"),
+    dict(key="aitools",      name="AI Tools Weekly",     pk="youtube_aitools",    handle="@AIToolsWeekly_EN",       cat="AI tools",                   status="active", lang="EN", group="core"),
+    dict(key="misterios",    name="Enigmas ES",          pk="youtube_misterios",  handle="@enigmas_es",             cat="Misterios / enigmas",        status="active", lang="ES", group="core"),
+    dict(key="sesgos",       name="Mente Racional",      pk="youtube_sesgos",     handle="@MenteRacional-ES",       cat="Sesgos cognitivos",          status="active", lang="ES", group="core"),
+    dict(key="curiosidades", name="¿Qué Pasaría Si?",    pk="youtube_curiosidades", handle="@Quépasaríasi-videos-es", cat="Curiosidades / ciencia",   status="active", lang="ES", group="core"),
+    dict(key="ia",           name="Datos Increibles ES", pk="youtube_ia",         handle="@datos_inreibles_es",     cat="Datos / curiosidades",       status="active", lang="ES", group="core"),
+    dict(key="espacio",      name="Cosmos Videos ES",    pk="youtube_espacio",    handle="@Cosmos_videos_ES",       cat="Astronomía",                 status="active", lang="ES", group="core"),
+    dict(key="ayudas",       name="AyudaGob ES",         pk="youtube_ayudas",     handle="@AyudaGob_es",            cat="Ayudas y subvenciones",      status="active", lang="ES", group="core"),
+    dict(key="ranking",      name="TopRanking ES",       pk="youtube_ranking",    handle="@TopRanking_ESP",         cat="Rankings / datos",           status="active", lang="ES", group="core"),
+    dict(key="stoic",        name="Stoic Mind",          pk="youtube_stoic",      handle="@StoicMind_videos",       cat="Estoicismo (EN)",            status="active", lang="EN", group="core"),
+    dict(key="padel",        name="Padel Pro ES",        pk="youtube_padel",      handle="@PadelProES",             cat="Pádel (Manim)",              status="active", lang="ES", group="extra"),
+    dict(key="scams",        name="Alerta Estafas",      pk="youtube_scams",      handle="@alerta_estafas_es",      cat="Estafas y seguridad",        status="active", lang="ES", group="extra"),
+    dict(key="ainews",       name="AI Decoded",          pk="youtube_ainews",     handle="@ai_decoded_en",          cat="IA explicada (EN)",          status="active", lang="EN", group="extra"),
+    dict(key="business",     name="Money Machines",      pk="youtube_business",   handle="@money_machines_en",      cat="Negocio / dinero (EN)",      status="active", lang="EN", group="extra"),
+    dict(key="geography",    name="Map Decoded",         pk="youtube_geography",  handle="@map_pecoded",            cat="Geografía (EN)",             status="active", lang="EN", group="extra"),
+    dict(key="compare",      name="Scale Compare",       pk="youtube_compare",    handle="@scale_compare",          cat="Comparaciones de escala (EN)", status="active", lang="EN", group="extra"),
 ]
 
 # IG whitelist (otra sesión 21/09): solo canales afines a true crime ES suben a

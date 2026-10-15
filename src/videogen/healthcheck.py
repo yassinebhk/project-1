@@ -272,8 +272,6 @@ YT_CHANNELS = [
     ("YT_AMBIENT", "MenteEnCalma"),
     ("YT_IA", "IA Autónomos ES"),
     ("YT_AITOOLS", "AI Tools Weekly"),
-    ("YT_RANKINGS", "Global Rankings EN"),
-    ("YT_SATISFYING", "Infinite Fractals"),
     ("YT_PADEL", "Pádel Pro ES"),
     ("YT_SCAMS", "Alerta Estafas"),
     ("YT_AINEWS", "AI Decoded"),
