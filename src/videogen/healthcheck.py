@@ -263,10 +263,8 @@ def _check_mastodon() -> tuple[bool, str]:
 
 YT_CHANNELS = [
     ("", "WaitWhy"),
-    ("YT_TAX", "TaxHack ES"),
     ("YT_LEGAL", "TusDerechos ES"),
     ("YT_AYUDAS", "AyudaGob"),
-    ("YT_MOTOR", "Motor60s"),
     ("YT_POV", "TiempoAtrás ES"),
     ("YT_RANKING", "TopRanking ES"),
     ("YT_AMBIENT", "MenteEnCalma"),

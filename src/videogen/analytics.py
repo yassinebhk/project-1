@@ -687,10 +687,8 @@ def snapshot_all(progress=lambda m: None) -> dict[str, int]:
     """Snapshot de todas las plataformas con API. Devuelve {plataforma: nº filas}."""
     counts: dict[str, int] = {}
     for platform, fn in [("youtube", snapshot_youtube),
-                          ("youtube_tax", snapshot_youtube_tax),
                           ("youtube_legal", snapshot_youtube_legal),
                           ("youtube_ayudas", snapshot_youtube_ayudas),
-                          ("youtube_motor", snapshot_youtube_motor),
                           ("youtube_ambient", snapshot_youtube_ambient),
                           ("youtube_pov", snapshot_youtube_pov),
                           ("youtube_ranking", snapshot_youtube_ranking),
