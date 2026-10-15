@@ -143,17 +143,9 @@ jobs:
       command: criminopatia-once
     secrets: inherit
 
-  satisfying_short:
-    if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
-    needs: [criminopatia_short]
-    uses: ./.github/workflows/_videogen-job.yml
-    with:
-      command: satisfying-once
-    secrets: inherit
-
   padel_short:
     if: ${{ always() && (inputs.only == '' || inputs.only == null || inputs.only == 'all' || inputs.only == 'shorts' || inputs.only == 'blue') }}
-    needs: [satisfying_short]
+    needs: [criminopatia_short]
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: padel-once
