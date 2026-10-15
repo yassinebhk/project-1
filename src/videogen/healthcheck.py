@@ -400,12 +400,18 @@ def check_all() -> dict[str, Any]:
     }
     yt = {}
     for prefix, name in YT_CHANNELS:
+        # Canal pre-cableado SIN token todavía → pendiente de configurar, NO caducado.
+        # (Sin esta guarda, los canales NO-OP salían como ❌ y disparaban reauth falso.)
+        tok_var = (prefix + "_REFRESH_TOKEN") if prefix else "YT_REFRESH_TOKEN"
+        if not os.environ.get(tok_var, "").strip():
+            yt[name] = {"ok": True, "detail": "pendiente (sin token aún)", "pending": True}
+            continue
         yt[name] = _safe(lambda p=prefix, n=name: _check_youtube_channel(p, n), name)
 
     def _fmt_group(title: str, items: dict) -> list[str]:
         lines = [f"<b>{title}</b>"]
         for name, r in items.items():
-            icon = "✅" if r["ok"] else "❌"
+            icon = "🟡" if r.get("pending") else ("✅" if r["ok"] else "❌")
             detail = r["detail"] if r["detail"] else ""
             lines.append(f"  {icon} {name}: {detail[:80]}")
         return lines
