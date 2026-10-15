@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T20:28:46.044798+00:00",
+  "generated_at": "2026-10-15T10:33:55.192094+00:00",
   "topics": [
     {
       "key": "efecto_arrastre",
@@ -84,6 +84,90 @@
       "hook": "Crees que si pierdes tu trabajo tu vida se acaba, pero la ciencia dice que te adaptarás antes de lo que piensas.",
       "angle": "Examinar el sesgo de impacto en la investigación sobre afecto pronosticado por Daniel Gilbert y Timothy Wilson.",
       "visual": "persona mirando por ventana, lluvia cayendo en cristal, luz calida interior, cinematic depth"
+    },
+    {
+      "key": "efecto_sen_zeller",
+      "titulo": "Por qué ignoras las señales obvias hasta que es tarde",
+      "hook": "La investigación clásica de Zeigarnik demostró que tu cerebro se niega a soltar lo inconcluso.",
+      "angle": "Explicar el efecto Zeigarnik sobre cómo la memoria retiene mejor las tareas interrumpidas, basado en los experimentos originales de Bluma Zeigarnik en 1927.",
+      "visual": "cerebro brillante, piezas incompletas, reloj antiguo, sombras cinematográficas"
+    },
+    {
+      "key": "sesgo_de_omision",
+      "titulo": "El peligro invisible de no hacer absolutamente nada",
+      "hook": "Preferimos dejar que alguien salga herido con tal de no ser nosotros quienes pulsen el botón.",
+      "angle": "Analizar el sesgo de omisión y la preferencia por el daño por inacción frente al daño por acción, documentado en estudios de ética conductual de Jonathan Baron.",
+      "visual": "balanza desequilibrada, decisiones difíciles, vías del tren, tonos oscuros"
+    },
+    {
+      "key": "efecto_posicion_serial",
+      "titulo": "Por qué solo recuerdas el principio y el final de las cosas",
+      "hook": "Tu memoria es una trampa perfecta que olvida exactamente el ochenta por ciento del medio.",
+      "angle": "Explicar el efecto de primacía y recencia en la memoria de trabajo, probado en la psicología cognitiva experimental por Hermann Ebbinghaus.",
+      "visual": "lista infinita, luces de neón, memoria borrosa, túnel temporal"
+    },
+    {
+      "key": "licencia_moral",
+      "titulo": "Por qué hacer una buena acción te da permiso para portarte mal",
+      "hook": "Hacer algo correcto hoy es la excusa perfecta para cometer un error mañana sin sentir culpa.",
+      "angle": "Desglosar la licencia moral (moral licensing) demostrada por Monin y Miller, donde las acciones buenas previas desinhiben conductas egoístas.",
+      "visual": "balanza moral, ángel y demonio abstractos, decisiones duales, contraste de colores"
+    },
+    {
+      "key": "efecto_lugar_comun",
+      "titulo": "El curioso error por el que crees que todos piensan como tú",
+      "hook": "Asumes que el mundo entero comparte tus opiniones hasta que alguien te demuestra lo contrario.",
+      "angle": "Explicar el sesgo de falso consenso estudiado por Lee Ross, donde sobreestimamos el grado en que los demás acuerdan con nosotros.",
+      "visual": "multitud idéntica, espejo roto, perspectiva distorsionada, tonos fríos"
+    },
+    {
+      "key": "ley_de_parkinson",
+      "titulo": "Por qué tu trabajo siempre se expande hasta ocupar todo tu tiempo",
+      "hook": "Si tienes una semana para hacer una tarea, tardarás exactamente siete días en terminarla.",
+      "angle": "Analizar la formulación empírica de Cyril Northcote Parkinson sobre la administración del tiempo y la eficiencia artificial.",
+      "visual": "reloj derretido, oficina minimalista, tiempo corriendo, arena cayendo"
+    },
+    {
+      "key": "maldicion_de_la_novedad",
+      "titulo": "Por qué siempre recuerdas la última estupidez que escuchaste",
+      "hook": "La información más reciente borra por completo los datos sólidos que tenías antes.",
+      "angle": "Explicar el efecto de recencia en la toma de decisiones económicas y cognitivas, validado en la investigación de Kahneman.",
+      "visual": "noticias rápidas, pantallas parpadeantes, datos flotantes, enfoque cenital"
+    },
+    {
+      "key": "efecto_esfuerzo_justificado",
+      "titulo": "Por qué valoras más lo que te costó sangre, sudor y lágrimas",
+      "hook": "Si algo te resulta demasiado fácil de conseguir, tu cerebro automáticamente lo desprecia.",
+      "angle": "Desglosar el paradigma del esfuerzo de Aronson y Mills, demostrando cómo el sufrimiento para lograr un objetivo aumenta su valor percibido.",
+      "visual": "escalera empinada, montaña rocosa, esfuerzo físico, iluminación dramática"
+    },
+    {
+      "key": "efecto_disonancia_cognitiva",
+      "titulo": "La trampa mental que te obliga a defender tus peores errores",
+      "hook": "Prefieres mentirte a ti mismo antes que aceptar que tomaste una pésima decisión.",
+      "angle": "Explicar la teoría de la disonancia cognitiva de Leon Festinger y cómo el cerebro altera creencias para reducir la contradicción interna.",
+      "visual": "espejo distorsionado, fractura mental, dudas, colores contrastados"
+    },
+    {
+      "key": "sesgo_de_atribucion_hostil",
+      "titulo": "Por qué siempre crees que los demás lo hacen con mala intención",
+      "hook": "Si alguien te choca en la calle, asumes que es malvado y nunca un simple despiste.",
+      "angle": "Analizar el sesgo de atribución hostil en la psicología social, documentado en la investigación de interacciones cotidianas de Kenneth Dodge.",
+      "visual": "miradas cruzadas, tensión urbana, siluetas oscuras, atmósfera densa"
+    },
+    {
+      "key": "efecto_de_retraso_temporal",
+      "titulo": "Por qué te importa más lo que pasa hoy que tu propia vejez",
+      "hook": "Tu cerebro trata a tu 'yo' del futuro como si fuera un completo desconocido.",
+      "angle": "Explicar el descuento temporal y la desconexión neurológica con el futuro, estudiado mediante resonancia magnética por Hershfield y colaboradores.",
+      "visual": "envejecimiento rápido, reloj de arena digital, futuro incierto, rayos X"
+    },
+    {
+      "key": "ilusion_de_frecuencia",
+      "titulo": "Por qué ves ese coche nuevo en todas partes desde que lo compraste",
+      "hook": "No es que haya más coches iguales en la calle, es que tu cerebro acaba de activar su radar secreto.",
+      "angle": "Desglosar el fenómeno Baader-Meinhof (ilusión de frecuencia), combinado con la atención selectiva estudiada en neurociencia cognitiva.",
+      "visual": "patrones repetidos, enfoque selectivo, ciudad borrosa, coche destacado"
     }
   ]
 }
