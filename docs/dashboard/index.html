@@ -648,8 +648,8 @@ function renderCanales(){
   const core=d.channels.filter(c=>c.group==='core'),extra=d.channels.filter(c=>c.group==='extra');
   el.innerHTML=`<div class="sechead" style="margin-top:0"><h2>Tus canales de YouTube</h2><span class="eyebrow">${core.length} canales · ${core.filter(c=>c.status==='active').length} activos</span></div>
     <div class="grid chgrid">${core.map(card).join('')}</div>
-    <div class="sechead"><h2>Líneas de contenido y experimentales</h2><span class="eyebrow">sin canal YT dedicado / en evaluación</span></div>
-    <div class="grid chgrid" style="opacity:.9">${extra.map(card).join('')}</div>`;
+    ${extra.length?`<div class="sechead"><h2>Líneas de contenido y experimentales</h2><span class="eyebrow">sin canal YT dedicado / en evaluación</span></div>
+    <div class="grid chgrid" style="opacity:.9">${extra.map(card).join('')}</div>`:''}`;
   el.querySelectorAll('canvas[data-sp]').forEach(cv=>{const c=d.channels.find(x=>x.key===cv.dataset.sp);spark(cv,c.series.map(p=>p.views),c.color)});
   el.querySelectorAll('.chcard[data-ch]').forEach(cd=>cd.onclick=e=>{if(e.target.closest('a'))return;openChannel(cd.dataset.ch)});
 }
@@ -727,7 +727,7 @@ function renderProduccion(){
       <div class="card pad"><div class="sechead" style="margin:0 0 6px"><h2 style="font-size:15px">Cuándo se publica</h2><span class="eyebrow">vídeos por día de la semana</span></div>
         <div class="heat">${d.weekday.map((v,i)=>`<div class="col"><div class="bar" style="height:${Math.max(4,Math.round(100*v/mx))}%"><b>${v}</b></div><div class="lb">${DOW[i]}</div></div>`).join('')}</div></div>
       <div class="card pad"><div class="sechead" style="margin:0 0 10px"><h2 style="font-size:15px">Notas</h2></div>
-        <p class="hint" style="margin:0 0 10px">Las <b>líneas experimentales</b> (Pádel, Infinite Fractals, CuriosLaboral, Criminopatía, Global Rankings) no cuentan entre los 10 canales.</p>
+        <p class="hint" style="margin:0 0 10px">Los <b>19 canales</b> son reales (cuenta youtubevideos308). Los 6 más nuevos (Pádel, Alerta Estafas, AI Decoded, Money Machines, Map Decoded, Scale Compare) ya tienen canal propio y pipeline activo.</p>
         <p class="hint" style="margin:0 0 10px">Los <b>canales en pausa</b> siguen con cron pero su pipeline no genera (consolidación). Reactivar = editar su pipeline.</p>
         <p class="hint" style="margin:0">⚠️ Ojo con la cuota de Gemini al reactivar / añadir long-form (más generaciones LLM/día).</p></div></div>`;
   el.querySelectorAll('tr[data-ch]').forEach(r=>r.onclick=()=>openChannel(r.dataset.ch));

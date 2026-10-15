@@ -40,7 +40,7 @@ CH_COLORS = [
     "#ffd6a5", "#a0c4ff", "#ffadad", "#caffbf", "#bdb2ff",
 ]
 
-# group="core" = los 10 canales YouTube reales del usuario; "extra" = líneas de
+# group="core" = los 19 canales YouTube reales del usuario (todos tienen canal
 # contenido / experimentales (sin canal YT dedicado o en evaluación).
 CHANNELS: list[dict] = [
     # 19 canales YouTube REALES (cuenta youtubevideos308). Nombres + handles verificados 15/10.
@@ -57,12 +57,12 @@ CHANNELS: list[dict] = [
     dict(key="ayudas",       name="AyudaGob ES",         pk="youtube_ayudas",     handle="@AyudaGob_es",            cat="Ayudas y subvenciones",      status="active", lang="ES", group="core"),
     dict(key="ranking",      name="TopRanking ES",       pk="youtube_ranking",    handle="@TopRanking_ESP",         cat="Rankings / datos",           status="active", lang="ES", group="core"),
     dict(key="stoic",        name="Stoic Mind",          pk="youtube_stoic",      handle="@StoicMind_videos",       cat="Estoicismo (EN)",            status="active", lang="EN", group="core"),
-    dict(key="padel",        name="Padel Pro ES",        pk="youtube_padel",      handle="@PadelProES",             cat="Pádel (Manim)",              status="active", lang="ES", group="extra"),
-    dict(key="scams",        name="Alerta Estafas",      pk="youtube_scams",      handle="@alerta_estafas_es",      cat="Estafas y seguridad",        status="active", lang="ES", group="extra"),
-    dict(key="ainews",       name="AI Decoded",          pk="youtube_ainews",     handle="@ai_decoded_en",          cat="IA explicada (EN)",          status="active", lang="EN", group="extra"),
-    dict(key="business",     name="Money Machines",      pk="youtube_business",   handle="@money_machines_en",      cat="Negocio / dinero (EN)",      status="active", lang="EN", group="extra"),
-    dict(key="geography",    name="Map Decoded",         pk="youtube_geography",  handle="@map_pecoded",            cat="Geografía (EN)",             status="active", lang="EN", group="extra"),
-    dict(key="compare",      name="Scale Compare",       pk="youtube_compare",    handle="@scale_compare",          cat="Comparaciones de escala (EN)", status="active", lang="EN", group="extra"),
+    dict(key="padel",        name="Padel Pro ES",        pk="youtube_padel",      handle="@PadelProES",             cat="Pádel (Manim)",              status="active", lang="ES", group="core"),
+    dict(key="scams",        name="Alerta Estafas",      pk="youtube_scams",      handle="@alerta_estafas_es",      cat="Estafas y seguridad",        status="active", lang="ES", group="core"),
+    dict(key="ainews",       name="AI Decoded",          pk="youtube_ainews",     handle="@ai_decoded_en",          cat="IA explicada (EN)",          status="active", lang="EN", group="core"),
+    dict(key="business",     name="Money Machines",      pk="youtube_business",   handle="@money_machines_en",      cat="Negocio / dinero (EN)",      status="active", lang="EN", group="core"),
+    dict(key="geography",    name="Map Decoded",         pk="youtube_geography",  handle="@map_pecoded",            cat="Geografía (EN)",             status="active", lang="EN", group="core"),
+    dict(key="compare",      name="Scale Compare",       pk="youtube_compare",    handle="@scale_compare",          cat="Comparaciones de escala (EN)", status="active", lang="EN", group="core"),
 ]
 
 # IG whitelist (otra sesión 21/09): solo canales afines a true crime ES suben a
@@ -80,7 +80,7 @@ CATCHUP_PROD = {
     "Datos Increíbles": {"short": True, "long": False},
 }
 # Canales huérfanos (sin YT propio) que suben al canal host de otro nicho afín.
-YT_HOST_REDIRECT = {"criminopatia": "WaitWhy", "trabajos": "TusDerechos ES", "padel": "TopRanking ES"}
+YT_HOST_REDIRECT = {}  # obsoleto: los 19 canales tienen token/canal propio (15/10)
 
 # Plataformas sociales (no-YouTube) y su handle/URL de perfil
 SOCIALS: list[dict] = [
