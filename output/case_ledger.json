@@ -295,7 +295,7 @@
       ]
     },
     "naseiro": {
-      "count": 4,
+      "count": 5,
       "history": [
         {
           "ts": "2026-09-08T10:31:12.572180+00:00",
@@ -312,6 +312,10 @@
         {
           "ts": "2026-09-28T17:21:39.060841+00:00",
           "topic": "[CRIMEN] Naseiro: el escándalo de financiación del PP de 1990 que marcó un antes y un después en los tribunales"
+        },
+        {
+          "ts": "2026-10-16T11:19:05.647925+00:00",
+          "topic": "[CRIMEN] Las escuchas del caso Naseiro (1990): el escándalo de financiación ilegal del PP que destapó las primeras tramas de corrupción sistémica en España"
         }
       ]
     },
