@@ -797,5 +797,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-16T17:39:19.510280+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-thesis-literature-reviews",
+    "title": "Top 5 AI tools for thesis literature reviews · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-16T18:11:20.720913+00:00"
   }
 ]
