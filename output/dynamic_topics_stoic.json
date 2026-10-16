@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-02T10:52:16.185398+00:00",
+  "generated_at": "2026-10-16T10:20:38.210733+00:00",
   "topics": [
     {
       "key": "inbox_zero_anxiety",
@@ -108,6 +108,114 @@
       "hook": "You stare at the clinic ceiling, trapped in a loop of worst-case scenarios.",
       "titulo": "How to Stop Torturing Yourself While Waiting for Bad News",
       "visual": "dark hospital corridor, flickering fluorescent light, cold metal chairs, rain"
+    },
+    {
+      "key": "algorithm_shadowban",
+      "stoic": "Seneca",
+      "principle": "Focus only on what is in your direct power",
+      "stressor": "Sudden drop in content views and algorithm reach",
+      "hook": "You spent three weeks editing a video, and the algorithm buried it in zero views overnight.",
+      "titulo": "Your Views Dropped? The Seneca Reset for Digital Control",
+      "visual": "dark glowing monitor, cold rain on window, ancient marble hand, cinematic shadows"
+    },
+    {
+      "key": "remote_isolation",
+      "stoic": "Marcus Aurelius",
+      "principle": "The inner citadel and self-sufficiency",
+      "stressor": "Extreme loneliness from working entirely from home",
+      "hook": "You have not spoken a single word aloud by 3 PM because your entire life is confined to a laptop screen.",
+      "titulo": "Working Alone Every Day? Marcus Aurelius on Solitude",
+      "visual": "empty minimalist room, dim desk lamp, dark moody fog, stone bust silhouette"
+    },
+    {
+      "key": "subscription_creep",
+      "stoic": "Epictetus",
+      "principle": "Desire only what you need and master unnecessary wants",
+      "stressor": "Hidden monthly micro-subscriptions bleeding bank accounts",
+      "hook": "You check your credit card statement and realize forty dollars vanished on apps you forgot you installed.",
+      "titulo": "Drowning in Subscriptions? Epictetus on Modern Luxury",
+      "visual": "dark banking graphs, flickering candle, melting wax, cracked marble pillar"
+    },
+    {
+      "key": "ghosted_applications",
+      "stoic": "Zeno",
+      "principle": "Radical acceptance of external outcomes",
+      "stressor": "Endless automated job rejection emails after months of applying",
+      "hook": "You receive your fiftieth robotic rejection email for a job you were genuinely qualified to do.",
+      "titulo": "Endless Job Rejections? Zeno's Guide to Radical Acceptance",
+      "visual": "empty dark hallway, single harsh overhead light, dust motes falling, ancient ruin"
+    },
+    {
+      "key": "ai_job_anxiety",
+      "stoic": "Seneca",
+      "principle": "Suffering more in imagination than in reality",
+      "stressor": "Fear of being replaced by artificial intelligence in the workplace",
+      "hook": "You spend your entire evening reading articles about artificial intelligence rendering your career completely obsolete.",
+      "titulo": "Scared of AI Taking Your Job? Seneca on Anticipated Fear",
+      "visual": "glowing server racks, dark data center, ancient stone face, green digital rain"
+    },
+    {
+      "key": "unsolicited_feedback",
+      "stoic": "Musonius Rufus",
+      "principle": "Evaluate the source of an opinion before internalizing it",
+      "stressor": "Harsh, unhelpful public comments on personal creative projects",
+      "hook": "A stranger leaves a brutal critique on your public portfolio without knowing a fraction of your effort.",
+      "titulo": "Hated Online? Musonius Rufus on Unsolicited Opinions",
+      "visual": "dark mirror reflection, cracked glass, dim studio lights, stoic bust"
+    },
+    {
+      "key": "burned_out_sabbatical",
+      "stoic": "Marcus Aurelius",
+      "principle": "Valuing time above all external possessions",
+      "stressor": "Guilt over taking a single day off to rest from burnout",
+      "hook": "You finally take a day off to rest, but your chest stays tight with the guilt of not being productive.",
+      "titulo": "Guilty for Resting? Marcus Aurelius on the Value of Time",
+      "visual": "dark moody bedroom, morning fog, hourglass running out, ancient marble statue"
+    },
+    {
+      "key": "relationship_texts",
+      "stoic": "Epictetus",
+      "principle": "Separating facts from your own catastrophic interpretations",
+      "stressor": "Over-analyzing a partner's dry text message or delayed reply",
+      "hook": "You stare at a single unreturned text message for two hours, inventing worst-case scenarios in your head.",
+      "titulo": "Left on Read? Epictetus on Stopping Narrative Spirals",
+      "visual": "glowing smartphone screen, dark rainy night, solitary candle, weathered stone hand"
+    },
+    {
+      "key": "lifestyle_inflation",
+      "stoic": "Seneca",
+      "principle": "Practicing voluntary poverty to test inner resilience",
+      "stressor": "Feeling poor despite a good salary because expenses scaled up instantly",
+      "hook": "You got a massive raise last year, yet somehow your bank account is emptier than when you started.",
+      "titulo": "More Money, Same Stress? Seneca on Lifestyle Inflation",
+      "visual": "dark vault, heavy iron keys, glowing gold coins, dusty ancient temple"
+    },
+    {
+      "key": "family_group_chat",
+      "stoic": "Zeno",
+      "principle": "Maintaining emotional detachment from family drama",
+      "stressor": "Being dragged into toxic political or emotional arguments in a family chat",
+      "hook": "Your phone buzzes with a massive family group chat argument that instantly ruins your entire morning.",
+      "titulo": "Toxic Family Group Chats? Zeno on Emotional Detachment",
+      "visual": "dark cracked smartphone, flickering firelight, ancient ruin columns, heavy shadow"
+    },
+    {
+      "key": "relocation_culture_shock",
+      "stoic": "Musonius Rufus",
+      "principle": "Finding home within your own character anywhere in the world",
+      "stressor": "Severe alienation and loneliness after moving to a new city for work",
+      "hook": "You sit alone in an unfurnished apartment in a brand new city where you do not know a single soul.",
+      "titulo": "Lonely in a New City? Musonius Rufus on Finding Home",
+      "visual": "empty dark room, cardboard boxes, rainy window, classical sculpture profile"
+    },
+    {
+      "key": "constant_news_cycle",
+      "stoic": "Marcus Aurelius",
+      "principle": "Withdrawing inward when external chaos becomes deafening",
+      "stressor": "Mental exhaustion from non-stop global crisis reporting",
+      "hook": "You wake up and immediately scroll through three separate breaking news disasters before your feet even touch the floor.",
+      "titulo": "Exhausted by Global News? Marcus Aurelius on Mental Retreat",
+      "visual": "dark stormy ocean, lightning flash, ancient marble head, heavy cinematic contrast"
     }
   ]
 }
