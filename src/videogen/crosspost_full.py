@@ -14,6 +14,7 @@ Short debe llamar `crosspost_short(...)` tras el upload YT y ya está.
 """
 from __future__ import annotations
 
+import os
 from pathlib import Path
 from typing import Any
 
@@ -38,7 +39,7 @@ def _ig_allowed(channel_label: str) -> bool:
 
 
 def crosspost_short(dst_dir: Path, title: str, yt_url: str,
-                     teaser: str = "", channel_label: str = "canal") -> dict[str, bool]:
+                     teaser: str = "", channel_label: str = "canal") -> dict[str, object]:
     """Postea a Bluesky + Mastodon + Threads + Instagram (best-effort).
 
     Cada error se aísla — un fallo en una plataforma no rompe las demás.
@@ -47,7 +48,7 @@ def crosspost_short(dst_dir: Path, title: str, yt_url: str,
 
     Devuelve dict con emoji plataforma → bool éxito, para notif Telegram.
     """
-    result: dict[str, bool] = {}
+    result: dict[str, object] = {}
     slug = dst_dir.name if isinstance(dst_dir, Path) else str(dst_dir)
 
     # 1) Bluesky
@@ -82,25 +83,37 @@ def crosspost_short(dst_dir: Path, title: str, yt_url: str,
     # subimos canales no afines (padel/motor/IA/fractales/tax/rankings).
     if not _ig_allowed(channel_label):
         print(f"  {channel_label} ig: SKIP (no en whitelist true crime ES)")
-        result["📸"] = False
+        result["📸"] = "skip"
     else:
         try:
             from . import instagram_poster
-            mp4: Path | None = None
-            if isinstance(dst_dir, Path) and dst_dir.exists():
-                for lang in ("es", "en"):
-                    p = dst_dir / f"video_{lang}_vertical.mp4"
-                    if p.exists():
-                        mp4 = p
-                        break
-            if mp4:
-                r = instagram_poster.post_reel_to_instagram(
-                    title, yt_url, mp4, slug, teaser=teaser
-                )
-                result["📸"] = bool(r)
+            # Pre-chequeo rate-limit (máx 6/24h + espaciado): si no toca, NO
+            # reencodamos ni subimos; el portero real está en post_reel_to_instagram.
+            _tok, _acc = instagram_poster._ig_creds()
+            _rl_ok = True
+            if _acc and os.environ.get("IG_RATE_BYPASS") != "1":
+                _rl_ok, _rl_why, _ = instagram_poster._ig_rate_check(_acc)
+                if not _rl_ok:
+                    print(f"  {channel_label} ig: ⏭️ throttle — {_rl_why}")
+                    result["📸"] = "skip"
+            if not _rl_ok:
+                pass  # ya marcado "skip"
             else:
-                print(f"  {channel_label} ig: no mp4 vertical en {dst_dir}")
-                result["📸"] = False
+                mp4: Path | None = None
+                if isinstance(dst_dir, Path) and dst_dir.exists():
+                    for lang in ("es", "en"):
+                        p = dst_dir / f"video_{lang}_vertical.mp4"
+                        if p.exists():
+                            mp4 = p
+                            break
+                if mp4:
+                    r = instagram_poster.post_reel_to_instagram(
+                        title, yt_url, mp4, slug, teaser=teaser
+                    )
+                    result["📸"] = bool(r)
+                else:
+                    print(f"  {channel_label} ig: no mp4 vertical en {dst_dir}")
+                    result["📸"] = False
         except Exception as e:
             print(f"  {channel_label} ig fail: {e}")
             result["📸"] = False
@@ -110,13 +123,13 @@ def crosspost_short(dst_dir: Path, title: str, yt_url: str,
 
 def crosspost_short_from_mp4(mp4_path: Path, title: str, yt_url: str,
                               teaser: str = "", channel_label: str = "canal",
-                              slug: str | None = None) -> dict[str, bool]:
+                              slug: str | None = None) -> dict[str, object]:
     """Variante para pipelines que solo tienen la ruta al mp4 sin dst_dir.
 
     Ambient/MenteEnCalma genera el mp4 fuera de output/{pending,uploaded}/{slug}/,
     así que llamamos aquí con la ruta directa.
     """
-    result: dict[str, bool] = {}
+    result: dict[str, object] = {}
     slug = slug or (mp4_path.stem if isinstance(mp4_path, Path) else "short")
 
     try:
@@ -143,24 +156,39 @@ def crosspost_short_from_mp4(mp4_path: Path, title: str, yt_url: str,
     # IG whitelist true crime ES — canales fuera del nicho NO publican
     if not _ig_allowed(channel_label):
         print(f"  {channel_label} ig: SKIP (no en whitelist true crime ES)")
-        result["📸"] = False
+        result["📸"] = "skip"
     else:
         try:
             from . import instagram_poster
-            if mp4_path and Path(mp4_path).exists():
-                r = instagram_poster.post_reel_to_instagram(
-                    title, yt_url, Path(mp4_path), slug, teaser=teaser
-                )
-                result["📸"] = bool(r)
-            else:
-                print(f"  {channel_label} ig: mp4 no existe {mp4_path}")
-                result["📸"] = False
+            _tok, _acc = instagram_poster._ig_creds()
+            _rl_ok = True
+            if _acc and os.environ.get("IG_RATE_BYPASS") != "1":
+                _rl_ok, _rl_why, _ = instagram_poster._ig_rate_check(_acc)
+                if not _rl_ok:
+                    print(f"  {channel_label} ig: ⏭️ throttle — {_rl_why}")
+                    result["📸"] = "skip"
+            if _rl_ok:
+                if mp4_path and Path(mp4_path).exists():
+                    r = instagram_poster.post_reel_to_instagram(
+                        title, yt_url, Path(mp4_path), slug, teaser=teaser
+                    )
+                    result["📸"] = bool(r)
+                else:
+                    print(f"  {channel_label} ig: mp4 no existe {mp4_path}")
+                    result["📸"] = False
         except Exception as e:
             print(f"  {channel_label} ig fail: {e}"); result["📸"] = False
 
     return result
 
 
-def summary_line(result: dict[str, bool]) -> str:
-    """Formato compacto para notif Telegram: '🦋✅ · 🐘✅ · 🧵❌ · 📸✅'."""
-    return " · ".join(f"{k}{'✅' if v else '❌'}" for k, v in result.items())
+def summary_line(result: dict[str, object]) -> str:
+    """Formato compacto para notif Telegram: '🦋✅ · 🐘✅ · 🧵❌ · 📸⏭️'.
+
+    Valores: True→✅ (publicado), False→❌ (fallo), "skip"→⏭️ (omitido a
+    propósito: fuera de whitelist o rate-limit IG)."""
+    def _mark(v: object) -> str:
+        if v == "skip":
+            return "⏭️"
+        return "✅" if v else "❌"
+    return " · ".join(f"{k}{_mark(v)}" for k, v in result.items())

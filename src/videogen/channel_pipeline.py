@@ -185,12 +185,16 @@ def _load_video_title(slug: str) -> str | None:
     return None
 
 
-def _crosspost(cfg: ChannelConfig, slug: str, url: str, topic: dict) -> dict[str, bool]:
+def _crosspost(cfg: ChannelConfig, slug: str, url: str, topic: dict) -> dict[str, object]:
     """Cross-post RRSS con marca del nicho (emoji audiencia + cifra).
 
     url puede ser vacía si el canal aún no tiene YT (subimos solo a IG
-    que no requiere URL, y skip BS/MA/TH que sí la necesitan)."""
-    result: dict[str, bool] = {}
+    que no requiere URL, y skip BS/MA/TH que sí la necesitan).
+
+    Los valores del dict son True (publicado), False (fallo) o la cadena
+    "skip" (omitido a propósito: fuera de whitelist o rate-limit IG) → el
+    resumen de run_channel_once lo pinta ⏭️, no ❌."""
+    result: dict[str, object] = {}
     title = _load_video_title(slug) or topic.get("titulo", "")
     if not title:
         return result
@@ -231,25 +235,38 @@ def _crosspost(cfg: ChannelConfig, slug: str, url: str, topic: dict) -> dict[str
     from .crosspost_full import _ig_allowed
     if not _ig_allowed(cfg.slug):
         print(f"  {cfg.slug} ig: SKIP (no en whitelist true crime ES)")
-        result["📸"] = False
+        result["📸"] = "skip"
     else:
         try:
             from .config import UPLOADED_DIR, PENDING_DIR
             from . import instagram_poster
-            mp4 = None
-            for base in (UPLOADED_DIR, PENDING_DIR):
-                p = base / slug / "video_es_vertical.mp4"
-                if p.exists():
-                    mp4 = p
-                    break
-            if mp4:
-                r = instagram_poster.post_reel_to_instagram(
-                    title, url, mp4, slug, teaser=teaser,
-                )
-                result["📸"] = bool(r)
+            # Pre-chequeo de rate-limit: si ya tocamos el cap diario (6/24h) o aún
+            # no toca por espaciado, NO reencodamos ni subimos → ahorra trabajo y
+            # el resumen marca ⏭️ (omitido a propósito), no ❌ (fallo). El portero
+            # real vive dentro de post_reel_to_instagram; esto solo evita el curro.
+            _tok, _acc = instagram_poster._ig_creds()
+            _rl_ok = True
+            if _acc and os.environ.get("IG_RATE_BYPASS") != "1":
+                _rl_ok, _rl_reason, _ = instagram_poster._ig_rate_check(_acc)
+                if not _rl_ok:
+                    print(f"  {cfg.slug} ig: ⏭️ throttle — {_rl_reason}")
+            if not _rl_ok:
+                result["📸"] = "skip"
             else:
-                print(f"  {cfg.slug} ig: no mp4 encontrado para {slug}")
-                result["📸"] = False
+                mp4 = None
+                for base in (UPLOADED_DIR, PENDING_DIR):
+                    p = base / slug / "video_es_vertical.mp4"
+                    if p.exists():
+                        mp4 = p
+                        break
+                if mp4:
+                    r = instagram_poster.post_reel_to_instagram(
+                        title, url, mp4, slug, teaser=teaser,
+                    )
+                    result["📸"] = bool(r)
+                else:
+                    print(f"  {cfg.slug} ig: no mp4 encontrado para {slug}")
+                    result["📸"] = False
         except Exception as e:
             print(f"  {cfg.slug} ig fail: {e}")
             result["📸"] = False
@@ -493,7 +510,9 @@ def run_channel_once(cfg: ChannelConfig) -> dict[str, Any]:
 
         _mark_used(ROOT / "output" / cfg.ledger_filename, topic["key"])
         cross = _crosspost(cfg, slug, url, topic)
-        cross_summary = " · ".join(f"{k}{'✅' if v else '❌'}" for k, v in cross.items())
+        cross_summary = " · ".join(
+            f"{k}{'⏭️' if v == 'skip' else ('✅' if v else '❌')}"
+            for k, v in cross.items())
         yt_line = f"YT: {url}" if url and url != "?" else f"YT {yt_status}"
         _notify(f"✅ <b>{cfg.display_name}</b> · {yt_line}\n"
                 f"<i>{topic.get('titulo','')[:60]}</i> · RRSS {cross_summary}")

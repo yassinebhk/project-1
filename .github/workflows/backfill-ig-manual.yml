@@ -16,15 +16,20 @@ on:
   workflow_dispatch:
     inputs:
       count:
-        description: "Cuántos reels IG subir (recomendado 5-10 para no saturar)"
+        description: "Cuántos reels IG intentar (el cap diario de 6/día lo limita salvo force)"
         required: true
         type: string
-        default: "8"
+        default: "6"
       platforms:
         description: "Plataformas coma-sep (default 'instagram' solo; 'instagram,threads' para además)"
         required: false
         type: string
         default: "instagram"
+      force:
+        description: "Saltar el cap diario y el espaciado de IG (populate supervisado > 6/día)"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -34,7 +39,13 @@ jobs:
     uses: ./.github/workflows/_videogen-job.yml
     with:
       command: backfill-once
+      # IG_MIN_GAP_MIN=0: esto es un populate supervisado y manual → puede subir
+      # seguido (sin el espaciado de 4h del flujo automático), pero SIGUE
+      # respetando el cap diario de 6/día salvo que marques `force`.
+      # force=true → IG_RATE_BYPASS=1 salta cap y espaciado por completo.
       extra_env: |
         BACKFILL_PER_PLATFORM=${{ inputs.count }}
         BACKFILL_PLATFORMS=${{ inputs.platforms }}
+        IG_MIN_GAP_MIN=0
+        IG_RATE_BYPASS=${{ inputs.force == true && '1' || '0' }}
     secrets: inherit

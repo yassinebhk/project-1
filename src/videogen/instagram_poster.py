@@ -56,11 +56,102 @@ def _append_ig_log(entry: dict) -> None:
             log = []
         entry["ts"] = datetime.now(timezone.utc).isoformat()
         log.append(entry)
-        log = log[-100:]
+        # 250 (antes 100): con el rate-limit se registran también skips; a ~6
+        # OK/día esto garantiza que las entradas 'ok' de las últimas 24h NUNCA
+        # son expulsadas por skips → el contador del cap no se puede falsear.
+        log = log[-250:]
         IG_LOG_PATH.write_text(json.dumps(log, indent=2, ensure_ascii=False),
                                 encoding="utf-8")
     except Exception as e:
         print(f"  ig: log write failed: {e}")
+
+
+# ─────────────────────────────────────────────────────────────────────────
+# Rate-limit + espaciado de publicación IG  (añadido 16/10/26)
+# ─────────────────────────────────────────────────────────────────────────
+# El user pidió: subir COMO MUCHO ~5-6 reels/día y ESPACIADOS, no en ráfaga.
+# Dumpear muchos reels de golpe es señal de spam para Meta → riesgo de
+# shadowban / pérdida de alcance (ver memorias ig-whitelist-true-crime-antimix
+# y threads-borrado-contenido-repetido). El portero vive AQUÍ porque es el
+# ÚNICO punto por el que pasan TODAS las vías de subida a IG (channel_pipeline,
+# crosspost_full, backfill, teasers long-form, tax/ia_autonomos).
+#
+# Config por entorno (defaults sensatos):
+#   IG_DAILY_CAP     máx. reels OK por ventana MÓVIL de 24h   (default 6)
+#   IG_MIN_GAP_MIN   minutos mínimos entre reels OK           (default 24h/CAP)
+#                    → con el default, 6/día quedan equiespaciados (~1 cada 4h).
+#                    IG_MIN_GAP_MIN=0 desactiva SOLO el espaciado (sigue el cap).
+#   IG_RATE_BYPASS=1 salta cap Y espaciado (uso manual supervisado).
+#
+# Se cuenta POR CUENTA IG (bucket hasheado — el log va al repo PÚBLICO, así que
+# NUNCA el account_id en claro) usando output/ig_publish_log.json como verdad.
+IG_RATE_WINDOW_SEC = 24 * 3600
+
+
+def _ig_bucket(ig_account_id: str) -> str:
+    """Bucket NO identificativo por cuenta IG (sha1[:8]). El log es público."""
+    import hashlib
+    return hashlib.sha1((ig_account_id or "").encode("utf-8")).hexdigest()[:8]
+
+
+def _ig_rate_state(bucket: str) -> tuple[int, Optional[float]]:
+    """(nº reels OK en 24h, epoch del último OK) para esta cuenta IG.
+
+    Las entradas antiguas sin `ig_bucket` (previas a este cambio) se cuentan
+    para CUALQUIER cuenta (conservador: evita pasarse del cap el día del deploy;
+    se auto-resuelven al salir de la ventana de 24h)."""
+    if not IG_LOG_PATH.exists():
+        return 0, None
+    try:
+        log = json.loads(IG_LOG_PATH.read_text(encoding="utf-8"))
+    except Exception:
+        return 0, None
+    now = time.time()
+    count = 0
+    last_ok: Optional[float] = None
+    for e in log:
+        if e.get("status") != "ok":
+            continue
+        b = e.get("ig_bucket")
+        if b is not None and b != bucket:
+            continue
+        try:
+            ts = datetime.fromisoformat(e["ts"]).timestamp()
+        except Exception:
+            continue
+        if now - ts <= IG_RATE_WINDOW_SEC:
+            count += 1
+            if last_ok is None or ts > last_ok:
+                last_ok = ts
+    return count, last_ok
+
+
+def _ig_rate_check(ig_account_id: str) -> tuple[bool, str, str]:
+    """¿Se puede publicar en IG ahora? Devuelve (allowed, motivo, bucket).
+
+    `motivo` es informativo cuando allowed=False (va al log/consola)."""
+    bucket = _ig_bucket(ig_account_id)
+    try:
+        cap = max(1, int(os.environ.get("IG_DAILY_CAP", "6") or "6"))
+    except ValueError:
+        cap = 6
+    gap_env = os.environ.get("IG_MIN_GAP_MIN", "").strip()
+    try:
+        gap_min = int(gap_env) if gap_env else (24 * 60) // cap
+    except ValueError:
+        gap_min = (24 * 60) // cap
+    gap_min = max(0, gap_min)
+
+    count, last_ok = _ig_rate_state(bucket)
+    if count >= cap:
+        return False, f"cap diario alcanzado ({count}/{cap} en 24h)", bucket
+    if last_ok is not None and gap_min > 0:
+        elapsed = (time.time() - last_ok) / 60.0
+        if elapsed < gap_min:
+            return (False,
+                    f"espaciado: último reel hace {elapsed:.0f}min < {gap_min}min "
+                    f"mínimo ({count}/{cap} en 24h)", bucket)
+    return True, f"ok ({count}/{cap} en 24h)", bucket
 
 
 REELS_HOST_DIR = ROOT / "docs" / "reels"
@@ -638,6 +729,19 @@ def post_reel_to_instagram(video_title: str, video_url: str,
         print(f"  ig DRY-RUN — {len(caption)} chars:\n{caption}")
         return {"dry_run": True, "caption": caption}
 
+    # ── Rate-limit + espaciado IG (único portero para TODAS las vías) ──
+    # máx IG_DAILY_CAP reels/24h y ≥ IG_MIN_GAP_MIN entre ellos → equiespaciados.
+    # Si se excede → NO se sube (return None): en el flujo en vivo simplemente se
+    # omite; en el backfill el candidato NO se marca como posteado y se reintenta
+    # en la siguiente corrida → se difiere, no se pierde el mejor contenido.
+    _rl_ok, _rl_reason, _ig_bkt = _ig_rate_check(ig_account_id)
+    if not _rl_ok and os.environ.get("IG_RATE_BYPASS") != "1":
+        print(f"  ig: SKIP rate-limit — {_rl_reason} · {slug}")
+        _append_ig_log({"slug": slug, "title": video_title[:80],
+                         "status": "skip_rate_limit", "reason": _rl_reason,
+                         "ig_bucket": _ig_bkt})
+        return None
+
     # Resumable Upload DESACTIVADO 21/09: la API de IG Business Login NO lo soporta
     # (devuelve 400 "video_url is required"). Dormante tras IG_RESUMABLE=1 por si en
     # el futuro Meta lo habilita. El fix real es R2 (host fiable) — ver _prepare_public_reel.
@@ -648,7 +752,8 @@ def post_reel_to_instagram(video_title: str, video_url: str,
             _url = f"https://instagram.com/reel/{_mid}"
             print(f"  ig: ✅ Reel publicado (resumable, sin URL) → {_url}")
             _append_ig_log({"slug": slug, "title": video_title[:80], "status": "ok",
-                            "media_id": _mid, "url": _url, "via": "resumable"})
+                            "media_id": _mid, "url": _url, "via": "resumable",
+                            "ig_bucket": _ig_bkt})
             return {"media_id": _mid, "url": _url, "caption": caption}
         print("  ig: resumable llegó a FINISHED pero publish falló → fallback URL")
     elif _ru_cid:
@@ -730,5 +835,6 @@ def post_reel_to_instagram(video_title: str, video_url: str,
     url = f"https://instagram.com/reel/{media_id}"
     print(f"  ig: ✅ Reel published → {url}")
     _append_ig_log({"slug": slug, "title": video_title[:80],
-                     "status": "ok", "media_id": media_id, "url": url})
+                     "status": "ok", "media_id": media_id, "url": url,
+                     "ig_bucket": _ig_bkt})
     return {"media_id": media_id, "url": url, "caption": caption}
