@@ -453,6 +453,15 @@
           "topic": "[CRIMEN] Caso Palma Arena: cómo el expresidente balear Jaume Matas desvió fondos públicos para su propia campaña, acumulando múltiples condenas firmes desde 2012"
         }
       ]
+    },
+    "pretoria": {
+      "count": 1,
+      "history": [
+        {
+          "ts": "2026-10-16T09:02:28.300438+00:00",
+          "topic": "[CRIMEN] Caso Pretoria: cómo Alavedra y Prenafeta saquearon 45 millones en comisiones urbanísticas en Catalunya con condena firme de la Audiencia Nacional en 2018."
+        }
+      ]
     }
   }
 }
