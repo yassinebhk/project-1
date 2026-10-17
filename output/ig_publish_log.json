@@ -814,5 +814,13 @@
     "url": "https://instagram.com/reel/17912251326518526",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-16T22:17:46.538496+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-language-practice",
+    "title": "Top 5 AI tools for interactive language practice · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 136min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-17T00:33:34.516243+00:00"
   }
 ]
