@@ -7,6 +7,7 @@ país + capital. Cierre con CTA "comment your score". Ver [[tanda-canales-02-10]
 """
 from __future__ import annotations
 
+import os
 import subprocess
 import urllib.request
 from datetime import datetime, timezone
@@ -17,6 +18,9 @@ from PIL import Image, ImageDraw, ImageFont
 from ..config import ROOT
 
 W, H = 1080, 1920
+# Piel visual ACTIVA (se reasigna por episodio en _apply_theme → cada día sale una
+# paleta distinta). WHITE se mantiene fijo: es el texto principal y el marco de la
+# bandera, debe seguir legible sobre cualquier fondo. Defaults = tema "navy".
 BG = (14, 23, 38)          # navy oscuro
 ACCENT = (57, 224, 208)    # turquesa
 GOLD = (245, 197, 66)
@@ -24,6 +28,73 @@ WHITE = (240, 244, 248)
 MUTED = (150, 165, 185)
 FONT_PATH = ROOT / "assets" / "fonts" / "Montserrat.ttf"
 FLAG_CACHE = ROOT / "output" / "geoquiz_assets" / "flags"
+
+# ── Rotación de piel visual (anti "contenido repetitivo" de TikTok, 17/10/26) ──
+# TikTok capa lo que percibe como el MISMO vídeo repetido. El quiz variaba las
+# preguntas pero la piel (fondo navy + intro idéntica + mismos colores) era clavada
+# cada día → firma de contenido repetitivo. Rotamos paleta + copy por episodio (por
+# día) para que cada subida se vea distinta. Todos los fondos son OSCUROS para que
+# WHITE/MUTED sigan legibles y el marco blanco de la bandera funcione.
+THEMES = [
+    {"name": "navy",    "bg": (14, 23, 38), "accent": (57, 224, 208),  "gold": (245, 197, 66),  "muted": (150, 165, 185)},
+    {"name": "plum",    "bg": (26, 16, 40), "accent": (200, 130, 255), "gold": (255, 185, 95),  "muted": (178, 162, 192)},
+    {"name": "forest",  "bg": (10, 30, 22), "accent": (95, 230, 150),  "gold": (240, 205, 90),  "muted": (152, 182, 162)},
+    {"name": "crimson", "bg": (32, 16, 22), "accent": (255, 115, 120), "gold": (245, 200, 100), "muted": (196, 162, 166)},
+    {"name": "cyan",    "bg": (8, 30, 36),  "accent": (70, 214, 224),  "gold": (250, 210, 120), "muted": (150, 182, 186)},
+    {"name": "indigo",  "bg": (18, 18, 46), "accent": (126, 152, 255), "gold": (255, 200, 110), "muted": (168, 172, 202)},
+    {"name": "amber",   "bg": (32, 23, 14), "accent": (255, 172, 86),  "gold": (250, 222, 120), "muted": (198, 178, 156)},
+]
+
+# Variantes de copy de intro/outro — cambian los frames 1º y último (los que más
+# pesan en el hash perceptual) además del color.
+INTRO_COPY = [
+    {"l1": "GUESS THE",  "l2": "COUNTRY",   "sub": "flags · capitals · maps · monuments"},
+    {"l1": "CAN YOU",    "l2": "GUESS IT?", "sub": "flags · capitals · silhouettes"},
+    {"l1": "NAME THE",   "l2": "COUNTRY",   "sub": "one shot — how many can you get?"},
+    {"l1": "COUNTRY",    "l2": "QUIZ",      "sub": "how good is your geography?"},
+    {"l1": "GEO",        "l2": "CHALLENGE", "sub": "flags · capitals · maps"},
+]
+# OJO: la fuente (Montserrat) NO tiene glifos de emoji → cualquier emoji sale como
+# cuadro "tofu" en el frame. Mantener el copy SIN emojis (van en title/description).
+# Plantillas de título (metadata YT/caption) — rotan por día para no repetir el
+# mismo título clavado (otra señal de contenido repetitivo). El emoji aquí SÍ vale:
+# es texto de metadata, no se renderiza con la fuente del frame.
+TITLES = [
+    "Guess the country 🌍 | {n} questions, easy → hard",
+    "Can you guess all {n}? 🌍 Geography quiz",
+    "Name the country 🌍 | {n}-question geo quiz",
+    "Geo challenge 🌍 | {n} countries, easy → hard",
+    "How good is your geography? 🌍 {n} questions",
+]
+OUTRO_COPY = [
+    {"l1": "How many",   "l2": "did you get?", "cta": "Comment your score",       "follow": "Follow for more geo quizzes"},
+    {"l1": "What's your", "l2": "score?",      "cta": "Drop it in the comments",  "follow": "Follow for a quiz every day"},
+    {"l1": "Did you",    "l2": "ace it?",      "cta": "Comment how many you got", "follow": "Follow — new quiz daily"},
+    {"l1": "Count your", "l2": "correct ones", "cta": "Tell me your score below", "follow": "Follow for more"},
+]
+
+
+def _rotation_index() -> int:
+    """Índice de tema para hoy. GEOQUIZ_THEME (nombre o nº) lo fuerza (preview/test);
+    si no, rota por día del calendario → días seguidos salen con piel distinta."""
+    override = os.environ.get("GEOQUIZ_THEME", "").strip()
+    if override:
+        for i, t in enumerate(THEMES):
+            if t["name"] == override.lower():
+                return i
+        try:
+            return int(override) % len(THEMES)
+        except ValueError:
+            pass
+    return datetime.now(timezone.utc).toordinal() % len(THEMES)
+
+
+def _apply_theme(idx: int) -> str:
+    """Reasigna la paleta activa (globals) al tema idx. Devuelve el nombre."""
+    global BG, ACCENT, GOLD, MUTED
+    t = THEMES[idx % len(THEMES)]
+    BG, ACCENT, GOLD, MUTED = t["bg"], t["accent"], t["gold"], t["muted"]
+    return t["name"]
 
 
 def _font(size: int):
@@ -57,6 +128,16 @@ def _text_center(draw, cx, y, text, font, fill, max_w=None):
         draw.text((cx - wline / 2, yy), ln, font=font, fill=fill)
         yy += lh
     return yy - y
+
+
+def _fit_font(draw, text: str, size: int, max_w: int):
+    """Fuente que garantiza que `text` cabe en una línea de ancho max_w (encoge
+    hasta 40px). Evita que un titular largo (ej. 'CHALLENGE') se salga del frame."""
+    f = _font(size)
+    while size > 40 and draw.textlength(text, font=f) > max_w:
+        size -= 6
+        f = _font(size)
+    return f
 
 
 def _base() -> Image.Image:
@@ -115,13 +196,13 @@ PROMPT_BY_MODE = {
 }
 
 
-def _frame_intro(path: Path) -> None:
+def _frame_intro(path: Path, copy: dict, n_rounds: int = 10) -> None:
     img = _base()
     d = ImageDraw.Draw(img)
-    _text_center(d, W // 2, 470, "GUESS THE", _font(120), WHITE)
-    _text_center(d, W // 2, 610, "COUNTRY", _font(170), ACCENT)
-    _text_center(d, W // 2, 850, "flags · capitals · maps · monuments", _font(52), MUTED, max_w=1000)
-    _text_center(d, W // 2, 1120, "10 questions", _font(104), GOLD)
+    _text_center(d, W // 2, 470, copy["l1"], _fit_font(d, copy["l1"], 120, W - 80), WHITE)
+    _text_center(d, W // 2, 610, copy["l2"], _fit_font(d, copy["l2"], 170, W - 80), ACCENT)
+    _text_center(d, W // 2, 850, copy["sub"], _font(52), MUTED, max_w=1000)
+    _text_center(d, W // 2, 1120, f"{n_rounds} questions", _font(104), GOLD)
     _text_center(d, W // 2, 1280, "easy → hard", _font(72), WHITE)
     _text_center(d, W // 2, 1550, "Comment your score below", _font(60), MUTED, max_w=900)
     img.save(path)
@@ -183,17 +264,18 @@ def _frame_reveal(path: Path, asset: Path | None, mode: str, text_payload: str,
     if mode == "fact" and text_payload:
         _text_center(d, W // 2, 1490, text_payload, _font(42), MUTED, max_w=980)
     elif mode == "monument" and text_payload:
-        _text_center(d, W // 2, 1490, f"🏛 {text_payload}", _font(44), MUTED, max_w=980)
+        # Sin emoji 🏛: la fuente no lo tiene y saldría como cuadro roto (tofu).
+        _text_center(d, W // 2, 1490, text_payload, _font(44), MUTED, max_w=980)
     img.save(path)
 
 
-def _frame_outro(path: Path) -> None:
+def _frame_outro(path: Path, copy: dict) -> None:
     img = _base()
     d = ImageDraw.Draw(img)
-    _text_center(d, W // 2, 560, "How many", _font(120), WHITE)
-    _text_center(d, W // 2, 700, "did you get?", _font(120), ACCENT)
-    _text_center(d, W // 2, 1050, "Comment your score", _font(80), GOLD, max_w=940)
-    _text_center(d, W // 2, 1420, "Follow for more geo quizzes", _font(62), MUTED, max_w=940)
+    _text_center(d, W // 2, 560, copy["l1"], _fit_font(d, copy["l1"], 120, W - 80), WHITE)
+    _text_center(d, W // 2, 700, copy["l2"], _fit_font(d, copy["l2"], 120, W - 80), ACCENT)
+    _text_center(d, W // 2, 1050, copy["cta"], _font(80), GOLD, max_w=940)
+    _text_center(d, W // 2, 1420, copy["follow"], _font(62), MUTED, max_w=940)
     img.save(path)
 
 
@@ -289,9 +371,17 @@ def generate_geoquiz(out_dir: Path, questions: list[tuple], n_rounds: int = 10) 
         return None
     n_rounds = len(chosen)
 
+    # Piel visual del episodio: rota paleta + copy por día (anti contenido repetitivo).
+    # Se aplica ANTES de construir ningún frame → intro/round/reveal/outro usan esta paleta.
+    theme_name = _apply_theme(_rotation_index())
+    _ordinal = datetime.now(timezone.utc).toordinal()
+    intro_copy = INTRO_COPY[_ordinal % len(INTRO_COPY)]
+    outro_copy = OUTRO_COPY[_ordinal % len(OUTRO_COPY)]
+    print(f"  geoquiz: piel visual = tema '{theme_name}' · intro '{intro_copy['l1']} {intro_copy['l2']}'")
+
     # construir frames + lista concat (duraciones en segundos)
     frames: list[tuple[Path, float]] = []
-    intro = work / "f_intro.png"; _frame_intro(intro); frames.append((intro, 2.6))
+    intro = work / "f_intro.png"; _frame_intro(intro, intro_copy, n_rounds); frames.append((intro, 2.6))
     for i, q in enumerate(chosen, 1):
         for num, dur in ((3, 1.0), (2, 1.0), (1, 1.0)):
             fr = work / f"f_r{i}_{num}.png"
@@ -301,7 +391,7 @@ def generate_geoquiz(out_dir: Path, questions: list[tuple], n_rounds: int = 10) 
         _frame_reveal(rv, q["asset"], q["mode"], q["text"], i, n_rounds,
                       q["name"], q["capital"], q["flag"], q["tier"])
         frames.append((rv, 1.9))
-    outro = work / "f_outro.png"; _frame_outro(outro); frames.append((outro, 2.8))
+    outro = work / "f_outro.png"; _frame_outro(outro, outro_copy); frames.append((outro, 2.8))
 
     # Secuencia numerada (image2) = método robusto entre versiones de ffmpeg:
     # cada frame se repite dur*fps veces y se codifica a 30 fps constante.
@@ -335,7 +425,7 @@ def generate_geoquiz(out_dir: Path, questions: list[tuple], n_rounds: int = 10) 
 
     names = ", ".join(q["name"] for q in chosen)
     modes = sorted(set(q["mode"] for q in chosen))
-    title = f"Guess the country 🌍 | {n_rounds} questions, easy → hard"
+    title = TITLES[_ordinal % len(TITLES)].format(n=n_rounds)
     desc = (
         f"Can you name all {n_rounds} countries? Comment your score below!\n\n"
         f"Modes used: {', '.join(modes)}.\n"
@@ -346,7 +436,7 @@ def generate_geoquiz(out_dir: Path, questions: list[tuple], n_rounds: int = 10) 
         "#geography #quiz #flags #capitals #guessthecountry #trivia #geoquiz #shorts #learnontiktok"
     )
     return {
-        "slug": slug, "video_path": str(final),
+        "slug": slug, "video_path": str(final), "theme": theme_name,
         "title": title[:100], "description": desc[:4900],
         "tags": ["geography", "quiz", "flags", "capitals", "monuments", "guess the country",
                  "trivia", "geoquiz", "shorts"],
