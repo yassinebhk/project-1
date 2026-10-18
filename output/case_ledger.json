@@ -475,6 +475,15 @@
           "topic": "[CRIMEN] Caso Nóos: el mecanismo de Iñaki Urdangarin para captar 6 millones de fondos públicos y su condena de 2018"
         }
       ]
+    },
+    "banesto": {
+      "count": 1,
+      "history": [
+        {
+          "ts": "2026-10-18T12:49:16.558012+00:00",
+          "topic": "Mario Conde y el caso Banesto: el agujero patrimonial de 605.000 millones de pesetas que provocó la histórica intervención judicial del banco en 1993"
+        }
+      ]
     }
   }
 }
