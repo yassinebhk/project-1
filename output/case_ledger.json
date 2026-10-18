@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 24,
+      "count": 25,
       "history": [
-        {
-          "ts": "2026-09-18T09:04:15.637716+00:00",
-          "topic": "Torres KIO: el fraude bursátil de 300 millones de euros que sacudió la economía española"
-        },
         {
           "ts": "2026-09-19T09:03:34.738489+00:00",
           "topic": "KIO: cómo la Kuwait Investment Authority perdió 300 millones en la bolsa española con Javier de la Rosa"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-10-03T15:10:22.924797+00:00",
           "topic": "Caso KIO: el fraude bursátil de 300 millones de euros que sacudió la economía española"
+        },
+        {
+          "ts": "2026-10-18T14:34:22.161367+00:00",
+          "topic": "[CRIMEN] KIO: el fraude bursátil de 300 millones de euros que sacudió las Torres KIO de Madrid"
         }
       ]
     },
