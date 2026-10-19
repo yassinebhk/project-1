@@ -944,5 +944,13 @@
     "url": "https://instagram.com/reel/17936877111385514",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-19T14:09:33.125437+00:00"
+  },
+  {
+    "slug": "padel_tactic_back_wall_20261019_162744",
+    "title": "Off the Back Wall — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 152min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-19T16:41:06.795772+00:00"
   }
 ]
