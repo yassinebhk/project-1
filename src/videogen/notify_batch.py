@@ -23,27 +23,39 @@ _BUFFER: list[str] = []
 _FLUSHED = False
 
 
+def chat_muted(text: str = "") -> bool:
+    """¿Hay que SILENCIAR este mensaje de Telegram? Fuente ÚNICA de la política del
+    chat — la consultan add() Y los emisores directos (cli.py, features).
+
+    Bot de Telegram = SOLO GeoQuiz (user 06/10 + 19/10: "me llega mucha basura que
+    no me interesa"). En modo ONLY_GEOQUIZ (default ON) se silencia TODO lo que no
+    mencione GeoQuiz/TikTok — INCLUIDOS los urgentes (un fallo de otro canal = ruido;
+    un fallo de GeoQuiz lleva 'geoquiz' en el texto → pasa). El vídeo del GeoQuiz
+    (send_video_for_tiktok) NO pasa por aquí → siempre se envía. El reauth de YT
+    tampoco (healthcheck lo manda aparte: es crítico y accionable).
+    Reversible: TELEGRAM_ONLY_GEOQUIZ=0."""
+    if os.environ.get("TELEGRAM_ONLY_GEOQUIZ", "1").lower() in ("0", "false", "no"):
+        return False
+    tl = (text or "").lower()
+    return "geoquiz" not in tl and "tiktok" not in tl
+
+
 def add(text: str, urgent: bool = False) -> None:
-    """Encola un mensaje. urgent=True → envía inmediatamente."""
-    if urgent:
-        _send_message_now(text)
+    """Encola un mensaje (o lo envía ya si urgent). Aplica la política del chat
+    (chat_muted) TAMBIÉN a los urgentes, para que los fallos de canales que no sigues
+    dejen de spamear. Reversible con TELEGRAM_ONLY_GEOQUIZ=0."""
+    t = text or ""
+    if chat_muted(t):
         return
-    # Bot de Telegram = SOLO GeoQuiz (user 06/10: "que sea solo de eso, no me envíes
-    # vídeos de otras cosas ni contenido basura"). En modo ONLY_GEOQUIZ (default on),
-    # se descarta TODO lo no-urgente que no mencione GeoQuiz/TikTok. Las alertas de
-    # FALLO (urgent=True) SIEMPRE llegan — no son basura, las necesitas.
-    # Reversible: TELEGRAM_ONLY_GEOQUIZ=0 (vuelve al modo normal con resúmenes RRSS
-    # silenciados vía TELEGRAM_MUTE_RRSS_SUMMARIES).
-    import os as _os
-    t = (text or "")
-    _tl = t.lower()
-    if _os.environ.get("TELEGRAM_ONLY_GEOQUIZ", "1").lower() not in ("0", "false", "no"):
-        if "geoquiz" not in _tl and "tiktok" not in _tl:
-            return
-    elif _os.environ.get("TELEGRAM_MUTE_RRSS_SUMMARIES", "1").lower() not in ("0", "false", "no"):
+    if urgent:
+        _send_message_now(t)
+        return
+    # Modo normal (ONLY_GEOQUIZ off): silenciar resúmenes "· RRSS" por canal.
+    if os.environ.get("TELEGRAM_MUTE_RRSS_SUMMARIES", "1").lower() not in ("0", "false", "no"):
+        _tl = t.lower()
         if "· RRSS" in t and "geoquiz" not in _tl and "tiktok" not in _tl:
             return
-    _BUFFER.append(text)
+    _BUFFER.append(t)
 
 
 def flush() -> None:

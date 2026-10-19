@@ -1357,17 +1357,8 @@ def social_boost_cmd():
         else:
             lines.append(f"{icon} ❌ fallo post")
     print("\n".join(lines))
-    if tok and chat:
-        try:
-            req = urllib.request.Request(
-                f"https://api.telegram.org/bot{tok}/sendMessage",
-                data=json.dumps({"chat_id": int(chat), "text": "\n".join(lines),
-                                  "parse_mode": "HTML"}).encode(),
-                headers={"Content-Type": "application/json"},
-            )
-            urllib.request.urlopen(req, timeout=30).read()
-        except Exception as e:
-            print(f"tg notify fail: {e}")
+    from . import notify_batch
+    notify_batch.add("\n".join(lines), urgent=True)  # portero central: solo pasa si geoquiz/tiktok
 
 
 @cli.command(name="tax-once")
@@ -1917,19 +1908,8 @@ def newsjack_once_cmd():
         lines.append(f"· ✅ {result.get('slug','')}")
         lines.append(f"· topic: {result.get('topic','')[:100]}")
     print("\n".join(lines))
-    tok = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat = os.environ.get("TELEGRAM_CHAT_ID")
-    if tok and chat:
-        try:
-            req = urllib.request.Request(
-                f"https://api.telegram.org/bot{tok}/sendMessage",
-                data=json.dumps({"chat_id": int(chat), "text": "\n".join(lines),
-                                  "parse_mode": "HTML"}).encode(),
-                headers={"Content-Type": "application/json"},
-            )
-            urllib.request.urlopen(req, timeout=30).read()
-        except Exception as e:
-            print(f"tg notify fail: {e}")
+    from . import notify_batch
+    notify_batch.add("\n".join(lines), urgent=True)  # portero central: solo pasa si geoquiz/tiktok
 
 
 @cli.command(name="narrative-post")
@@ -1952,19 +1932,8 @@ def narrative_post_cmd():
             mark = "—" if val is None else ("✅" if val else "❌")
             lines.append(f"{icon} {mark}")
     print("\n".join(lines))
-    tok = os.environ.get("TELEGRAM_BOT_TOKEN")
-    chat = os.environ.get("TELEGRAM_CHAT_ID")
-    if tok and chat:
-        try:
-            req = urllib.request.Request(
-                f"https://api.telegram.org/bot{tok}/sendMessage",
-                data=json.dumps({"chat_id": int(chat), "text": "\n".join(lines),
-                                  "parse_mode": "HTML"}).encode(),
-                headers={"Content-Type": "application/json"},
-            )
-            urllib.request.urlopen(req, timeout=30).read()
-        except Exception as e:
-            print(f"tg notify fail: {e}")
+    from . import notify_batch
+    notify_batch.add("\n".join(lines), urgent=True)  # portero central: solo pasa si geoquiz/tiktok
 
 
 @cli.command(name="backfill-once")
@@ -2075,15 +2044,12 @@ def traffic_report_cmd(days: int):
         lines.append(line)
     tok = os.environ.get("TELEGRAM_BOT_TOKEN", "").strip()
     chat = os.environ.get("TELEGRAM_CHAT_ID", "").strip()
-    if tok and chat and lines:
+    if lines:
         txt = (f"📊 <b>Funnel RRSS→YouTube ({days}d)</b>\n"
                f"EXT_URL = clics desde enlaces externos (Bluesky/Mastodon/Threads)\n\n"
                + "\n".join("• " + l for l in lines))
-        try:
-            requests.post(f"https://api.telegram.org/bot{tok}/sendMessage",
-                          json={"chat_id": chat, "text": txt, "parse_mode": "HTML"}, timeout=15)
-        except Exception as e:
-            print("  telegram fail:", e)
+        from . import notify_batch
+        notify_batch.add(txt, urgent=True)  # portero central: solo pasa si geoquiz/tiktok
     if not lines:
         print("Ningún canal con scope analytics todavía → reautoriza para activar la medición del funnel.")
 
