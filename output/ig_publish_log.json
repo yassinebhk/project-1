@@ -952,5 +952,13 @@
     "reason": "espaciado: último reel hace 152min < 240min mínimo (4/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-19T16:41:06.795772+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-deep-visual-reasoning",
+    "title": "Top 5 AI tools for deep visual reasoning · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 205min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-19T17:34:10.509950+00:00"
   }
 ]
