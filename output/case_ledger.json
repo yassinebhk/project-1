@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 32,
+      "count": 33,
       "history": [
-        {
-          "ts": "2026-10-03T09:04:55.114188+00:00",
-          "topic": "Caso KIO: el fraude bursátil de 300 millones de euros que sacudió los cimientos financieros de España"
-        },
         {
           "ts": "2026-10-03T15:10:22.924797+00:00",
           "topic": "Caso KIO: el fraude bursátil de 300 millones de euros que sacudió la economía española"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-10-20T13:02:05.273500+00:00",
           "topic": "[CRIMEN] Caso KIO y las Torres de Madrid: el fraude bursátil de 300 millones de euros que llevó a Javier de la Rosa y Manuel Prado y Colón de Carvajal a los tribunales"
+        },
+        {
+          "ts": "2026-10-20T20:55:51.969673+00:00",
+          "topic": "Caso KIO y Javier de la Rosa: la estafa financiera de 300 millones de euros que hizo colapsar las inversiones en la España de los años 90"
         }
       ]
     },
