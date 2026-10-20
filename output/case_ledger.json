@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 29,
+      "count": 30,
       "history": [
-        {
-          "ts": "2026-09-27T15:41:06.903173+00:00",
-          "topic": "KIO: el fraude bursátil de 300 millones de euros que sacudió España en el año 2000"
-        },
         {
           "ts": "2026-09-30T09:05:02.283251+00:00",
           "topic": "KIO: el fraude bursátil de 300 millones de euros que sacudió la economía española en el año 2000"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-10-19T17:28:02.492161+00:00",
           "topic": "[CRIMEN] El asalto a las Torres KIO: el fraude bursátil de 300 millones de euros que sacudió España en los años 90 y terminó con condenas firmes por estafa"
+        },
+        {
+          "ts": "2026-10-20T11:31:31.720950+00:00",
+          "topic": "[CRIMEN] Torres KIO: el fraude bursátil de 300 millones de euros de Javier de la Rosa que terminó en la quiebra de Grand Tibidabo"
         }
       ]
     },
