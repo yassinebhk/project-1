@@ -46,7 +46,7 @@
       ]
     },
     "andratx": {
-      "count": 2,
+      "count": 3,
       "history": [
         {
           "ts": "2026-08-24T07:57:23.244137+00:00",
@@ -55,6 +55,10 @@
         {
           "ts": "2026-09-27T12:35:18.817843+00:00",
           "topic": "[CRIMEN] Caso Andratx en 2006: el escándalo de urbanismo ilegal en Mallorca que se saldó con la condena del alcalde a 7 años de cárcel"
+        },
+        {
+          "ts": "2026-10-20T09:01:57.609989+00:00",
+          "topic": "[CRIMEN] Caso Andratx (2006): el mayor escándalo urbanístico de Mallorca con 40 alcaldes y concejales imputados por licencias ilegales"
         }
       ]
     },
