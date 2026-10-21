@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 36,
+      "count": 37,
       "history": [
-        {
-          "ts": "2026-10-19T13:05:42.490758+00:00",
-          "topic": "Torres KIO: el fraude bursátil de 300 millones de euros que dejó las famosas torres inclinadas de Madrid en bancarrota"
-        },
         {
           "ts": "2026-10-19T14:01:35.207677+00:00",
           "topic": "Caso KIO: el fraude bursátil de 300 millones de euros que colapsó las Torres KIO en el año 2000"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-10-21T12:29:33.078867+00:00",
           "topic": "Torres KIO y Javier de la Rosa: el fraude de 300 millones de euros que derrumbó las famosas torres inclinadas de Madrid"
+        },
+        {
+          "ts": "2026-10-21T13:02:49.861888+00:00",
+          "topic": "Caso KIO: el fraude bursátil de 300 millones de euros que sacudió la economía española en los 90"
         }
       ]
     },
