@@ -1046,5 +1046,13 @@
     "url": "https://instagram.com/reel/18016903988748503",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-20T22:17:52.616004+00:00"
+  },
+  {
+    "slug": "grand_slams_men_20261021_005232",
+    "title": "Top 10 Men's Tennis Grand Slam Champions All-Time (1968-2026)",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 159min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-21T00:56:43.379522+00:00"
   }
 ]
