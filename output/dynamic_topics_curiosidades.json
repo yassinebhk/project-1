@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T10:31:32.624188+00:00",
+  "generated_at": "2026-10-22T11:14:57.738102+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -168,6 +168,83 @@
       "hook": "Sin nubes durante treinta días, los océanos de la Tierra empezarían a hervir por el calor atrapado.",
       "angle": "El albedo terrestre, el ciclo del agua y el control de la temperatura global por la nubosidad.",
       "visual": "cielo azul despejado extremo, océano evaporándose, rayos solares directos, sequía global severa"
+    },
+    {
+      "key": "diamante_lluvia_atmosfera",
+      "titulo": "¿Qué pasaría si lloviera diamante puro en la Tierra?",
+      "hook": "Imagina salir a la calle y morir decapitado por una tormenta de piedras preciosas.",
+      "angle": "Analizar la química atmosférica de gigantes gaseosos como Neptuno y Júpiter, donde las altas presiones descomponen el metano en cristales de carbono sólido.",
+      "visual": "tormenta alienígena, cristales de diamante cayendo, atmósfera densa y oscura de metano"
+    },
+    {
+      "key": "estrella_de_neutrones_cercania",
+      "titulo": "¿Qué pasaría si una estrella de neutrones reemplazara a Júpiter?",
+      "hook": "Un objeto del tamaño de una ciudad a millones de kilómetros podría robarte los empastes de los dientes.",
+      "angle": "Describir el campo magnético extremo y la gravedad de una estrella de neutrones, explicando cómo la marea gravitacional desestabilizaría el Sistema Solar interior.",
+      "visual": "estrella de neutrones brillante, distorsión gravitacional en el espacio, Júpiter siendo aplastado"
+    },
+    {
+      "key": "dia_dieciocho_horas",
+      "titulo": "¿Qué pasaría si los días duraran 18 horas en lugar de 24?",
+      "hook": "Perderías seis horas de tu día para siempre y tu cuerpo colapsaría por falta de sueño.",
+      "angle": "Explicar la conservación del momento angular, la desaceleración histórica de la rotación terrestre gracias a la Luna y el impacto biológico en el ritmo circadiano humano.",
+      "visual": "reloj girando aceleradamente, persona exhausta, amanecer y atardecer muy rápidos"
+    },
+    {
+      "key": "oceanos_ebullicion_vacio",
+      "titulo": "¿Qué pasaría si la presión atmosférica cayera a cero?",
+      "hook": "En un segundo, toda el agua de tus océanos empezaría a hervir a temperatura ambiente.",
+      "angle": "Explicar la relación termodinámica entre la presión atmosférica y el punto de ebullición de los líquidos, basándose en la física de los diagramas de fase.",
+      "visual": "océano hirviendo violentamente, burbujas gigantes en el agua, cielo convirtiéndose en el vacío negro"
+    },
+    {
+      "key": "campo_magnetico_inversion",
+      "titulo": "¿Qué pasaría si el Polo Norte magnético saltara al sur hoy?",
+      "hook": "Todas las brújulas del mundo enloquecerían y las auroras boreales se verían en el Ecuador.",
+      "angle": "Detallar la geodinamo del núcleo externo de hierro fundido y cómo la magnetosfera protege a la Tierra de la radiación solar durante una inversión de polos.",
+      "visual": "brújula girando sin control, auroras boreales en el desierto, líneas de campo magnético terrestre"
+    },
+    {
+      "key": "hielo_nueve_mecanica",
+      "titulo": "¿Qué pasaría si el agua se congelara en una estructura cristalina diferente?",
+      "hook": "Un solo vaso de agua congelada extraña podría congelar todos los lagos del planeta al instante.",
+      "angle": "Explicar los alótropos del hielo bajo alta presión y la termodinámica de la nucleación cristalina en la física de materiales.",
+      "visual": "vaso de agua congelándose al instante, cristales de hielo creciendo macro, lago congelándose en segundos"
+    },
+    {
+      "key": "rayos_laser_atmosfera",
+      "titulo": "¿Qué pasaría si el cielo se volviera completamente púrpura?",
+      "hook": "Si la atmósfera filtrara la luz diferente, las plantas morirían asfixiadas en la oscuridad.",
+      "angle": "Analizar la dispersión de Rayleigh y cómo el espectro de emisión estelar determina qué longitudes de onda llegan a la superficie para la fotosíntesis.",
+      "visual": "cielo color violeta intenso, plantas marchitándose, espectro de luz solar descompuesto en prisma"
+    },
+    {
+      "key": "supervolcan_invierno",
+      "titulo": "¿Qué pasaría si Yellowstone hiciera erupción sin previo aviso?",
+      "hook": "La mitad de un continente desaparecería bajo la ceniza y el sol dejaría de verse en diez años.",
+      "angle": "Explicar la dinámica de cámaras magmáticas riolíticas y el efecto de los aerosoles de dióxido de azufre en la estratosfera reflejando la luz solar (invierno volcánico).",
+      "visual": "supervolcán explotando, nube de ceniza bloqueando el planeta, paisaje nevado y oscuro perpetuo"
+    },
+    {
+      "key": "gravedad_cero_atmosfera_fuga",
+      "titulo": "¿Qué pasaría si la gravedad terrestre se redujera a la mitad?",
+      "hook": "Podrías saltar por encima de un edificio de tres pisos, pero tu sangre dejaría de circular bien.",
+      "angle": "Explicar la ley de gravitación universal de Newton aplicada a la retención atmosférica y los problemas cardiovasculares por menor presión hidrostática en humanos.",
+      "visual": "persona saltando muy alto en la calle, atmósfera desprendiéndose lentamente, modelo anatómico del corazón"
+    },
+    {
+      "key": "oxigeno_puro_combustion",
+      "titulo": "¿Qué pasaría si el aire tuviera un 50% más de oxígeno?",
+      "hook": "Un simple cerillo encendido podría hacer explotar un bosque entero en milisegundos.",
+      "angle": "Describir la química de la combustión rápida, el triángulo del fuego y cómo la atmósfera terrestre del periodo Carbonífero permitió la existencia de insectos gigantes.",
+      "visual": "fuego descontrolado propagándose rápido, libélula gigante prehistórica, molécula de O2 brillando"
+    },
+    {
+      "key": "sol_estrella_enana_roja",
+      "titulo": "¿Qué pasaría si nuestro Sol fuera reemplazado por una enana roja?",
+      "hook": "El cielo se volvería de un color rojo sangre y tendrías que vivir bajo tierra para sobrevivir.",
+      "angle": "Explicar la luminosidad de las estrellas tipo M, la zona habitable cercana y las eyecciones de masa coronal que bombardearían constantemente la Tierra.",
+      "visual": "sol rojo gigante ocupando medio cielo, base subterránea futurista, erupción solar masiva"
     }
   ]
 }
