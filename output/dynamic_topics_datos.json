@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T09:32:07.418083+00:00",
+  "generated_at": "2026-10-22T00:16:41.409488+00:00",
   "topics": [
     {
       "key": "nubes_peso",
@@ -154,6 +154,69 @@
       "hook": "Hace millones de años, un día en la Tierra duraba solo 18 horas.",
       "angle": "La Luna se aleja lentamente de la Tierra cada año, lo que frena la rotación del planeta y alarga nuestros días.",
       "visual": "Tierra primitiva, luna gigante cerca, marea alta, rotacion rapida"
+    },
+    {
+      "key": "tormentas_electricas",
+      "titulo": "El fenómeno real donde caen rayos hacia arriba",
+      "hook": "Imagina ver un rayo que no cae del cielo, sino que sale disparado desde la tierra hacia las nubes.",
+      "angle": "Los rayos ascendentes o descargas hacia la estratosfera que ocurren en tormentas eléctricas intensas.",
+      "visual": "rayos azules hacia arriba cielo nocturno tormenta"
+    },
+    {
+      "key": "huesos_bebes",
+      "titulo": "Por qué los bebes tienen mas huesos que un adulto",
+      "hook": "Naces con casi 300 huesos en tu cuerpo, pero al crecer desaparecen misteriosamente.",
+      "angle": "La fusión ósea durante el crecimiento humano que reduce de unos 270-300 huesos en recién nacidos a 206 en la edad adulta.",
+      "visual": "esqueleto de bebe comparacion radiografia crecimiento"
+    },
+    {
+      "key": "tiburones_antiguos",
+      "titulo": "El animal que llevaba millones de anos en la Tierra antes de los anillos de Saturno",
+      "hook": "Los tiburones ya cazaban en los océanos terrestres cuando Saturno ni siquiera tenía sus anillos.",
+      "angle": "La antigüedad del linaje de los tiburones (más de 400 millones de años) en contraste con la formación reciente de los anillos de Saturno.",
+      "visual": "tiburon blanco nadando fondo marino antiguo"
+    },
+    {
+      "key": "color_sol",
+      "titulo": "El verdadero color del Sol que la atmosfera nos oculta",
+      "hook": "El Sol no es amarillo ni naranja; la ciencia demuestra que su color real es completamente diferente.",
+      "angle": "El Sol emite luz en todas las longitudes de onda del espectro visible, combinándose para parecer blanco puro desde el espacio.",
+      "visual": "sol visto desde el espacio color blanco brillante"
+    },
+    {
+      "key": "ojos_avestruz",
+      "titulo": "La sorprendente razon por la que el cerebro de un avestruz es minusculo",
+      "hook": "El avestruz tiene un cerebro más pequeño que uno de sus ojos, y la ciencia explica por qué.",
+      "angle": "La anatomía ocular del avestruz, donde cada ojo pesa más que su propio cerebro debido a la optimización evolutiva visual.",
+      "visual": "primer plano cabeza avestruz ojo grande"
+    },
+    {
+      "key": "tardigrados_espacio",
+      "titulo": "La criatura microscopica capaz de sobrevivir al vacio del espacio",
+      "hook": "Este animal microscópico puede congelarse, hervir, ser irradiado y aun así seguir viviendo en el espacio.",
+      "angle": "Los tardígrados y su capacidad de entrar en estado de criptobiosis para resistir condiciones letales.",
+      "visual": "tardigrado microscopio cientifico animacion 3d"
+    },
+    {
+      "key": "fresas_semillas",
+      "titulo": "El secreto botanico por el cual las fresas no son frutas reales",
+      "hook": "La fresa que te comes todos los días técnicamente no es una fruta, y sus semillas están por fuera.",
+      "angle": "La botánica de la fresa como un receptáculo floral engrosado y sus aquenios externos.",
+      "visual": "fresa macro semilla exterior textura detallada"
+    },
+    {
+      "key": "bambu_crecimiento",
+      "titulo": "La planta que puedes ver crecer literalmente ante tus ojos",
+      "hook": "Hay una planta capaz de crecer casi un metro en un solo día, batiendo récords en el reino vegetal.",
+      "angle": "El bambú gigante y su velocidad de crecimiento acelerado medida en centímetros por hora.",
+      "visual": "bosque de bambu verde lapso de tiempo crecimiento rapido"
+    },
+    {
+      "key": "estornudo_velocidad",
+      "titulo": "A que velocidad viaja el aire cuando estornudas",
+      "hook": "Cuando estornudas, el aire y las gotas salen disparadas de tu nariz casi a la velocidad de un coche en la autopista.",
+      "angle": "La velocidad física de un estornudo humano y la expulsión de aerosoles a más de 100 km/h.",
+      "visual": "estornudo camara lenta particulas aire primer plano"
     }
   ]
 }
