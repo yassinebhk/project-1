@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-15T10:33:55.192094+00:00",
+  "generated_at": "2026-10-22T10:45:37.114798+00:00",
   "topics": [
     {
       "key": "efecto_arrastre",
@@ -168,6 +168,55 @@
       "hook": "No es que haya más coches iguales en la calle, es que tu cerebro acaba de activar su radar secreto.",
       "angle": "Desglosar el fenómeno Baader-Meinhof (ilusión de frecuencia), combinado con la atención selectiva estudiada en neurociencia cognitiva.",
       "visual": "patrones repetidos, enfoque selectivo, ciudad borrosa, coche destacado"
+    },
+    {
+      "key": "efecto_tercera_persona",
+      "titulo": "Por qué crees que la publicidad engaña a todos menos a ti",
+      "hook": "Siempre piensas que los demás son manipulables, pero tú tienes el control absoluto.",
+      "angle": "El efecto de la tercera persona demostrado por W. Phillips Davison en 1983, donde las personas estiman que los mensajes persuasivos tienen mayor efecto en los otros que en sí mismos.",
+      "visual": "persona mirando espejo, reflejo distorsionado, multitud borrosa, tonos oscuros"
+    },
+    {
+      "key": "falsa_consensualidad",
+      "titulo": "El error mental por el que asumes que todo el mundo opina igual que tú",
+      "hook": "Asumir que los demás piensan como tú es la trampa cerebral más común.",
+      "angle": "El sesgo de falso consenso estudiado por Lee Ross, David Greene y Pamela House en 1977, que muestra cómo sobreestimamos el grado en que los demás están de acuerdo con nosotros.",
+      "visual": "multitud de siluetas idénticas, una persona destacada, tonos azules fríos, minimalista"
+    },
+    {
+      "key": "efecto_esquina_izquierda",
+      "titulo": "El truco de precios que engaña a tu cerebro por un simple dígito",
+      "hook": "Bajar un céntimo cambia por completo cómo tu cerebro valora el dinero.",
+      "angle": "La investigación sobre precios psicológicos con terminación en nueve, analizada en la literatura de economía conductual por Eric Anderson y Duncan Simester.",
+      "visual": "etiqueta de precio, números borrosos, tienda moderna, iluminación cenital"
+    },
+    {
+      "key": "efecto_pico_final",
+      "titulo": "Por qué tu memoria de las experiencias miente sobre lo que viviste",
+      "hook": "Tu cerebro no recuerda cómo fue todo tu viaje, solo el peor momento y el final.",
+      "angle": "La regla de pico y final demostrada por Daniel Kahneman, Barbara Fredrickson, Donald A. Redelmeier y Charles A. Kahn en 1993.",
+      "visual": "gráfico de pulso cardíaco, picos altos y bajos, tonos neón, diseño abstracto"
+    },
+    {
+      "key": "efecto_autoridad",
+      "titulo": "El experimento real que demuestra por qué obedeces sin cuestionar",
+      "hook": "Una bata blanca es suficiente para hacer que olvides tu propio criterio.",
+      "angle": "Los experimentos de obediencia a la autoridad realizados por Stanley Milgram en la Universidad de Yale en 1961.",
+      "visual": "laboratorio antiguo, interruptores de palanca, sombras marcadas, estilo documental"
+    },
+    {
+      "key": "efecto_espectador_bystander",
+      "titulo": "Por qué cuanta más gente hay presente, menos probable es que alguien ayude",
+      "hook": "Pensar que otro va a ayudar es la razón principal por la que nadie lo hace.",
+      "angle": "El efecto espectador documentado rigurosamente por John Darley y Bibb Latané tras el caso Kitty Genovese en 1968.",
+      "visual": "calle urbana concurrida, personas caminando sin mirar, cámara lenta, tonos grises"
+    },
+    {
+      "key": "sesgo_de_impacto_emocional",
+      "titulo": "Por qué exageras cuánto te afectarán los eventos futuros",
+      "hook": "Crees que ese fracaso arruinará tu vida para siempre, pero la ciencia dice lo contrario.",
+      "angle": "El sesgo de impacto estudiado por Timothy Wilson y Daniel Gilbert en psicología afectiva, midiendo nuestra sobreestimación de la intensidad y duración de las reacciones emocionales futuras.",
+      "visual": "reloj de arena, arena cayendo rápido, rostro preocupado, iluminación suave"
     }
   ]
 }
