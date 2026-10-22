@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T10:36:19.926242+00:00",
+  "generated_at": "2026-10-22T01:08:33.482616+00:00",
   "topics": [
     {
       "key": "diamantes_en_neptuno",
@@ -168,6 +168,90 @@
       "hook": "Incluso en el espacio profundo más oscuro, hay un frío absoluto remanente del mismísimo nacimiento del universo.",
       "angle": "La temperatura del Fondo Cósmico de Microondas (CMB) medida por Planck, fijada en 2.7 Kelvin por encima del cero absoluto.",
       "visual": "Cosmic microwave background map, absolute zero thermometer scale, deep space nebula, cold cosmic void"
+    },
+    {
+      "key": "anillo_de_einstein",
+      "titulo": "El fenómeno donde el espacio actúa como una lupa gigante",
+      "hook": "La gravedad de una galaxia invisible acaba de doblar la luz del universo frente a nuestros telescopios.",
+      "angle": "Explicación de la lente gravitacional fuerte observada por el telescopio James Webb, mostrando un Anillo de Einstein perfecto.",
+      "visual": "NASA JWST imagery, gravitational lensing simulation, warped space-time grid, glowing cosmic ring"
+    },
+    {
+      "key": "supervolcan_io",
+      "titulo": "El infierno volcánico más activo de todo el sistema solar",
+      "hook": "Este mundo no tiene agua, pero sus ríos de lava pura alcanzan temperaturas imposibles.",
+      "angle": "Actividad volcánica extrema en Ío, la luna de Júpiter, impulsada por la fricción de marea gravitacional.",
+      "visual": "Volcanic plumes on Jupiter's moon Io, glowing lava rivers, NASA Galileo imagery, Jupiter in the background"
+    },
+    {
+      "key": "magnetar_sgr",
+      "titulo": "Un imán tan potente que borraría tus tarjetas de crédito desde la Luna",
+      "hook": "Si te acercaras a este objeto estelar, los átomos de tu cuerpo dejarían de obedecer a la química.",
+      "angle": "Los magnetares y sus campos magnéticos extremos capaces de distorsionar la corteza electrónica de los átomos.",
+      "visual": "Magnetar emitting fierce gamma-ray flares, distorted magnetic field lines, extreme cosmic pressure, dark space"
+    },
+    {
+      "key": "huella_de_apolo",
+      "titulo": "Por qué las huellas de los astronautas en la Luna durarán millones de años",
+      "hook": "Nadie ha borrado las pisadas de Neil Armstrong porque en la Luna falta algo esencial.",
+      "angle": "Ausencia de atmósfera, viento y erosión en la Luna preservando los rastros de las misiones Apolo indefinidamente.",
+      "visual": "Apollo moon boot print close-up, dusty lunar surface, sharp shadows, planet Earth rising"
+    },
+    {
+      "key": "hielo_caliente_gliese",
+      "titulo": "El exoplaneta con un océano de hielo que nunca se derrite",
+      "hook": "En este mundo infernal, el agua permanece sólida a pesar de soportar temperaturas de hornos industriales.",
+      "angle": "Gliese 436 b y el hielo exótico (hielo X) mantenido en estado sólido por la intensa gravedad a alta presión.",
+      "visual": "Exoplanet Gliese 436 b, glowing hot ice surface, extreme atmospheric pressure, distant red dwarf star"
+    },
+    {
+      "key": "eco_de_luz_v838",
+      "titulo": "El misterioso eco de luz que revela los fantasmas del espacio",
+      "hook": "Una estrella explotó hace años, pero su luz sigue rebotando en el polvo como un holograma en 3D.",
+      "angle": "El eco de luz expansivo alrededor de la estrella variable V838 Monocerotis capturado por el telescopio Hubble.",
+      "visual": "Hubble timelapse of V838 Monocerotis light echo, expanding dust shells, glowing colorful nebula waves"
+    },
+    {
+      "key": "escudo_heliopausa",
+      "titulo": "El lugar exacto donde termina el dominio del Sol",
+      "hook": "Las sondas Voyager cruzaron una frontera invisible donde el viento solar choca contra el vacío interestelar.",
+      "angle": "La heliopausa como la burbuja protectora del Sistema Solar contra los rayos cósmicos galácticos según datos de la NASA.",
+      "visual": "Voyager spacecraft crossing solar system boundary, plasma shockwave, interstellar magnetic field lines"
+    },
+    {
+      "key": "atm_titan_metano",
+      "titulo": "El único mundo alienígena con ríos y lagos de gas natural líquido",
+      "hook": "Llueve, fluye y se evapora, pero en esta luna no hay una sola gota de agua.",
+      "angle": "El ciclo hidrológico del metano y etano líquido en la superficie de Titán, documentado por la misión Cassini-Huygens.",
+      "visual": "Titan hazy orange atmosphere, hydrocarbon lakes, Cassini probe descent perspective, alien shoreline"
+    },
+    {
+      "key": "estrellas_hiperveloces",
+      "titulo": "Estrellas fugitivas que fueron expulsadas del centro de nuestra galaxia",
+      "hook": "Este sol viaja a millones de kilómetros por hora porque un agujero negro gigante lo desterró.",
+      "angle": "Estrellas hiperveloces aceleradas por el encuentro gravitacional con Sagitario A*, el agujero negro supermasivo.",
+      "visual": "High-velocity star streaking across Milky Way core, gravitational ejection slingshot effect, bright stellar trail"
+    },
+    {
+      "key": "nebula_pilar_creacion",
+      "titulo": "La verdadera escala titánica de los Pilares de la Creación",
+      "hook": "Lo que parece una pequeña nube colorida es en realidad una catedral cósmica de años luz de altura.",
+      "angle": "Dimensiones físicas reales y viveros estelares activos dentro de los Pilares de la Creación en la Nebulosa del Águila.",
+      "visual": "JWST infrared pillars of creation, newborn protostars, towering gas columns, deep space backdrop"
+    },
+    {
+      "key": "roca_aplastada_impacto",
+      "titulo": "El día en que un asteroide fundió la corteza terrestre en minutos",
+      "hook": "La energía liberada por este impacto histórico hizo que los océanos enteros literalmente hirvieran.",
+      "angle": "Efectos geológicos inmediatos del impacto de Chicxulub documentados por testigos en el registro de fósiles y minerales.",
+      "visual": "Chicxulub asteroid impact simulation, molten earth surface, massive atmospheric vapor plume, night sky debris"
+    },
+    {
+      "key": "nucleo_de_hierro_tierra",
+      "titulo": "El corazón fundido de la Tierra arde a la misma temperatura que la superficie solar",
+      "hook": "Bajo tus pies hay una esfera de hierro líquido tan caliente como el sol que nos da vida.",
+      "angle": "Datos sismológicos sobre el núcleo externo e interno de la Tierra y la dinamo geodinámica que genera el campo magnético.",
+      "visual": "Earth cutaway showing molten iron outer core, swirling liquid metal, glowing magnetic field generation lines"
     }
   ]
 }
