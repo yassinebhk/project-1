@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-14T10:19:46.998057+00:00",
+  "generated_at": "2026-10-22T00:55:06.540324+00:00",
   "topics": [
     {
       "key": "el_tesoro_de_oak_island",
@@ -168,6 +168,27 @@
       "hook": "Kilómetros de túneles secretos bajo Escocia con muebles tallados en la misma roca viva.",
       "angle": "Investigar los registros históricos del siglo XVIII sobre la excavación de estos pasadizos y los debates académicos sobre su propósito original.",
       "visual": "túnel de roca subterráneo, linterna en la oscuridad, marcas de cincel en la pared, calle empedrada"
+    },
+    {
+      "key": "mapa_vinland_falsificacion",
+      "titulo": "El mapa de Vinland: cómo la ciencia moderna destapó la falsificación medieval perfecta",
+      "hook": "El mapa que supuestamente demostraba que los vikingos llegaron a América antes que Colón resultó ser una trampa química perfecta.",
+      "angle": "Explicar el análisis de espectrometría de rayos X de 2021 que detectó tinta de pigmento moderno del siglo XX en el pergamino.",
+      "visual": "ancient map, laboratory microscope, chemical analysis, ultraviolet light"
+    },
+    {
+      "key": "piedra_runica_kensington",
+      "titulo": "La piedra rúnica de Kensington: ¿mensaje templario en Minnesota o fraude de 1898?",
+      "hook": "Un agricultor estadounidense desenterró en 1898 una piedra cubierta de runas nórdicas que desafió la historia oficial.",
+      "angle": "Detallar el debate arqueológico documentado sobre las incongruencias gramaticales del nórdico antiguo encontrado en el monolito.",
+      "visual": "runestone, minnesota pine forest, vintage shovel, carved symbols"
+    },
+    {
+      "key": "fortaleza_kuelap_chachapoyas",
+      "titulo": "Kuélap: la imponente ciudadela en las nubes que los incas apenas pudieron dominar",
+      "hook": "Construida sobre un abismo en los Andes, la cultura Chachapoyas levantó una fortaleza de piedra que desafía la ingeniería.",
+      "angle": "Explorar los métodos de construcción en terrazas monumentales documentados por arqueólogos peruanos y su posterior conquista incaica.",
+      "visual": "misty mountain fortress, stone walls, peruvian Andes, drone aerial view"
     }
   ]
 }
