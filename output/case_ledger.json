@@ -355,11 +355,15 @@
       ]
     },
     "malaya": {
-      "count": 1,
+      "count": 2,
       "history": [
         {
           "ts": "2026-09-14T14:18:06.163869+00:00",
           "topic": "El cerebro del Caso Malaya: cómo Juan Antonio Roca movió más de 200 millones en Marbella y fue sentenciado a 17 años de cárcel en 2013."
+        },
+        {
+          "ts": "2026-10-23T11:33:43.523301+00:00",
+          "topic": "[CRIMEN] Caso Malaya: cómo Juan Antonio Roca amasó un patrimonio de 240 millones de euros convirtiendo el Ayuntamiento de Marbella en una trama mafiosa"
         }
       ]
     },
