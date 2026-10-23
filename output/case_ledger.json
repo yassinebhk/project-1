@@ -63,11 +63,15 @@
       ]
     },
     "grand_tibidabo": {
-      "count": 1,
+      "count": 2,
       "history": [
         {
           "ts": "2026-08-24T07:57:23.246473+00:00",
           "topic": "Javier de la Rosa Grand Tibidabo 40 millones"
+        },
+        {
+          "ts": "2026-10-23T20:41:11.744765+00:00",
+          "topic": "[CRIMEN] El Caso Grand Tibidabo: cómo Javier de la Rosa desfudró 40 millones de euros en la bolsa catalana antes de su condena firme"
         }
       ]
     },
