@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 51,
+      "count": 52,
       "history": [
-        {
-          "ts": "2026-10-22T09:05:36.215332+00:00",
-          "topic": "KIO: el fraude bursátil de 300 millones de euros que sacudió la economía española en el año 2000"
-        },
         {
           "ts": "2026-10-22T11:46:34.103588+00:00",
           "topic": "[CRIMEN] Torres KIO (2000): el fraude bursátil de 300 millones de euros que arruinó las emblemáticas torres inclinadas de Madrid."
@@ -42,6 +38,10 @@
         {
           "ts": "2026-10-23T14:06:26.938078+00:00",
           "topic": "[CRIMEN] Torres KIO: el fraude bursátil de 300 millones de euros que arruinó el imperio de Grand Tibidabo con Javier de la Rosa"
+        },
+        {
+          "ts": "2026-10-23T16:06:19.319813+00:00",
+          "topic": "Torres KIO en Madrid: el fraude bursátil de 300 millones de euros que arruinó a la Kuwait Investment Office"
         }
       ]
     },
