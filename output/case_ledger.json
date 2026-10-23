@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 49,
+      "count": 50,
       "history": [
-        {
-          "ts": "2026-10-21T17:42:19.336064+00:00",
-          "topic": "Caso KIO: el fraude bursátil de 300 millones de euros que sacudió la economía española en el año 2000"
-        },
         {
           "ts": "2026-10-21T20:55:54.479172+00:00",
           "topic": "[CRIMEN] Caso KIO (2000): el fraude bursátil de 300 millones de euros que llevó a Javier de la Rosa a los tribunales"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-10-22T20:52:08.331506+00:00",
           "topic": "[CRIMEN] Caso KIO (STS 2000): el fraude bursátil de 300 millones de euros que arruinó Torres KIO y sacudió las finanzas españolas"
+        },
+        {
+          "ts": "2026-10-23T12:27:10.813336+00:00",
+          "topic": "[CRIMEN] Las Torres KIO: cómo un fraude bursátil de 300 millones de euros en el año 2000 terminó con la condena de sus gestores"
         }
       ]
     },
