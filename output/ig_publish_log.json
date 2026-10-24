@@ -1195,5 +1195,13 @@
     "url": "https://instagram.com/reel/17983949378901615",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-24T09:14:28.549109+00:00"
+  },
+  {
+    "slug": "el-pais-que-imprime-mas-dinero-del-mundo",
+    "title": "Hiperinflación global — 1.000.000% de subida · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 150min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-24T11:44:29.038544+00:00"
   }
 ]
