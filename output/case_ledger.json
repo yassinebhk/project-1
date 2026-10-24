@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 55,
+      "count": 56,
       "history": [
-        {
-          "ts": "2026-10-22T15:54:37.375507+00:00",
-          "topic": "[CRIMEN] KIO: el fraude bursátil de 300 millones de euros que llevó a Javier de la Rosa y Manuel Prado y Colón de Carvajal ante la justicia"
-        },
         {
           "ts": "2026-10-22T17:15:32.468665+00:00",
           "topic": "[CRIMEN] El fraude de las Torres KIO en el año 2000: cómo Javier de la Rosa y sus socios saquearon 300 millones de euros del banco KIO en plena burbuja bursátil"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-10-24T10:53:39.311530+00:00",
           "topic": "[CRIMEN] Caso KIO: el fraude de 300 millones de euros en los años 90 con las Torres de la Castellana y la condena firme a Javier de la Rosa por apropiación indebida y falsedad."
+        },
+        {
+          "ts": "2026-10-24T13:02:17.516051+00:00",
+          "topic": "[CRIMEN] Caso KIO: cómo un fraude de 300 millones de euros en las Torres de Madrid llevó a la quiebra y condena judicial a sus directivos en el año 2000."
         }
       ]
     },
