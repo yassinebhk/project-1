@@ -1238,5 +1238,13 @@
     "url": "https://instagram.com/reel/17900729076672397",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-24T22:17:36.852915+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-local-voice-apps",
+    "title": "Top 5 AI tools for local voice apps · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 140min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-25T00:37:42.533825+00:00"
   }
 ]
