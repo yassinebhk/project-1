@@ -185,11 +185,15 @@
       ]
     },
     "koldo": {
-      "count": 1,
+      "count": 2,
       "history": [
         {
           "ts": "2026-08-26T07:23:52.020707+00:00",
           "topic": "[CRIMEN] Caso Koldo y Ábalos: Las comisiones ocultas de las mascarillas COVID en 2020 que salpican a políticos"
+        },
+        {
+          "ts": "2026-10-25T17:04:45.150634+00:00",
+          "topic": "[CRIMEN] Caso Koldo y las mascarillas COVID de 2024: cómo se cobraron 18 millones en comisiones ilegales con el Ministerio de Transportes en el punto de mira"
         }
       ]
     },
