@@ -1263,5 +1263,13 @@
     "reason": "espaciado: último reel hace 232min < 240min mínimo (3/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-25T14:00:03.056563+00:00"
+  },
+  {
+    "slug": "caso-estepona-corrupcion-40m",
+    "title": "Caso Estepona — 40M€ desviados y el alcalde al frente · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 238min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-25T14:06:06.979998+00:00"
   }
 ]
