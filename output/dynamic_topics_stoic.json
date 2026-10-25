@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-16T10:20:38.210733+00:00",
+  "generated_at": "2026-10-25T01:40:10.729235+00:00",
   "topics": [
     {
       "key": "inbox_zero_anxiety",
@@ -216,6 +216,15 @@
       "hook": "You wake up and immediately scroll through three separate breaking news disasters before your feet even touch the floor.",
       "titulo": "Exhausted by Global News? Marcus Aurelius on Mental Retreat",
       "visual": "dark stormy ocean, lightning flash, ancient marble head, heavy cinematic contrast"
+    },
+    {
+      "key": "algorithmic_burnout",
+      "stoic": "Seneca",
+      "principle": "Focus on the present task",
+      "stressor": "Obsessing over real-time analytics dashboards",
+      "hook": "You just refreshed your creator dashboard for the tenth time today, watching numbers dictate your self-worth.",
+      "titulo": "Why Chasing Algorithm Approval Destroys Your Peace (A Seneca Guide)",
+      "visual": "dark glowing monitor, lonely marble bust, flickering candle, midnight storm"
     }
   ]
 }
