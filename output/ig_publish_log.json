@@ -1288,5 +1288,13 @@
     "reason": "espaciado: último reel hace 162min < 240min mínimo (3/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-25T17:46:14.110778+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-long-context-processing",
+    "title": "Top 5 AI tools for long-context processing · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 236min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-25T19:00:12.863088+00:00"
   }
 ]
