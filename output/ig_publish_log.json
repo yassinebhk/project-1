@@ -1322,5 +1322,13 @@
     "url": "https://instagram.com/reel/18104290517055237",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-26T10:09:21.099620+00:00"
+  },
+  {
+    "slug": "crisis-microchips-taiwan-60-porcentaje",
+    "title": "TSMC Taiwán — 60 por ciento de los microchips mundiales · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 172min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-26T13:01:19.379577+00:00"
   }
 ]
