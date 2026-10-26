@@ -232,6 +232,33 @@ def _mux(video: Path, voice: Path, music: Path | None, work: Path) -> Path:
     return out
 
 
+def _overlay_endcard(video: Path, work: Path, handle: str, lang: str = "en") -> Path:
+    """Superpone un end-card de SUSCRIPCIÓN full-frame los últimos ~2.5s → la palanca
+    de conversión views→subs que faltaba en Pádel. Graceful: cualquier fallo devuelve
+    el vídeo original (un overlay decorativo nunca debe tumbar el render)."""
+    try:
+        from .. import graphics
+        dur = _probe_dur(video)
+        if dur < 4:
+            return video
+        ec = graphics.render_endcard_overlay_png(work / "endcard.png", handle, "Padel Pro", lang=lang)
+        start = round(dur - 2.5, 2)
+        out = work / "final_endcard.mp4"
+        cmd = ["ffmpeg", "-y", "-loglevel", "error", "-i", str(video), "-i", str(ec),
+               "-filter_complex",
+               f"[0:v][1:v]overlay=0:0:enable='between(t\\,{start}\\,{dur + 0.5})'[v]",
+               "-map", "[v]", "-map", "0:a?", "-c:v", "libx264", "-pix_fmt", "yuv420p",
+               "-preset", "veryfast", "-c:a", "copy", str(out)]
+        r = subprocess.run(cmd, capture_output=True, text=True, timeout=180)
+        if r.returncode == 0 and out.exists() and out.stat().st_size > 10000:
+            print(f"  padel: end-card suscripción · {handle}")
+            return out
+        print(f"  padel: end-card overlay FAIL (silent)\n{r.stderr[-400:]}")
+    except Exception as e:
+        print(f"  padel: end-card skip ({type(e).__name__}: {e})")
+    return video
+
+
 def render_topic(topic: dict, work: Path) -> Path | None:
     """Renderiza cualquier topic (tactic/fact/compare/checklist) completo
     (vídeo+voz+música). Devuelve mp4 final o None.
@@ -344,4 +371,10 @@ def render_topic(topic: dict, work: Path) -> Path | None:
     # Mark incrustado en el DOM capturado por puppeteer, no hay que remuxar).
     if use_tactika and final:
         final = _overlay_avatar(final, work)
+    # End-card de suscripción los últimos ~2.5s (conversión views→subs). Solo si Padel
+    # tiene canal propio (si cae a un host, el @handle no aplica). Reversible ENDCARD_DISABLE=1.
+    if (final and os.environ.get("ENDCARD_DISABLE", "").lower() not in ("1", "true", "yes")
+            and os.environ.get("YT_PADEL_REFRESH_TOKEN")):
+        final = _overlay_endcard(final, work, "@PadelProES",
+                                 lang="es" if use_tactika else "en")
     return final
