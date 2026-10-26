@@ -1330,5 +1330,13 @@
     "reason": "espaciado: último reel hace 172min < 240min mínimo (3/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-26T13:01:19.379577+00:00"
+  },
+  {
+    "slug": "el-pais-que-imprime-mas-billetes",
+    "title": "Billetes físicos mundiales — 40 mil millones impresos · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 213min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-26T13:42:05.933082+00:00"
   }
 ]
