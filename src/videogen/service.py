@@ -15,6 +15,8 @@ Progress = Callable[[str], None]
 
 # Cuánto dura en pantalla el texto-hook del arranque (segundos)
 HOOK_SECONDS = 2.4
+# Cuánto dura el end-card de suscripción al final (segundos)
+ENDCARD_SECONDS = 2.6
 
 
 def _noop(msg: str) -> None:
@@ -181,6 +183,22 @@ def generate(
             overlays = overlays + [(hk, 0.0, HOOK_SECONDS)]
             progress(f"[{lang}] Texto-hook: «{hook_text[:48]}»")
 
+        # End-card de SUSCRIPCIÓN los últimos ~2.6s (la palanca de conversión views→subs
+        # que faltaba). Overlay full-frame opaco con el @handle del PROPIO canal. Graceful
+        # + reversible (ENDCARD_DISABLE=1): cualquier fallo aquí NO tumba el vídeo.
+        import os as _os_ec
+        if _os_ec.environ.get("ENDCARD_DISABLE", "").lower() not in ("1", "true", "yes"):
+            try:
+                _ec_handle, _ec_name, _ = _brand()
+                _end_t = timed[-1].end if timed else 0.0
+                if _ec_handle and _end_t > 4.0:
+                    _ec = graphics.render_endcard_overlay_png(
+                        work_dir / "endcard" / f"ec_{lang}.png", _ec_handle, _ec_name, lang=lang)
+                    overlays = list(overlays) + [(_ec, max(0.0, _end_t - ENDCARD_SECONDS), _end_t + 0.5)]
+                    progress(f"[{lang}] End-card suscripción · {_ec_handle}")
+            except Exception as _ece:
+                progress(f"[{lang}] end-card skip: {type(_ece).__name__}: {str(_ece)[:80]}")
+
         progress(f"[{lang}] Componiendo video YouTube (música: {scripts.music_mood})…")
         ass = compose.build_caption_ass(track, work_dir / f"captions_{lang}_v.ass", vertical=True)
         out = work_dir / f"video_{lang}_vertical.mp4"
@@ -322,6 +340,46 @@ CHANNEL_HANDLE = "@waitwhy_ybb"
 CHANNEL_URL = f"https://youtube.com/{CHANNEL_HANDLE}"
 PLAYLISTS_URL = f"{CHANNEL_URL}/playlists"
 
+# ── Marca por canal (handle + nombre) — FUENTE ÚNICA Y AUTORITATIVA ──
+# De la lista verificada 15/10 ([[canales-reales-19]]). Antes el handle estaba
+# hardcodeado a @waitwhy_ybb en la descripción de shorts → TODOS los canales
+# decían "Suscríbete a WaitWhy" + playlists true-crime (mandaba sus views a otro
+# canal = 0 conversión a subs). El mapa viejo de atomización estaba incompleto y
+# con handles MAL (@topranking_es vs real @TopRanking_ESP). Ojo a los typos reales
+# del user en los handles (map_pecoded, inreibles, acentos en Quépasaríasi).
+CHANNEL_BRANDS: dict[str, tuple[str, str]] = {
+    "":                ("@waitwhy_ybb",             "WaitWhy"),
+    "YT_LEGAL":        ("@TusDerechos_ES",          "TusDerechos ES"),
+    "YT_POV":          ("@TiempoAtrasES",           "TiempoAtrás ES"),
+    "YT_AMBIENT":      ("@MenteEnCalma_ES",         "MenteEnCalma"),
+    "YT_AITOOLS":      ("@AIToolsWeekly_EN",        "AI Tools Weekly"),
+    "YT_MISTERIOS":    ("@enigmas_es",              "Enigmas ES"),
+    "YT_SESGOS":       ("@MenteRacional-ES",        "Mente Racional"),
+    "YT_CURIOSIDADES": ("@Quépasaríasi-videos-es",  "¿Qué Pasaría Si?"),
+    "YT_IA":           ("@datos_inreibles_es",      "Datos Increíbles ES"),
+    "YT_ESPACIO":      ("@Cosmos_videos_ES",        "Cosmos Videos ES"),
+    "YT_AYUDAS":       ("@AyudaGob_es",             "AyudaGob ES"),
+    "YT_RANKING":      ("@TopRanking_ESP",          "TopRanking ES"),
+    "YT_STOIC":        ("@StoicMind_videos",        "Stoic Mind"),
+    "YT_PADEL":        ("@PadelProES",              "Padel Pro ES"),
+    "YT_SCAMS":        ("@alerta_estafas_es",       "Alerta Estafas"),
+    "YT_AINEWS":       ("@ai_decoded_en",           "AI Decoded"),
+    "YT_BUSINESS":     ("@money_machines_en",       "Money Machines"),
+    "YT_GEOGRAPHY":    ("@map_pecoded",             "Map Decoded"),
+    "YT_COMPARE":      ("@scale_compare",           "Scale Compare"),
+}
+
+
+def _brand(prefix: str | None = None) -> tuple[str, str, str]:
+    """(handle, display_name, channel_url) del canal ACTIVO.
+
+    Resuelve por YT_CHANNEL_PREFIX (lo fija simple_channel/channel_pipeline antes
+    de generar). Desconocido o vacío → WaitWhy (principal)."""
+    import os as _os
+    p = (prefix if prefix is not None else _os.environ.get("YT_CHANNEL_PREFIX", "")).strip()
+    handle, name = CHANNEL_BRANDS.get(p, CHANNEL_BRANDS[""])
+    return handle, name, f"https://youtube.com/{handle}"
+
 
 def _format_court_source(court) -> str:
     """Formatea el bloque de fuente judicial verificable para la descripción.
@@ -413,13 +471,15 @@ def _enrich_description_seo(base: str, title: str, hashtags: list[str], is_short
     )
     court_block = _format_court_source(court)
     related_block = _related_videos_from_case(title, max_related=3)
-    cta = (
-        "\n\n━━━━━━━━━━━━━━━\n"
-        f"🎬 Casos nuevos cada semana\n"
-        f"📼 Suscríbete: {CHANNEL_URL}\n"
-        f"📚 Playlists por categoría (Bancarios · Políticos · Empresariales): {PLAYLISTS_URL}\n"
-        "━━━━━━━━━━━━━━━"
-    )
+    # CTA con el handle del PROPIO canal (no el de WaitWhy). Las playlists por
+    # categoría son específicas de WaitWhy → solo para él.
+    _handle, _name, _url = _brand()
+    _cta_lines = ["\n\n━━━━━━━━━━━━━━━", "🎬 Vídeos nuevos cada semana",
+                  f"📼 Suscríbete: {_url}"]
+    if _handle == CHANNEL_HANDLE:  # WaitWhy
+        _cta_lines.append(f"📚 Playlists por categoría (Bancarios · Políticos · Empresariales): {PLAYLISTS_URL}")
+    _cta_lines.append("━━━━━━━━━━━━━━━")
+    cta = "\n".join(_cta_lines)
     tags_line = "\n\n" + " ".join(hashtags[:15])
     if is_short and "#shorts" not in tags_line.lower():
         tags_line += " #Shorts"
@@ -748,22 +808,10 @@ def publish_long(
         try:
             from . import atomize
             # Handle/channel dinámico por YT_CHANNEL_PREFIX (evita CTA "@waitwhy_ybb"
-            # en clips de TaxHack/AyudaGob/etc — CTA incorrecto = engagement 0).
+            # en clips de otros canales — CTA incorrecto = engagement 0). Fuente única
+            # CHANNEL_BRANDS (handles verificados, antes este mapa estaba mal).
             _prefix = _os_atom.environ.get("YT_CHANNEL_PREFIX", "").strip()
-            _BRAND_MAP = {
-                "": ("@waitwhy_ybb", "WaitWhy"),
-                "YT_TAX": ("@taxhack_es", "TaxHack ES"),
-                "YT_LEGAL": ("@tusderechos_es", "TusDerechos ES"),
-                "YT_AYUDAS": ("@ayudagob", "AyudaGob"),
-                "YT_MOTOR": ("@motor60s", "Motor60s"),
-                "YT_POV": ("@tiempoatras_es", "TiempoAtrás ES"),
-                "YT_RANKING": ("@topranking_es", "TopRanking ES"),
-                "YT_IA": ("@ia_autonomos_es", "IA Autónomos ES"),
-                "YT_AMBIENT": ("@menteencalma", "MenteEnCalma"),
-                "YT_AITOOLS": ("@aitoolsweekly", "AI Tools Weekly"),
-                "YT_CRIMINOPATIA": ("@criminopatia", "Criminopatía"),
-            }
-            _handle, _channel = _BRAND_MAP.get(_prefix, _BRAND_MAP[""])
+            _handle, _channel, _ = _brand(_prefix)
             for lang in langs:
                 if lang not in links:
                     continue

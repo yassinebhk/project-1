@@ -235,6 +235,51 @@ def render_scene(
     return dest
 
 
+def render_endcard_overlay_png(dest: Path, handle: str, channel_name: str = "",
+                               lang: str = "es") -> Path:
+    """End-card de SUSCRIPCIÓN full-frame (1080x1920, OPACO) para los últimos
+    segundos del Short → palanca de conversión views→subs que faltaba.
+
+    Botón rojo estilo YouTube + @handle del PROPIO canal + value-prop. SIN emojis
+    (la fuente variable no los tiene → saldrían como cuadro 'tofu'). lang='es'|otro."""
+    es = (lang or "es").lower().startswith("es")
+    bg = _vertical_gradient(*PALETTES[0]["bg"])   # navy → casi negro
+    accent = PALETTES[0]["accent"]                # amarillo
+    WHITE = (244, 246, 250); MUTED = (156, 170, 196); YT_RED = (230, 33, 42)
+    img = bg.convert("RGB")
+    d = ImageDraw.Draw(img)
+
+    # value-prop arriba
+    vp = "UN VÍDEO NUEVO CADA DÍA" if es else "A NEW VIDEO EVERY DAY"
+    _draw_text_centered(d, vp, _fit_font(d, vp, W - 160, 58, weight=700), 560, MUTED)
+    # headline grande
+    head = "SUSCRÍBETE" if es else "SUBSCRIBE"
+    _draw_text_centered(d, head, _fit_font(d, head, W - 120, 165, weight=900), 700, accent)
+
+    # botón rojo tipo YouTube
+    btn_txt = "SUSCRIBIRME" if es else "SUBSCRIBE"
+    bf = _fit_font(d, btn_txt, 620, 70, weight=800)
+    tb = d.textbbox((0, 0), btn_txt, font=bf)
+    tw, th = tb[2] - tb[0], tb[3] - tb[1]
+    pad_x, pad_y = 70, 46
+    bw, bh = tw + pad_x * 2, th + pad_y * 2
+    bx0, by0 = (W - bw) // 2, 1040
+    d.rounded_rectangle([bx0, by0, bx0 + bw, by0 + bh], radius=bh // 2, fill=YT_RED)
+    d.text(((W - tw) // 2 - tb[0], by0 + (bh - th) // 2 - tb[1]), btn_txt, font=bf, fill=WHITE)
+
+    # handle del canal
+    if handle:
+        _draw_text_centered(d, handle, _fit_font(d, handle, W - 160, 76, weight=800),
+                            1360, WHITE)
+    # cierre
+    tail = "y no te pierdas el próximo" if es else "so you don't miss the next one"
+    _draw_text_centered(d, tail, _fit_font(d, tail, W - 200, 50, weight=600), 1520, MUTED)
+
+    dest.parent.mkdir(parents=True, exist_ok=True)
+    img.save(dest, "PNG")
+    return dest
+
+
 def render_stat_overlay_png(
     spec: GraphicSpec, dest: Path, theme_idx: int
 ) -> Path:
