@@ -288,9 +288,24 @@ def _search_clip_pixabay(
     kw_tokens = {t for t in keyword.lower().split() if t}
     want_portrait = orientation == "portrait"
 
-    def _hit_score(hit: dict) -> float:
+    def _is_portrait(sizes: dict) -> bool:
+        # Todas las resoluciones de un hit comparten aspect ratio → basta mirar una.
+        for v in sizes.values():
+            w, h = v.get("width", 0), v.get("height", 0)
+            if w and h:
+                return h > w
+        return False
+
+    def _hit_score(hit: dict):
+        # La ORIENTACIÓN correcta pesa más que el match de tags: un clip con la
+        # orientación equivocada se recorta fuerte (landscape→9:16 pierde los lados
+        # = zoom feo). La decisión es por HIT, no por tamaño (los tamaños de un hit
+        # son el MISMO clip a distinta resolución).
+        sizes = hit.get("videos") or {}
         tags = (hit.get("tags") or "").lower()
-        return float(sum(1 for t in kw_tokens if t in tags))
+        orient = 1 if (_is_portrait(sizes) == want_portrait) else 0
+        tag_match = sum(1 for t in kw_tokens if t in tags)
+        return (orient, tag_match)
 
     usable = [h for h in hits if float(h.get("duration", 0) or 0) >= min_duration] or hits
     usable.sort(key=_hit_score, reverse=True)
@@ -303,11 +318,8 @@ def _search_clip_pixabay(
         ] or [v for v in sizes.values() if v.get("url")]
         if not cands:
             continue
-        # Prioriza orientación correcta si existe; luego el lado largo más cercano a 1920.
-        cands.sort(key=lambda v: (
-            0 if ((v.get("height", 0) > v.get("width", 0)) == want_portrait) else 1,
-            abs(max(v.get("width", 0), v.get("height", 0)) - 1920),
-        ))
+        # Dentro del hit elegido, la resolución con lado largo más cercano a 1920.
+        cands.sort(key=lambda v: abs(max(v.get("width", 0), v.get("height", 0)) - 1920))
         chosen = cands[0]
         out_path = dest_dir / f"{cache_key}.mp4"
         try:
