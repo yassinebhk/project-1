@@ -3,6 +3,9 @@ from __future__ import annotations
 
 import hashlib
 import json
+import os
+import random
+import time
 from pathlib import Path
 
 import requests
@@ -12,6 +15,42 @@ from .models import VideoClip
 
 
 PEXELS_SEARCH = "https://api.pexels.com/videos/search"
+
+# Códigos transitorios: 429 = rate-limit (Pexels free = 200 req/h; una tanda de
+# ~15 canales en ráfaga los agota), 5xx = fallo temporal del servidor.
+_RETRYABLE_STATUS = {429, 500, 502, 503, 504}
+
+
+def _pexels_get(url: str, *, stream: bool = False, **kwargs) -> requests.Response:
+    """GET con reintentos ante 429/5xx.
+
+    Antes, un único 429 tumbaba la descarga de clips de un canal entero (y con
+    ella el vídeo: "No hay clips para componer"). Ahora respeta `Retry-After`
+    si viene y, si no, hace backoff exponencial con jitter.
+
+    Knobs: PEXELS_MAX_RETRIES (default 4), PEXELS_BACKOFF_BASE (default 2.0s).
+    """
+    attempts = max(1, int(os.environ.get("PEXELS_MAX_RETRIES", "4")))
+    base = float(os.environ.get("PEXELS_BACKOFF_BASE", "2.0"))
+    for i in range(attempts):
+        resp = requests.get(url, stream=stream, **kwargs)
+        if resp.status_code not in _RETRYABLE_STATUS:
+            resp.raise_for_status()
+            return resp
+        status = resp.status_code
+        retry_after = (resp.headers.get("Retry-After") or "").strip()
+        if stream:
+            resp.close()
+        if i == attempts - 1:
+            resp.raise_for_status()  # agotados los intentos → propaga el error
+        delay = (
+            min(float(retry_after), 60.0)
+            if retry_after.isdigit()
+            else base * (2 ** i) + random.uniform(0.0, 1.0)
+        )
+        print(f"  pexels {status} → reintento {i + 1}/{attempts - 1} en {delay:.1f}s")
+        time.sleep(delay)
+    raise RuntimeError("pexels: reintentos agotados")  # inalcanzable
 
 
 def _cache_key(keyword: str) -> str:
@@ -118,7 +157,7 @@ def search_clip(
             clip.path = str(mp4)  # corrige ruta si la carpeta se movió (pending→uploaded)
             return clip
 
-    resp = requests.get(
+    resp = _pexels_get(
         PEXELS_SEARCH,
         headers={"Authorization": pexels_key()},
         params={
@@ -129,7 +168,6 @@ def search_clip(
         },
         timeout=30,
     )
-    resp.raise_for_status()
     videos = resp.json().get("videos", [])
     if not videos:
         return None
@@ -161,11 +199,13 @@ def search_clip(
         chosen = mp4s[0]
         url = chosen["link"]
         out_path = dest_dir / f"{cache_key}.mp4"
-        with requests.get(url, stream=True, timeout=120) as r:
-            r.raise_for_status()
+        r = _pexels_get(url, stream=True, timeout=120)
+        try:
             with open(out_path, "wb") as fp:
                 for chunk in r.iter_content(chunk_size=1 << 20):
                     fp.write(chunk)
+        finally:
+            r.close()
 
         clip = VideoClip(
             path=str(out_path),
@@ -259,6 +299,7 @@ def fetch_clips_for_segments(
     Si se pasa `topic_anchor`, se PREPONE como primer keyword del hook
     (índice 0), garantizando que la primera imagen del video sea on-topic.
     """
+    last_good: VideoClip | None = None
     for seg in segments:
         # Confiamos en las keywords curadas por Gemini (la primera del teaser
         # es la imagen icónica del topic). El scoring + penalización filtran ruido.
@@ -270,6 +311,7 @@ def fetch_clips_for_segments(
                 continue
             if clip:
                 seg.clips.append(clip)
+                last_good = clip
         if not seg.clips:
             # Fallback: el sujeto del topic, o las primeras palabras del segmento
             fallback = topic_anchor or " ".join(seg.text.split()[:3])
@@ -278,5 +320,12 @@ def fetch_clips_for_segments(
                 clip = search_clip(fallback, dest_dir, orientation=orientation)
                 if clip:
                     seg.clips.append(clip)
+                    last_good = clip
             except Exception:
                 pass
+        # Red de seguridad: si AÚN no hay clips (p.ej. Pexels 429 en ráfaga tras
+        # agotar reintentos), reutiliza el último clip bueno. Un vídeo algo
+        # repetitivo es infinitamente mejor que "No hay clips para componer".
+        if not seg.clips and last_good is not None:
+            print(f"  ↻ seg {seg.label}: reutilizo clip previo (evita abortar compose)")
+            seg.clips.append(last_good)
