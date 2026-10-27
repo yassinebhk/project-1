@@ -311,6 +311,8 @@ jobs:
             [ -n "$AMAZON_AFFILIATE_TAG" ] && printf 'AMAZON_AFFILIATE_TAG=%s\n' "$AMAZON_AFFILIATE_TAG"
             [ -n "$REPO_ADMIN_PAT" ] && printf 'REPO_ADMIN_PAT=%s\n' "$REPO_ADMIN_PAT"
             printf 'PEXELS_API_KEY=%s\n'        "$PEXELS_API_KEY"
+            # Pixabay: 2ª fuente de vídeo (respaldo cuando Pexels da 429) además de fotos.
+            [ -n "$PIXABAY_API_KEY" ] && printf 'PIXABAY_API_KEY=%s\n' "$PIXABAY_API_KEY"
             printf 'YOUTUBE_CHANNEL_ID_ES=%s\n' "$YOUTUBE_CHANNEL_ID_ES"
             printf 'YOUTUBE_CHANNEL_ID_EN=%s\n' "$YOUTUBE_CHANNEL_ID_EN"
             [ -n "$REDDIT_CLIENT_ID"     ] && printf 'REDDIT_CLIENT_ID=%s\n' "$REDDIT_CLIENT_ID"
