@@ -37,7 +37,9 @@ def chat_muted(text: str = "") -> bool:
     if os.environ.get("TELEGRAM_ONLY_GEOQUIZ", "1").lower() in ("0", "false", "no"):
         return False
     tl = (text or "").lower()
-    return "geoquiz" not in tl and "tiktok" not in tl
+    # Permite GeoQuiz escrito de cualquier forma ("geoquiz" o "geo quiz") + TikTok.
+    allow = ("geoquiz", "geo quiz", "tiktok")
+    return not any(a in tl for a in allow)
 
 
 def add(text: str, urgent: bool = False) -> None:

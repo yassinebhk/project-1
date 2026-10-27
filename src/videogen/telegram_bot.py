@@ -1179,7 +1179,7 @@ async def _auto_generate_weekly_longform(ctx: ContextTypes.DEFAULT_TYPE) -> None
     Wrapper con lock cross-job."""
     chat_id = ctx.job.chat_id
     if not _acquire_generation_lock("longgen_weekly", ttl_seconds=3600):  # 1h TTL
-        await ctx.bot.send_message(chat_id, "⏳ Otra generación en curso — longgen pospuesto.")
+        await _notify_user(chat_id, ctx, "⏳ Otra generación en curso — longgen pospuesto.")
         return
     try:
         await _run_longgen_weekly(chat_id, ctx)
@@ -1193,7 +1193,7 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
     from datetime import datetime, timedelta, timezone
     from . import ideas, atomize, script, compose, crosspost
 
-    await ctx.bot.send_message(chat_id, "🎬 *Long-form semanal iniciado*", parse_mode="Markdown")
+    await _notify_user(chat_id, ctx, "🎬 *Long-form semanal iniciado*", parse_mode="Markdown")
 
     # 0. Token check
     ok, reason = _check_yt_token()
@@ -1223,7 +1223,7 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
         if attempt < 2:
             await asyncio.sleep(15 * (attempt + 1))
     if not ideas_list:
-        await ctx.bot.send_message(chat_id, "❌ Gemini sin respuesta para ideas, abort.")
+        await _notify_user(chat_id, ctx, "❌ Gemini sin respuesta para ideas, abort.")
         return
 
     # Dedup vs long-forms + shorts ya subidos. Fuente de verdad: YouTube API
@@ -1267,7 +1267,7 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
             print(f"  case_ledger: registrado key={key}")
     except Exception as _e:
         print(f"  case_ledger: skip ({type(_e).__name__}: {_e})")
-    await ctx.bot.send_message(chat_id, f"📝 Topic long-form: «{topic[:80]}»\n⚙️ Generando (~10-15 min)…")
+    await _notify_user(chat_id, ctx, f"📝 Topic long-form: «{topic[:80]}»\n⚙️ Generando (~10-15 min)…")
 
     # 2. Genera long-form — DURACIÓN ROTATIVA para escapar del detector
     # "rythm of bot-driven production" (YT 2026): en vez de siempre ~8 min,
@@ -1285,7 +1285,7 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
         import traceback as _tb
         _tb.print_exc()
         print(f"  longgen: ❌ generate_long falló → {type(e).__name__}: {e}")
-        await ctx.bot.send_message(chat_id, f"❌ Generación long falló: {type(e).__name__}: {str(e)[:300]}")
+        await _notify_user(chat_id, ctx, f"❌ Generación long falló: {type(e).__name__}: {str(e)[:300]}")
         return
 
     # 3. Programa long-form para HOY 20:00 CEST (si tarde, mañana)
@@ -1320,13 +1320,13 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
             _pf.rebuild_feed(new_slug=slug)
         except Exception as e:
             print(f"  longgen: ⚠ podcast feed error {type(e).__name__}: {e}")
-        await ctx.bot.send_message(
-            chat_id,
+        await _notify_user(
+            chat_id, ctx,
             f"🗓 Long-form programado <b>{long_target.strftime('%d/%m %H:%M %Z')}</b>\n{links.get('es','')}",
             parse_mode="HTML",
         )
     except Exception as e:
-        await ctx.bot.send_message(chat_id, f"⚠️ Schedule long falló: {e}")
+        await _notify_user(chat_id, ctx, f"⚠️ Schedule long falló: {e}")
         return
 
     # 4. Atomizar (5 clips TT-native, sin mención YT)
@@ -1335,7 +1335,7 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
             lambda: atomize.atomize_native(slug, lang="es", progress=lambda m: None)
         )
     except Exception as e:
-        await ctx.bot.send_message(chat_id, f"⚠️ Atomize falló: {e}")
+        await _notify_user(chat_id, ctx, f"⚠️ Atomize falló: {e}")
         return
 
     # Pausa entre el upload del long-form y el primer clip (rate limit interno).
@@ -1379,7 +1379,7 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
                 f"📅 Clip {i+1}/5 «{ch_name}» → {clip_target.strftime('%a %d/%m %H:%M')} · {url}",
             )
         except Exception as e:
-            await ctx.bot.send_message(chat_id, f"⚠️ Clip {i+1} falló: {e}")
+            await _notify_user(chat_id, ctx, f"⚠️ Clip {i+1} falló: {e}")
         # RATE LIMIT INTERNO: espera 5 min entre clip y clip para NO disparar el
         # cooldown de reputación de YT (canales <100 subs son sensibles a bursts).
         # Salto para el último clip.
@@ -1411,7 +1411,7 @@ async def _run_longgen_weekly(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> N
                 parse_mode="HTML",
             )
         except Exception as e:
-            await ctx.bot.send_message(chat_id, f"⚠️ Envío clip {i+1}: {e}")
+            await _notify_user(chat_id, ctx, f"⚠️ Envío clip {i+1}: {e}")
 
     await ctx.bot.send_message(
         chat_id,
@@ -1556,6 +1556,30 @@ def _check_yt_token() -> tuple[bool, str]:
         return False, f"{type(e).__name__}: {s[:120]}"
 
 
+async def _notify_user(
+    chat_id: int, ctx: ContextTypes.DEFAULT_TYPE, text: str, *, force: bool = False, **kwargs
+) -> None:
+    """Envía al usuario RESPETANDO el portero central (notify_batch.chat_muted).
+
+    El autogen mandaba progreso ('📝 Topic elegido', '⚙️ Generando'), fallos
+    transitorios ('❌ No hay clips', auto-reintentados) y '🗓 YT programado' con
+    ctx.bot.send_message DIRECTO, saltándose el filtro → flood en Telegram. El
+    usuario (27/10) solo quiere: el VÍDEO (GeoQuiz, va por otra vía sin filtro),
+    avisos de reauth REALES (se mandan con force=True) y roturas de verdad (las
+    cubre el healthcheck cada 6h). Por defecto (TELEGRAM_ONLY_GEOQUIZ=1) esto
+    silencia el ruido. Reversible: TELEGRAM_ONLY_GEOQUIZ=0.
+    """
+    if not force:
+        try:
+            from . import notify_batch
+            if notify_batch.chat_muted(text):
+                print(f"  [tg silenciado] {text[:70]}")
+                return
+        except Exception:
+            pass
+    await ctx.bot.send_message(chat_id, text, **kwargs)
+
+
 async def _send_yt_token_alert(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE, reason: str) -> None:
     """Alerta de token YT caducado con botón inline para reauth desde móvil.
 
@@ -1686,11 +1710,11 @@ async def _run_autogen_daily(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> No
             if ideas_list:
                 break
         except Exception as e:
-            await ctx.bot.send_message(chat_id, f"⚠️ Ideas falló (intento {attempt+1}/3): {e}")
+            await _notify_user(chat_id, ctx, f"⚠️ Ideas falló (intento {attempt+1}/3): {e}")
         if attempt < 2:
             await asyncio.sleep(15 * (attempt + 1))  # 15s, 30s
     if not ideas_list:
-        await ctx.bot.send_message(chat_id, "❌ Gemini no devolvió ideas tras 3 intentos. Salto la generación de hoy.")
+        await _notify_user(chat_id, ctx, "❌ Gemini no devolvió ideas tras 3 intentos. Salto la generación de hoy.")
         return
 
     # 2. Deduplicar contra historial. Fuente de verdad = YouTube API, NO
@@ -1763,7 +1787,7 @@ async def _run_autogen_daily(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> No
     if not fresh:
         msg = "⚠️ Todas las ideas ya generadas o repiten casos recientes. Pasa /ideas para más."
         print(msg)
-        await ctx.bot.send_message(chat_id, msg)
+        await _notify_user(chat_id, ctx, msg)
         return
     # ~20% de los días prioriza una idea de CURIOSIDAD-CON-CIFRA ([ACTUALIDAD]) — el
     # formato de mejor mediana del canal (21/09). El resto de días: corrupción (fresh[0]).
@@ -1824,8 +1848,8 @@ async def _run_autogen_daily(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> No
             print(f"  case_ledger: registrado key={key}")
     except Exception as _e:
         print(f"  case_ledger: skip ({type(_e).__name__}: {_e})")
-    await ctx.bot.send_message(
-        chat_id,
+    await _notify_user(
+        chat_id, ctx,
         f"📝 Topic elegido (#Episodio {episode_num}): «{topic[:80]}»\n⚙️ Generando…"
     )
 
@@ -1839,7 +1863,7 @@ async def _run_autogen_daily(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> No
         import traceback as _tb
         _tb.print_exc()
         print(f"  autogen: ❌ generación falló → {type(e).__name__}: {e}")
-        await ctx.bot.send_message(chat_id, f"❌ Generación falló: {type(e).__name__}: {str(e)[:300]}")
+        await _notify_user(chat_id, ctx, f"❌ Generación falló: {type(e).__name__}: {str(e)[:300]}")
         return
 
     # 4. Programar a YT — hora configurable vía env AUTOGEN_PUBLISH_HOUR (default 21 CEST)
@@ -1879,7 +1903,7 @@ async def _run_autogen_daily(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> No
         import traceback as _tb
         _tb.print_exc()
         print(f"  autogen: ❌ schedule YT falló → {type(e).__name__}: {e}")
-        await ctx.bot.send_message(chat_id, f"⚠️ Schedule YT falló: {type(e).__name__}: {str(e)[:300]}")
+        await _notify_user(chat_id, ctx, f"⚠️ Schedule YT falló: {type(e).__name__}: {str(e)[:300]}")
         return
 
     # 4b. Bluesky + Mastodon con formato viral (hook + cifra + reply thread).
@@ -1988,8 +2012,8 @@ async def _run_autogen_daily(chat_id: int, ctx: ContextTypes.DEFAULT_TYPE) -> No
     # UN solo mensaje final: YT + resumen social. Reduce ruido de 8 msg → 1.
     # (Eliminado el step "No-subs falló, omito TT/IG" — IG ya se cross-postea
     # automático arriba, y ese mensaje solo generaba ruido.)
-    await ctx.bot.send_message(
-        chat_id,
+    await _notify_user(
+        chat_id, ctx,
         f"{yt_msg}\n\n" + "  ·  ".join(social_status),
         parse_mode="HTML",
     )
