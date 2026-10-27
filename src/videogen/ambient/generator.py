@@ -401,6 +401,7 @@ def _fetch_multiple_images(topic: dict, out_dir: Path, n: int = 8) -> list[Path]
         print("  ambient: falta PEXELS_API_KEY — usa 1 imagen fallback")
         return []
     q = topic["pexels_image_query"]
+    urls: list[str] = []
     try:
         from .. import visuals
         r = visuals.pexels_api_get(
@@ -409,17 +410,27 @@ def _fetch_multiple_images(topic: dict, out_dir: Path, n: int = 8) -> list[Path]
                      "orientation": "landscape", "size": "large"},
             timeout=30,
         )
-        data = r.json()
+        for ph in (r.json().get("photos", []) if r.status_code == 200 else []):
+            u = (ph.get("src") or {}).get("large2x") or (ph.get("src") or {}).get("large")
+            if u:
+                urls.append(u)
     except Exception as e:
         print(f"  ambient: Pexels multi-image fetch fail — {e}")
+    # Respaldo Pixabay (cupo INDEPENDIENTE) si Pexels da 429/0 resultados: antes,
+    # un 429 persistente dejaba el crossfade sin imágenes → el vídeo ambient fallaba
+    # (p.ej. MenteEnCalma 27/10). Pixabay imágenes SÍ funciona (misma PIXABAY_API_KEY).
+    if not urls:
+        print("  ambient: Pexels sin imágenes (429/vacío) → respaldo Pixabay")
+        try:
+            from .. import aimages
+            urls = [u for (_i, u, _a) in aimages._pixabay_candidates(q, vertical=False) if u]
+        except Exception as e:
+            print(f"  ambient: respaldo Pixabay falló — {e}")
+    if not urls:
         return []
-    photos = data.get("photos", [])
-    if not photos:
-        return []
-    random.shuffle(photos)
+    random.shuffle(urls)
     downloaded: list[Path] = []
-    for i, photo in enumerate(photos[:n]):
-        url = (photo.get("src") or {}).get("large2x") or photo["src"]["large"]
+    for i, url in enumerate(urls[:n]):
         try:
             content = requests.get(url, timeout=30).content
             p = out_dir / f"cover_{i:02d}.jpg"
@@ -427,7 +438,7 @@ def _fetch_multiple_images(topic: dict, out_dir: Path, n: int = 8) -> list[Path]
             downloaded.append(p)
         except Exception:
             continue
-    print(f"  ambient: {len(downloaded)} imágenes Pexels descargadas para crossfade")
+    print(f"  ambient: {len(downloaded)} imágenes descargadas para crossfade")
     return downloaded
 
 

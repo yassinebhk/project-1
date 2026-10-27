@@ -42,6 +42,7 @@ def _fetch_short_images(topic: dict, out_dir: Path, n: int = 4) -> list[Path]:
     if not key:
         return []
     q = topic["pexels_image_query"]
+    urls: list[str] = []
     try:
         from .. import visuals
         r = visuals.pexels_api_get(
@@ -50,16 +51,25 @@ def _fetch_short_images(topic: dict, out_dir: Path, n: int = 4) -> list[Path]:
                      "orientation": "portrait", "size": "large"},
             timeout=30,
         )
-        photos = r.json().get("photos", [])
+        for ph in (r.json().get("photos", []) if r.status_code == 200 else []):
+            u = (ph.get("src") or {}).get("portrait") or (ph.get("src") or {}).get("large")
+            if u:
+                urls.append(u)
     except Exception as e:
         print(f"  short-amb: Pexels fail — {e}")
+    # Respaldo Pixabay (cupo independiente) si Pexels da 429/0 resultados.
+    if not urls:
+        print("  short-amb: Pexels sin imágenes → respaldo Pixabay")
+        try:
+            from .. import aimages
+            urls = [u for (_i, u, _a) in aimages._pixabay_candidates(q, vertical=True) if u]
+        except Exception as e:
+            print(f"  short-amb: respaldo Pixabay falló — {e}")
+    if not urls:
         return []
-    if not photos:
-        return []
-    random.shuffle(photos)
+    random.shuffle(urls)
     downloaded = []
-    for i, photo in enumerate(photos[:n]):
-        url = (photo.get("src") or {}).get("portrait") or photo["src"]["large"]
+    for i, url in enumerate(urls[:n]):
         try:
             content = requests.get(url, timeout=30).content
             p = out_dir / f"vert_{i:02d}.jpg"
