@@ -10,30 +10,42 @@ from pathlib import Path
 
 import requests
 
-from .config import pexels_key
+from .config import pexels_key, pexels_keys
 from .models import VideoClip
 
 
 PEXELS_SEARCH = "https://api.pexels.com/videos/search"
 
-# Códigos transitorios: 429 = rate-limit (Pexels free = 200 req/h; una tanda de
-# ~15 canales en ráfaga los agota), 5xx = fallo temporal del servidor.
+# Códigos transitorios: 429 = rate-limit (Pexels free = 200 req/h POR CLAVE; una
+# tanda de ~15 canales en ráfaga los agota), 5xx = fallo temporal del servidor.
 _RETRYABLE_STATUS = {429, 500, 502, 503, 504}
 
 
-def _pexels_get(url: str, *, stream: bool = False, **kwargs) -> requests.Response:
-    """GET con reintentos ante 429/5xx.
+def _pexels_get(
+    url: str, *, stream: bool = False, auth_keys: list[str] | None = None, **kwargs
+) -> requests.Response:
+    """GET con reintentos ante 429/5xx + ROTACIÓN de claves Pexels.
 
     Antes, un único 429 tumbaba la descarga de clips de un canal entero (y con
-    ella el vídeo: "No hay clips para componer"). Ahora respeta `Retry-After`
-    si viene y, si no, hace backoff exponencial con jitter.
+    ella el vídeo: "No hay clips para componer").
+
+    - `auth_keys`: si se pasan varias claves, ante un 429 rota a la siguiente
+      SIN esperar (cada clave tiene su propio cupo 200 req/h). Solo cuando se
+      agotan todas en una vuelta aplica backoff.
+    - Respeta `Retry-After` si viene; si no, backoff exponencial con jitter.
 
     Knobs: PEXELS_MAX_RETRIES (default 4), PEXELS_BACKOFF_BASE (default 2.0s).
     """
     attempts = max(1, int(os.environ.get("PEXELS_MAX_RETRIES", "4")))
     base = float(os.environ.get("PEXELS_BACKOFF_BASE", "2.0"))
-    for i in range(attempts):
-        resp = requests.get(url, stream=stream, **kwargs)
+    keys = [k for k in (auth_keys or []) if k]
+    headers0 = dict(kwargs.pop("headers", None) or {})
+    total = max(attempts, len(keys) or 1)  # al menos un intento por clave
+    for i in range(total):
+        headers = dict(headers0)
+        if keys:
+            headers["Authorization"] = keys[i % len(keys)]
+        resp = requests.get(url, stream=stream, headers=headers, **kwargs)
         if resp.status_code not in _RETRYABLE_STATUS:
             resp.raise_for_status()
             return resp
@@ -41,14 +53,18 @@ def _pexels_get(url: str, *, stream: bool = False, **kwargs) -> requests.Respons
         retry_after = (resp.headers.get("Retry-After") or "").strip()
         if stream:
             resp.close()
-        if i == attempts - 1:
+        if i == total - 1:
             resp.raise_for_status()  # agotados los intentos → propaga el error
+        # Si queda otra clave sin probar en esta vuelta, rota SIN dormir.
+        if keys and (i + 1) % len(keys) != 0:
+            print(f"  pexels {status} → rota a clave #{(i + 1) % len(keys) + 1}/{len(keys)}")
+            continue
         delay = (
             min(float(retry_after), 60.0)
             if retry_after.isdigit()
-            else base * (2 ** i) + random.uniform(0.0, 1.0)
+            else base * (2 ** (i // max(1, len(keys)))) + random.uniform(0.0, 1.0)
         )
-        print(f"  pexels {status} → reintento {i + 1}/{attempts - 1} en {delay:.1f}s")
+        print(f"  pexels {status} → reintento en {delay:.1f}s")
         time.sleep(delay)
     raise RuntimeError("pexels: reintentos agotados")  # inalcanzable
 
@@ -159,7 +175,7 @@ def search_clip(
 
     resp = _pexels_get(
         PEXELS_SEARCH,
-        headers={"Authorization": pexels_key()},
+        auth_keys=pexels_keys() or [pexels_key()],  # rotación si hay varias claves
         params={
             "query": keyword,
             "per_page": 15,

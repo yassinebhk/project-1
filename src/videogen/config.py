@@ -43,6 +43,34 @@ def pexels_key() -> str:
     return _require("PEXELS_API_KEY")
 
 
+def pexels_keys() -> list[str]:
+    """Todas las claves Pexels disponibles, para ROTACIÓN.
+
+    El free tier son 200 req/h POR CLAVE. Una tanda de catchup (~15 canales)
+    las agota y da 429. Crear claves extra en pexels.com es gratis → con 2-3
+    claves el límite efectivo se multiplica y el 429 casi desaparece.
+
+    Fuentes (en orden, dedup): PEXELS_API_KEY (admite varias separadas por
+    comas) + PEXELS_API_KEY_2, _3, … Devuelve [] si no hay ninguna.
+    """
+    raw: list[str] = []
+    raw += [p.strip() for p in os.environ.get("PEXELS_API_KEY", "").split(",")]
+    i = 2
+    while True:
+        v = os.environ.get(f"PEXELS_API_KEY_{i}", "").strip()
+        if not v:
+            break
+        raw.append(v)
+        i += 1
+    seen: set[str] = set()
+    out: list[str] = []
+    for k in raw:
+        if k and k not in seen:
+            seen.add(k)
+            out.append(k)
+    return out
+
+
 def gemini_key() -> str | None:
     """Requerida para script (Gemini Flash) y opcional para Veo hook."""
     val = os.environ.get("GEMINI_API_KEY", "").strip()
