@@ -1390,5 +1390,13 @@
     "url": "https://instagram.com/reel/18135737032584481",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-27T14:26:16.156496+00:00"
+  },
+  {
+    "slug": "padel_tactic_lob_20261027_152048",
+    "title": "The Deep Lob — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 68min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-27T15:33:59.137308+00:00"
   }
 ]
