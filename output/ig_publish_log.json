@@ -1415,5 +1415,13 @@
     "url": "https://instagram.com/reel/18133154182801120",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-27T19:09:47.084371+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-world-simulation",
+    "title": "Top 5 AI tools for world simulation · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 24min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-27T19:33:23.947481+00:00"
   }
 ]
