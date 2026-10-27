@@ -1373,5 +1373,13 @@
     "url": "https://instagram.com/reel/18120141439767773",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-27T10:11:41.107381+00:00"
+  },
+  {
+    "slug": "epictetus-weekend-networking-drain",
+    "title": "Epictetus on Saving Your Energy at Dreaded Weekend Mixers",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 216min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-27T13:47:20.921531+00:00"
   }
 ]
