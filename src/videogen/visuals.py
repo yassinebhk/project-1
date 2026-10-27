@@ -173,27 +173,22 @@ def _score_video(vid: dict, kw_tokens: set[str], orientation: str) -> float:
     return score
 
 
-def search_clip(
+PIXABAY_VIDEO_SEARCH = "https://pixabay.com/api/videos/"
+
+
+def _search_clip_pexels(
     keyword: str,
     dest_dir: Path,
-    min_duration: float = 3.0,
-    orientation: str = "portrait",
+    cache_key: str,
+    min_duration: float,
+    orientation: str,
 ) -> VideoClip | None:
-    """Busca un clip en Pexels matching keyword.
+    """Fuente PRIMARIA: busca+descarga un clip en Pexels.
 
     Pide 15 candidatos, los puntúa por relevancia (URL slug match, duración,
-    orientación) y descarga el mejor. Resultado cacheado en dest_dir.
+    orientación) y descarga el mejor. Puede LANZAR si Pexels agota los
+    reintentos (429 persistente) — lo captura search_clip para caer a Pixabay.
     """
-    dest_dir.mkdir(parents=True, exist_ok=True)
-    cache_key = _cache_key(keyword)
-    cached_meta = dest_dir / f"{cache_key}.json"
-    if cached_meta.exists():
-        clip = VideoClip.model_validate_json(cached_meta.read_text(encoding="utf-8"))
-        mp4 = dest_dir / f"{cache_key}.mp4"
-        if mp4.exists():
-            clip.path = str(mp4)  # corrige ruta si la carpeta se movió (pending→uploaded)
-            return clip
-
     resp = _pexels_get(
         PEXELS_SEARCH,
         auth_keys=pexels_keys() or [pexels_key()],  # rotación si hay varias claves
@@ -251,8 +246,135 @@ def search_clip(
             height=int(chosen.get("height", 0)),
             keyword=keyword,
         )
-        cached_meta.write_text(clip.model_dump_json(indent=2), encoding="utf-8")
+        (dest_dir / f"{cache_key}.json").write_text(
+            clip.model_dump_json(indent=2), encoding="utf-8"
+        )
         return clip
+    return None
+
+
+def _search_clip_pixabay(
+    keyword: str,
+    dest_dir: Path,
+    cache_key: str,
+    min_duration: float,
+    orientation: str,
+) -> VideoClip | None:
+    """Fuente de RESPALDO cuando Pexels da 429 (cupo horario agotado en ráfaga)
+    o 0 resultados.
+
+    Pixabay tiene API de vídeo GRATIS con cupo INDEPENDIENTE de Pexels (y más
+    holgado, ~100 req/min). La clave PIXABAY_API_KEY ya existe (se usa para fotos
+    en aimages). Esto es la cura real mientras Pexels tiene PAUSADA la emisión de
+    claves nuevas (27/10) → no se puede añadir PEXELS_API_KEY_2. Desactivable con
+    PIXABAY_VIDEO_FALLBACK=0.
+    """
+    key = os.environ.get("PIXABAY_API_KEY", "").strip()
+    if not key:
+        return None
+    r = requests.get(
+        PIXABAY_VIDEO_SEARCH,
+        params={"key": key, "q": keyword, "per_page": 20, "safesearch": "true"},
+        timeout=30,
+    )
+    if r.status_code != 200:
+        return None
+    # Pixabay a veces manda content-type text/html con el JSON dentro → r.json()
+    # parsea el body igual (ignora el content-type).
+    hits = (r.json() or {}).get("hits", [])
+    if not hits:
+        return None
+
+    kw_tokens = {t for t in keyword.lower().split() if t}
+    want_portrait = orientation == "portrait"
+
+    def _hit_score(hit: dict) -> float:
+        tags = (hit.get("tags") or "").lower()
+        return float(sum(1 for t in kw_tokens if t in tags))
+
+    usable = [h for h in hits if float(h.get("duration", 0) or 0) >= min_duration] or hits
+    usable.sort(key=_hit_score, reverse=True)
+
+    for hit in usable:
+        sizes = hit.get("videos") or {}
+        cands = [
+            v for v in sizes.values()
+            if v.get("url") and max(v.get("width", 0), v.get("height", 0)) >= 1280
+        ] or [v for v in sizes.values() if v.get("url")]
+        if not cands:
+            continue
+        # Prioriza orientación correcta si existe; luego el lado largo más cercano a 1920.
+        cands.sort(key=lambda v: (
+            0 if ((v.get("height", 0) > v.get("width", 0)) == want_portrait) else 1,
+            abs(max(v.get("width", 0), v.get("height", 0)) - 1920),
+        ))
+        chosen = cands[0]
+        out_path = dest_dir / f"{cache_key}.mp4"
+        try:
+            dl = requests.get(chosen["url"], stream=True, timeout=120)
+            dl.raise_for_status()
+            try:
+                with open(out_path, "wb") as fp:
+                    for chunk in dl.iter_content(chunk_size=1 << 20):
+                        fp.write(chunk)
+            finally:
+                dl.close()
+        except Exception as e:  # noqa: BLE001 — prueba el siguiente hit
+            print(f"  pixabay descarga falló: {type(e).__name__}")
+            continue
+
+        clip = VideoClip(
+            path=str(out_path),
+            duration_seconds=float(hit.get("duration", 0) or 0),
+            width=int(chosen.get("width", 0)),
+            height=int(chosen.get("height", 0)),
+            keyword=keyword,
+        )
+        (dest_dir / f"{cache_key}.json").write_text(
+            clip.model_dump_json(indent=2), encoding="utf-8"
+        )
+        print(f"  ✓ pixabay (respaldo) sirvió clip para '{keyword}'")
+        return clip
+    return None
+
+
+def search_clip(
+    keyword: str,
+    dest_dir: Path,
+    min_duration: float = 3.0,
+    orientation: str = "portrait",
+) -> VideoClip | None:
+    """Busca un clip para `keyword`.
+
+    Fuente primaria = Pexels. Si Pexels da 429 (cupo de la única clave agotado en
+    ráfaga; Pexels tiene PAUSADA la emisión de claves nuevas) o 0 resultados, cae
+    a **Pixabay vídeo** (cupo independiente, clave ya existente). Resultado
+    cacheado en dest_dir. Devuelve None solo si NINGUNA fuente sirve clip.
+    """
+    dest_dir.mkdir(parents=True, exist_ok=True)
+    cache_key = _cache_key(keyword)
+    cached_meta = dest_dir / f"{cache_key}.json"
+    if cached_meta.exists():
+        clip = VideoClip.model_validate_json(cached_meta.read_text(encoding="utf-8"))
+        mp4 = dest_dir / f"{cache_key}.mp4"
+        if mp4.exists():
+            clip.path = str(mp4)  # corrige ruta si la carpeta se movió (pending→uploaded)
+            return clip
+
+    # 1) Pexels (primaria)
+    try:
+        clip = _search_clip_pexels(keyword, dest_dir, cache_key, min_duration, orientation)
+        if clip:
+            return clip
+    except Exception as e:  # noqa: BLE001 — 429 agotado u otro fallo → respaldo
+        print(f"  pexels agotado para '{keyword}': {type(e).__name__} — pruebo Pixabay")
+
+    # 2) Pixabay vídeo (respaldo; cupo independiente, clave gratis ya existe)
+    if os.environ.get("PIXABAY_VIDEO_FALLBACK", "1").lower() not in ("0", "false", "no"):
+        try:
+            return _search_clip_pixabay(keyword, dest_dir, cache_key, min_duration, orientation)
+        except Exception as e:  # noqa: BLE001
+            print(f"  pixabay vídeo falló para '{keyword}': {type(e).__name__}")
     return None
 
 
