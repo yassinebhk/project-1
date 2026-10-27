@@ -380,10 +380,21 @@ def check_all() -> dict[str, Any]:
         "OpenRouter":   _safe(_check_openrouter, "OpenRouter"),
         "Groq":         _safe(_check_groq, "Groq"),
     }
+    # Pexels 429 = rate-limit transitorio (una tanda de catchup acaba de agotar
+    # el límite 200 req/h), NO una caída: el pipeline ya reintenta con backoff y
+    # Pollinations cubre imágenes. Lo marcamos 🟡 pendiente para no tumbar el run
+    # entero (exit!=0) ni disparar auto-retries por una falsa alarma.
+    _pexels = _safe(_check_pexels, "Pexels")
+    if not _pexels["ok"] and "429" in _pexels["detail"]:
+        _pexels = {
+            "ok": True,
+            "pending": True,
+            "detail": "429 rate-limit (transitorio; pipeline reintenta + fallback Pollinations)",
+        }
     media = {
         "Pixabay(img)": _safe(_check_pixabay, "Pixabay"),
         "Pollinations": _safe(_check_pollinations, "Pollinations"),
-        "Pexels":       _safe(_check_pexels, "Pexels"),
+        "Pexels":       _pexels,
         "Freesound(música)": _safe(_check_freesound, "Freesound"),
         "R2(IG host)":  _safe(_check_r2, "R2"),
     }
