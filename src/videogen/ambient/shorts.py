@@ -43,9 +43,9 @@ def _fetch_short_images(topic: dict, out_dir: Path, n: int = 4) -> list[Path]:
         return []
     q = topic["pexels_image_query"]
     try:
-        r = requests.get(
+        from .. import visuals
+        r = visuals.pexels_api_get(
             "https://api.pexels.com/v1/search",
-            headers={"Authorization": key},
             params={"query": q, "per_page": max(15, n * 2),
                      "orientation": "portrait", "size": "large"},
             timeout=30,

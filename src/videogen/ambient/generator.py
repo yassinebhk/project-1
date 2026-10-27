@@ -402,9 +402,9 @@ def _fetch_multiple_images(topic: dict, out_dir: Path, n: int = 8) -> list[Path]
         return []
     q = topic["pexels_image_query"]
     try:
-        r = requests.get(
+        from .. import visuals
+        r = visuals.pexels_api_get(
             "https://api.pexels.com/v1/search",
-            headers={"Authorization": key},
             params={"query": q, "per_page": max(20, n * 2),
                      "orientation": "landscape", "size": "large"},
             timeout=30,

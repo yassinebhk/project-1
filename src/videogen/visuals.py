@@ -69,6 +69,27 @@ def _pexels_get(
     raise RuntimeError("pexels: reintentos agotados")  # inalcanzable
 
 
+def pexels_api_get(
+    url: str, *, stream: bool = False, auth_keys: list[str] | None = None, **kwargs
+) -> requests.Response:
+    """Variante pública para callers que YA manejan `status != 200` con su propio
+    fallback (fotos: aimages, thumbnails, ambient).
+
+    Reintenta/rota igual que `_pexels_get`, pero DEVUELVE la respuesta del último
+    intento (aunque sea 429) en vez de lanzar, para no romper su lógica. Las
+    claves por defecto son todas las disponibles (rotación). Un error de
+    conexión (sin respuesta) sí se propaga → lo captura el try/except del caller.
+    """
+    if auth_keys is None:
+        auth_keys = pexels_keys() or [pexels_key()]
+    try:
+        return _pexels_get(url, stream=stream, auth_keys=auth_keys, **kwargs)
+    except requests.HTTPError as e:
+        if e.response is not None:
+            return e.response
+        raise
+
+
 def _cache_key(keyword: str) -> str:
     return hashlib.sha1(keyword.lower().encode("utf-8")).hexdigest()[:12]
 

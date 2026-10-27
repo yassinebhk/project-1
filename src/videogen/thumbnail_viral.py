@@ -136,10 +136,10 @@ def _fetch_pexels_background(title: str, dest: Path, w: int = 1280,
     try:
         import requests
         import random as _r
+        from . import visuals
         for query in queries:
-            r = requests.get(
+            r = visuals.pexels_api_get(
                 "https://api.pexels.com/v1/search",
-                headers={"Authorization": key},
                 params={"query": query, "per_page": 15, "orientation": "landscape",
                          "size": "large"},
                 timeout=15,

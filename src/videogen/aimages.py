@@ -265,9 +265,8 @@ def _pexels_candidates(query: str, orientation: str) -> list[tuple[str, str, str
     if not key:
         return []
     try:
-        import requests
-        r = requests.get("https://api.pexels.com/v1/search",
-                         headers={"Authorization": key},
+        from . import visuals
+        r = visuals.pexels_api_get("https://api.pexels.com/v1/search",
                          params={"query": query, "per_page": 30, "orientation": orientation},
                          timeout=30)
         if r.status_code != 200:
