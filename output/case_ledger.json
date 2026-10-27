@@ -298,7 +298,7 @@
       ]
     },
     "ballena_blanca": {
-      "count": 3,
+      "count": 4,
       "history": [
         {
           "ts": "2026-09-06T10:12:25.212575+00:00",
@@ -311,6 +311,10 @@
         {
           "ts": "2026-09-24T15:52:14.014521+00:00",
           "topic": "Caso Ballena Blanca: cómo operaba la mayor red de blanqueo de capitales de 250 millones de euros en la Costa del Sol"
+        },
+        {
+          "ts": "2026-10-27T14:02:40.775658+00:00",
+          "topic": "[CRIMEN] Operación Ballena Blanca (2005): la mayor red de blanqueo de capitales de Marbella que lavó más de 250 millones de euros"
         }
       ]
     },
