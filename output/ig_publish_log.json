@@ -1466,5 +1466,13 @@
     "url": "https://instagram.com/reel/18088615859289081",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-28T14:17:10.278749+00:00"
+  },
+  {
+    "slug": "padel_tactic_defense_20261028_160032",
+    "title": "Patient Defense — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 119min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-28T16:16:13.108833+00:00"
   }
 ]
