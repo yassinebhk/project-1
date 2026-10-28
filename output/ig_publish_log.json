@@ -1491,5 +1491,13 @@
     "url": "https://instagram.com/reel/18049383737818176",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-28T18:19:19.258854+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-social-media-growth",
+    "title": "Top 5 AI tools for social media growth · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 81min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-28T19:40:32.359534+00:00"
   }
 ]
