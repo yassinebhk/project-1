@@ -1449,5 +1449,13 @@
     "url": "https://instagram.com/reel/18115116932120089",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-28T10:08:35.730478+00:00"
+  },
+  {
+    "slug": "casa-real-espana-presupuesto-comparacion",
+    "title": "Casa Real España — 8 millones de presupuesto · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 162min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-28T12:50:40.146912+00:00"
   }
 ]
