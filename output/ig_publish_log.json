@@ -1525,5 +1525,13 @@
     "url": "https://instagram.com/reel/18100799411551481",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-29T10:08:07.633044+00:00"
+  },
+  {
+    "slug": "coste-real-iphone-apple",
+    "title": "iPhone 15 Pro — 500€ de margen limpio por cada móvil · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 171min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-29T12:59:14.650491+00:00"
   }
 ]
