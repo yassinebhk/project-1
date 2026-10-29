@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T11:14:57.738102+00:00",
+  "generated_at": "2026-10-29T11:37:32.051078+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -245,6 +245,90 @@
       "hook": "El cielo se volvería de un color rojo sangre y tendrías que vivir bajo tierra para sobrevivir.",
       "angle": "Explicar la luminosidad de las estrellas tipo M, la zona habitable cercana y las eyecciones de masa coronal que bombardearían constantemente la Tierra.",
       "visual": "sol rojo gigante ocupando medio cielo, base subterránea futurista, erupción solar masiva"
+    },
+    {
+      "key": "suelo_marino_vacio",
+      "titulo": "¿Qué pasaría si el agua de los océanos desapareciera por un segundo?",
+      "hook": "Si el mar desapareciera un solo instante, la presión atmosférica aplastaría el fondo marino con una fuerza inimaginable.",
+      "angle": "La columna de agua ejerce una presión hidrostática extrema; al vaciarse, el aire se precipitaría al fondo generando ondas de choque sónicas según la física de fluidos.",
+      "visual": "ocean basin dry, sudden water vacuum, pressure shockwave, abyssal plains revealed"
+    },
+    {
+      "key": "rayos_gamma_cercanos",
+      "titulo": "¿Qué pasaría si una estrella cercana emitiera un estallido de rayos gamma hacia la Tierra?",
+      "hook": "Un solo destello invisible desde el espacio profundo podría destruir la capa de ozono de la Tierra en cuestión de segundos.",
+      "angle": "La radiación gamma ioniza el nitrógeno y oxígeno atmosférico, creando dióxido de nitrógeno que bloquea la luz solar y causa una extinción masiva según la astrofísica estelar.",
+      "visual": "gamma ray burst space, ozone layer depleting, purple aurora daytime, glowing atmosphere"
+    },
+    {
+      "key": "madera_flotante_gigante",
+      "titulo": "¿Qué pasaría si todos los árboles del planeta crecieran el doble de alto en un año?",
+      "hook": "Si los árboles duplicaran su altura de repente, la física de la capilaridad del agua rompería sus propios troncos desde dentro.",
+      "angle": "La tensión superficial y la capilaridad que usan las plantas para subir agua contra la gravedad tienen un límite físico máximo de unos 130 metros.",
+      "visual": "giant redwood forests, microscopic water columns, snapped tree trunks, massive wooden skyscrapers"
+    },
+    {
+      "key": "viento_solar_intenso",
+      "titulo": "¿Qué pasaría si el viento solar impactara directamente la superficie de la Tierra?",
+      "hook": "Si nuestro campo magnético se desvaneciera un lunes, cada red eléctrica del planeta se fundiría antes del mediodía.",
+      "angle": "La interacción de partículas cargadas con la ionosfera terrestre genera corrientes geomagnéticamente inducidas que destruyen transformadores según el clima espacial.",
+      "visual": "solar flare earth impact, destroyed power grids, massive auroras equator, plasma storm"
+    },
+    {
+      "key": "gravedad_gradual_ecuatorial",
+      "titulo": "¿Qué pasaría si pudieras volar en el ecuador terrestre solo corriendo muy rápido?",
+      "hook": "En el ecuador de la Tierra ya pesas menos que en los polos gracias a la fuerza centrífuga de la rotación planetaria.",
+      "angle": "La aceleración centrífuga contrarresta levemente la gravedad en la línea ecuatorial; si girara 17 veces más rápido, la fuerza centrífuga superaría a la gravedad.",
+      "visual": "running fast equator, physics calculation overlay, centrifugal force animation, earth rotation vectors"
+    },
+    {
+      "key": "fuego_sin_gravedad",
+      "titulo": "¿Qué pasaría si encendieras una cerilla dentro de una estación espacial en caída libre?",
+      "hook": "Una llama en gravedad cero no arde hacia arriba, sino que forma una esfera azul perfecta que se asfixia a sí misma.",
+      "angle": "Sin convección térmica para desplazar los gases calientes y atraer oxígeno fresco, el fuego consume el aire circundante y crea una esfera de plasma frío.",
+      "visual": "spherical blue flame, zero gravity candle, microgravity combustion, oxygen starvation animation"
+    },
+    {
+      "key": "rayos_cosmicos_visibles",
+      "titulo": "¿Qué pasaría si pudieras ver los rayos cósmicos atravesando tus ojos?",
+      "hook": "Cada pocos minutos, una partícula invisible del espacio profundo atraviesa tu retina y tú la ves como un destello blanco.",
+      "angle": "Los muones y rayos cósmicos galácticos golpean el fluido vítreo del ojo humano y estimulan el nervio óptico, un fenómeno real medido por astronautas en el espacio.",
+      "visual": "cosmic ray eyeball hit, phosphenes vision, human eye close up, starry deep space particles"
+    },
+    {
+      "key": "arena_desierto_vidrio",
+      "titulo": "¿Qué pasaría si un rayo gigante convirtiera todo un desierto en una sola pieza de vidrio?",
+      "hook": "Cuando un rayo funde la arena del desierto a más de 1.800 grados, nace una estructura de vidrio fósil llamada fulgurita.",
+      "angle": "La energía térmica instantánea de una descarga eléctrica de 30.000 amperios funde el dióxido de silicio cristalino transformándolo en vidrio de cuarzo amorfo.",
+      "visual": "lightning striking desert sand, glowing molten fulgurite, crystal structures forming, extreme heat glow"
+    },
+    {
+      "key": "bacterias_metano_profundas",
+      "titulo": "¿Qué pasaría si los microbios del fondo marino duplicaran su producción de metano hoy?",
+      "hook": "Bajo el lecho marino se esconde una bomba de gas metano congelado capaz de calentar todo el planeta en un parpadeo.",
+      "angle": "Los clratos de metano en los sedimentos oceánicos son compuestos estables a alta presión y baja temperatura; alterar su equilibrio libera gases de efecto invernadero masivos.",
+      "visual": "methane ice bubbles ocean floor, deep sea hydrothermal vents, global warming simulation, frozen gas crystals"
+    },
+    {
+      "key": "carbono_puro_corteza",
+      "titulo": "¿Qué pasaría si toda la corteza terrestre estuviera hecha de grafito en lugar de roca?",
+      "hook": "Si el suelo bajo tus pies estuviera hecho del mismo material que la punta de tu lápiz, tus pisadas lo desintegrarían.",
+      "angle": "El grafito tiene enlaces de Van der Waals muy débiles entre sus láminas atómicas, lo que hace que sea extremadamente blando y resbaladizo a nivel molecular.",
+      "visual": "graphite ground crumbling, molecular lattice layers, pencil lead structure zoom, soft mineral surface"
+    },
+    {
+      "key": "erosion_viento_marte",
+      "titulo": "¿Qué pasaría si los vientos de Marte soplaran en la atmósfera de la Tierra?",
+      "hook": "Aunque las tormentas marcianas cubren un planeta entero, su viento apenas podría mover una hoja de papel debido a su baja densidad.",
+      "angle": "La presión atmosférica en Marte es inferior al 1% de la terrestre; un viento huracanado de 100 km/h allí ejerce la fuerza física de una brisa suave en la Tierra.",
+      "visual": "mars dust storm thin atmosphere, wind pressure comparison, red planet dunes, aerodynamic airflow physics"
+    },
+    {
+      "key": "eco_infinito_cañon",
+      "titulo": "¿Qué pasaría si las paredes de un cañón reflejaran el 100% de las ondas sonoras?",
+      "hook": "En un cañón con paredes de perfecta reverberación, un simple susurro se acumularía hasta convertirse en un estruendo sordo mortal.",
+      "angle": "La energía acústica se disipa al chocar contra superficies rugosas transformándose en calor; una reflexión perfecta sumaría decibelios exponenciales por interferencia constructiva.",
+      "visual": "infinite echo canyon, sound wave bounce animation, acoustic physics visualization, decibel wave spike"
     }
   ]
 }
