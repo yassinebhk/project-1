@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T00:16:41.409488+00:00",
+  "generated_at": "2026-10-29T01:29:24.457110+00:00",
   "topics": [
     {
       "key": "nubes_peso",
@@ -217,6 +217,41 @@
       "hook": "Cuando estornudas, el aire y las gotas salen disparadas de tu nariz casi a la velocidad de un coche en la autopista.",
       "angle": "La velocidad física de un estornudo humano y la expulsión de aerosoles a más de 100 km/h.",
       "visual": "estornudo camara lenta particulas aire primer plano"
+    },
+    {
+      "key": "sueno_delfines_hemisferios",
+      "titulo": "Los delfines nunca duermen del todo: apagan medio cerebro",
+      "hook": "¿Sabías que los delfines duermen con un ojo abierto y la mitad de su cerebro despierta?",
+      "angle": "Explicar el sueño unishemisférico en cetáceos para no ahogarse y mantener la alerta.",
+      "visual": "delfin_nadando_noche_ojo_abierto"
+    },
+    {
+      "key": "huesos_ craneo_fusion_bebes",
+      "titulo": "Por qué los bebes nacen con el cráneo separado en piezas",
+      "hook": "Los bebés nacen con los huesos del cráneo separados para poder pasar por el canal de parto.",
+      "angle": "La fontanela y la evolución del esqueleto humano al nacer.",
+      "visual": "radiografia_craneo_bebe_partes"
+    },
+    {
+      "key": "velocidad_estornudo_aire",
+      "titulo": "A qué velocidad real sale disparado el aire de un estornudo",
+      "hook": "El aire de un estornudo viaja a la velocidad de un coche en la autopista.",
+      "angle": "La física de la expulsión de aire a más de 150 km por hora.",
+      "visual": "camara_lenta_estornudo_particulas"
+    },
+    {
+      "key": "tardigrados_vacio_espacio",
+      "titulo": "La criatura microscópica capaz de sobrevivir al vacío del espacio",
+      "hook": "Este animal microscópico puede soportar la radiación extrema y el vacío del espacio.",
+      "angle": "Los tardígrados y su capacidad de entrar en criptobiosis.",
+      "visual": "tardigrado_microscopio_electronico_3d"
+    },
+    {
+      "key": "cerebro_avestruz_ojo",
+      "titulo": "La sorprendente razón por la que el cerebro de un avestruz es minúsculo",
+      "hook": "El cerebro de un avestruz es más pequeño que su propio ojo.",
+      "angle": "Anatomía comparada y la evolución visual de las aves corredoras.",
+      "visual": "avestruz_primer_plano_ojo_grande"
     }
   ]
 }
