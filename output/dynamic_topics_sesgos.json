@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T10:45:37.114798+00:00",
+  "generated_at": "2026-10-30T11:27:06.716474+00:00",
   "topics": [
     {
       "key": "efecto_arrastre",
@@ -217,6 +217,27 @@
       "hook": "Crees que ese fracaso arruinará tu vida para siempre, pero la ciencia dice lo contrario.",
       "angle": "El sesgo de impacto estudiado por Timothy Wilson y Daniel Gilbert en psicología afectiva, midiendo nuestra sobreestimación de la intensidad y duración de las reacciones emocionales futuras.",
       "visual": "reloj de arena, arena cayendo rápido, rostro preocupado, iluminación suave"
+    },
+    {
+      "key": "efecto_pyp_asimetria",
+      "titulo": "La razón científica por la que el pasado siempre parece mejor",
+      "hook": "El psicólogo Daniel Schacter demostró que tu memoria reescribe el pasado para que encaje con tu estado de ánimo actual.",
+      "angle": "Explicar el sesgo de positividad retrospectiva y cómo la investigación de Schacter sobre la memoria constructiva altera nuestros recuerdos.",
+      "visual": "old photograph burning, fading memories, cinematic blue lighting, neural network abstract"
+    },
+    {
+      "key": "efecto_falso_consenso",
+      "titulo": "Por qué crees que todo el mundo piensa exactamente igual que tú",
+      "hook": "Lee Ross demostró en 1977 que sobreestimas ridículamente cuánta gente comparte tus opiniones.",
+      "angle": "El efecto de falso consenso y el estudio clásico de Ross sobre estudiantes y carteles publicitarios en el campus.",
+      "visual": "crowd of identical silhouettes, single colored figure, university campus 1970s style, minimalist visual"
+    },
+    {
+      "key": "efecto_falsa_singularidad",
+      "titulo": "Por qué crees que tus talentos son raros cuando son completamente normales",
+      "hook": "Creusere y otros investigadores demostraron que subestimas cuánta gente comparte tus habilidades únicas.",
+      "angle": "El efecto de falsa singularidad y cómo el sesgo egocéntrico distorsiona la comparación social de capacidades.",
+      "visual": "one glowing bulb in a box, mirror reflection distortion, minimalist psychological studio, cold tones"
     }
   ]
 }
