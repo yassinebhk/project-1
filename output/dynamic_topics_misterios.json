@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T00:55:06.540324+00:00",
+  "generated_at": "2026-10-30T00:40:10.039948+00:00",
   "topics": [
     {
       "key": "el_tesoro_de_oak_island",
@@ -189,6 +189,90 @@
       "hook": "Construida sobre un abismo en los Andes, la cultura Chachapoyas levantó una fortaleza de piedra que desafía la ingeniería.",
       "angle": "Explorar los métodos de construcción en terrazas monumentales documentados por arqueólogos peruanos y su posterior conquista incaica.",
       "visual": "misty mountain fortress, stone walls, peruvian Andes, drone aerial view"
+    },
+    {
+      "key": "bateria_de_bagdad",
+      "titulo": "¿Tuvieron los partos electricidad 2000 años antes de Volta?",
+      "hook": "En 1936, unos obreros hallaron vasijas arcillosas en Irak que contenían tubos de cobre y varillas de hierro.",
+      "angle": "Analizar las jarras de Khujut Rabu datadas entre el 250 a.C. y el 224 d.C., explicando por qué los arqueólogos descartan que fueran baterías eléctricas funcionales.",
+      "visual": "arqueologia museo vasija arcilla tubo cobre"
+    },
+    {
+      "key": "caminos_de_bimini",
+      "titulo": "La formacion rocosa bajo el mar de Bahamas que confunde a la ciencia",
+      "hook": "Bloques gigantes de piedra caliza perfectamente rectangulares yacen ordenados como una calzada en el fondo del océano.",
+      "angle": "Exponer el descubrimiento de la formación de Bimini en 1968 y la explicación geológica oficial sobre lajas fracturadas por erosión natural.",
+      "visual": "oceano fondo marino bloques piedra rectangulares"
+    },
+    {
+      "key": "mOMIAS_DE_TARIM",
+      "titulo": "Momias con rasgos caucásicos enterradas en el desierto de China",
+      "hook": "En medio del árido desierto de Taklamakán aparecieron cuerpos perfectamente preservados con cabellos rubios y ropa escocesa.",
+      "angle": "Documentar el hallazgo de las momias de Tarim de hace 4000 años y el análisis genético que reveló su procedencia eurasiática occidental.",
+      "visual": "desierto arena momia conservada cabello claro"
+    },
+    {
+      "key": "manuscritos_de_dunhuang",
+      "titulo": "La biblioteca sellada en una cueva con miles de documentos olvidados",
+      "hook": "Un monje taoísta abrió por accidente en 1900 una pared secreta que ocultaba 50000 manuscritos antiguos intactos.",
+      "angle": "Detallar el hallazgo de las Cuevas de Mogao en China y cómo el contenido revolucionó el estudio del budismo y la historia de la Ruta de la Seda.",
+      "visual": "cueva oscura rollos papel antiguo estantes"
+    },
+    {
+      "key": "piedras_de_ica",
+      "titulo": "Miles de cantos rodados grabados con dinosaurios y cirugias imposibles",
+      "hook": "Un médico peruano reunió en los años 60 miles de piedras talladas con escenas de trasplantes de corazón y hombres montando saurios.",
+      "angle": "Presentar el origen documentado de las piedras de Ica y la confirmación de que se trata de una producción artesanal masiva y moderna con fines comerciales.",
+      "visual": "piedras grabadas motivos antiguos arqueologia"
+    },
+    {
+      "key": "tesoro_de_sutton_hoo",
+      "titulo": "El entierro real anglosajón intacto dentro de un barco de 27 metros",
+      "hook": "En 1939, una propietaria de tierras inglesa ordenó excavar unos montículos y halló el barco funerario más rico de Europa.",
+      "angle": "Describir el descubrimiento del túmulo de Sutton Hoo en Suffolk y el ajuar funerario intacto del siglo VII atribuido al rey Raedwald.",
+      "visual": "colina inglesa excavacion casco barco madera"
+    },
+    {
+      "key": "cueva_de_altamira",
+      "titulo": "Por que la comunidad cientifica llamo fraude a la Capilla Sixtina del arte rupestre",
+      "hook": "Cuando un noble español descubrio pinturas de bisontes policromados en 1879, los expertos las tacharon de falsificacion absurda.",
+      "angle": "Narrar la resistencia inicial de la academia ante el arte rupestre de Altamira y cómo se validó su autenticidad paleolítica años después.",
+      "visual": "cueva pinturas rupestres bisonte antorcha"
+    },
+    {
+      "key": "tuneles_subterraneos_de_cappadocia",
+      "titulo": "La ciudad bajo tierra capaz de albergar a 20000 personas descubierta por azar",
+      "hook": "Un hombre derribo la pared de su sotano en Turquia en 1963 y destapo una metropoli oculta de multiples niveles.",
+      "angle": "Describir la estructura y documentacion historica de Derinkuyu, enfatizando los sistemas de ventilacion y puertas de piedra circulares.",
+      "visual": "tunel subterraneo piedra habitacion antigua"
+    },
+    {
+      "key": "esferas_de_piedra_de_costa_rica",
+      "titulo": "Esferas de piedra casi perfectas talladas por culturas precolombinas",
+      "hook": "Trabajadores bananeros que despejaban la selva en los anos 30 comenzaron a toparse con bolas de piedra perfectamente esfericas.",
+      "angle": "Explicar el origen arqueologico de las esferas de la cultura Diquís, su metodo de fabricacion por percusion y arena, y mitos descartados.",
+      "visual": "selva tropical esferas piedra perfecta"
+    },
+    {
+      "key": "gigantes_de_cahokia",
+      "titulo": "La metropoli indigena norteamericana que superaba en tamano al Londres medieval",
+      "hook": "Antes de la llegada de colonizadores, Norteamerica albergaba una ciudad amurallada con piramides de tierra mas altas que iglesias.",
+      "angle": "Analizar los registros arqueologicos de Cahokia en Illinois, su auge en el siglo XI y su misterioso abandono documentado por polen y estratigrafia.",
+      "visual": "monticulos tierra piramide valle rio"
+    },
+    {
+      "key": "mapa_de_piresi",
+      "titulo": "El portulano otomano de 1513 que cartografia costas desconocidas",
+      "hook": "Un almirante turco dibujo un mapa mundial usando fuentes antiguas que mostraba detalles geograficos increibles para su epoca.",
+      "angle": "Estudiar el mapa de Piri Reis, los documentos fuente utilizados de la biblioteca de Alejandra y la explicacion cartografica racional de sus trazos.",
+      "visual": "pergamino antiguo mapa navegacion compas"
+    },
+    {
+      "key": "fortaleza_de_sacsayhuaman",
+      "titulo": "Muros incas monumentales encajados sin argamasa que desafian sismos",
+      "hook": "Bloques de granito de mas de 100 toneladas encajan con tanta precision que no cabe una hoja de afeitar entre ellos.",
+      "angle": "Explicar las tecnicas de ingenieria documentadas en Sacsayhuamán y como la mampostería antisísmica soportó terremotos devastadores en Cusco.",
+      "visual": "muro piedra ciclopea inca cusco"
     }
   ]
 }
