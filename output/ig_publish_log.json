@@ -1610,5 +1610,13 @@
     "reason": "espaciado: último reel hace 106min < 240min mínimo (4/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-30T16:01:59.615120+00:00"
+  },
+  {
+    "slug": "elon-musk-sueldo-por-segundo-twitter-44b",
+    "title": "Elon Musk — 6.000 euros por segundo · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 168min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-30T17:04:44.179806+00:00"
   }
 ]
