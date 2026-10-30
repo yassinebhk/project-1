@@ -1602,5 +1602,13 @@
     "url": "https://instagram.com/reel/18145558495592033",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-30T14:16:21.269578+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261030_155302",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 106min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-30T16:01:59.615120+00:00"
   }
 ]
