@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T01:08:33.482616+00:00",
+  "generated_at": "2026-10-30T00:59:32.613156+00:00",
   "topics": [
     {
       "key": "diamantes_en_neptuno",
@@ -252,6 +252,83 @@
       "hook": "Bajo tus pies hay una esfera de hierro líquido tan caliente como el sol que nos da vida.",
       "angle": "Datos sismológicos sobre el núcleo externo e interno de la Tierra y la dinamo geodinámica que genera el campo magnético.",
       "visual": "Earth cutaway showing molten iron outer core, swirling liquid metal, glowing magnetic field generation lines"
+    },
+    {
+      "key": "crater_chicxulub_atmosfera",
+      "titulo": "El día en que el impacto de un asteroide hizo hervir los océanos de la Tierra",
+      "hook": "Cuando cayó el asteroide de los dinosaurios, no solo chocó: hizo hervir los océanos en minutos.",
+      "angle": "Simulaciones científicas recientes de la evaporación y el calor extremo generado por el impacto de Chicxulub.",
+      "visual": "Asteroide gigante, impacto terrestre, evaporación oceánica, fuego global"
+    },
+    {
+      "key": "tormenta_geomagnetica_carrington",
+      "titulo": "Cuando las auroras boreales llegaron hasta el Caribe por una supertormenta solar",
+      "hook": "El cielo nocturno se volvió tan brillante en pleno siglo XIX que la gente pudo leer el periódico de madrugada.",
+      "angle": "Registro histórico y científico del Evento Carrington de 1859 y su impacto en el campo magnético.",
+      "visual": "Aurora boreal roja, telégrafos echando chispas, Sol activo, llamarada solar"
+    },
+    {
+      "key": "nubes_magallanes_colision",
+      "titulo": "Las galaxias vecinas que están bailando una danza mortal alrededor de la Vía Láctea",
+      "hook": "Dos galaxias satélite están chocando lentamente contra nuestro propio patio trasero cósmico.",
+      "angle": "Observaciones del telescopio Hubble sobre la interacción gravitacional de las Nubes de Magallanes.",
+      "visual": "Nubes de Magallanes, telescopio Hubble, gas galáctico, colisión estelar"
+    },
+    {
+      "key": "supernova_kepler_1604",
+      "titulo": "La última supernova visible a simple vista en nuestra propia galaxia",
+      "hook": "Hace cuatro siglos, una estrella explotó tan fuerte que brilló a plena luz del día durante semanas.",
+      "angle": "Datos históricos y astronómicos sobre la Supernova de Kepler registrada en 1604.",
+      "visual": "Supernova brillante, cielo diurno, remanente estelar, astrónomo histórico"
+    },
+    {
+      "key": "planeta_orbita_retrograda",
+      "titulo": "El extraño exoplaneta que orbita en dirección totalmente contraria a su estrella",
+      "hook": "Los astrónomos descubrieron un mundo rebelde que gira al revés de todo su sistema solar.",
+      "angle": "Exoplanetas con órbita retrógrada descubiertos por misiones espaciales de la NASA y la ESA.",
+      "visual": "Exoplaneta gigante, órbita invertida, estrella anfitriona, espacio profundo"
+    },
+    {
+      "key": "anillos_uranio_oscuros",
+      "titulo": "Por qué los misteriosos anillos de Urano son casi tan oscuros como el carbón",
+      "hook": "Urano tiene anillos, pero son tan negros que la luz casi ni los refleja.",
+      "angle": "Composición de partículas de hielo recubiertas de carbono orgánico en los anillos tenues de Urano.",
+      "visual": "Planeta Urano, anillos oscuros, Voyager 2, espacio helado"
+    },
+    {
+      "key": "nebulosa_boomerang_frio",
+      "titulo": "El rincón más frío del universo conocido supera la temperatura del espacio profundo",
+      "hook": "Existe una nebulosa donde hace más frío que en el mismísimo vacío del espacio exterior.",
+      "angle": "Mediciones de la Nebulosa del Bumerán, el objeto natural más frío conocido a 1 Kelvin.",
+      "visual": "Nebulosa bipolar, gas en expansión, termómetro cósmico, azul helado"
+    },
+    {
+      "key": "nucleo_tierra_super_temperatura",
+      "titulo": "El centro de la Tierra arde a la misma temperatura que la superficie visible del Sol",
+      "hook": "Bajo nuestros pies hay un horno gigante que rivaliza con la superficie de nuestra estrella.",
+      "angle": "Datos sismológicos y mediciones físicas sobre el núcleo interno de hierro fundido.",
+      "visual": "Núcleo terrestre, hierro fundido, capas de la Tierra, magma brillante"
+    },
+    {
+      "key": "pulsar_fuga_velocidad",
+      "titulo": "El cadáver estelar que atraviesa el espacio a dos millones de kilómetros por hora",
+      "hook": "Un remanente de supernova viaja tan rápido por el cosmos que dejaría atrás a cualquier cohete.",
+      "angle": "Estudio de púlsares con alta velocidad peculiar impulsados por asimetrías en su explosión original.",
+      "visual": "Pulsar girando, chorros de rayos X, estela veloz, nebulosa brillante"
+    },
+    {
+      "key": "luna_ganimedes_campo",
+      "titulo": "La única luna del sistema solar que posee su propio campo magnético activo",
+      "hook": "Esta luna gigante de Júpiter tiene su propia burbuja magnética invisible protegiéndola.",
+      "angle": "Datos de la misión JUICE de la ESA y Galileo de la NASA sobre el campo magnético interno de Ganimedes.",
+      "visual": "Luna Ganimedes, Júpiter de fondo, campo magnético brillante, auroras lunares"
+    },
+    {
+      "key": "cinturon_kuiper_limite",
+      "titulo": "El gran muro de cometas helados que marca la frontera invisible del sistema solar",
+      "hook": "Más allá de Neptuno se extiende una vasta muralla de miles de mundos helados ocultos.",
+      "angle": "Estructura y población de objetos transneptunianos en el Cinturón de Kuiper según datos de New Horizons.",
+      "visual": "Cinturón de Kuiper, cometas helados, Plutón lejano, oscuridad estelar"
     }
   ]
 }
