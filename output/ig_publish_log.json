@@ -1661,5 +1661,13 @@
     "url": "https://instagram.com/reel/18016655375950828",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-31T10:10:41.389229+00:00"
+  },
+  {
+    "slug": "apple-iphone-manufacturing-cost",
+    "title": "Apple iPhone 15 — Cuesta 400€ fabricarlo y lo venden a 1.400 · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 132min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-31T12:22:43.954051+00:00"
   }
 ]
