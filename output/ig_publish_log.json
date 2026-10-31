@@ -1695,5 +1695,13 @@
     "url": "https://instagram.com/reel/17897848449680006",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-31T18:22:59.388532+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-to-land-your-dream-job",
+    "title": "Top 5 AI tools to land your dream job · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 17min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-10-31T18:40:25.360876+00:00"
   }
 ]
