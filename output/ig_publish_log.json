@@ -1754,5 +1754,13 @@
     "reason": "espaciado: último reel hace 122min < 240min mínimo (4/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-01T16:16:09.383826+00:00"
+  },
+  {
+    "slug": "caso-andratx-corrupcion-mallorca",
+    "title": "Caso Andratx — 40 imputados y urbanismo ilegal · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 179min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-01T17:13:20.049988+00:00"
   }
 ]
