@@ -331,7 +331,7 @@
       ]
     },
     "naseiro": {
-      "count": 6,
+      "count": 7,
       "history": [
         {
           "ts": "2026-09-08T10:31:12.572180+00:00",
@@ -356,6 +356,10 @@
         {
           "ts": "2026-10-31T16:04:51.915003+00:00",
           "topic": "[CRIMEN] Caso Naseiro: las grabaciones que destaparon la financiación ilegal del Partido Popular en 1990"
+        },
+        {
+          "ts": "2026-11-01T15:29:37.981283+00:00",
+          "topic": "[CRIMEN] Caso Naseiro: cómo las escuchas de 1990 destaparon la financiación ilegal del PP con millones de pesetas en sobres."
         }
       ]
     },
