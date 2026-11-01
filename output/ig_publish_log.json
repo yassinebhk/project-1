@@ -1712,5 +1712,13 @@
     "url": "https://instagram.com/reel/18568577887075396",
     "ig_bucket": "f8d1626a",
     "ts": "2026-10-31T23:19:53.043865+00:00"
+  },
+  {
+    "slug": "top-5-ai-podcast-post-production-tools-1",
+    "title": "Top 5 AI tools for podcast post-production · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 204min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-01T02:44:00.813800+00:00"
   }
 ]
