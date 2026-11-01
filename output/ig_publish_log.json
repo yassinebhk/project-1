@@ -1729,5 +1729,13 @@
     "url": "https://instagram.com/reel/18648844744032914",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-01T10:11:51.918934+00:00"
+  },
+  {
+    "slug": "caso-millet-palau-musica-26m",
+    "title": "26 MILLONES ROBADOS y pasta gansa en bodas: caso Millet · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 189min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-01T13:20:47.385913+00:00"
   }
 ]
