@@ -1771,5 +1771,13 @@
     "url": "https://instagram.com/reel/17964952185232323",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-01T18:23:31.282037+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-youtube-thumbnails",
+    "title": "Top 5 AI tools for YouTube thumbnail ideas · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 42min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-01T19:05:54.558726+00:00"
   }
 ]
