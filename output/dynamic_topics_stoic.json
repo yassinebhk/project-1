@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-25T01:40:10.729235+00:00",
+  "generated_at": "2026-11-01T01:52:01.371255+00:00",
   "topics": [
     {
       "key": "inbox_zero_anxiety",
@@ -225,6 +225,24 @@
       "hook": "You just refreshed your creator dashboard for the tenth time today, watching numbers dictate your self-worth.",
       "titulo": "Why Chasing Algorithm Approval Destroys Your Peace (A Seneca Guide)",
       "visual": "dark glowing monitor, lonely marble bust, flickering candle, midnight storm"
+    },
+    {
+      "key": "career_pivot_failure",
+      "stoic": "Zeno",
+      "principle": "radical acceptance",
+      "stressor": "realizing your big career pivot after age thirty was a massive mistake that cost you dearly",
+      "hook": "You took a massive risk on a new career path, and now you are watching it completely fall apart.",
+      "titulo": "Failed Career Pivot? Zeno's Guide to Radical Acceptance",
+      "visual": "dark crossroads, ancient stone marker, foggy horizon, distant lightning"
+    },
+    {
+      "key": "relentless_networking_burnout",
+      "stoic": "Marcus Aurelius",
+      "principle": "focus on what is essential",
+      "stressor": "attending another mandatory industry networking event where everyone is selling a fake persona",
+      "hook": "You are standing in a crowded room of industry peers, pretending to care about metrics you despise.",
+      "titulo": "Burned Out on Networking? Marcus Aurelius on True Association",
+      "visual": "crowded dark ballroom, blurred faces, solitary stone pillar, cold rain"
     }
   ]
 }
