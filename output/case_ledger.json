@@ -88,7 +88,7 @@
       ]
     },
     "roldan": {
-      "count": 6,
+      "count": 7,
       "history": [
         {
           "ts": "2026-08-24T07:57:23.248688+00:00",
@@ -113,6 +113,10 @@
         {
           "ts": "2026-10-14T14:01:06.455705+00:00",
           "topic": "[CRIMEN] Roldán: cómo el director de la Guardia Civil robó 1.500 millones de pesetas y huyó a Laos"
+        },
+        {
+          "ts": "2026-11-02T10:02:40.621674+00:00",
+          "topic": "[CRIMEN] Caso Roldán (1994): cómo el director general de la Guardia Civil robó 1.500 millones de pesetas del fondo de huérfanos y acabó condenado a 28 años de cárcel"
         }
       ]
     },
