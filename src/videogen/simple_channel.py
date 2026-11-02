@@ -234,6 +234,20 @@ def _build_prompt(cfg: SimpleChannelConfig, t: dict) -> str:
     except Exception:
         pass
     tone = f" Tone/register: {cfg.tone}." if cfg.tone else ""
+    # Refuerzo ADITIVO del hook/título (02/11): los vídeos que rompen 1000+ views
+    # comparten patrón — curiosity-gap ('¿y si…?', 'por qué…', un número concreto) +
+    # revelación demorada. No reescribe ni elimina la veracidad/estructura; solo
+    # empuja la calidad del gancho. Reversible: STRONG_HOOKS=0.
+    strong = ""
+    if os.environ.get("STRONG_HOOKS", "1").strip().lower() not in ("0", "false", "no"):
+        strong = (
+            " HOOK CRAFT (the first 3s decide everything): open an irresistible curiosity gap — a "
+            "counterintuitive 'why', a 'what if', or a surprising number — phrased as a bold claim or "
+            "question the viewer cannot scroll past. No warm-up, no greeting, no 'hoy vamos a hablar de'. "
+            "RETENTION: tease the payoff but DELAY the full reveal (open loop); short, punchy sentences. "
+            "TITLE: a curiosity-gap pattern mirroring the hook (e.g. '¿Y si…?', 'Por qué…', 'El/La … que …', "
+            "or a concrete number like '5 …'); <=70 chars; it MUST match the content — no clickbait lies."
+        )
     return (
         f"[Channel {cfg.display_name} · faceless {cfg.lang} Shorts]{tone} "
         f"Topic: {t.get('titulo','')}. "
@@ -243,6 +257,7 @@ def _build_prompt(cfg: SimpleChannelConfig, t: dict) -> str:
         f"VERACITY: only verifiable facts + a citable source; no fabrication; non-YMYL. "
         f"Visual keywords: {t.get('visual','cinematic, atmospheric')}. "
         f"Title direction (improve if you can): '{t.get('titulo','')}'."
+        + strong
         + avoid
     )
 
