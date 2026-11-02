@@ -1840,5 +1840,13 @@
     "url": "https://instagram.com/reel/18111321596577371",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-02T22:54:29.914040+00:00"
+  },
+  {
+    "slug": "top-5-ai-audio-voice-tools-1",
+    "title": "Top 5 AI tools for audio and voice creation · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 60min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-02T23:54:24.511758+00:00"
   }
 ]
