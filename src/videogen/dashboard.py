@@ -762,49 +762,72 @@ def build() -> dict:
                 # Éxito por VÍDEO: cada vídeo genera varios intentos (fail_container_ready
                 # → retry ok). Contar por vídeo (ok si ALGÚN intento salió) refleja la
                 # realidad (~100% con R2), no penaliza los reintentos intermedios.
-                by_vid: dict[str, str] = {}
+                # Disposición por VÍDEO con prioridad clara:
+                #   ok   → algún intento publicó
+                #   fail → ningún ok y hubo un fallo REAL
+                #   skip → solo skips del gobernador anti-ban (espaciado/cap) → NO es fallo
+                # Los skips intencionales NO cuentan en el ratio: antes inflaban "fail"
+                # y disparaban una falsa alarma ("Instagram al 52%") sobre un sistema sano.
+                def _disp(statuses):
+                    if any(s == "ok" for s in statuses):
+                        return "ok"
+                    if any(not str(s or "").startswith("skip") for s in statuses):
+                        return "fail"
+                    return "skip"
+                by_vid: dict[str, list] = defaultdict(list)
                 for x in log:
                     key = x.get("slug") or x.get("title") or x.get("ts")
-                    if by_vid.get(key) != "ok":
-                        by_vid[key] = "ok" if x.get("status") == "ok" else x.get("status")
-                vids = len(by_vid)
-                ok = sum(1 for v in by_vid.values() if v == "ok")
-                fail = vids - ok
-                ig["total"] = vids            # vídeos únicos
-                ig["attempts"] = len(log)     # intentos brutos (incluye reintentos)
+                    by_vid[key].append(x.get("status"))
+                disp = {k: _disp(v) for k, v in by_vid.items()}
+                ok = sum(1 for v in disp.values() if v == "ok")
+                fail = sum(1 for v in disp.values() if v == "fail")
+                skip = sum(1 for v in disp.values() if v == "skip")
+                rated = ok + fail            # denominador del ratio (sin skips)
+                ig["total"] = len(disp)      # vídeos únicos (incl. pospuestos)
+                ig["attempts"] = len(log)    # intentos brutos (reintentos y skips incluidos)
                 ig["ok"] = ok
                 ig["fail"] = fail
-                ig["rate"] = round(100 * ok / vids) if vids else None
-                # Ratio RECIENTE (últimos 14 días) — refleja el estado con R2 + retry,
-                # sin arrastrar los fallos de la era catbox/litterbox previa.
+                ig["skipped"] = skip
+                ig["rate"] = round(100 * ok / rated) if rated else None
+                # Ratio RECIENTE (últimos 14 días) — excluye skips del limitador y la
+                # era catbox/litterbox previa.
                 cutoff = (datetime.now(timezone.utc) - timedelta(days=14)).strftime("%Y-%m-%d")
-                rv: dict[str, str] = {}
+                rv: dict[str, list] = defaultdict(list)
                 for x in log:
                     if (x.get("ts") or "")[:10] < cutoff:
                         continue
                     key = x.get("slug") or x.get("title") or x.get("ts")
-                    if rv.get(key) != "ok":
-                        rv[key] = "ok" if x.get("status") == "ok" else x.get("status")
-                rok = sum(1 for v in rv.values() if v == "ok")
-                ig["total_recent"] = len(rv)
+                    rv[key].append(x.get("status"))
+                rdisp = {k: _disp(v) for k, v in rv.items()}
+                rok = sum(1 for v in rdisp.values() if v == "ok")
+                rfail = sum(1 for v in rdisp.values() if v == "fail")
+                rskip = sum(1 for v in rdisp.values() if v == "skip")
+                rrated = rok + rfail
+                # total_recent = intentos REALES (ok+fallo). El frontend deriva
+                # "sin publicar" = total_recent − ok_recent, así solo cuenta fallos reales.
+                ig["total_recent"] = rrated
                 ig["ok_recent"] = rok
-                ig["rate_recent"] = round(100 * rok / len(rv)) if rv else None
+                ig["skipped_recent"] = rskip
+                ig["rate_recent"] = round(100 * rok / rrated) if rrated else None
                 ig["recent"] = [dict(
                     slug=x.get("slug"), title=(x.get("title") or "")[:80],
                     status=x.get("status"), url=x.get("url"),
                     error=(x.get("error") or x.get("error_message") or "")[:120],
                     ts=x.get("ts"),
                 ) for x in log[-24:]][::-1]
-                day_ok: dict[str, list[int]] = defaultdict(lambda: [0, 0])
+                day_ok: dict[str, list[int]] = defaultdict(lambda: [0, 0, 0])
                 for x in log:
                     ts = (x.get("ts") or "")[:10]
                     if not ts:
                         continue
-                    if x.get("status") == "ok":
+                    s = str(x.get("status") or "")
+                    if s == "ok":
                         day_ok[ts][0] += 1
+                    elif s.startswith("skip"):
+                        day_ok[ts][2] += 1
                     else:
                         day_ok[ts][1] += 1
-                ig["by_day"] = [dict(date=d, ok=v[0], fail=v[1])
+                ig["by_day"] = [dict(date=d, ok=v[0], fail=v[1], skip=v[2])
                                 for d, v in sorted(day_ok.items())]
         except Exception:
             pass

@@ -240,7 +240,7 @@ section.view.on{display:block;animation:rise .3s ease}
 .iglog .row{display:flex;align-items:center;gap:10px;padding:10px 4px;border-bottom:1px solid var(--border);font-size:12.5px}
 .iglog .row:last-child{border-bottom:0}
 .iglog .s{width:8px;height:8px;border-radius:50%;flex:none}
-.iglog .s.ok{background:var(--good)}.iglog .s.fail{background:var(--bad)}
+.iglog .s.ok{background:var(--good)}.iglog .s.fail{background:var(--bad)}.iglog .s.skip{background:#f7b801}
 .iglog .tt{flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .iglog .dt{font-family:var(--mono);font-size:10.5px;color:var(--faint);flex:none}
 .bars>div{margin-bottom:13px}
@@ -872,7 +872,7 @@ function renderRedes(){
         <p class="hint" style="margin-top:14px">Me gusta y comentarios agregados de toda la red. La tasa de engagement (♥÷views) es la señal de qué CONECTA, más allá del alcance bruto.</p></div>
     </div>
     <div class="grid g32" style="margin-top:16px">
-      <div class="card pad"><div class="sechead" style="margin:0 0 16px"><h2 style="font-size:15px">Publicación en Instagram</h2><span class="eyebrow">${ig.total} vídeos · ${ig.attempts||ig.total} intentos</span></div>
+      <div class="card pad"><div class="sechead" style="margin:0 0 16px"><h2 style="font-size:15px">Publicación en Instagram</h2><span class="eyebrow">${ig.total} vídeos · ${ig.attempts||ig.total} intentos${ig.skipped?` · ${ig.skipped} pospuestos`:''}</span></div>
         <div class="gauge"><div class="ring"><canvas id="iggauge"></canvas><div class="mid"><b>${(ig.rate_recent!=null?ig.rate_recent:ig.rate)==null?'—':(ig.rate_recent!=null?ig.rate_recent:ig.rate)+'%'}</b><span>14 días</span></div></div>
           <div style="flex:1;min-width:200px"><div style="display:flex;gap:12px;margin-bottom:14px">
             <div class="card pad" style="flex:1;box-shadow:none;background:var(--good-soft);border-color:transparent"><div class="eyebrow">Vídeos OK (14d)</div><div class="num" style="font-size:24px;color:var(--good);margin-top:5px">${ig.ok_recent!=null?ig.ok_recent:ig.ok}</div></div>
@@ -880,7 +880,7 @@ function renderRedes(){
             <p class="hint" style="margin:0">% <b>por vídeo</b>: cada uno reintenta si el 1er contenedor falla, así que casi todos acaban subiendo. Host <b>Cloudflare R2</b> (coste 0).</p>
             <p class="hint" style="margin:8px 0 0">Solo suben a IG los canales <b>afines a true crime ES</b> (${d.channels.filter(c=>c.ig).map(c=>c.name).join(', ')}) para no bajar el alcance por mezcla de nichos.</p></div></div>
         <div class="eyebrow" style="margin:20px 0 8px">Registro reciente</div>
-        <div class="iglog">${ig.recent.map(r=>`<div class="row"><span class="s ${r.status==='ok'?'ok':'fail'}"></span>
+        <div class="iglog">${ig.recent.map(r=>`<div class="row"><span class="s ${r.status==='ok'?'ok':(String(r.status||'').startsWith('skip')?'skip':'fail')}"></span>
           <span class="tt">${r.url?`<a href="${r.url}" target="_blank" rel="noopener" style="text-decoration:none">${r.title||r.slug||'reel'}</a>`:(r.title||r.slug||'reel')}${r.status!=='ok'&&r.error?` <span class="faint">— ${r.error}</span>`:''}</span>
           <span class="dt">${(r.ts||'').slice(5,10)}</span></div>`).join('')||'<div class="hint">Sin registros.</div>'}</div></div>
       <div class="card pad"><div class="sechead" style="margin:0 0 16px"><h2 style="font-size:15px">Cross-post</h2><span class="eyebrow">cobertura</span></div>
