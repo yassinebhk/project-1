@@ -1520,7 +1520,7 @@ def stoic_once_cmd():
     from .stoic import pipeline
     result = pipeline.run_once()
     print(json.dumps(result, indent=2, ensure_ascii=False))
-    if result.get("status") not in ("ok", "skip_dedup", "no_topic", "no_channel", "skip_daily_cap"):
+    if result.get("status") not in ("ok", "skip_dedup", "no_topic", "no_channel", "skip_daily_cap", "skip_concentration"):
         raise SystemExit(1)
 
 
@@ -1536,7 +1536,7 @@ def batch_once_cmd(slug: str):
         raise SystemExit(1)
     result = simple_channel.run_once(cfg)
     print(json.dumps(result, indent=2, ensure_ascii=False))
-    if result.get("status") not in ("ok", "skip_dedup", "no_topic", "no_channel", "skip_daily_cap"):
+    if result.get("status") not in ("ok", "skip_dedup", "no_topic", "no_channel", "skip_daily_cap", "skip_concentration"):
         raise SystemExit(1)
 
 

@@ -281,6 +281,28 @@ def run_once(cfg: SimpleChannelConfig) -> dict[str, Any]:
         print(f"  {cfg.slug}: tope diario de Shorts ({cfg.shorts_per_day}) alcanzado — skip")
         return {"status": "skip_daily_cap"}
 
+    # ── Concentración en los canales que CONVIERTEN (reversible) ──
+    # Dato 02/11: el crecimiento se concentra en 5 canales (QuéPasaríaSi/Cosmos/
+    # MenteRacional/Enigmas/WaitWhy); el resto publica mucho y convierte ~0,
+    # diluyendo el foco y ocupando cupos COMPARTIDOS (IG 6/día, crosspost,
+    # first-comment). Throttle probabilístico de los NO-ganadores → la salida de
+    # la granja se concentra en lo que crece, SIN forzar más volumen en los
+    # ganadores (evita agotar su pool de temas → duplicados). WaitWhy va por su
+    # propio pipeline (no pasa por aquí). Revertir: CONCENTRATE_WINNERS=0.
+    # Ajustar: WINNER_SLUGS (csv), LOSER_THROTTLE (0..1, prob. de posponer).
+    if os.environ.get("CONCENTRATE_WINNERS", "1").strip().lower() not in ("0", "false", "no"):
+        winners = {s.strip() for s in os.environ.get(
+            "WINNER_SLUGS", "misterios,sesgos,curiosidades,espacio").split(",") if s.strip()}
+        if cfg.slug not in winners:
+            try:
+                throttle = float(os.environ.get("LOSER_THROTTLE", "0.4"))
+            except ValueError:
+                throttle = 0.4
+            if random.random() < throttle:
+                print(f"  {cfg.slug}: ⏭️ pospuesto por concentración en ganadores "
+                      f"(throttle={throttle}; CONCENTRATE_WINNERS=0 revierte)")
+                return {"status": "skip_concentration", "slug": cfg.slug}
+
     topic = _pick_topic(cfg)
     if not topic:
         return {"status": "no_topic"}
