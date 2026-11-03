@@ -1985,5 +1985,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-03T18:33:21.871974+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-to-land-your-next-job-1",
+    "title": "Top 5 AI tools to land your next job · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (10/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-03T19:03:14.400650+00:00"
   }
 ]
