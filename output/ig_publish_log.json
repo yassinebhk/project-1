@@ -2001,5 +2001,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-03T19:44:16.917781+00:00"
+  },
+  {
+    "slug": "top-5-ai-computer-use-automation-tools-1",
+    "title": "Top 5 AI tools for computer use automation · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (10/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-03T20:42:57.417331+00:00"
   }
 ]
