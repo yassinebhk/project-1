@@ -1929,5 +1929,13 @@
     "url": "https://instagram.com/reel/18389289469231981",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-03T11:24:28.693027+00:00"
+  },
+  {
+    "slug": "coste-real-iphone-china-1200-euros",
+    "title": "iPhone 15 — Cuesta 200 dólares fabricarlo · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (12/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-03T14:11:45.215672+00:00"
   }
 ]
