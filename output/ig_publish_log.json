@@ -1953,5 +1953,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-03T15:17:29.579698+00:00"
+  },
+  {
+    "slug": "stoic-mind-night-before-anxiety",
+    "title": "The Stoic Method to Kill Pre-Exam and Big Day Anxiety",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-03T15:23:31.792818+00:00"
   }
 ]
