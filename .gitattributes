@@ -1,3 +1,13 @@
 # stats_history.jsonl es append-only → merge=union evita conflictos cuando dos
 # workflows commitean a la vez (git conserva ambas líneas, sin unmerged files).
 output/stats_history.jsonl merge=union
+
+# Logs JSON (array) append-only COMPARTIDOS por varios canales a la vez. El
+# merge=union textual NO vale aquí porque cada entrada ocupa VARIAS líneas (uniría
+# a mitad de objeto → JSON inválido). Usamos un driver que une los arrays por
+# clave: scripts/git_merge_json_union.py (lo registra _videogen-job.yml). Sin ese
+# driver configurado, git cae al merge por defecto (comportamiento de antes).
+# ig_publish_log.json lo escriben TODOS los canales que publican en Instagram:
+# su conflicto tiraba el commit-back entero (y con él los ledgers de dedup).
+output/ig_publish_log.json merge=jsonunion
+output/stock_used.json merge=jsonunion
