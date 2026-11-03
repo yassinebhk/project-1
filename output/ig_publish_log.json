@@ -1977,5 +1977,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-03T18:19:22.898040+00:00"
+  },
+  {
+    "slug": "taiwan-microchips-tsmc-60-por-ciento",
+    "title": "Taiwán y los microchips — 60% del mercado mundial · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (10/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-03T18:33:21.871974+00:00"
   }
 ]

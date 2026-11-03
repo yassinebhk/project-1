@@ -544,6 +544,15 @@
           "topic": "Mario Conde y el caso Banesto: el agujero patrimonial de 605.000 millones de pesetas que provocó la histórica intervención judicial del banco en 1993"
         }
       ]
+    },
+    "chip_taiwan": {
+      "count": 1,
+      "history": [
+        {
+          "ts": "2026-11-03T18:28:32.640331+00:00",
+          "topic": "[ACTUALIDAD] Taiwán y los microchips: por qué una sola empresa (TSMC) controla el 60% del suministro mundial y sostiene la economía global"
+        }
+      ]
     }
   }
 }
