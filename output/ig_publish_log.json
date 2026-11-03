@@ -1937,5 +1937,13 @@
     "reason": "cap diario alcanzado (12/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-03T14:11:45.215672+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-apple-silicon-local",
+    "title": "Top 5 AI tools for local Apple Silicon deployment · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-03T14:47:36.336526+00:00"
   }
 ]
