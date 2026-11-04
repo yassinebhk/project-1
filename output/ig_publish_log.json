@@ -1,21 +1,5 @@
 [
   {
-    "slug": "jubilacion-anticipada-2026-penalizacion",
-    "title": "TOP 3 Claves de la Jubilación Anticipada · hasta -30% · #1",
-    "status": "ok",
-    "media_id": "17873972673588411",
-    "url": "https://instagram.com/reel/17873972673588411",
-    "ts": "2026-09-30T00:45:48.990516+00:00"
-  },
-  {
-    "slug": "caso-kio-300m-fraude-bursatil",
-    "title": "Caso KIO — 300 millones de euros robados y nadie en prisión · #1",
-    "status": "ok",
-    "media_id": "18152309188534986",
-    "url": "https://instagram.com/reel/18152309188534986",
-    "ts": "2026-09-30T09:11:09.495727+00:00"
-  },
-  {
     "slug": "caso-estepona-corrupcion-urbanistica-1",
     "title": "Caso Estepona — 40M€ en mordidas urbanísticas · #1",
     "status": "ok",
@@ -2078,5 +2062,13 @@
     "reason": "espaciado: último reel hace 128min < 240min mínimo (5/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-04T19:39:37.370226+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-school-compliance",
+    "title": "Top 5 AI tools for school compliance · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 206min < 240min mínimo (5/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-04T20:57:29.496799+00:00"
   }
 ]
