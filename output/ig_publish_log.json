@@ -2076,5 +2076,13 @@
     "reason": "espaciado: último reel hace 209min < 240min mínimo (3/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-04T14:42:08.355527+00:00"
+  },
+  {
+    "slug": "padel_tactic_serve_20261104_150737",
+    "title": "The Smart Serve — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 236min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-04T15:09:04.018659+00:00"
   }
 ]
