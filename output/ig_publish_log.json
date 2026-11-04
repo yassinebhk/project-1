@@ -2068,5 +2068,13 @@
     "reason": "espaciado: último reel hace 201min < 240min mínimo (3/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-04T14:33:55.875864+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-sql-databases",
+    "title": "Top 5 AI tools for SQL databases · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 209min < 240min mínimo (3/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-04T14:42:08.355527+00:00"
   }
 ]
