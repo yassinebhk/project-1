@@ -2025,5 +2025,13 @@
     "reason": "cap diario alcanzado (9/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-04T00:22:22.167045+00:00"
+  },
+  {
+    "slug": "guilt-over-resting-marcus-aurelius-time",
+    "title": "Guilty for Resting? Marcus Aurelius on Burning Out",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (9/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-04T00:26:24.953387+00:00"
   }
 ]
