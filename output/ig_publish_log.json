@@ -1,13 +1,5 @@
 [
   {
-    "slug": "reserva-capitalizacion-is-empresas",
-    "title": "Deduzca 10% en Impuesto Sociedades · 10% base IS · #1",
-    "status": "ok",
-    "media_id": "17995283508042744",
-    "url": "https://instagram.com/reel/17995283508042744",
-    "ts": "2026-10-01T22:19:01.346343+00:00"
-  },
-  {
     "slug": "top-3-reglas-patentar-ia-espana",
     "title": "TOP 3 reglas para patentar IA · 100% protección · #1",
     "status": "ok",
@@ -2079,5 +2071,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-05T15:18:27.485703+00:00"
+  },
+  {
+    "slug": "padel_tactic_positioning_20261105_172153",
+    "title": "Move as a Pair — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (10/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-05T17:30:58.892811+00:00"
   }
 ]
