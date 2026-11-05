@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T01:29:24.457110+00:00",
+  "generated_at": "2026-11-05T14:32:02.221762+00:00",
   "topics": [
     {
       "key": "nubes_peso",
@@ -252,6 +252,69 @@
       "hook": "El cerebro de un avestruz es más pequeño que su propio ojo.",
       "angle": "Anatomía comparada y la evolución visual de las aves corredoras.",
       "visual": "avestruz_primer_plano_ojo_grande"
+    },
+    {
+      "key": "sueno_jirafas",
+      "titulo": "Por qué las jirafas apenas duermen dos horas al día",
+      "hook": "¿Sabías que el animal más alto del mundo apenas necesita dormir un par de horas?",
+      "angle": "Las jirafas duermen en ciclos ultracortos de pocos minutos debido a su vulnerabilidad ante los depredadores, acumulando menos de dos horas diarias.",
+      "visual": "Savana africana, jirafa de pie al atardecer, primer plano de ojo de jirafa, lapso de tiempo nocturno."
+    },
+    {
+      "key": "huella_lengua",
+      "titulo": "Tu lengua tiene una huella única igual que tus dedos",
+      "hook": "Al igual que tus manos, tu boca esconde una identificación que jamás se repite en nadie más.",
+      "angle": "La lengua humana posee un patrón de textura y criptas completamente único en cada individuo, utilizándose también para la biometría.",
+      "visual": "Macro de lengua humana, escáner biométrico futurista, patrón de huella dactilar, partículas de luz."
+    },
+    {
+      "key": "nieve_rosa",
+      "titulo": "El misterio de la nieve rosa que huele a sandía fresca",
+      "hook": "En ciertas montañas del mundo cae una nieve de color rosa brillante que huele a fruta.",
+      "angle": "La nieve rosa es real y es causada por algas de agua fría llamadas Chlamydomonas nivalis que contienen pigmentos carotenoides y liberan aroma a sandía.",
+      "visual": "Montaña nevada con manchas rosadas, microalgas bajo microscopio, sandía cortada, paisaje alpino polar."
+    },
+    {
+      "key": "tiburon_greenland",
+      "titulo": "El vertebrado más longevo del planeta vive en aguas heladas",
+      "hook": "Hay un tiburón nadando ahora mismo en el océano que ya vivía cuando nació Shakespeare.",
+      "angle": "El tiburón de Groenlandia puede vivir más de 400 años debido a su metabolismo extremadamente lento en aguas árticas.",
+      "visual": "Océano polar oscuro, tiburón antiguo nadando lento, hielo marino desde abajo, brújula antigua."
+    },
+    {
+      "key": "vidrio_liquido",
+      "titulo": "El vidrio antiguo no es un líquido lento como dice el mito",
+      "hook": "El mayor mito sobre las ventanas antiguas de las catedrales finalmente ha sido destrozado.",
+      "angle": "Las catedrales medievales con cristales más gruesos abajo no fluyeron con el tiempo, sino que fueron fabricadas de forma irregular por los artesanos.",
+      "visual": "Catedral gótica interior, vitral antiguo de colores, artesano medieval soplando vidrio, macro de cristal."
+    },
+    {
+      "key": "camaleon_lengua",
+      "titulo": "La aceleración extrema de la lengua del camaleón",
+      "hook": "La lengua de este animal se dispara más rápido que un coche deportivo de alta gama.",
+      "angle": "Un camaleón puede acelerar su lengua de cero a cien kilómetros por hora en una fracción de segundo gracias a músculos elásticos especializados.",
+      "visual": "Camaleón camuflado en rama, insecto volando en cámara lenta, disparo de lengua macro, velocímetro digital."
+    },
+    {
+      "key": "oro_marino",
+      "titulo": "La inmensa cantidad de oro disuelto en todos los océanos",
+      "hook": "Los océanos de la Tierra esconden millones de toneladas de oro puro que nadie puede extraer.",
+      "angle": "El agua de mar contiene oro disuelto, estimado en unas veinte millones de toneladas, pero está tan diluido que su extracción es económicamente inviable.",
+      "visual": "Océano azul profundo desde el aire, barras de oro brillante apiladas, laboratorio químico submarino, partículas doradas flotando."
+    },
+    {
+      "key": "eco_pato",
+      "titulo": "El mito urbano sobre el eco del graznido de un pato",
+      "hook": "Durante décadas se creyó que el sonido de un pato no producía eco, pero la ciencia demostró lo contrario.",
+      "angle": "El graznido de un pato sí produce eco; el mito surgió porque las frecuencias altas y bajas del sonido se mezclan y confunden al oído humano en ciertos entornos.",
+      "visual": "Pato nadando en lago tranquilo, ondas de sonido animadas, cañón de eco montañoso, espectrograma de audio."
+    },
+    {
+      "key": "corales_luz",
+      "titulo": "Los arrecifes de coral que emiten su propia luz fluorescente",
+      "hook": "El fondo del mar se ilumina por la noche gracias a un espectáculo de neón natural.",
+      "angle": "Muchos corales producen proteínas fluorescentes que absorben la luz ultravioleta y la emiten como colores brillantes para protegerse del sol o atraer presas.",
+      "visual": "Arrecife de coral nocturno, luz ultravioleta submarina, colores neón brillantes, peces tropicales nadando."
     }
   ]
 }
