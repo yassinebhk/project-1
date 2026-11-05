@@ -2079,5 +2079,13 @@
     "reason": "cap diario alcanzado (14/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-05T10:08:26.825593+00:00"
+  },
+  {
+    "slug": "padel_tactic_positioning_20261105_113142",
+    "title": "Move as a Pair — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-05T11:33:20.432978+00:00"
   }
 ]
