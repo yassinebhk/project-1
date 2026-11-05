@@ -1,13 +1,5 @@
 [
   {
-    "slug": "top-3-reglas-patentar-ia-espana",
-    "title": "TOP 3 reglas para patentar IA · 100% protección · #1",
-    "status": "ok",
-    "media_id": "18107354215937541",
-    "url": "https://instagram.com/reel/18107354215937541",
-    "ts": "2026-10-02T00:27:31.806028+00:00"
-  },
-  {
     "slug": "crisis-espana-2012-draghi",
     "title": "Caso España 2012 — 100.000M€ y bancarrota evitada · #1",
     "status": "ok",
@@ -2079,5 +2071,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-05T17:30:58.892811+00:00"
+  },
+  {
+    "slug": "salario-futbolista-espanol-mejor-pagado",
+    "title": "Salario de futbolistas en España — 1.200€ por segundo · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (9/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-05T19:26:23.601926+00:00"
   }
 ]
