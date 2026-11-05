@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T11:37:32.051078+00:00",
+  "generated_at": "2026-11-05T01:21:55.974012+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -329,6 +329,90 @@
       "hook": "En un cañón con paredes de perfecta reverberación, un simple susurro se acumularía hasta convertirse en un estruendo sordo mortal.",
       "angle": "La energía acústica se disipa al chocar contra superficies rugosas transformándose en calor; una reflexión perfecta sumaría decibelios exponenciales por interferencia constructiva.",
       "visual": "infinite echo canyon, sound wave bounce animation, acoustic physics visualization, decibel wave spike"
+    },
+    {
+      "key": "suelo_diamante_saturno",
+      "titulo": "¿Qué pasaría si caminaras sobre los océanos de diamante de Saturno?",
+      "hook": "Aunque suene a fantasía espacial, los gigantes gaseosos como Saturno realmente albergan tormentas donde caen billones de toneladas de diamantes.",
+      "angle": "Explicar la física de alta presión en la atmósfera de Saturno y Júpiter que convierte el metano en carbono puro y diamantes sólidos.",
+      "visual": "tormenta de diamantes espaciales, gigante gaseoso dorado, presiones extremas, interior planetario"
+    },
+    {
+      "key": "relampagos_volcanicos",
+      "titulo": "¿Qué pasaría si capturaras toda la energía eléctrica de un rayo volcánico?",
+      "hook": "Durante una erupción masiva, la naturaleza desata un tipo de tormenta eléctrica que desafía toda lógica terrestre.",
+      "angle": "Analizar la física de la triboelectricidad en la ceniza volcánica y por qué los rayos volcánicos superan en voltaje a las tormentas normales.",
+      "visual": "erupción volcánica nocturna, rayos morados intensos, ceniza flotando, plasma eléctrico"
+    },
+    {
+      "key": "bacterias_hierro",
+      "titulo": "¿Qué pasaría si tu cuerpo funcionara con bacterias que comen metal?",
+      "hook": "En las profundidades del océano oscuro existen organismos que literalmente respiran hierro puro para sobrevivir.",
+      "angle": "Explicar la quimiosíntesis de las bacterias ferrooxidantes en respiraderos hidrotermales sin luz solar.",
+      "visual": "fondo marino oscuro, chimeneas hidrotermales, bacterias microscópicas doradas, cristales de hierro"
+    },
+    {
+      "key": "rayos_verdes_ocaso",
+      "titulo": "¿Qué pasaría si pudieras ver un rayo verde perfecto en cada atardecer?",
+      "hook": "Por una fracción de segundo al ocultarse el sol, el cielo destella un rayo de color verde esmeralda brillante.",
+      "angle": "Describir el fenómeno físico de la refracción atmosférica y la dispersión de Rayleigh en el horizonte marino.",
+      "visual": "atardecer marino, destello verde brillante, horizonte oceánico, atmósfera curvada"
+    },
+    {
+      "key": "superficie_hiper_reflectiva",
+      "titulo": "¿Qué pasaría si la arena del desierto reflejara el 100% de la luz solar?",
+      "hook": "Si la arena del Sahara duplicara su albedo natural, la temperatura global colapsaría de inmediato.",
+      "angle": "Explicar el concepto científico del albedo planetario y cómo la reflectividad regula el balance térmico de la Tierra.",
+      "visual": "desierto cegador, luz solar extrema, dunas blancas brillantes, termodinámica espacial"
+    },
+    {
+      "key": "humedad_estratosfera",
+      "titulo": "¿Qué pasaría si una tormenta húmeda alcanzara la estratosfera terrestre?",
+      "hook": "Si una nube de tormenta rompe el límite de la troposfera, puede desencadenar una reacción química que destruye el cielo.",
+      "angle": "Detallar cómo el vapor de agua en la estratosfera cataliza la destrucción del ozono mediante radicales libres de hidrógeno.",
+      "visual": "nube gigante perforando la atmósfera, tormenta desde el espacio, capa de ozono, vapor de agua"
+    },
+    {
+      "key": "sonido_helio_puro",
+      "titulo": "¿Qué pasaría si la atmósfera terrestre se llenara de helio puro por un minuto?",
+      "hook": "Si el nitrógeno del aire fuera reemplazado por helio, la acústica del planeta entero cambiaría para siempre.",
+      "angle": "Explicar la relación entre la densidad del medio gaseoso y la velocidad de propagación de las ondas sonoras.",
+      "visual": "ondas de sonido visibles, partículas de helio flotando, atmósfera molecular, física ondulatoria"
+    },
+    {
+      "key": "friccion_nula_nanoscale",
+      "titulo": "¿Qué pasaría si experimentaras la superbricción cuántica en tus manos?",
+      "hook": "A nivel molecular, hay superficies tan perfectamente lisas que los átomos se deslizan sin perder una sola pizca de energía.",
+      "angle": "Explicar el fenómeno de la superlubricidad y la fricción cero entre capas de grafeno a escala atómica.",
+      "visual": "superficie atómica perfecta, grafeno flotando, escala microscópica, átomos en movimiento"
+    },
+    {
+      "key": "campo_magnetico_inclinado",
+      "titulo": "¿Qué pasaría si el eje magnético de la Tierra girara 90 grados hacia el ecuador?",
+      "hook": "Si las líneas del campo magnético terrestre cambiaran de dirección, las auroras boreales iluminarían los trópicos.",
+      "angle": "Describir cómo la magnetosfera protege la atmósfera del viento solar y qué causa las desviaciones en el polo geomagnético.",
+      "visual": "aurora boreal tropical, líneas de campo magnético azul, escudo protector terrestre, viento solar"
+    },
+    {
+      "key": "resonancia_schumann_alta",
+      "titulo": "¿Qué pasaría si la frecuencia electromagnética de la Tierra duplicara sus pulsos?",
+      "hook": "Entre la superficie terrestre y la ionosfera existe un latido electromagnético constante que sintoniza el planeta.",
+      "angle": "Explicar la física de la resonancia de Schumann, las ondas electromagnéticas en la cavidad atmosférica y el campo electromagnético global.",
+      "visual": "ondas electromagnéticas globales, ionosfera brillante, planeta latiendo, tormenta eléctrica"
+    },
+    {
+      "key": "presion_hidrostatica_maxima",
+      "titulo": "¿Qué pasaría si pudieras comprimir agua hasta formar hielo caliente?",
+      "hook": "En las profundidades extremas del universo, el agua puede estar a miles de grados y aun así mantenerse sólida como una roca.",
+      "angle": "Explicar los estados exóticos del hielo de alta presión (Hielo VII y Hielo X) bajo condiciones termodinámicas extremas.",
+      "visual": "hielo brillante incandescente, alta presión extrema, estructura molecular cristalina, fondo planetario"
+    },
+    {
+      "key": "bioluminiscencia_abisal_masiva",
+      "titulo": "¿Qué pasaría si todo el océano profundo brillara con una sola luz azul?",
+      "hook": "Más del 80% de las criaturas que habitan en la oscuridad abisal utilizan reacciones químicas frías para iluminar el abismo.",
+      "angle": "Describir la bioquímica de la luciferina y la luciferasa en organismos de la zona batipelágica y mesopelágica.",
+      "visual": "océano profundo bioluminiscente, destellos azules mágicos, criaturas abisales, oscuridad marina"
     }
   ]
 }
