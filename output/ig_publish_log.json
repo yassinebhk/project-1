@@ -2143,5 +2143,13 @@
     "url": "https://instagram.com/reel/17924961885221347",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-05T01:04:58.483133+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-ocr-segmentation",
+    "title": "Top 5 AI tools for OCR and segmentation · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (13/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-05T02:30:39.571729+00:00"
   }
 ]
