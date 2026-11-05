@@ -1,93 +1,5 @@
 [
   {
-    "slug": "padel_tactic_bandeja_20260930_155823",
-    "title": "The Bandeja — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "18012236477987413",
-    "url": "https://instagram.com/reel/18012236477987413",
-    "ts": "2026-09-30T16:00:24.444800+00:00"
-  },
-  {
-    "slug": "el-3-por-ciento-catalan-comisiones-sentencia",
-    "title": "Caso Palau — 6,6M€ en comisiones probadas · #1",
-    "status": "ok",
-    "media_id": "18093493559541868",
-    "url": "https://instagram.com/reel/18093493559541868",
-    "ts": "2026-09-30T17:00:23.154175+00:00"
-  },
-  {
-    "slug": "la-literatura-y-la-realidad-de-cuba_teaser",
-    "title": "ANÁLISIS: La literatura y la realidad de Cuba · 7 min",
-    "status": "ok",
-    "media_id": "17912508267496509",
-    "url": "https://instagram.com/reel/17912508267496509",
-    "ts": "2026-09-30T17:59:53.648198+00:00"
-  },
-  {
-    "slug": "pov-diputado-congreso-23f-1981",
-    "title": "POV: eres diputado en el Congreso · 23 febrero 1981 · #1",
-    "status": "ok",
-    "media_id": "18117081799996027",
-    "url": "https://instagram.com/reel/18117081799996027",
-    "ts": "2026-09-30T19:30:47.534902+00:00"
-  },
-  {
-    "slug": "estimacion-directa-vs-simplificada",
-    "title": "Paga menos IRPF · €600.000 · #1",
-    "status": "ok",
-    "media_id": "18109074764233242",
-    "url": "https://instagram.com/reel/18109074764233242",
-    "ts": "2026-09-30T22:40:54.030183+00:00"
-  },
-  {
-    "slug": "subsidio-desempleo-480-2026",
-    "title": "TOP 3 Subsidios por desempleo 2026 · €480 al mes · #1",
-    "status": "ok",
-    "media_id": "17932691154143601",
-    "url": "https://instagram.com/reel/17932691154143601",
-    "ts": "2026-10-01T00:54:40.672407+00:00"
-  },
-  {
-    "slug": "maastricht-treaty-euro-sovereignty-1992",
-    "title": "Tratado de Maastricht 1992 — 4 países que rechazaron el euro · #1",
-    "status": "ok",
-    "media_id": "18009914795966859",
-    "url": "https://instagram.com/reel/18009914795966859",
-    "ts": "2026-10-01T09:12:16.324439+00:00"
-  },
-  {
-    "slug": "top-3-requirements-ai-intellectual-property",
-    "title": "TOP 3 Claves para blindar tu software con IA · 100% titularidad · #1",
-    "status": "ok",
-    "media_id": "17968541439169835",
-    "url": "https://instagram.com/reel/17968541439169835",
-    "ts": "2026-10-01T13:19:05.915183+00:00"
-  },
-  {
-    "slug": "ahorrar-tramos-irpf-autonomos",
-    "title": "Paga menos IRPF legalmente · €5.000 ahorro · #1",
-    "status": "ok",
-    "media_id": "18114582397830941",
-    "url": "https://instagram.com/reel/18114582397830941",
-    "ts": "2026-10-01T15:48:23.949461+00:00"
-  },
-  {
-    "slug": "padel_tactic_smash_20261001_162930",
-    "title": "The 'Por Tres' Smash — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "17989368195026754",
-    "url": "https://instagram.com/reel/17989368195026754",
-    "ts": "2026-10-01T16:31:33.040684+00:00"
-  },
-  {
-    "slug": "early-retirement-penalties-spain",
-    "title": "3 recortes sorpresa al jubilarte antes · -30% pensión · #1",
-    "status": "ok",
-    "media_id": "18018327260943753",
-    "url": "https://instagram.com/reel/18018327260943753",
-    "ts": "2026-10-01T16:48:40.725680+00:00"
-  },
-  {
     "slug": "kit-digital-segmentos-2026-ayudagob",
     "title": "TOP 3 segmentos Kit Digital 2026 · hasta €12.000 · #1",
     "status": "ok",
@@ -2159,5 +2071,13 @@
     "reason": "cap diario alcanzado (13/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-05T03:04:16.452874+00:00"
+  },
+  {
+    "slug": "caso-estepona-barrientos-astapa",
+    "title": "Caso Estepona — 28M€ en mordidas · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (14/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-05T10:08:26.825593+00:00"
   }
 ]
