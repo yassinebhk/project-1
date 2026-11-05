@@ -1,21 +1,5 @@
 [
   {
-    "slug": "kit-digital-segmentos-2026-ayudagob",
-    "title": "TOP 3 segmentos Kit Digital 2026 · hasta €12.000 · #1",
-    "status": "ok",
-    "media_id": "18122654747292424",
-    "url": "https://instagram.com/reel/18122654747292424",
-    "ts": "2026-10-01T17:33:17.283512+00:00"
-  },
-  {
-    "slug": "pov-galeote-lepanto-1571",
-    "title": "TOP 1 Momento clave de Lepanto · 7 oct 1571 · #1",
-    "status": "ok",
-    "media_id": "18070425335726022",
-    "url": "https://instagram.com/reel/18070425335726022",
-    "ts": "2026-10-01T19:37:58.916353+00:00"
-  },
-  {
     "slug": "reserva-capitalizacion-is-empresas",
     "title": "Deduzca 10% en Impuesto Sociedades · 10% base IS · #1",
     "status": "ok",
@@ -2087,5 +2071,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-05T11:33:20.432978+00:00"
+  },
+  {
+    "slug": "padel_tactic_positioning_20261105_151647",
+    "title": "Move as a Pair — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-05T15:18:27.485703+00:00"
   }
 ]
