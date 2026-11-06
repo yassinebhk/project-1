@@ -1,45 +1,5 @@
 [
   {
-    "slug": "cobro-horas-extra-emergencias-45-dolares",
-    "title": "TOP 1 Cobro horas extra emergencia · 45$ por hora · #1",
-    "status": "ok",
-    "media_id": "18113956115045783",
-    "url": "https://instagram.com/reel/18113956115045783",
-    "ts": "2026-10-02T13:20:56.610792+00:00"
-  },
-  {
-    "slug": "modelo-303-iva-trimestral-sin-gestoria",
-    "title": "Haz tu IVA trimestral solo · €300 ahorro/año · #1",
-    "status": "ok",
-    "media_id": "18055783313573882",
-    "url": "https://instagram.com/reel/18055783313573882",
-    "ts": "2026-10-02T15:07:36.230709+00:00"
-  },
-  {
-    "slug": "3-keys-retire-65-spain-2026",
-    "title": "3 claves para jubilarte a los 65 · 38 años y 3 meses · #1",
-    "status": "ok",
-    "media_id": "17891394804447833",
-    "url": "https://instagram.com/reel/17891394804447833",
-    "ts": "2026-10-02T16:00:26.330228+00:00"
-  },
-  {
-    "slug": "crisis-deuda-eurozona-2010-2012-1",
-    "title": "Crisis de la eurozona — 500.000 millones rescatados · #1",
-    "status": "ok",
-    "media_id": "18408657955093562",
-    "url": "https://instagram.com/reel/18408657955093562",
-    "ts": "2026-10-02T16:45:18.963441+00:00"
-  },
-  {
-    "slug": "top-2-fusiones-despachos-barcelona",
-    "title": "TOP 2 Fusiones de despachos · Barcelona · #1",
-    "status": "ok",
-    "media_id": "18632182882021999",
-    "url": "https://instagram.com/reel/18632182882021999",
-    "ts": "2026-10-02T17:19:44.616401+00:00"
-  },
-  {
     "slug": "top-3-carteles-feria-otono-ventas-2026",
     "title": "TOP 3 Carteles Feria de Otoño · octubre 2026 · #1",
     "status": "ok",
@@ -2115,5 +2075,13 @@
     "url": "https://instagram.com/reel/18111672323221601",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-06T00:44:07.586433+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-robotics-control",
+    "title": "Top 5 AI tools for robotics control · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 111min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-06T02:34:59.066114+00:00"
   }
 ]
