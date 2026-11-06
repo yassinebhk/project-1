@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T00:59:32.613156+00:00",
+  "generated_at": "2026-11-06T01:00:27.563254+00:00",
   "topics": [
     {
       "key": "diamantes_en_neptuno",
@@ -329,6 +329,83 @@
       "hook": "Más allá de Neptuno se extiende una vasta muralla de miles de mundos helados ocultos.",
       "angle": "Estructura y población de objetos transneptunianos en el Cinturón de Kuiper según datos de New Horizons.",
       "visual": "Cinturón de Kuiper, cometas helados, Plutón lejano, oscuridad estelar"
+    },
+    {
+      "key": "bucle_estelar_omega_centauri",
+      "titulo": "El cúmulo globular que esconde un agujero negro de masa intermedia",
+      "hook": "En el corazón de este enorme cúmulo estelar se esconde un monstruo invisible que desafía las reglas.",
+      "angle": "Explicar cómo Omega Centauri alberga indicios de un agujero negro de masa intermedia, el eslabón perdido entre los estelares y los supermasivos.",
+      "visual": "dense star cluster, glowing core, deep space cosmos, hubble telescope style"
+    },
+    {
+      "key": "magnetar_sgr_1935_plus_2154",
+      "titulo": "La señal de radio cósmica que desconcertó a los astrofísicos",
+      "hook": "Un destello milisegundo desde otra galaxia liberó más energía que nuestro Sol en todo un año.",
+      "angle": "Analizar las Fast Radio Bursts (FRB) detectadas por telescopios modernos y su origen en magnetares lejanos.",
+      "visual": "radio waves ripple, magnetar pulse, vibrant nebula, deep space"
+    },
+    {
+      "key": "corriente_estelar_sagitario",
+      "titulo": "El río invisible de estrellas que rodea nuestra galaxia",
+      "hook": "Nuestra Vía Láctea está devorando lentamente a una galaxia enana vecina en un ciclo sin fin.",
+      "angle": "Detallar cómo la corriente estelar de Sagitario orbita nuestra galaxia tras ser despedazada por fuerzas de marea.",
+      "visual": "milky way edge view, stellar stream, cosmic debris, night sky panorama"
+    },
+    {
+      "key": "anomalia_calor_netptuno",
+      "titulo": "El planeta gigante de hielo que irradia más calor del que recibe",
+      "hook": "A miles de millones de kilómetros del Sol, este mundo helado tiene su propio motor interno secreto.",
+      "angle": "Examinar el flujo de calor interno de Neptuno y los mecanismos físicos que mantienen su atmósfera activa.",
+      "visual": "neptune deep blue atmosphere, internal heat glow, storm bands, icy rings"
+    },
+    {
+      "key": "superficie_titan_lagos_metano",
+      "titulo": "Los complejos sistemas fluviales de la luna más grande de Saturno",
+      "hook": "Imagina llover metano líquido sobre costas de hielo de agua pura a menos de 180 grados.",
+      "angle": "Describir el ciclo hidrológico del metano en Titán basado en datos de la misión Cassini.",
+      "visual": "titan thick orange atmosphere, methane lakes, Cassini spacecraft view, icy shores"
+    },
+    {
+      "key": "nebulosa_huesos_galacticos",
+      "titulo": "Los filamentos gigantescos que forman el esqueleto de la Vía Láctea",
+      "hook": "Estructuras colosales de gas frío recorren el espacio interestelar como huesos invisibles.",
+      "angle": "Exponer los descubrimientos de filamentos moleculares gigantes donde nacen los cúmulos estelares masivos.",
+      "visual": "molecular gas filaments, star formation region, infrared space imagery, glowing gas"
+    },
+    {
+      "key": "espejismo_gravitacional_anillo_einstein",
+      "titulo": "Cuando el espacio mismo se dobla para mostrarte el doble",
+      "hook": "La gravedad de una galaxia delantera actúa como una lente óptica distorsionando la luz antigua.",
+      "angle": "Explicar el funcionamiento de los anillos de Einstein perfectos según la relatividad general probada por telescopios.",
+      "visual": "gravitational lensing, warped spacetime grid, distant galaxy ring, cosmic zoom"
+    },
+    {
+      "key": "atmo_exoplaneta_wasp_76b",
+      "titulo": "El mundo extremo donde los vientos arrastran hierro fundido",
+      "hook": "En este exoplaneta abrasador, el cielo de la tarde brilla con tormentas metálicas líquidas.",
+      "angle": "Detallar los hallazgos espectroscópicos de WASP-76b y su asimetría térmica diurna y nocturna.",
+      "visual": "exoplaneta surface, molten iron rain, alien sunrise, fierce heat glow"
+    },
+    {
+      "key": "cronologia_expansion_hubble",
+      "titulo": "La misteriosa discrepancia en la velocidad de expansión del universo",
+      "hook": "Dos métodos distintos para medir el cosmos dan resultados que la física actual no puede explicar.",
+      "angle": "Presentar la tensión de Hubble y las discrepancias entre la tasa de expansión local y el fondo cósmico de microondas.",
+      "visual": "expanding universe grid, red shift galaxies, cosmic microwave background, data charts"
+    },
+    {
+      "key": "impacto_chicxulub_minutos",
+      "titulo": "La catástrofe geológica exacta que reescribió la historia terrestre",
+      "hook": "Hace 66 millones de años, un proyectil cósmico desató un infierno global en cuestión de minutos.",
+      "angle": "Explicar la dinámica física del impacto de Chicxulub y la vaporización instantánea de la corteza basada en registros fósiles.",
+      "visual": "asteroid entering atmosphere, fiery impact crater, mega tsunami wave, Earth from space"
+    },
+    {
+      "key": "pulso_magnetico_estelar_pulsar",
+      "titulo": "El faro cósmico más puntual y perfecto jamás descubierto",
+      "hook": "Gira cientos de veces por segundo barriendo el cosmos con haces de radiación letal.",
+      "angle": "Describir el funcionamiento de los púlsares como relojes cósmicos de ultra alta precisión según datos astrofísicos.",
+      "visual": "rotating pulsar star, twin radiation beams, magnetic field lines, vibrant nebula"
     }
   ]
 }
