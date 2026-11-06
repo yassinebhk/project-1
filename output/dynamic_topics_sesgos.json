@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T11:27:06.716474+00:00",
+  "generated_at": "2026-11-06T12:08:19.109785+00:00",
   "topics": [
     {
       "key": "efecto_arrastre",
@@ -238,6 +238,20 @@
       "hook": "Creusere y otros investigadores demostraron que subestimas cuánta gente comparte tus habilidades únicas.",
       "angle": "El efecto de falsa singularidad y cómo el sesgo egocéntrico distorsiona la comparación social de capacidades.",
       "visual": "one glowing bulb in a box, mirror reflection distortion, minimalist psychological studio, cold tones"
+    },
+    {
+      "key": "efecto_licencia_moral",
+      "titulo": "Por qué hacer el bien te da permiso secreto para portarte mal",
+      "hook": "Comer una ensalada hoy te hace pedir el postre más calórico mañana.",
+      "angle": "Monin y Miller sobre la licencia moral, donde una buena acción previa acumula crédito ético que el cerebro gasta inconscientemente en conductas egoístas.",
+      "visual": "ensalada verde, hamburguesa gigante, balanza moral, cerebro dividido"
+    },
+    {
+      "key": "efecto_esfuerzo",
+      "titulo": "Por qué valoras más algo solo porque te costó sangre y sudor",
+      "hook": "Montar un mueble tú mismo te hace amarlo, aunque quede torcido.",
+      "angle": "Aronson y Mills sobre la justificación del esfuerzo, probando que el cerebro incrementa artificialmente el valor de algo en proporción directa al dolor sufrido.",
+      "visual": "mueble de madera, gotas de sudor, etiqueta de precio elevada, martillo brillante"
     }
   ]
 }
