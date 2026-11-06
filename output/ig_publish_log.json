@@ -2091,5 +2091,13 @@
     "reason": "cap diario alcanzado (12/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-06T14:17:14.204148+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-color-palettes",
+    "title": "Top 5 AI tools for color palettes · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (12/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-06T15:18:42.339208+00:00"
   }
 ]
