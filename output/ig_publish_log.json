@@ -1,12 +1,5 @@
 [
   {
-    "slug": "exencion-reinversion-vivienda-habitual",
-    "title": "Evita impuestos al vender tu casa · 100% exención · #1",
-    "status": "fail_publish",
-    "container_id": "18097885790188569",
-    "ts": "2026-10-04T17:15:22.748079+00:00"
-  },
-  {
     "slug": "top-5-ai-music-generation-tools",
     "title": "Top 5 AI tools for music generation focus · #1",
     "status": "ok",
@@ -2093,5 +2086,13 @@
     "reason": "cap diario alcanzado (12/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-06T20:34:06.091354+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-vector-art-1",
+    "title": "Top 5 AI tools for vector art · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (12/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-06T23:46:22.500372+00:00"
   }
 ]
