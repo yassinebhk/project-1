@@ -1,28 +1,5 @@
 [
   {
-    "slug": "top-3-contrato-temporal-fraudulento-sanciones",
-    "title": "TOP 3 alertas de contrato temporal fraudulento · €10.000 multa · #1",
-    "status": "ok",
-    "media_id": "18018325049930515",
-    "url": "https://instagram.com/reel/18018325049930515",
-    "ts": "2026-10-04T01:34:29.544992+00:00"
-  },
-  {
-    "slug": "supreme-court-judge-salary-spain",
-    "title": "121.000€ OCULTOS en complementos: el caso del Supremo · #1",
-    "status": "fail_publish",
-    "container_id": "18097829795188569",
-    "ts": "2026-10-04T09:11:18.076405+00:00"
-  },
-  {
-    "slug": "modelo-130-excepcion-70-por-ciento",
-    "title": "Zafarse del Modelo 130 · 20% trimestral · #1",
-    "status": "ok",
-    "media_id": "18113409227025202",
-    "url": "https://instagram.com/reel/18113409227025202",
-    "ts": "2026-10-04T13:16:17.511288+00:00"
-  },
-  {
     "slug": "padel_tactic_smash_20261004_144919",
     "title": "The 'Por Tres' Smash — Padel Tactics #padel #shorts",
     "status": "ok",
@@ -2107,5 +2084,13 @@
     "reason": "cap diario alcanzado (12/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-06T15:38:33.025430+00:00"
+  },
+  {
+    "slug": "padel_tactic_defense_20261106_164504",
+    "title": "Patient Defense — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (12/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-06T17:00:55.605270+00:00"
   }
 ]
