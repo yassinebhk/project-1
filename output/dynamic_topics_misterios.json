@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-30T00:40:10.039948+00:00",
+  "generated_at": "2026-11-06T00:45:34.804507+00:00",
   "topics": [
     {
       "key": "el_tesoro_de_oak_island",
@@ -273,6 +273,62 @@
       "hook": "Bloques de granito de mas de 100 toneladas encajan con tanta precision que no cabe una hoja de afeitar entre ellos.",
       "angle": "Explicar las tecnicas de ingenieria documentadas en Sacsayhuamán y como la mampostería antisísmica soportó terremotos devastadores en Cusco.",
       "visual": "muro piedra ciclopea inca cusco"
+    },
+    {
+      "key": "manuscrito_de_ripley",
+      "titulo": "El pergamino alquímico del siglo XV que desconcierta a la química moderna",
+      "hook": "Un monje inglés dibujó en 1488 instrucciones tan extrañas que la ciencia aún debate su significado real.",
+      "angle": "Analizar los grabados y símbolos del manuscrito de Sir George Ripley conservado en la Biblioteca Británica.",
+      "visual": "manuscrito antiguo pergamino alquimia simbolos medievales"
+    },
+    {
+      "key": "piedras_de_icastica",
+      "titulo": "Las rocas grabadas de Ica: el enigma arqueológico documentado en Perú",
+      "hook": "Miles de piedras talladas con supuestas escenas médicas imposibles desconciertan a los historiadores desde los años 60.",
+      "angle": "Examinar el origen documentado de la colección de piedras de Javier Cabrera en Ica y su estatus de artefactos inclasificables.",
+      "visual": "piedras grabadas arqueologia peruana desierto misterio"
+    },
+    {
+      "key": "cueva_de_las_manos",
+      "titulo": "Quiénes pintaron la Patagonia hace 9000 años usando solo esténcil",
+      "hook": "Un cañadón argentino guarda miles de manos negativas inmortalizadas por cazadores en la prehistoria.",
+      "angle": "Describir el registro arqueológico y la datación por carbono de las pinturas rupestres del Río Pinturas.",
+      "visual": "cueva de las manos patagonia argentina arte rupestre"
+    },
+    {
+      "key": "galeon_atocha",
+      "titulo": "El naufragio del Nuestra Señora de Atocha y la búsqueda que cambió las leyes",
+      "hook": "Un galeón español cargado de oro se hundió en 1622, desatando una batalla legal histórica por su tesoro.",
+      "angle": "Explicar el desastre marítimo documentado en los archivos de Indias y el posterior hallazgo de Mel Fisher.",
+      "visual": "galeon hundido tesoro monedas oro fondo marino"
+    },
+    {
+      "key": "faro_eilean_mor",
+      "titulo": "El misterio de Eilean Mor: la bitácora final de tres fareros desaparecidos",
+      "hook": "Tres hombres desaparecieron de una isla remota en 1900 sin dejar rastro, dejando una mesa servida.",
+      "angle": "Revisar el informe oficial de la Junta de Faros de Escocia y los hechos documentados de la inspección.",
+      "visual": "faro escocia acantilado mar tormentoso misterio"
+    },
+    {
+      "key": "ludwig_leichhardt",
+      "titulo": "La desaparición sin rastro del explorador Ludwig Leichhardt en Australia",
+      "hook": "Un explorador y todo su equipo se esfumaron en el interior australiano en 1848, dejando solo un árbol marcado.",
+      "angle": "Reconstruir la expedición transcontinental documentada y la búsqueda infructuosa de sus restos.",
+      "visual": "desierto australiano explorador arbol marcado expedicion"
+    },
+    {
+      "key": "pilar_de_hierro_delhi",
+      "titulo": "El pilar de hierro de Delhi que lleva 1600 años sin oxidarse",
+      "hook": "Una columna de hierro puro resiste los monzones de la India desde el siglo V sin una sola mancha de óxido.",
+      "angle": "Detallar el análisis metalúrgico real que explica la película protectora de fosfuro de hierro creada por sus antiguos herreros.",
+      "visual": "pilar de hierro delhi india arquitectura antigua"
+    },
+    {
+      "key": "islas_flannan",
+      "titulo": "El enigma de las Islas Flannan y el extraño diario del faro vacío",
+      "hook": "La última anotación en la bitácora hablaba de una tormenta feroz que jamás ocurrió en esa zona.",
+      "angle": "Examinar los registros meteorológicos oficiales de diciembre de 1900 en contraste con el diario de los fareros.",
+      "visual": "islas flannan oceano atlantico diario antiguo faro"
     }
   ]
 }
