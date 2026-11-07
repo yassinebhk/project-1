@@ -1,20 +1,5 @@
 [
   {
-    "slug": "us-money-printing-global-impact",
-    "title": "Reserva Federal — 3 billones de dólares impresos en un año · #1",
-    "status": "fail_publish",
-    "container_id": "18098099705188569",
-    "ts": "2026-10-06T09:10:50.207814+00:00"
-  },
-  {
-    "slug": "pais-imprime-mas-dinero-mundo-hiperinflacion",
-    "title": "Hiperinflación mundial — El país que imprime sin control · #1",
-    "status": "ok",
-    "media_id": "17986726007881283",
-    "url": "https://instagram.com/reel/17986726007881283",
-    "ts": "2026-10-06T13:08:32.025723+00:00"
-  },
-  {
     "slug": "pais-imprime-mas-dinero-mundo",
     "title": "Impresión de dinero mundial — 15.000 billetes cada segundo · #1",
     "status": "ok",
@@ -2108,5 +2093,14 @@
     "reason": "espaciado: último reel hace 183min < 240min mínimo (5/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-07T18:59:18.504268+00:00"
+  },
+  {
+    "slug": "top-3-derechos-erte-2026",
+    "title": "TOP 3 derechos que NO pierdes en un ERTE · 50-70% base · #1",
+    "status": "ok",
+    "media_id": "18122432686947289",
+    "url": "https://instagram.com/reel/18122432686947289",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-07T23:19:15.088252+00:00"
   }
 ]
