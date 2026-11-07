@@ -1,13 +1,5 @@
 [
   {
-    "slug": "opera-antigua-valencia-1747",
-    "title": "3 Secretos para revivir la ópera antigua · 1747 · #1",
-    "status": "ok",
-    "media_id": "18094035419653695",
-    "url": "https://instagram.com/reel/18094035419653695",
-    "ts": "2026-10-05T21:37:54.242696+00:00"
-  },
-  {
     "slug": "stanford-hsf-ia-derecho-contratos",
     "title": "TOP 1 Programa IA en Derecho · Stanford y HSF · #1",
     "status": "ok",
@@ -2098,5 +2090,14 @@
     "reason": "espaciado: último reel hace 238min < 240min mínimo (3/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-07T15:02:50.700628+00:00"
+  },
+  {
+    "slug": "3-causas-de-despido-nulo-readmision-1",
+    "title": "TOP 3 causas de despido NULO · Readmisión obligada · #1",
+    "status": "ok",
+    "media_id": "18135140533801830",
+    "url": "https://instagram.com/reel/18135140533801830",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-07T15:54:31.029800+00:00"
   }
 ]
