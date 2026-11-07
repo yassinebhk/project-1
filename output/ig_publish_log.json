@@ -2118,5 +2118,13 @@
     "reason": "cap diario alcanzado (9/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-07T00:43:48.143921+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261107_025839",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-07T03:00:19.718923+00:00"
   }
 ]
