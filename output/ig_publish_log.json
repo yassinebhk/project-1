@@ -2102,5 +2102,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-07T00:27:57.805703+00:00"
+  },
+  {
+    "slug": "seneca-reset-social-comparison",
+    "title": "When Everyone Seems Ahead of You — A Seneca Reset",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-07T00:32:27.592480+00:00"
   }
 ]
