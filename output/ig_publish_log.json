@@ -1,21 +1,5 @@
 [
   {
-    "slug": "stanford-hsf-ia-derecho-contratos",
-    "title": "TOP 1 Programa IA en Derecho · Stanford y HSF · #1",
-    "status": "ok",
-    "media_id": "17987825937083151",
-    "url": "https://instagram.com/reel/17987825937083151",
-    "ts": "2026-10-05T22:23:44.865218+00:00"
-  },
-  {
-    "slug": "ia-rompe-facturacion-horas-despachos",
-    "title": "TOP 3 riesgos de cobrar por horas en tu despacho · #1",
-    "status": "ok",
-    "media_id": "18132249298738488",
-    "url": "https://instagram.com/reel/18132249298738488",
-    "ts": "2026-10-06T01:35:53.078920+00:00"
-  },
-  {
     "slug": "us-money-printing-global-impact",
     "title": "Reserva Federal — 3 billones de dólares impresos en un año · #1",
     "status": "fail_publish",
@@ -2108,5 +2092,13 @@
     "url": "https://instagram.com/reel/18177869884454803",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-07T15:56:15.543564+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-video-tutorials-1",
+    "title": "Top 5 AI tools for recording video tutorials · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 178min < 240min mínimo (5/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-07T18:54:11.595445+00:00"
   }
 ]
