@@ -67,7 +67,7 @@
       ]
     },
     "grand_tibidabo": {
-      "count": 4,
+      "count": 5,
       "history": [
         {
           "ts": "2026-08-24T07:57:23.246473+00:00",
@@ -84,6 +84,10 @@
         {
           "ts": "2026-10-30T12:48:30.746990+00:00",
           "topic": "[CRIMEN] Caso Grand Tibidabo: cómo Javier de la Rosa estafó más de 40 millones de euros a miles de pequeños ahorradores en los noventa"
+        },
+        {
+          "ts": "2026-11-08T13:18:29.571605+00:00",
+          "topic": "Javier de la Rosa y el escándalo de Grand Tibidabo: la estafa de 40 millones de euros que dejó sin ahorros a 10.000 accionistas."
         }
       ]
     },
