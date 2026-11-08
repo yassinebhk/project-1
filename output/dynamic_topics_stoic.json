@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T01:52:01.371255+00:00",
+  "generated_at": "2026-11-08T02:06:53.230917+00:00",
   "topics": [
     {
       "key": "inbox_zero_anxiety",
@@ -243,6 +243,96 @@
       "hook": "You are standing in a crowded room of industry peers, pretending to care about metrics you despise.",
       "titulo": "Burned Out on Networking? Marcus Aurelius on True Association",
       "visual": "crowded dark ballroom, blurred faces, solitary stone pillar, cold rain"
+    },
+    {
+      "key": "unsolicited_family_advice",
+      "stoic": "Epictetus",
+      "principle": "dichotomy of control",
+      "stressor": "unsolicited family advice during holidays",
+      "hook": "You are nodding through a relative's lecture on why your career choice is a mistake.",
+      "titulo": "How Epictetus Handled Unsolicited Opinions Without Losing His Peace",
+      "visual": "dark marble bust, candle flicker, stormy window, moody shadows"
+    },
+    {
+      "key": "algorithmic_anxiety_dips",
+      "stoic": "Seneca",
+      "principle": "premeditatio malorum",
+      "stressor": "sudden drops in freelance income",
+      "hook": "You stare at an empty bank account notification while rent is due in three days.",
+      "titulo": "The Seneca Reset For When Your Income Suddenly Drops",
+      "visual": "ancient amphitheater ruins, heavy rain, dramatic lightning, stone columns"
+    },
+    {
+      "key": "forgotten_passion_projects",
+      "stoic": "Marcus Aurelius",
+      "principle": "memento mori",
+      "stressor": "abandoning creative projects due to work exhaustion",
+      "hook": "You close your laptop at midnight too tired to open the journal you swore you would fill.",
+      "titulo": "Marcus Aurelius On Protecting Your Art From Daily Exhaustion",
+      "visual": "ancient parchment, flickering candle, midnight shadows, dark moody desk"
+    },
+    {
+      "key": "unresponsive_clients",
+      "stoic": "Zeno",
+      "principle": "radical acceptance",
+      "stressor": "being ghosted by major clients after pitching",
+      "hook": "You refresh your email for the tenth time hoping to see a reply that will never come.",
+      "titulo": "Zeno's Guide To Dealing With Unresponsive Partners And Clients",
+      "visual": "cracked stone statue, stormy sea cliffs, dark overcast sky, cinematic rain"
+    },
+    {
+      "key": "public_transit_chaos",
+      "stoic": "Epictetus",
+      "principle": "objective representation",
+      "stressor": "gridlocked public transit making you late",
+      "hook": "You stand pressed against strangers in a delayed subway train watching your meeting time pass.",
+      "titulo": "How Epictetus Kept His Calm When Infrastructure Collapsed Around Him",
+      "visual": "dark subway tunnel, dim emergency lights, moody grain, dramatic shadows"
+    },
+    {
+      "key": "unrealistic_deadlines",
+      "stoic": "Seneca",
+      "principle": "shortness of life",
+      "stressor": "impossible corporate deadlines",
+      "hook": "You accept a weekend-destroying project assignment because you are too afraid to push back.",
+      "titulo": "Seneca On Saying No To Impossible Demands And Reclaiming Your Time",
+      "visual": "ancient hourglass, black sand, dark cinematic lighting, moody smoke"
+    },
+    {
+      "key": "digital_clutter_overload",
+      "stoic": "Marcus Aurelius",
+      "principle": "mental citadel",
+      "stressor": "drowning in unorganized cloud storage and bookmarks",
+      "hook": "You stare at thousands of open browser tabs while your computer fan roars in panic.",
+      "titulo": "Marcus Aurelius On Clearing Digital Clutter To Find Mental Space",
+      "visual": "dark marble statue, blue screen glow, minimalist shadows, cinematic night"
+    },
+    {
+      "key": "neighborhood_noise_pollution",
+      "stoic": "Musonius Rufus",
+      "principle": "inner fortress",
+      "stressor": "loud construction noise destroying your focus",
+      "hook": "You grip your desk in frustration as jackhammers shatter your morning concentration.",
+      "titulo": "Musonius Rufus On Maintaining Focus Amidst Chaos And Noise",
+      "visual": "ancient temple ruins, heavy fog, dramatic low key lighting, dark stone"
+    },
+    {
+      "key": "unstable_housing_market",
+      "stoic": "Zeno",
+      "principle": "indifferents",
+      "stressor": "sudden rent hikes in a competitive city",
+      "hook": "You read an eviction notice informing you that your home is about to double in price.",
+      "titulo": "Zeno On Finding Stability When Your Living Situation Falls Apart",
+      "visual": "dark stormy coast, ancient lighthouse, crashing waves, moody atmospheric fog"
+    },
+    {
+      "key": "constant_travel_burnout",
+      "stoic": "Seneca",
+      "principle": "traveling without changing the soul",
+      "stressor": "constant business travel exhaustion",
+      "hook": "You wake up in a sterile hotel room completely forgetting which city you are currently in.",
+      "titulo": "Seneca On Curing Travel Exhaustion And Finding Peace In Movement",
+      "visual": "dark hotel window, rainy night city lights, moody cinematic reflections"
     }
   ]
 }
