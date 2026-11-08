@@ -2173,5 +2173,13 @@
     "reason": "cap diario alcanzado (8/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-08T01:44:29.058617+00:00"
+  },
+  {
+    "slug": "padel_tactic_smash_20261108_020405",
+    "title": "The 'Por Tres' Smash — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-08T02:05:21.127532+00:00"
   }
 ]
