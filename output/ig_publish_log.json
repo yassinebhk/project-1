@@ -2181,5 +2181,13 @@
     "reason": "cap diario alcanzado (8/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-08T02:05:21.127532+00:00"
+  },
+  {
+    "slug": "descuento-hiperbolico-cerebro-placer",
+    "title": "¿Por qué arruinas tu futuro por 5 minutos de placer?",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-08T02:22:58.418358+00:00"
   }
 ]
