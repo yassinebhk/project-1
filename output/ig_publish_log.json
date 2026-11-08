@@ -1,93 +1,5 @@
 [
   {
-    "slug": "pais-imprime-mas-dinero-mundo",
-    "title": "Impresión de dinero mundial — 15.000 billetes cada segundo · #1",
-    "status": "ok",
-    "media_id": "17907473226334337",
-    "url": "https://instagram.com/reel/17907473226334337",
-    "ts": "2026-10-06T13:23:58.002668+00:00"
-  },
-  {
-    "slug": "padel_tactic_serve_20261006_155849",
-    "title": "The Smart Serve — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "18115144955092147",
-    "url": "https://instagram.com/reel/18115144955092147",
-    "ts": "2026-10-06T16:00:47.197996+00:00"
-  },
-  {
-    "slug": "jubilacion-2026-edad-anos-cotizados",
-    "title": "TOP 3 claves de jubilación en 2026 · 66 años y 6 meses · #1",
-    "status": "ok",
-    "media_id": "18180018892435827",
-    "url": "https://instagram.com/reel/18180018892435827",
-    "ts": "2026-10-06T16:11:09.644829+00:00"
-  },
-  {
-    "slug": "pais-imprime-mas-dinero-pib-global",
-    "title": "Emisión global — 500% de impresión monetaria sobre PIB · #1",
-    "status": "ok",
-    "media_id": "18204685384372720",
-    "url": "https://instagram.com/reel/18204685384372720",
-    "ts": "2026-10-06T17:19:52.316520+00:00"
-  },
-  {
-    "slug": "origen-palabra-arsenal-y-arsenal-fc",
-    "title": "TOP 3 Orígenes ocultos de la palabra arsenal · 1204 · #1",
-    "status": "ok",
-    "media_id": "18176094130454052",
-    "url": "https://instagram.com/reel/18176094130454052",
-    "ts": "2026-10-06T19:48:13.024278+00:00"
-  },
-  {
-    "slug": "top-3-keys-self-dismissal-spain",
-    "title": "TOP 3 claves del autodespido · €480 subsidio · #1",
-    "status": "ok",
-    "media_id": "18133579651746257",
-    "url": "https://instagram.com/reel/18133579651746257",
-    "ts": "2026-10-07T22:21:49.574116+00:00"
-  },
-  {
-    "slug": "top-3-contratos-temporales-clima-45-eur-hora",
-    "title": "TOP 3 Contratos temporales por inclemencias · 45€ la hora · #1",
-    "status": "ok",
-    "media_id": "18001470515806217",
-    "url": "https://instagram.com/reel/18001470515806217",
-    "ts": "2026-10-08T01:00:05.824600+00:00"
-  },
-  {
-    "slug": "padel_tactic_back_wall_20261012_190439",
-    "title": "Off the Back Wall — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "17910134967552698",
-    "url": "https://instagram.com/reel/17910134967552698",
-    "ts": "2026-10-12T19:08:35.635651+00:00"
-  },
-  {
-    "slug": "padel_tactic_positioning_20261012_222202",
-    "title": "Move as a Pair — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "18358820590221397",
-    "url": "https://instagram.com/reel/18358820590221397",
-    "ts": "2026-10-12T22:24:20.084298+00:00"
-  },
-  {
-    "slug": "top-5-fp-sueldos-altos-espana-2500",
-    "title": "TOP 5 FP con sueldos más altos · 2.500 euros mes · #1",
-    "status": "ok",
-    "media_id": "18117801646958362",
-    "url": "https://instagram.com/reel/18117801646958362",
-    "ts": "2026-10-14T09:10:27.371974+00:00"
-  },
-  {
-    "slug": "padel_tactic_positioning_20261014_094406",
-    "title": "Move as a Pair — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "18010122230777969",
-    "url": "https://instagram.com/reel/18010122230777969",
-    "ts": "2026-10-14T09:45:59.162433+00:00"
-  },
-  {
     "slug": "padel_tactic_smash_20261014_100354",
     "title": "The 'Por Tres' Smash — Padel Tactics #padel #shorts",
     "status": "ok",
@@ -2189,5 +2101,13 @@
     "reason": "cap diario alcanzado (8/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-08T02:22:58.418358+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-flash-video-generation",
+    "title": "Top 5 AI tools for flash video generation · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (12/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-08T10:43:45.419705+00:00"
   }
 ]
