@@ -270,7 +270,7 @@
       ]
     },
     "millet": {
-      "count": 5,
+      "count": 6,
       "history": [
         {
           "ts": "2026-08-28T18:09:28.746467+00:00",
@@ -291,6 +291,10 @@
         {
           "ts": "2026-11-01T13:15:48.383954+00:00",
           "topic": "Fèlix Millet y el saqueo del Palau de la Música: 26 millones de euros desviados y 9 años de cárcel"
+        },
+        {
+          "ts": "2026-11-09T21:26:23.117244+00:00",
+          "topic": "[CRIMEN] Fèlix Millet y el expolio del Palau de la Música: 26 millones de euros desviados en Catalunya y una condena firme de 9 años de prisión"
         }
       ]
     },
