@@ -1,12 +1,5 @@
 [
   {
-    "slug": "caso-pretoria-45m-comisiones",
-    "title": "Caso Pretoria — 45M€ en comisiones y pacto con la fiscalía · #1",
-    "status": "fail_publish",
-    "container_id": "18099343424188569",
-    "ts": "2026-10-16T09:08:32.647039+00:00"
-  },
-  {
     "slug": "caso-naseiro-financiacion-ilegal-pp",
     "title": "Caso Naseiro — 6.6M€ y el Supremo lo ANULÓ · #1",
     "status": "ok",
@@ -2118,5 +2111,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-09T16:14:05.343088+00:00"
+  },
+  {
+    "slug": "padel_tactic_drop_shot_20261109_183835",
+    "title": "The Drop Shot — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-09T18:39:55.011605+00:00"
   }
 ]
