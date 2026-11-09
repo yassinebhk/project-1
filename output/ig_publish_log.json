@@ -1,21 +1,5 @@
 [
   {
-    "slug": "despido-improcedente-2026-33-dias",
-    "title": "TOP 3 claves del despido improcedente · 33 días por año · #1",
-    "status": "ok",
-    "media_id": "18284100949295117",
-    "url": "https://instagram.com/reel/18284100949295117",
-    "ts": "2026-10-15T22:17:37.662030+00:00"
-  },
-  {
-    "slug": "top-3-requisitos-contrato-relevo-boes",
-    "title": "TOP 3 Requisitos Contrato de Relevo · 75% jornada · #1",
-    "status": "ok",
-    "media_id": "18107858096242805",
-    "url": "https://instagram.com/reel/18107858096242805",
-    "ts": "2026-10-16T00:02:54.314403+00:00"
-  },
-  {
     "slug": "caso-pretoria-45m-comisiones",
     "title": "Caso Pretoria — 45M€ en comisiones y pacto con la fiscalía · #1",
     "status": "fail_publish",
@@ -2126,5 +2110,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-09T15:07:20.174931+00:00"
+  },
+  {
+    "slug": "caso-torres-kio-de-la-rosa",
+    "title": "300 MILLONES robados y libertad condicional · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-09T16:14:05.343088+00:00"
   }
 ]
