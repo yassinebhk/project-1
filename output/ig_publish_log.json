@@ -2121,5 +2121,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-10T10:08:54.365244+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-email-automation",
+    "title": "Top 5 AI tools for email automation · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-10T11:06:37.697814+00:00"
   }
 ]
