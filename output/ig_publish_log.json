@@ -1,64 +1,5 @@
 [
   {
-    "slug": "padel_tactic_positioning_20261020_141750",
-    "title": "Move as a Pair — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 71min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-20T14:27:00.750512+00:00"
-  },
-  {
-    "slug": "planificar-jubilacion-espana-2026_teaser",
-    "title": "Planificar tu JUBILACIÓN en España 2026 · edad, cotizaciones, cuantía",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 152min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-20T15:47:49.863357+00:00"
-  },
-  {
-    "slug": "faro-trafalgar-bic-1860",
-    "title": "TOP 1 Declaración BIC · Máxima protección legal · #1",
-    "status": "ok",
-    "media_id": "18128903452817284",
-    "url": "https://instagram.com/reel/18128903452817284",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-20T17:26:27.481770+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-for-meeting-management-1",
-    "title": "Top 5 AI tools for meeting management · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 69min < 240min mínimo (5/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-20T18:35:00.399513+00:00"
-  },
-  {
-    "slug": "top-3-jubilacion-activa-autonomos",
-    "title": "3 claves para cobrar pensión y trabajar · 4% extra · #1",
-    "status": "ok",
-    "media_id": "18016903988748503",
-    "url": "https://instagram.com/reel/18016903988748503",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-20T22:17:52.616004+00:00"
-  },
-  {
-    "slug": "grand_slams_men_20261021_005232",
-    "title": "Top 10 Men's Tennis Grand Slam Champions All-Time (1968-2026)",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 159min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-21T00:56:43.379522+00:00"
-  },
-  {
-    "slug": "top-3-reglas-pagas-extras-nomina",
-    "title": "TOP 3 reglas de las pagas extras · 2 pagas anuales · #1",
-    "status": "ok",
-    "media_id": "18192306385399659",
-    "url": "https://instagram.com/reel/18192306385399659",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-21T09:11:52.731409+00:00"
-  },
-  {
     "slug": "top-3-ayudas-renovacion-flotas-2026",
     "title": "TOP 3 ayudas flotas comerciales · hasta €9.000 · #1",
     "status": "ok",
@@ -2169,5 +2110,13 @@
     "url": "https://instagram.com/reel/17908063209353128",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-11T11:13:13.338112+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261111_171546",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-11T17:28:11.317295+00:00"
   }
 ]
