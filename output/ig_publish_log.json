@@ -2134,5 +2134,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-11T18:34:54.197824+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-automating-newsletters",
+    "title": "Top 5 AI tools for automating weekly newsletters · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-11T19:52:43.888498+00:00"
   }
 ]
