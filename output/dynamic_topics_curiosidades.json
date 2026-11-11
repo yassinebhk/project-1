@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T01:21:55.974012+00:00",
+  "generated_at": "2026-11-11T00:22:54.079797+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -413,6 +413,83 @@
       "hook": "Más del 80% de las criaturas que habitan en la oscuridad abisal utilizan reacciones químicas frías para iluminar el abismo.",
       "angle": "Describir la bioquímica de la luciferina y la luciferasa en organismos de la zona batipelágica y mesopelágica.",
       "visual": "océano profundo bioluminiscente, destellos azules mágicos, criaturas abisales, oscuridad marina"
+    },
+    {
+      "key": "niebla_neon_atmosfera",
+      "titulo": "¿Qué pasaría si el aire tuviera gas neón brillante?",
+      "hook": "¿Y si al respirar en una noche oscura tu pecho brillara con luz de neón?",
+      "angle": "Propiedades de los gases nobles, fluorescencia y cómo reaccionan las moléculas atmosféricas bajo descargas eléctricas.",
+      "visual": "ciudad futurista niebla brillante colores fosforescentes"
+    },
+    {
+      "key": "gravedad_cero_fuego",
+      "titulo": "¿Qué pasaría si encendieras una cerilla en microgravedad?",
+      "hook": "Prendesse fuego en el espacio y verías una esfera perfecta en lugar de una llama alargada.",
+      "angle": "Dinámica de fluidos, convección térmica ausente y cómo el fuego consume oxígeno en forma esférica sin gravedad.",
+      "visual": "llama esférica flotando estación espacial oscuridad total"
+    },
+    {
+      "key": "cielo_verde_atardecer",
+      "titulo": "¿Qué pasaría si el cielo se volviera verde esmeralda al atardecer?",
+      "hook": "Imagina que el sol se pone y todo el horizonte explota en un tono verde brillante.",
+      "angle": "Dispersión de Rayleigh modificada, absorción de longitudes de onda y la física óptica de la luz solar en atmósferas densas.",
+      "visual": "atardecer verde desierto horizonte alienígena"
+    },
+    {
+      "key": "oceano_baja_salinidad",
+      "titulo": "¿Qué pasaría si el agua del mar no tuviera sal?",
+      "hook": "Un océano completamente dulce cubriría la Tierra, alterando por completo las corrientes del planeta.",
+      "angle": "Densidad del agua, termohalina, flotabilidad y el impacto científico en la circulación oceánica global.",
+      "visual": "océano gigante olas gigantescas sin espuma blanca"
+    },
+    {
+      "key": "tormentas_electricas_silenciosas",
+      "titulo": "¿Qué pasaría si los rayos no emitieran ningún sonido?",
+      "hook": "Una tormenta eléctrica masiva cruza la ciudad sin que escuches ni un solo trueno.",
+      "angle": "Ondas de choque, expansión del aire por calor extremo y la física detrás del sonido del trueno.",
+      "visual": "rayos gigantes cruzando rascacielos cielo oscuro silencioso"
+    },
+    {
+      "key": "suelo_metalico_magnetico",
+      "titulo": "¿Qué pasaría si la corteza terrestre fuera de hierro puro?",
+      "hook": "Caminarías sobre un suelo capaz de atraer tus llaves y herramientas con fuerza descomunal.",
+      "angle": "Geología planetaria, propiedades ferromagnéticas de los metales de transición y campos magnéticos.",
+      "visual": "suelo metálico brillante rocas magnéticas flotando ligeramente"
+    },
+    {
+      "key": "nieve_carbono_negra",
+      "titulo": "¿Qué pasaría si nevara cristales de grafito negro?",
+      "hook": "En lugar de copos blancos, una tormenta de nieve negra cubriría todo el paisaje de hollín.",
+      "angle": "Sublimación del carbono, puntos de fusión y estructura cristalina en condiciones atmosféricas extremas.",
+      "visual": "nevada negra paisaje monocromático bosques oscuros"
+    },
+    {
+      "key": "magnetosfera_pulso_solar",
+      "titulo": "¿Qué pasaría si el campo magnético parpadeara un segundo?",
+      "hook": "Por un solo parpadeo, el escudo magnético de la Tierra desaparece frente a una eyección solar.",
+      "angle": "Interacción del viento solar con la ionosfera, auroras boreales masivas y radiación cósmica.",
+      "visual": "aurora boreal gigante cubriendo todo el planeta desde el espacio"
+    },
+    {
+      "key": "bosques_gigantes_gravedad",
+      "titulo": "¿Qué pasaría si los árboles midieran mil metros de altura?",
+      "hook": "Imagina bosques cuyos árboles superan la altura de las nubes más altas.",
+      "angle": "Tensión capilar del agua, transporte de xilema y los límites físicos de la gravedad para bombear agua en plantas.",
+      "visual": "secuoyas gigantescas tocando las nubes luz solar filtrada"
+    },
+    {
+      "key": "ondas_sonoras_silicio",
+      "titulo": "¿Qué pasaría si las rocas transmitieran el sonido como el metal?",
+      "hook": "Golpear una montaña lejana haría eco en tus pies como una campana gigante.",
+      "angle": "Velocidad del sonido en sólidos cristalinos, elasticidad y densidad de los minerales terrestres.",
+      "visual": "montañas de cuarzo brillante ondas de sonido vibrando"
+    },
+    {
+      "key": "atmósfera_lenta_viento",
+      "titulo": "¿Qué pasaría si el viento soplara a la velocidad del sonido?",
+      "hook": "Una brisa matutina cruzaría el continente generando un estallido supersónico constante.",
+      "angle": "Dinámica de gases, barrera del sonido, presión atmosférica y aerodinámica extrema.",
+      "visual": "viento huracanado árboles doblados paisaje dinámico borroso"
     }
   ]
 }
