@@ -2114,5 +2114,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-11T23:54:18.429061+00:00"
+  },
+  {
+    "slug": "padel_tactic_lob_20261112_001417",
+    "title": "The Deep Lob — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-12T00:15:36.098267+00:00"
   }
 ]
