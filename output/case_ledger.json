@@ -573,6 +573,15 @@
           "topic": "[ACTUALIDAD] Taiwán y los microchips: por qué una sola empresa (TSMC) controla el 60% del suministro mundial y sostiene la economía global"
         }
       ]
+    },
+    "boe_como_funciona": {
+      "count": 1,
+      "history": [
+        {
+          "ts": "2026-11-12T18:53:57.901418+00:00",
+          "topic": "[ACTUALIDAD] El BOE: qué es, desde qué año se publica en España (1661) y por qué cada ley entra en vigor exactamente a medianoche."
+        }
+      ]
     }
   }
 }
