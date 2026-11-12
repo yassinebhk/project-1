@@ -2122,5 +2122,13 @@
     "reason": "cap diario alcanzado (8/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-12T00:15:36.098267+00:00"
+  },
+  {
+    "slug": "el-truco-de-precios-que-engana-a-tu-cerebro",
+    "title": "Efecto dígito izquierdo: por qué el 9,99 te parece más barato · #58",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-12T00:31:38.700178+00:00"
   }
 ]
