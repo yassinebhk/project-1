@@ -165,7 +165,7 @@
       ]
     },
     "psv": {
-      "count": 2,
+      "count": 3,
       "history": [
         {
           "ts": "2026-08-25T11:16:44.943197+00:00",
@@ -174,6 +174,10 @@
         {
           "ts": "2026-09-16T12:34:18.766965+00:00",
           "topic": "La estafa de la cooperativa PSV en 1993: cómo la promotora sindical dejó a 20.000 familias españolas sin ahorros y sin sus viviendas."
+        },
+        {
+          "ts": "2026-11-12T18:02:38.894650+00:00",
+          "topic": "[CRIMEN] Caso PSV (1993): la estafa inmobiliaria sindical que dejó a 20.000 familias sin vivienda y provocó un agujero de 15.000 millones de pesetas"
         }
       ]
     },
