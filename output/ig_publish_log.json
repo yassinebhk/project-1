@@ -2120,5 +2120,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-12T03:12:34.240195+00:00"
+  },
+  {
+    "slug": "failed-career-pivot-zenos-guide",
+    "title": "Failed Career Pivot After Thirty: Zeno's Radical Reset",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-12T03:17:15.453444+00:00"
   }
 ]
