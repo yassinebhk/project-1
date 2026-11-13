@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-05T14:32:02.221762+00:00",
+  "generated_at": "2026-11-13T01:55:38.225643+00:00",
   "topics": [
     {
       "key": "nubes_peso",
@@ -315,6 +315,90 @@
       "hook": "El fondo del mar se ilumina por la noche gracias a un espectáculo de neón natural.",
       "angle": "Muchos corales producen proteínas fluorescentes que absorben la luz ultravioleta y la emiten como colores brillantes para protegerse del sol o atraer presas.",
       "visual": "Arrecife de coral nocturno, luz ultravioleta submarina, colores neón brillantes, peces tropicales nadando."
+    },
+    {
+      "key": "sueno_unidireccional_aves",
+      "titulo": "El sorprendente modo en que las aves duermen volando sin chocar",
+      "hook": "Las fragatas pueden dormir mientras vuelan durante semanas seguidas.",
+      "angle": "Explicación del sueño de ondas lentas unihemisférico en vuelo.",
+      "visual": "Aves volando, cielo nocturno, primer plano ojo, océano infinito"
+    },
+    {
+      "key": "gusano_inmortal_planaria",
+      "titulo": "El animal que desafía al tiempo y puede regenerar su propio cerebro",
+      "hook": "Si cortas a una planaria en diez pedazos, tendrás diez animales idénticos.",
+      "angle": "Biología de las células madre totipotentes en la regeneración de la planaria.",
+      "visual": "Laboratorio microscopio, agua cristalina, gusano plano, animación celular"
+    },
+    {
+      "key": "bacterias_petroleo_lagos",
+      "titulo": "El lago mortal donde la vida prospera respirando asfalto puro",
+      "hook": "Existe un lago de petróleo líquido donde ningún pez sobrevive, pero sí bacterias extremófilas.",
+      "angle": "Microbiología de extremófilos en los pozos de brea de la Brea o similares.",
+      "visual": "Lago negro burbujeante, alquitrán, bacterias microscópicas, paisaje surrealista"
+    },
+    {
+      "key": "hongo_zombi_hormigas",
+      "titulo": "El hongo que toma el control mental de los insectos antes de matarlos",
+      "hook": "Un parásito obliga a las hormigas a trepar y morder una hoja para morir.",
+      "angle": "Mecanismo del hongo Ophiocordyceps unilateralis sobre el sistema nervioso.",
+      "visual": "Selva tropical, hormiga en hoja, espora de hongo, macrofotografía oscura"
+    },
+    {
+      "key": "diamantes_lluvia_atmosfera",
+      "titulo": "La razón física por la que el metano se convierte en gemas preciosas",
+      "hook": "En los gigantes gaseosos los relámpagos transforman el carbono en tormentas de diamantes.",
+      "angle": "Química planetaria de la conversión de metano bajo presión extrema.",
+      "visual": "Planeta gigante gaseoso, tormenta eléctrica, diamantes cayendo, espacio exterior"
+    },
+    {
+      "key": "bambu_crecimiento_extremo",
+      "titulo": "La planta gigante que puedes ver estirarse centímetro a centímetro",
+      "hook": "Algunas especies de bambú crecen hasta casi un metro en un solo día.",
+      "angle": "Fisiología del crecimiento vegetal acelerado por presión de turgencia.",
+      "visual": "Bosque de bambú denso, timelapse verde, sol filtrado, brote creciendo"
+    },
+    {
+      "key": "vision_mantis_relampago",
+      "titulo": "El insecto con los ojos más complejos y alucinantes de todo el planeta",
+      "hook": "El camarón mantis puede ver colores que el ojo humano ni siquiera puede imaginar.",
+      "angle": "Espectro de visión ultravioleta y polarizada de los estomatópodos.",
+      "visual": "Arrecife de coral vibrante, crustáceo colorido, ojos compuestos, espectro de luz"
+    },
+    {
+      "key": "sonido_ballenas_profundidad",
+      "titulo": "El misterio de las ondas de baja frecuencia que cruzan océanos enteros",
+      "hook": "El canto de una ballena azul puede viajar miles de kilómetros bajo el agua sin perder fuerza.",
+      "angle": "Acústica submarina y canales SOFAR en la propagación del sonido oceánico.",
+      "visual": "Océano profundo azul oscuro, ballena gigante, ondas sonoras visuales, abismo marino"
+    },
+    {
+      "key": "fosil_viviente_celacanto",
+      "titulo": "El pez prehistórico que la ciencia creía extinto junto a los dinosaurios",
+      "hook": "Los pescadores sacaron del mar a un animal que se suponía desaparecido hace 66 millones de años.",
+      "angle": "Descubrimiento del celacanto y su anatomía de aletas lobuladas.",
+      "visual": "Fondo marino oscuro, pez azul antiguo, aletas extrañas, buceador con linterna"
+    },
+    {
+      "key": "hielo_caliente_fisica",
+      "titulo": "El extraño estado del agua que permanece sólida a temperaturas de horno",
+      "hook": "Existe un tipo de hielo que no se derretiría ni aunque lo metas al fuego.",
+      "angle": "Estructuras cristalinas del hielo VII bajo presiones extremas.",
+      "visual": "Laboratorio de física, cristal brillante, presión extrema, animación molecular"
+    },
+    {
+      "key": "araña_seda_resistencia",
+      "titulo": "El material natural más resistente del mundo creado por un arácnido",
+      "hook": "Un hilo de telaraña más fino que un cabello humano puede detener a un insecto en pleno vuelo.",
+      "angle": "Propiedades de tracción y elasticidad de las proteínas de la seda de araña.",
+      "visual": "Telaraña brillante con rocío, macrofotografía, araña tejiendo, amanecer"
+    },
+    {
+      "key": "reloj_biologico_tardigrado",
+      "titulo": "La criatura microscópica que congela su vida cuando falta el agua",
+      "hook": "Este animalito puede perder el noventa por ciento de su agua y volver a la vida décadas después.",
+      "angle": "Criptobiosis y anhidrobiosis en los tardígrados u osos de agua.",
+      "visual": "Musgo verde microscópico, tardígrado animado, cristales de hielo, laboratorio científico"
     }
   ]
 }
