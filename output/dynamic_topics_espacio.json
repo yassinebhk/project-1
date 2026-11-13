@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T01:00:27.563254+00:00",
+  "generated_at": "2026-11-13T02:48:05.515636+00:00",
   "topics": [
     {
       "key": "diamantes_en_neptuno",
@@ -406,6 +406,90 @@
       "hook": "Gira cientos de veces por segundo barriendo el cosmos con haces de radiación letal.",
       "angle": "Describir el funcionamiento de los púlsares como relojes cósmicos de ultra alta precisión según datos astrofísicos.",
       "visual": "rotating pulsar star, twin radiation beams, magnetic field lines, vibrant nebula"
+    },
+    {
+      "key": "estrellas_hipervelocidad_centro_galactico",
+      "titulo": "Estrellas que huyen del centro galáctico a millones de km/h",
+      "hook": "Imagina una estrella siendo expulsada de su propia galaxia como si fuera una bala de cañón.",
+      "angle": "Explicación basada en datos de Gaia de la ESA sobre estrellas hipervelocidad lanzadas por el agujero negro supermasivo Sagitario A*.",
+      "visual": "Galaxia espiral, chorro de energía, estrella veloz, espacio profundo"
+    },
+    {
+      "key": "atmuesfera_exoplaneta_metales_pesados",
+      "titulo": "El mundo alienígena donde las nubes expulsan titanio",
+      "hook": "En este planeta infernal, las nubes no son de vapor de agua, sino de metales puros.",
+      "angle": "Datos espectroscópicos del telescopio espacial James Webb sobre exoplanetas ultra calientes con condensación metálica.",
+      "visual": "Planeta ardiente, nubes metálicas, atmósfera tóxica, telescopio James Webb"
+    },
+    {
+      "key": "anomalia_gravitacional_gran_atractor",
+      "titulo": "La gigantesca anomalía invisible que arrastra a nuestra galaxia",
+      "hook": "Nuestra Vía Láctea se está moviendo a una velocidad vertiginosa hacia un destino invisible.",
+      "angle": "El fenómeno del Gran Atractor y cómo las galaxias locales son atraídas por una masa masiva oculta tras la Zona de Evasión.",
+      "visual": "Vía Láctea en movimiento, corrientes galácticas, cúmulo masivo oculto, mapa cósmico"
+    },
+    {
+      "key": "crateres_impacto_marte_hielo_subterraneo",
+      "titulo": "El secreto helado que esconden los cráteres marcianos",
+      "hook": "Bajo el polvo rojo y seco de Marte se esconde un océano congelado esperando ser descubierto.",
+      "angle": "Observaciones orbitales de la NASA y la ESA sobre glaciares masivos protegidos bajo capas de regolito.",
+      "visual": "Superficie de Marte, corte transversal geológico, hielo subterráneo, orbitador marciano"
+    },
+    {
+      "key": "pulsar_viento_nebulosa_cangrejo",
+      "titulo": "El latido electromagnético que desgarra una nebulosa entera",
+      "hook": "Cada segundo, un cadáver estelar invisible emite pulsos de energía que deforman su entorno.",
+      "angle": "Dinámica del púlsar de la Nebulosa del Cangrejo y su viento relativista capturado en rayos X por Chandra.",
+      "visual": "Púlsar girando, rayos de energía, nebulosa de gas, observaciones de rayos X"
+    },
+    {
+      "key": "nubes_noctilucentes_mesosfera",
+      "titulo": "Las misteriosas nubes eléctricas que brillan en la noche",
+      "hook": "Mientras duermes, a ochenta kilómetros de altura, unas extrañas nubes de hielo brillan con luz propia.",
+      "angle": "Formación de nubes noctilucentes en la mesosfera terrestre y su relación con el vapor de agua y meteoroides.",
+      "visual": "Atmósfera terrestre, nubes brillantes en la oscuridad, horizonte espacial, aurora"
+    },
+    {
+      "key": "anillos_tenues_jupiter_descubrimiento",
+      "titulo": "El secreto mejor guardado alrededor del planeta gigante",
+      "hook": "Todo el mundo conoce los anillos de Saturno, pero Júpiter también esconde los suyos propios.",
+      "angle": "El sistema de anillos polvorientos de Júpiter formado por impactos de micrometeoroides en lunas interiores, confirmado por misiones de la NASA.",
+      "visual": "Júpiter visto de cerca, anillos tenues acontraluz, lunas galileanas, nave espacial"
+    },
+    {
+      "key": "dinamica_dinamo_nucleo_marte_apagado",
+      "titulo": "Por qué el planeta rojo perdió su escudo invisible",
+      "hook": "Hace millones de años, Marte tenía un campo magnético protector que de repente se apagó para siempre.",
+      "angle": "Causas geofísicas del enfriamiento del núcleo marciano y la pérdida de la dinamo interna según datos de la misión InSight.",
+      "visual": "Interior de un planeta, núcleo congelado, campo magnético desapareciendo, planeta desolado"
+    },
+    {
+      "key": "estrellas_enanas_blancas_cristalizadas",
+      "titulo": "Los gigantescos diamantes cósmicos flotando en el espacio",
+      "hook": "Cuando una estrella como nuestro Sol muere, su interior se convierte literalmente en un cristal gigante.",
+      "angle": "El proceso físico de cristalización del carbono y oxígeno en enanas blancas envejecidas según datos astrofísicos.",
+      "visual": "Enana blanca brillante, estructura cristalina interna, remanente estelar, espacio oscuro"
+    },
+    {
+      "key": "vientos_exoplaneta_hd189733b",
+      "titulo": "El planeta donde sopla un viento letal de vidrio fundido",
+      "hook": "En este mundo infernal, los vientos huracanados arrastran lluvia de cristal a siete veces la velocidad del sonido.",
+      "angle": "Mediciones atmosféricas del exoplaneta HD 189733b analizadas con telescopios espaciales de la NASA y ESA.",
+      "visual": "Planeta azul oscuro, vientos extremos, lluvia lateral de vidrio, tormenta alienígena"
+    },
+    {
+      "key": "coronas_solares_calor_misterio",
+      "titulo": "El desconcertante misterio del fuego solar que desafía la física",
+      "hook": "La atmósfera exterior del Sol es un millón de veces más caliente que su propia superficie.",
+      "angle": "El problema del calentamiento coronal y los datos recientes aportados por la sonda Parker Solar Probe de la NASA.",
+      "visual": "Sol rugiente, llamaradas solares, sonda espacial cerca del sol, plasma magnético"
+    },
+    {
+      "key": "luna_encelado_geiseres_agua",
+      "titulo": "Los géiseres espaciales que disparan océanos al vacío",
+      "hook": "En una pequeña luna helada de Saturno, enormes chorros de agua escapan disparados directamente al espacio.",
+      "angle": "Análisis de la Cassini sobre los penachos criovolcánicos de Encélado que confirman un océano subterráneo global.",
+      "visual": "Encélado helado, géiseres disparando agua, Saturno de fondo, sonda Cassini"
     }
   ]
 }
