@@ -1,13 +1,5 @@
 [
   {
-    "slug": "padel_tactic_positioning_20261025_134343",
-    "title": "Move as a Pair — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 232min < 240min mínimo (3/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-25T14:00:03.056563+00:00"
-  },
-  {
     "slug": "caso-estepona-corrupcion-40m",
     "title": "Caso Estepona — 40M€ desviados y el alcalde al frente · #1",
     "status": "skip_rate_limit",
@@ -2108,5 +2100,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-12T21:34:25.472347+00:00"
+  },
+  {
+    "slug": "padel_tactic_positioning_20261113_000305",
+    "title": "Move as a Pair — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-13T00:04:17.331553+00:00"
   }
 ]
