@@ -2108,5 +2108,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-13T00:04:17.331553+00:00"
+  },
+  {
+    "slug": "marcus-aurelius-on-browser-tabs-and-digital-clutter",
+    "title": "Marcus Aurelius On Digital Clutter And Mental Clarity",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-13T00:07:57.562538+00:00"
   }
 ]
