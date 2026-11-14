@@ -1,14 +1,5 @@
 [
   {
-    "slug": "top-3-claves-mejores-empresas-forbes",
-    "title": "TOP 3 claves de las mejores empresas · según Forbes USA · #1",
-    "status": "ok",
-    "media_id": "18115116932120089",
-    "url": "https://instagram.com/reel/18115116932120089",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T10:08:35.730478+00:00"
-  },
-  {
     "slug": "casa-real-espana-presupuesto-comparacion",
     "title": "Casa Real España — 8 millones de presupuesto · #1",
     "status": "skip_rate_limit",
@@ -2109,5 +2100,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-14T17:08:30.002454+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261114_185320",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 196min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-14T18:54:56.714696+00:00"
   }
 ]
