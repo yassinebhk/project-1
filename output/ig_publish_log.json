@@ -1,13 +1,5 @@
 [
   {
-    "slug": "top-5-free-ai-writing-tools-1",
-    "title": "Top 5 AI tools for content writers · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 224min < 240min mínimo (3/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-26T20:04:17.831191+00:00"
-  },
-  {
     "slug": "jubilacion-2026-edad-cotizacion-espana",
     "title": "TOP 3 claves de la jubilación 2026 · 66 años y 6 meses · #1",
     "status": "ok",
@@ -2110,5 +2102,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-13T18:57:50.399099+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261114_002025",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-14T00:22:07.697427+00:00"
   }
 ]
