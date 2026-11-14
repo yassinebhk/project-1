@@ -2108,5 +2108,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-14T02:22:36.672546+00:00"
+  },
+  {
+    "slug": "sesgo-de-impacto-gilbert-wilson",
+    "title": "Sesgo de impacto: por qué exageras el futuro · #60",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-14T02:31:05.738613+00:00"
   }
 ]
