@@ -1,13 +1,5 @@
 [
   {
-    "slug": "top-5-ai-tools-for-agent-web-search",
-    "title": "Top 5 AI tools for agent web search · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 160min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T01:57:29.949644+00:00"
-  },
-  {
     "slug": "top-3-claves-mejores-empresas-forbes",
     "title": "TOP 3 claves de las mejores empresas · según Forbes USA · #1",
     "status": "ok",
@@ -2109,5 +2101,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-14T16:03:50.837807+00:00"
+  },
+  {
+    "slug": "crisis-euro-2012-mario-draghi",
+    "title": "Crisis del euro 2012 — 500.000 millones en juego · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-14T17:08:30.002454+00:00"
   }
 ]
