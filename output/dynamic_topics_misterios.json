@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T00:45:34.804507+00:00",
+  "generated_at": "2026-11-14T00:28:50.605434+00:00",
   "topics": [
     {
       "key": "el_tesoro_de_oak_island",
@@ -329,6 +329,48 @@
       "hook": "La última anotación en la bitácora hablaba de una tormenta feroz que jamás ocurrió en esa zona.",
       "angle": "Examinar los registros meteorológicos oficiales de diciembre de 1900 en contraste con el diario de los fareros.",
       "visual": "islas flannan oceano atlantico diario antiguo faro"
+    },
+    {
+      "key": "carreteras_de_bimini",
+      "titulo": "La supuesta carretera submarina de las Bahamas que desconcierta a los buzos",
+      "hook": "A pocos metros de profundidad en la costa de Bimini descansa una formación de bloques de roca perfectamente rectangulares que parecen una calzada pavimentada por gigantes.",
+      "angle": "Documentar el hallazgo de la formación rocosa conocida como la Carretera de Bimini en 1968, explicando los estudios geológicos que determinaron su origen natural por fracturación de beachrock y descartando mitos de la Atlántida.",
+      "visual": "formacion rocosa submarina, buceador en aguas cristalinas, bloques de piedra, fondo marino"
+    },
+    {
+      "key": "cahokia",
+      "titulo": "La metrópoli indígena norteamericana que superaba en tamaño al Londres medieval",
+      "hook": "Antes de la llegada de Colón, los bosques de Norteamérica albergaron una enorme ciudad con pirámides de tierra y miles de habitantes cuya repentina desaparición sigue investigándose.",
+      "angle": "Explorar la historia urbana y arqueológica de Cahokia en Illinois, detallando sus grandes montículos de tierra, su pico demográfico en el siglo XIII y las teorías científicas sobre su declive vinculadas al colapso ambiental.",
+      "visual": "grandes monticulos de tierra, ciudad indigene reconstruccion, dron sobre bosque, atardecer arqueologico"
+    },
+    {
+      "key": "mapa_de_piri_reis",
+      "titulo": "El portulano otomano de 1513 que cartografió costas insólitas",
+      "hook": "Un almirante otomano dibujó en un pergamino de piel de gacela detalles costeros que la cartografía europea tardaría siglos en volver a registrar con precisión.",
+      "angle": "Analizar el mapa de Piri Reis conservado en el Palacio de Topkapi, explicando sus fuentes basadas en cartas portuguesas y mapas de Colón, y desmontando las teorías pseudocientíficas sobre la Antártida libre de hielo.",
+      "visual": "mapa antiguo en pergamino, navegante estudiando brjula, palacio otomano, caligrafia antigua"
+    },
+    {
+      "key": "pergamino_de_ripley",
+      "titulo": "El extraño pergamino alquímico del siglo XV lleno de simbolismo prohibido",
+      "hook": "Un manuscrito ilustrado de seis metros de largo guarda extrañas figuras de sapos, dragones y copas que intentaban explicar la receta de la piedra filosofal.",
+      "angle": "Examinar el pergamino atribuido a Sir George Ripley en la Biblioteca Británica, analizando el trasfondo histórico de la alquimia medieval inglesa y su lenguaje alegórico desprovisto de valor científico real.",
+      "visual": "pergamino largo ilustrado, simbolos alquimicos, frascos de laboratorio antiguo, biblioteca historica"
+    },
+    {
+      "key": "isla_flores",
+      "titulo": "El refugio de los pequeños homínidos que convivieron con humanos modernos",
+      "hook": "En una remota isla de Indonesia, los arqueólogos desenterraron los restos de una especie humana diminuta que sobrevivió hasta hace poco más de cincuenta mil años.",
+      "angle": "Resumir el descubrimiento del Homo floresiensis en la cueva de Liang Bua en 2003, analizando el fenómeno del enanismo insular y la cronología establecida por la estratigrafía de la cueva.",
+      "visual": "cueva oscura indonesia, craneo fosil, herramientas de piedra primitivas, selva tropical"
+    },
+    {
+      "key": "barco_dragon_skuldelev",
+      "titulo": "Los cinco barcos vikingos hundidos intencionalmente para bloquear un fiordo",
+      "hook": "Para proteger un asentamiento de incursiones enemigas, los vikingos hundieron deliberadamente cinco naves de guerra distintas en el fondo de un fiordo danés.",
+      "angle": "Exponer el hallazgo de los barcos de Skuldelev en el fiordo de Roskilde en 1962, detallando cómo la arqueología subacuática permitió clasificar las diferentes tipologías navales de la época vikinga.",
+      "visual": "barco vikingo bajo el agua, buceador arqueologo, fiordo de dinamarca, maderas antiguas sumergidas"
     }
   ]
 }
