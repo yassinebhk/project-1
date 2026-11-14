@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-06T12:08:19.109785+00:00",
+  "generated_at": "2026-11-14T00:33:06.043322+00:00",
   "topics": [
     {
       "key": "efecto_arrastre",
@@ -252,6 +252,13 @@
       "hook": "Montar un mueble tú mismo te hace amarlo, aunque quede torcido.",
       "angle": "Aronson y Mills sobre la justificación del esfuerzo, probando que el cerebro incrementa artificialmente el valor de algo en proporción directa al dolor sufrido.",
       "visual": "mueble de madera, gotas de sudor, etiqueta de precio elevada, martillo brillante"
+    },
+    {
+      "key": "efecto_pyp_asimetria_atribucion",
+      "titulo": "Por qué tus errores son culpa del destino y los ajenos son culpa suya",
+      "hook": "Cuando tú llegas tarde es por el tráfico, pero cuando llega otro es porque es un irresponsable.",
+      "angle": "Explicar el error fundamental de atribución documentado por Lee Ross (1977), donde sobreestimamos los factores disposicionales en los demás y subestimamos las situaciones.",
+      "visual": "Splitscreen traffic jam, office worker clocking in, psychology desk, brain neural network"
     }
   ]
 }
