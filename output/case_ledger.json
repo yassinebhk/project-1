@@ -359,7 +359,7 @@
       ]
     },
     "naseiro": {
-      "count": 7,
+      "count": 8,
       "history": [
         {
           "ts": "2026-09-08T10:31:12.572180+00:00",
@@ -388,6 +388,10 @@
         {
           "ts": "2026-11-01T15:29:37.981283+00:00",
           "topic": "[CRIMEN] Caso Naseiro: cómo las escuchas de 1990 destaparon la financiación ilegal del PP con millones de pesetas en sobres."
+        },
+        {
+          "ts": "2026-11-15T13:53:36.110172+00:00",
+          "topic": "[CRIMEN] Caso Naseiro (1990): Rosendo Naseiro y las escuchas que destaparon la financiación ilegal del PP con millones de pesetas en comisiones."
         }
       ]
     },

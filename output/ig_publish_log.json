@@ -1,14 +1,5 @@
 [
   {
-    "slug": "36-dias-libres-vacaciones-festivos-2026",
-    "title": "3 reglas de tus 36 días libres · 22+14 días · #1",
-    "status": "ok",
-    "media_id": "18203977897329334",
-    "url": "https://instagram.com/reel/18203977897329334",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-29T14:17:09.101622+00:00"
-  },
-  {
     "slug": "padel_tactic_serve_20261029_160458",
     "title": "The Smart Serve — Padel Tactics #padel #shorts",
     "status": "skip_rate_limit",
@@ -2112,5 +2103,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-15T11:50:15.884933+00:00"
+  },
+  {
+    "slug": "caso-naseiro-financiacion-ilegal-pp",
+    "title": "Caso Naseiro — millones en comisiones y cero cárcel · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-15T14:03:12.931804+00:00"
   }
 ]
