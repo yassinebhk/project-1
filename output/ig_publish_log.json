@@ -1,13 +1,5 @@
 [
   {
-    "slug": "padel_tactic_serve_20261030_023414",
-    "title": "The Smart Serve — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 197min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T02:35:35.330928+00:00"
-  },
-  {
     "slug": "top-3-despido-economico-20-dias",
     "title": "TOP 3 causas de despido económico · 20 días por año · #1",
     "status": "ok",
@@ -2109,5 +2101,13 @@
     "reason": "cap diario alcanzado (8/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-15T17:54:18.526496+00:00"
+  },
+  {
+    "slug": "padel_tactic_defense_20261115_192556",
+    "title": "Patient Defense — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-15T19:27:33.479007+00:00"
   }
 ]
