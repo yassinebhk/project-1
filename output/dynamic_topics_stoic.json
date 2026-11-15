@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T02:06:53.230917+00:00",
+  "generated_at": "2026-11-15T12:52:04.287131+00:00",
   "topics": [
     {
       "key": "inbox_zero_anxiety",
@@ -333,6 +333,105 @@
       "hook": "You wake up in a sterile hotel room completely forgetting which city you are currently in.",
       "titulo": "Seneca On Curing Travel Exhaustion And Finding Peace In Movement",
       "visual": "dark hotel window, rainy night city lights, moody cinematic reflections"
+    },
+    {
+      "key": "unlocked_phone_noise",
+      "stoic": "Seneca",
+      "principle": "voluntary discomfort",
+      "stressor": "phantom notification vibration anxiety",
+      "hook": "You stare at a blank screen, heart racing, waiting for a ping that never arrives.",
+      "titulo": "The Seneca Reset For Constant Ping Anxiety",
+      "visual": "dark obsidian phone, flickering candle, shadows, rain on glass"
+    },
+    {
+      "key": "cloud_storage_loss",
+      "stoic": "Epictetus",
+      "principle": "dichotomy of control",
+      "stressor": "losing years of digital files due to a server crash",
+      "hook": "Ten thousand photos vanish in a second when the cloud storage account locks.",
+      "titulo": "When Your Entire Digital Life Disappears (An Epictetus Guide)",
+      "visual": "shattered marble statue, digital static, dim blue light, empty desk"
+    },
+    {
+      "key": "group_chat_exclusion",
+      "stoic": "Musonius Rufus",
+      "principle": "indifferents",
+      "stressor": "being quietly left out of private friend group chats",
+      "hook": "You notice the inside jokes happening in real-time without you in the group feed.",
+      "titulo": "How Musonius Rufus Handled Being Left Out",
+      "visual": "dark moody room, glowing smartphone screen, solitary chair, heavy fog"
+    },
+    {
+      "key": "gig_economy_uncertainty",
+      "stoic": "Zeno",
+      "principle": "radical acceptance",
+      "stressor": "zero scheduled freelance gigs for the upcoming month",
+      "hook": "The invoice is sent, rent is due, and the client inbox remains terrifyingly silent.",
+      "titulo": "Zeno's Guide To Surviving Freelance Income Droughts",
+      "visual": "ancient columns, fierce storm clouds, stark lighting, empty notebook"
+    },
+    {
+      "key": "open_office_burnout",
+      "stoic": "Marcus Aurelius",
+      "principle": "the inner citadel",
+      "stressor": "constant noise and interruptions in an open-plan office",
+      "hook": "Colleagues chatter loudly three feet away while your deadline is in forty minutes.",
+      "titulo": "Marcus Aurelius On Finding Silence In Loud Workspaces",
+      "visual": "bust of marcus aurelius, dark shadows, heavy rain, glowing desk lamp"
+    },
+    {
+      "key": "unopened_bills",
+      "stoic": "Seneca",
+      "principle": "premeditatio malorum",
+      "stressor": "paralyzing fear of opening overdue utility bills",
+      "hook": "The bright red envelope sits on the counter, untouched for three days of pure dread.",
+      "titulo": "Seneca On Facing Dreaded Financial Envelopes",
+      "visual": "red letter, flickering oil lamp, dark stone table, intense shadows"
+    },
+    {
+      "key": "dating_app_ghosting",
+      "stoic": "Epictetus",
+      "principle": "assessing impressions",
+      "stressor": "getting ghosted after a promising third date",
+      "hook": "The chat bubble lingers for hours before turning into permanent radio silence.",
+      "titulo": "The Epictetus Reset For Sudden Dating Ghosting",
+      "visual": "dark alleyway, single glowing streetlamp, empty bench, mist"
+    },
+    {
+      "key": "erratic_sleep_schedule",
+      "stoic": "Marcus Aurelius",
+      "principle": "nature and duty",
+      "stressor": "insomnia caused by replaying awkward work conversations at 3 AM",
+      "hook": "Your eyes burn at 3:15 AM as your brain replays a single awkward sentence from noon.",
+      "titulo": "Marcus Aurelius On Stopping 3 AM Mental Loops",
+      "visual": "dark bedroom, moonlit window, restless sheets, stoic bust silhouette"
+    },
+    {
+      "key": "career_pivot_judgment",
+      "stoic": "Musonius Rufus",
+      "principle": "focusing on virtue over opinion",
+      "stressor": "family judging your decision to leave a stable career for a creative path",
+      "hook": "At Sunday dinner, relatives openly question why you threw away a safe corporate title.",
+      "titulo": "How Musonius Rufus Dealt With Family Disapproval",
+      "visual": "dark dining table, solitary candle, deep shadows, smoke tendrils"
+    },
+    {
+      "key": "commute_traffic_gridlock",
+      "stoic": "Epictetus",
+      "principle": "focusing on what is up to us",
+      "stressor": "trapped in unmoving highway traffic while late for a major appointment",
+      "hook": "Tail-lights stretch into infinity while the dashboard clock ticks past your meeting time.",
+      "titulo": "The Epictetus Guide To Unmoving Traffic Rage",
+      "visual": "dark highway, red tail-lights, moody fog, rain streaked windshield"
+    },
+    {
+      "key": "portfolio_comparison",
+      "stoic": "Zeno",
+      "principle": "comparing only to oneself",
+      "stressor": "watching peers younger than you land massive industry awards online",
+      "hook": "A twenty-four-year-old posts their Forbes feature while you eat cereal at your desk.",
+      "titulo": "Zeno On Stopping The Peer Success Comparison Trap",
+      "visual": "dark mirror reflection, dramatic side lighting, empty room, storm"
     }
   ]
 }
