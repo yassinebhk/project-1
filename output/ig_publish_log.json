@@ -1,81 +1,5 @@
 [
   {
-    "slug": "top-6-limites-jornada-laboral-2026",
-    "title": "TOP 6 límites de jornada diaria · BOE 2026 · #1",
-    "status": "ok",
-    "media_id": "18088615859289081",
-    "url": "https://instagram.com/reel/18088615859289081",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T14:17:10.278749+00:00"
-  },
-  {
-    "slug": "padel_tactic_defense_20261028_160032",
-    "title": "Patient Defense — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 119min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T16:16:13.108833+00:00"
-  },
-  {
-    "slug": "banco-central-europeo-dinero-invisible",
-    "title": "Banco Central Europeo — 1.500 millones al día · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 179min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T17:16:23.039119+00:00"
-  },
-  {
-    "slug": "julio-cesar-lider-ventas-alberto-angela_teaser",
-    "title": "HISTORIA DE JULIO CÉSAR LÍDER DE VENTAS · 7 min",
-    "status": "ok",
-    "media_id": "18049383737818176",
-    "url": "https://instagram.com/reel/18049383737818176",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T18:19:19.258854+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-social-media-growth",
-    "title": "Top 5 AI tools for social media growth · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 81min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T19:40:32.359534+00:00"
-  },
-  {
-    "slug": "baja-medica-comun-porcentajes-pago",
-    "title": "TOP 3 claves de la baja médica · 60% base reguladora · #1",
-    "status": "ok",
-    "media_id": "17887303920688693",
-    "url": "https://instagram.com/reel/17887303920688693",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-28T23:16:02.246772+00:00"
-  },
-  {
-    "slug": "padel_tactic_drop_shot_20261029_020827",
-    "title": "The Drop Shot — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 174min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-29T02:10:05.483404+00:00"
-  },
-  {
-    "slug": "jubilacion-2026-requisitos-edad",
-    "title": "3 Claves de tu jubilación en 2026 · 65 o 66 años · #1",
-    "status": "ok",
-    "media_id": "18100799411551481",
-    "url": "https://instagram.com/reel/18100799411551481",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-29T10:08:07.633044+00:00"
-  },
-  {
-    "slug": "coste-real-iphone-apple",
-    "title": "iPhone 15 Pro — 500€ de margen limpio por cada móvil · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 171min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-29T12:59:14.650491+00:00"
-  },
-  {
     "slug": "36-dias-libres-vacaciones-festivos-2026",
     "title": "3 reglas de tus 36 días libres · 22+14 días · #1",
     "status": "ok",
@@ -2180,5 +2104,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-15T04:12:01.905898+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261115_114837",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-15T11:50:15.884933+00:00"
   }
 ]
