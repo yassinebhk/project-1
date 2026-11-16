@@ -1,0 +1,40 @@
+{
+  "case_name": "Caso ITV Cataluña",
+  "case_key": "itv_cataluna",
+  "mode": "crime",
+  "started_at": "2026-11-16T22:30:00+00:00",
+  "parts": [
+    {
+      "part_num": 1,
+      "angle": "El apellido: Oriol Pujol, hijo del expresident",
+      "topic": "[MINISERIE Caso ITV Cataluña · Parte 1/5] Oriol Pujol, hijo del expresident Jordi Pujol: cómo el número dos de CDC acabó admitiendo el amaño de las concesiones de ITV en Cataluña",
+      "cliffhanger": "Pero, ¿cómo se amañaba exactamente un concurso público de ITV? En la siguiente parte lo desmontamos paso a paso."
+    },
+    {
+      "part_num": 2,
+      "angle": "El mecanismo: el decreto que lo hizo posible",
+      "topic": "[MINISERIE Caso ITV Cataluña · Parte 2/5] El mecanismo del amaño: cómo se repartían las concesiones de las estaciones de ITV en Cataluña y por qué el TSJC acabó anulando el decreto que lo permitía",
+      "cliffhanger": "Y cuando la justicia empezó a tirar del hilo, aparecieron unas grabaciones que lo cambiaron todo."
+    },
+    {
+      "part_num": 3,
+      "angle": "Las escuchas que destaparon la trama",
+      "topic": "[MINISERIE Caso ITV Cataluña · Parte 3/5] Las escuchas telefónicas que destaparon la trama de las ITV y que la Audiencia de Barcelona dio por válidas",
+      "cliffhanger": "Pero el caso no se quedó en los políticos: acabó salpicando al propio poder judicial."
+    },
+    {
+      "part_num": 4,
+      "angle": "Cuando la trama salpicó a la justicia",
+      "topic": "[MINISERIE Caso ITV Cataluña · Parte 4/5] Cuando la trama de las ITV salpicó a la justicia: un juez del propio TSJC también acabó imputado en el caso",
+      "cliffhanger": "¿Y qué pena pagó realmente el protagonista? El desenlace, en la última parte."
+    },
+    {
+      "part_num": 5,
+      "angle": "El desenlace: el pacto 5 años → 2 años y medio",
+      "topic": "[MINISERIE Caso ITV Cataluña · Parte 5/5] El desenlace: de los más de 5 años que pedía la Fiscalía a los 2 años y medio que Oriol Pujol aceptó por el amaño de las ITV",
+      "cliffhanger": "Si te ha enganchado el caso ITV, suscríbete: cada semana desmontamos otra trama real de corrupción en España."
+    }
+  ],
+  "next_part": 1,
+  "last_published_at": null
+}

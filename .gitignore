@@ -11,6 +11,11 @@ output/**
 !output/social_boost_log.json
 !output/ambient_ledger.json
 !output/ig_publish_log.json
+# Miniseries forzadas (series_generator): el workflow las commitea con `git add`
+# SIN -f, así que sin estas líneas el fichero nuevo e ignorado NO se commitea y
+# la serie nunca avanza en el repo (republica siempre la parte 1). Whitelisted.
+!output/active_series.json
+!output/series_history.json
 # Engagement ledgers (creados por engagement/ig_engagement/threads_engagement/
 # bsky_reply_boost/playlists_manager). Sin estas líneas git status no los
 # detecta y el commit del reusable los ignora silenciosamente (bug 28/09
