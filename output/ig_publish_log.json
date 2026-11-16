@@ -1,81 +1,5 @@
 [
   {
-    "slug": "caso-grand-tibidabo-javier-de-la-rosa",
-    "title": "Caso Javier de la Rosa — 40M€ y CERO cárcel real · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 162min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T12:52:56.011956+00:00"
-  },
-  {
-    "slug": "top-3-kit-conectividad-rural-autonomos-3000",
-    "title": "TOP 3 Kit Conectividad Rural · hasta €3.000 · #1",
-    "status": "ok",
-    "media_id": "18145558495592033",
-    "url": "https://instagram.com/reel/18145558495592033",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T14:16:21.269578+00:00"
-  },
-  {
-    "slug": "padel_tactic_bandeja_20261030_155302",
-    "title": "The Bandeja — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 106min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T16:01:59.615120+00:00"
-  },
-  {
-    "slug": "elon-musk-sueldo-por-segundo-twitter-44b",
-    "title": "Elon Musk — 6.000 euros por segundo · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 168min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T17:04:44.179806+00:00"
-  },
-  {
-    "slug": "premio-pascal-ia-literatura",
-    "title": "TOP 1 Certamen literario con IA · Premio Pascal 2026 · #1",
-    "status": "ok",
-    "media_id": "18230850955336602",
-    "url": "https://instagram.com/reel/18230850955336602",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T18:19:41.743827+00:00"
-  },
-  {
-    "slug": "top-5-ai-research-tools-for-students-1",
-    "title": "Top 5 AI tools for academic research · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 71min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T19:30:55.107712+00:00"
-  },
-  {
-    "slug": "top-3-requisitos-trabajar-finlandia-3000-euros",
-    "title": "TOP 3 requisitos para trabajar en Finlandia · 3.000€/mes · #1",
-    "status": "ok",
-    "media_id": "18642923731015486",
-    "url": "https://instagram.com/reel/18642923731015486",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-30T23:16:44.577247+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-mixture-of-experts",
-    "title": "Top 5 AI tools for mixture of experts kernels · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 173min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-31T02:09:53.882024+00:00"
-  },
-  {
-    "slug": "top-3-pasos-msct-empresa-despido-20-dias",
-    "title": "3 pasos para cambiar horarios en empresa · 20 días · #1",
-    "status": "ok",
-    "media_id": "18016655375950828",
-    "url": "https://instagram.com/reel/18016655375950828",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-31T10:10:41.389229+00:00"
-  },
-  {
     "slug": "apple-iphone-manufacturing-cost",
     "title": "Apple iPhone 15 — Cuesta 400€ fabricarlo y lo venden a 1.400 · #1",
     "status": "skip_rate_limit",
@@ -2181,5 +2105,13 @@
     "url": "https://instagram.com/reel/18470085454186806",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-16T04:08:16.616924+00:00"
+  },
+  {
+    "slug": "padel_tactic_back_wall_20261116_112952",
+    "title": "Off the Back Wall — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (9/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-16T11:31:25.355333+00:00"
   }
 ]
