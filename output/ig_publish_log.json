@@ -1,13 +1,5 @@
 [
   {
-    "slug": "apple-iphone-manufacturing-cost",
-    "title": "Apple iPhone 15 — Cuesta 400€ fabricarlo y lo venden a 1.400 · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 132min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-10-31T12:22:43.954051+00:00"
-  },
-  {
     "slug": "top-3-proyectos-universitarios-4000",
     "title": "TOP 3 ayudas proyectos universitarios · hasta €4.000 · #1",
     "status": "ok",
@@ -2113,5 +2105,13 @@
     "reason": "cap diario alcanzado (9/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-16T11:31:25.355333+00:00"
+  },
+  {
+    "slug": "padel_tactic_drop_shot_20261116_153017",
+    "title": "The Drop Shot — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (9/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-16T15:31:48.105330+00:00"
   }
 ]
