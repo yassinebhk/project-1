@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-11T00:22:54.079797+00:00",
+  "generated_at": "2026-11-16T11:40:22.059674+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -490,6 +490,83 @@
       "hook": "Una brisa matutina cruzaría el continente generando un estallido supersónico constante.",
       "angle": "Dinámica de gases, barrera del sonido, presión atmosférica y aerodinámica extrema.",
       "visual": "viento huracanado árboles doblados paisaje dinámico borroso"
+    },
+    {
+      "key": "gramo_antimateria_impacto",
+      "titulo": "¿Qué pasaría si cayera un solo gramo de antimateria?",
+      "hook": "Un solo gramo de esta sustancia liberaría más energía que la bomba de Hiroshima sin dejar un solo átomo de residuo.",
+      "angle": "Análisis de la aniquilación materia-antimateria mediante E=mc², detallando la conversión total de masa en radiación gamma de alta energía.",
+      "visual": "destello de luz cegador en órbita, esquema de interacción de positrones y electrones, laboratorio del CERN, gráfico de energía acumulada"
+    },
+    {
+      "key": "oceano_viscosidad_miel",
+      "titulo": "¿Qué pasaría si el agua del océano fuera tan viscosa como la miel?",
+      "hook": "Las olas tardarían días en romper y la vida marina quedaría atrapada en un fluido denso e inmóvil.",
+      "angle": "Principios de dinámica de fluidos y números de Reynolds, explicando la interrupción de la circulación termohalina y la mecánica de branquias animales.",
+      "visual": "barco atrapado en mar dorado y denso, olas gigantes moviéndose a cámara ultra lenta, pez nadando con esfuerzo extremo, diagrama de fricción de fluidos"
+    },
+    {
+      "key": "micro_agujero_negro_tierra",
+      "titulo": "¿Qué pasaría si un agujero negro del tamaño de un centavo atravesara la Tierra?",
+      "hook": "Un objeto del tamaño de una moneda pero con la masa de todo nuestro planeta pasaría de lado a lado en cuestión de minutos.",
+      "angle": "Física de agujeros negros primordiales, densidad extrema, radiación de Hawking y la propagación de ondas sísmicas de choque a través del manto terrestre.",
+      "visual": "moneda brillante flotando en el espacio, túnel de distorsión gravitacional atravesando el globo, mapa de ondas sísmicas planetarias, simulación cuántica"
+    },
+    {
+      "key": "nube_interestelar_polvo",
+      "titulo": "¿Qué pasaría si el Sistema Solar atravesara una nube de polvo interestelar?",
+      "hook": "Las estrellas desaparecerían del cielo nocturno y el Sol comenzaría a perder su fuerza visible.",
+      "angle": "Comportamiento de nubes moleculares gigantes, compresión de la heliosfera por presión interestelar y filtrado de la radiación solar incidente.",
+      "visual": "nave cruzando neblina cósmica oscura, cielo nocturno completamente negro, Sol opacado por polvo estelar, heliopausa encogiéndose alrededor de los planetas"
+    },
+    {
+      "key": "nieve_negra_albedo",
+      "titulo": "¿Qué pasaría si la nieve fuera completamente negra?",
+      "hook": "Si la nieve absorbiera la luz del Sol en lugar de reflejarla, el clima de la Tierra colapsaría en cuestión de semanas.",
+      "angle": "Efecto albedo planetario, retroalimentación del bucle térmico y el impacto del derretimiento repentino de la criosfera sobre las corrientes oceánicas globales.",
+      "visual": "cumbres montañosas cubiertas de nieve carbón, derretimiento acelerado en CGI, mapa térmico planetario en rojo intenso, absorción de radiación solar"
+    },
+    {
+      "key": "agua_pesada_oceanos",
+      "titulo": "¿Qué pasaría si todo el océano estuviera hecho de agua pesada?",
+      "hook": "Nadarías un 11% más fácil debido a su densidad, pero las plantas y animales del planeta morirían lentamente.",
+      "angle": "Diferencias bioquímicas entre el deuterio y el hidrógeno ligero, alteración del enlace de hidrógeno en la mitosis celular y la fotosíntesis biológica.",
+      "visual": "persona flotando alto en agua cristalina, molécula de agua con neutrones extra resaltados, mitosis celular detenida, vida marina en declive sintético"
+    },
+    {
+      "key": "atmosfera_sin_nitrogeno",
+      "titulo": "¿Qué pasaría si el nitrógeno de la atmósfera desapareciera?",
+      "hook": "El aire se volvería 100% comburente y tus oídos reventarían instantáneamente por la caída de presión.",
+      "angle": "Función del nitrógeno como gas inerte diluyente y estabilizador barométrico (78% atmosférico), hiperoxia repentina e inflamabilidad extrema del entorno.",
+      "visual": "chispa generando una bola de fuego inmediata en el aire, indicador de presión barométrica cayendo en picado, cielo volviéndose de un azul opaco, vegetación encendiéndose"
+    },
+    {
+      "key": "asteroide_oro_puro",
+      "titulo": "¿Qué pasaría si un asteroide de oro puro entrara en órbita terrestre?",
+      "hook": "Una roca metálica masiva orbitando la Tierra alteraría el campo magnético del planeta mucho antes de tocar tierra.",
+      "angle": "Propiedades diamagnéticas e inductivas del oro masivo (19.3 g/cm³), interacción electromagnética en la magnetosfera y perturbaciones de marea por densidad.",
+      "visual": "asteroide metálico dorado deslumbrante en órbita, líneas del campo magnético curvándose, destello solar reflejado en superficie pulida, simulación gravitacional"
+    },
+    {
+      "key": "sonido_mas_lento_caminar",
+      "titulo": "¿Qué pasaría si la velocidad del sonido fuera más lenta que tus pasos?",
+      "hook": "Si el sonido viajara a 2 kilómetros por hora, escucharías tus propias palabras minutos después de haberlas dicho.",
+      "angle": "Mecánica de ondas longitudinales en medios hipotéticos de baja densidad, acoplamiento acústico y compresión del efecto Doppler a escala humana.",
+      "visual": "persona caminando dejando estelas de ondas visibles en el aire, cara hablando en silencio mientras las palabras flotan atrás, gráfico de ondas mecánicas frenadas"
+    },
+    {
+      "key": "sin_inclinacion_axial",
+      "titulo": "¿Qué pasaría si el eje de la Tierra estuviera completamente recto?",
+      "hook": "Sin la inclinación de 23.5 grados, las estaciones del año desaparecerían para siempre del planeta.",
+      "angle": "Geometría de insolación solar constante por latitud, eliminación de la variación estacional, estancamiento de la migración animal y climas perpetuos fijados.",
+      "visual": "Tierra girando perpendicularmente respecto al Sol, bandas climáticas fijas en el planeta, bosque inmóvil en un otoño permanente, rayos solares paralelos"
+    },
+    {
+      "key": "manto_cristal_liquido",
+      "titulo": "¿Qué pasaría si el manto terrestre fuera de cristal líquido?",
+      "hook": "Las placas tectónicas se moverían a la velocidad de un río en lugar de unos pocos milímetros al año.",
+      "angle": "Reología de la astenosfera, anisotropía de cristales líquidos bajo alta presión y velocidad acelerada de convección térmica en el interior planetario.",
+      "visual": "corte transversal de la Tierra mostrando un manto multicolor refractante, continentes desplazándose a gran velocidad, fluidos viscosos brillantes bajo la corteza"
     }
   ]
 }
