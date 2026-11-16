@@ -345,7 +345,12 @@ def _send_reauth_buttons(yt_results: dict) -> int:
     down_prefixed = [(n, p) for (n, p) in down if p]  # el principal (prefix "") va aparte
     sent = 0
 
-    # 🔐 Botón "RENOVAR TODOS" (cadena) — un clic renueva todos en secuencia
+    # 🔐 Con ≥2 caídos: UN SOLO mensaje con "RENOVAR TODOS" + el fix permanente.
+    # Antes se mandaba 1 consolidado + N individuales = hasta 11 msg/run × 4 runs/día
+    # = ~44 msg/día → fatiga de notificaciones (el user los ignoraba o muteaba el
+    # chat). Ahora 1 claro y accionable. El aviso ENSEÑA la causa raíz: estos canales
+    # caen cada 7 días porque su proyecto OAuth está en "Testing"; publicarlo a
+    # "In production" acaba con el problema (ver memoria oauth-testing-mode-caduca-tokens-7d).
     if len(down_prefixed) >= 2:
         allp = ",".join(p for _, p in down_prefixed)
         url = f"{webhook}/api/yt-auth?t={chat}&channels={allp}"
@@ -353,17 +358,23 @@ def _send_reauth_buttons(yt_results: dict) -> int:
         kb = {"inline_keyboard": [[{"text": f"🔐 RENOVAR TODOS ({len(down_prefixed)})", "url": url}]]}
         text = (f"🚨 <b>{len(down_prefixed)} tokens YT caducados</b>\n"
                 f"Toca para renovarlos TODOS en cadena (Google te pedirá elegir cada canal, "
-                f"uno tras otro):\n{lst}")
+                f"uno tras otro):\n{lst}\n\n"
+                f"💡 <b>Para que dejen de caducar</b>: su proyecto OAuth está en modo "
+                f"<i>Testing</i> (Google revoca el token cada 7 días). En Google Cloud "
+                f"Console → <i>OAuth consent screen</i> → <b>PUBLISH APP</b> (In production) "
+                f"y no habrá que renovar más.")
         if _post(text, kb):
             sent += 1
+        return sent  # con varios caídos, evita el flood de botones individuales
 
-    # Botones individuales (por si quieres renovar solo uno)
+    # Solo 1 caído → botón individual (incluye el principal, prefix "")
     for name, prefix in down:
         url = f"{webhook}/api/yt-auth?t={chat}"
         if prefix:
             url += f"&channel={prefix}"
         kb = {"inline_keyboard": [[{"text": f"🔐 Renovar · {name}", "url": url}]]}
-        text = (f"🔸 <b>{name}</b> — o renueva solo este (elige <b>{name}</b> en Google).")
+        text = (f"🔸 <b>{name}</b> — token YT caducado. Toca para renovar "
+                f"(elige <b>{name}</b> en Google).")
         if _post(text, kb):
             sent += 1
     return sent
