@@ -92,7 +92,7 @@
       ]
     },
     "roldan": {
-      "count": 8,
+      "count": 9,
       "history": [
         {
           "ts": "2026-08-24T07:57:23.248688+00:00",
@@ -125,6 +125,10 @@
         {
           "ts": "2026-11-06T10:03:14.860675+00:00",
           "topic": "Roldán: cómo el director general de la Guardia Civil saqueó 1.500 millones de pesetas del fondo de huérfanos y terminó condenado a 28 años de cárcel."
+        },
+        {
+          "ts": "2026-11-16T15:40:51.855466+00:00",
+          "topic": "Luis Roldán: cómo el director de la Guardia Civil robó 1.500 millones de pesetas y protagonizó una fuga a Laos"
         }
       ]
     },
