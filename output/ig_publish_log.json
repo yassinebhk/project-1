@@ -1,47 +1,5 @@
 [
   {
-    "slug": "kit-digital-2026-autonomos-12000",
-    "title": "TOP 3 Segmentos Kit Digital · hasta €12.000 · #1",
-    "status": "ok",
-    "media_id": "18257945662307996",
-    "url": "https://instagram.com/reel/18257945662307996",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-01T14:14:13.762889+00:00"
-  },
-  {
-    "slug": "padel_tactic_smash_20261101_160031",
-    "title": "The 'Por Tres' Smash — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 122min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-01T16:16:09.383826+00:00"
-  },
-  {
-    "slug": "caso-andratx-corrupcion-mallorca",
-    "title": "Caso Andratx — 40 imputados y urbanismo ilegal · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 179min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-01T17:13:20.049988+00:00"
-  },
-  {
-    "slug": "3-peligros-peregrino-codice-calixtino-1140",
-    "title": "TOP 3 Peligros mortales de la primera guía de viajes · 1140 · #1",
-    "status": "ok",
-    "media_id": "17964952185232323",
-    "url": "https://instagram.com/reel/17964952185232323",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-01T18:23:31.282037+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-for-youtube-thumbnails",
-    "title": "Top 5 AI tools for YouTube thumbnail ideas · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 42min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-01T19:05:54.558726+00:00"
-  },
-  {
     "slug": "top-5-errores-jubilacion-seguridad-social",
     "title": "5 errores al pedir la jubilación · 0% penalización evitable · #1",
     "status": "ok",
@@ -2148,5 +2106,13 @@
     "url": "https://instagram.com/reel/17917565280551771",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-17T12:24:44.013021+00:00"
+  },
+  {
+    "slug": "padel_tactic_back_wall_20261117_155328",
+    "title": "Off the Back Wall — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-17T15:54:46.448255+00:00"
   }
 ]
