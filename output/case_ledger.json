@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 60,
+      "count": 61,
       "history": [
-        {
-          "ts": "2026-10-23T14:06:26.938078+00:00",
-          "topic": "[CRIMEN] Torres KIO: el fraude bursátil de 300 millones de euros que arruinó el imperio de Grand Tibidabo con Javier de la Rosa"
-        },
         {
           "ts": "2026-10-23T16:06:19.319813+00:00",
           "topic": "Torres KIO en Madrid: el fraude bursátil de 300 millones de euros que arruinó a la Kuwait Investment Office"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-11-13T18:31:25.163379+00:00",
           "topic": "[CRIMEN] Las Torres KIO: el fraude bursátil de 300 millones de euros que destrozó el imperio financiero de Kuwait en España"
+        },
+        {
+          "ts": "2026-11-17T15:57:34.169936+00:00",
+          "topic": "El fraude de las Torres KIO: cómo se desviaron 300 millones de euros en la bolsa española que acabaron en condenas firmes del Tribunal Supremo"
         }
       ]
     },
