@@ -243,7 +243,7 @@
       ]
     },
     "blesa": {
-      "count": 4,
+      "count": 5,
       "history": [
         {
           "ts": "2026-08-26T11:19:22.718794+00:00",
@@ -260,6 +260,10 @@
         {
           "ts": "2026-10-28T15:27:44.991909+00:00",
           "topic": "[CRIMEN] Miguel Blesa y las Tarjetas Black: el escándalo de Bankia con 12 millones de euros gastados en opulencia mientras miles perdían sus ahorros"
+        },
+        {
+          "ts": "2026-11-18T17:39:03.088870+00:00",
+          "topic": "[CRIMEN] Caso Blesa y las Tarjetas Black (2015): cómo los directivos de Caja Madrid gastaron 15 millones de euros en opaco con tarjetas corporativas sin declarar a Hacienda."
         }
       ]
     },
