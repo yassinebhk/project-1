@@ -1,31 +1,5 @@
 [
   {
-    "slug": "top-3-requisitos-it-autonomos-dia-4",
-    "title": "TOP 3 requisitos de baja médica en autónomos · cobro desde día 4 · #1",
-    "status": "ok",
-    "media_id": "18119210851798598",
-    "url": "https://instagram.com/reel/18119210851798598",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-02T14:11:45.942122+00:00"
-  },
-  {
-    "slug": "top-3-claves-baja-medica-comun-2026",
-    "title": "TOP 3 claves de tu baja médica · 60% y 75% de base · #1",
-    "status": "ok",
-    "media_id": "18119412433811070",
-    "url": "https://instagram.com/reel/18119412433811070",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-02T18:15:07.376438+00:00"
-  },
-  {
-    "slug": "padel_tactic_bandeja_20261102_194513",
-    "title": "The Bandeja — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 106min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-02T20:00:54.702099+00:00"
-  },
-  {
     "slug": "top-3-ordenes-reyes-catolicos-1503-1",
     "title": "TOP 3 Órdenes de los Reyes Católicos · 1503 · #1",
     "status": "ok",
@@ -2131,5 +2105,13 @@
     "url": "https://instagram.com/reel/18133208777499432",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-18T01:53:10.516175+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261118_055527",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-18T05:57:07.969583+00:00"
   }
 ]
