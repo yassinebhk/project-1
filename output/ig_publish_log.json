@@ -2113,5 +2113,13 @@
     "reason": "cap diario alcanzado (8/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-18T05:57:07.969583+00:00"
+  },
+  {
+    "slug": "por-que-descuidad-tu-futuro-descuento-temporal",
+    "title": "Descuento temporal: Hershfield 2011 · #64",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-18T06:12:10.841433+00:00"
   }
 ]
