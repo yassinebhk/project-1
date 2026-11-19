@@ -2139,5 +2139,13 @@
     "url": "https://instagram.com/reel/18053696291812847",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-19T19:42:30.418988+00:00"
+  },
+  {
+    "slug": "cuanto-gana-amazon-por-segundo",
+    "title": "Amazon 1994 — Los beneficios por segundo de Jeff Bezos · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 74min < 240min mínimo (4/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-19T19:45:54.083091+00:00"
   }
 ]
