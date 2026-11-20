@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T01:55:38.225643+00:00",
+  "generated_at": "2026-11-20T11:09:01.816032+00:00",
   "topics": [
     {
       "key": "nubes_peso",
@@ -399,6 +399,69 @@
       "hook": "Este animalito puede perder el noventa por ciento de su agua y volver a la vida décadas después.",
       "angle": "Criptobiosis y anhidrobiosis en los tardígrados u osos de agua.",
       "visual": "Musgo verde microscópico, tardígrado animado, cristales de hielo, laboratorio científico"
+    },
+    {
+      "key": "gusano_eterno_planaria",
+      "titulo": "El animal inmortal que olvida su cabeza al cortarla",
+      "hook": "Este animal puede ser cortado en pedazos y cada trozo regenera un cuerpo entero.",
+      "angle": "La capacidad de regeneración extrema de las planarias mediante células madre totipotentes.",
+      "visual": "planaria regeneracion laboratorio microscopio ciencia"
+    },
+    {
+      "key": "bambu_crecimiento_rapido",
+      "titulo": "La planta gigante que puedes ver crecer en directo",
+      "hook": "Hay una planta capaz de crecer casi un metro en un solo día.",
+      "angle": "La velocidad de crecimiento físico del bambú gigante bajo condiciones óptimas de humedad.",
+      "visual": "bambu bosque lapso de tiempo verde intenso"
+    },
+    {
+      "key": "saliva_humana_piscina",
+      "titulo": "Tanta saliva en tu vida que llenarías dos piscinas",
+      "hook": "La cantidad de saliva que produces a lo largo de tu vida llenaría dos piscinas olímpicas.",
+      "angle": "El volumen total de secreción de las glándulas salivales humanas a lo largo de setenta y cinco años.",
+      "visual": "gotas de saliva macro cinematografico boca humano"
+    },
+    {
+      "key": "aceleracion_lengua_salamandra",
+      "titulo": "El animal que dispara su lengua mas rapido que un coche",
+      "hook": "Este pequeño anfibio puede lanzar su lengua a una velocidad que desafía la física.",
+      "angle": "La catapulta balística de colágeno y la aceleración instantánea en salamandras sin pulmones.",
+      "visual": "salamandra cazando insecto camara lenta macro"
+    },
+    {
+      "key": "oro_disuelto_oceanos",
+      "titulo": "El tesoro oculto en el agua de mar que nadie puede extraer",
+      "hook": "Los océanos de la Tierra contienen millones de toneladas de oro puro disueltas en el agua.",
+      "angle": "La concentración química y distribución de partículas de oro en el agua marina global.",
+      "visual": "oceano profundo dorado brillo submarino misterio"
+    },
+    {
+      "key": "mariposa_gusto_patas",
+      "titulo": "El insecto que come y saborea la comida con los pies",
+      "hook": "Las mariposas no usan la boca para saborear lo que pisan, usan sus propias patas.",
+      "angle": "Los quimiorreceptores tarsales situados en las patas de los lepidópteros.",
+      "visual": "mariposa posada sobre flor macro extremidades"
+    },
+    {
+      "key": "lago_asfalto_trinidad",
+      "titulo": "El extraño lago natural hecho completamente de betún",
+      "hook": "Hay un lago en el mundo donde en lugar de agua hay un mar gigante de asfalto líquido.",
+      "angle": "El Lago Pitch en Trinidad y Tobago, el depósito natural de asfalto más grande del planeta.",
+      "visual": "lago de brea asfalto natural superficie negra"
+    },
+    {
+      "key": "radar_natural_buhos",
+      "titulo": "Por qué las orejas de los buhos estan a distinta altura",
+      "hook": "Los búhos tienen un oído tan asimétrico que pueden cazar en completa oscuridad con precisión láser.",
+      "angle": "La asimetría vertical de los canales auditivos en cráneos de estrígidos para triangular sonidos.",
+      "visual": "buho bosque nocturno ojos amarillos atencion"
+    },
+    {
+      "key": "arrecife_fluorescente_mar",
+      "titulo": "Los corales que brillan en la oscuridad con luz propia",
+      "hook": "Algunos arrecifes de coral absorben la luz azul del océano y emiten un brillo neón brillante.",
+      "angle": "La biofluorescencia protectora de los corales mesofóticos ante la radiación solar marina.",
+      "visual": "arrecife coral fluorescente neon submarino azul"
     }
   ]
 }
