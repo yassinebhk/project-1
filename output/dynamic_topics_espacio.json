@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T02:48:05.515636+00:00",
+  "generated_at": "2026-11-21T01:28:10.477533+00:00",
   "topics": [
     {
       "key": "diamantes_en_neptuno",
@@ -490,6 +490,83 @@
       "hook": "En una pequeña luna helada de Saturno, enormes chorros de agua escapan disparados directamente al espacio.",
       "angle": "Análisis de la Cassini sobre los penachos criovolcánicos de Encélado que confirman un océano subterráneo global.",
       "visual": "Encélado helado, géiseres disparando agua, Saturno de fondo, sonda Cassini"
+    },
+    {
+      "key": "coronagraph_parker_probe_touching_sun",
+      "titulo": "La nave que sobrevivió a tocar la atmósfera del Sol",
+      "hook": "Un artefacto humano viajó a más de 500.000 kilómetros por hora directo hacia el infierno solar.",
+      "angle": "La sonda solar Parker de la NASA se convirtió en la primera nave espacial en cruzar la superficie crítica de Alfvén y penetrar la corona del Sol protegida por un escudo de carbono.",
+      "visual": "Parker Solar Probe glowing shield, solar flares looping, blinding plasma atmosphere, close-up solar corona"
+    },
+    {
+      "key": "betelgeuse_great_dimming_dust_cloud",
+      "titulo": "El misterio de la estrella gigante que casi se apaga",
+      "hook": "En 2019, una de las estrellas más brillantes del cielo perdió dos tercios de su brillo y nadie sabía por qué.",
+      "angle": "El telescopio Hubble reveló que el Gran Oscurecimiento de Betelgeuse fue causado por una eyección masiva de masa que se enfrió formando una densa nube de polvo estelar.",
+      "visual": "Betelgeuse glowing red supergiant, massive ejection of gas, condensing dark dust cloud, constellation Orion telescoping"
+    },
+    {
+      "key": "kilonova_gold_creation_neutron_stars",
+      "titulo": "El cataclismo cósmico donde nace todo el oro del universo",
+      "hook": "El anillo en tu dedo no nació en la Tierra, sino en la colisión de dos cadáveres de estrellas.",
+      "angle": "La fusión de dos estrellas de neutrones en una kilonova genera condiciones extremas de captura rápida de neutrones (proceso r), forjando elementos pesados como el oro y el platino.",
+      "visual": "Two neutron stars spiraling into collision, blinding gamma-ray burst, cloud of glowing heavy elements, microscopic metallic atoms expanding"
+    },
+    {
+      "key": "cosmic_web_void_bootes",
+      "titulo": "El vacío de Bootes: 330 millones de años luz de casi nada",
+      "hook": "Existe un agujero en el cosmos tan descomunal que desafía todo lo que sabemos sobre la estructura del universo.",
+      "angle": "El supervacío de Bootes mide aproximadamente 330 millones de años luz de diámetro y apenas alberga unas 60 galaxias, cuando normalmente debería albergar miles.",
+      "visual": "3D cosmic web filaments, zooming into a terrifyingly dark vast void, isolated solitary galaxy, vast black space emptiness"
+    },
+    {
+      "key": "charon_spock_mountain_trough",
+      "titulo": "La luna con un cañón cuatro veces más profundo que el Gran Cañón",
+      "hook": "En los confines helados de Plutón existe un abismo que deja en ridículo a cualquier falla de la Tierra.",
+      "angle": "Caronte posee el cañón Argo Chasma, una hendidura tectónica de 9 kilómetros de profundidad provocada por la congelación y expansión de su antiguo océano subterráneo.",
+      "visual": "New Horizons flyby of Charon, towering ice cliffs of Argo Chasma, shadows across frozen chasm, Pluto glowing faintly in background"
+    },
+    {
+      "key": "fast_radio_burst_magnetar_sgr1935",
+      "titulo": "El origen resuelto de las misteriosas señales de radio milimétricas",
+      "hook": "Durante décadas recibimos ráfagas de radio milisegundos desde galaxias lejanas sin entender su origen.",
+      "angle": "En 2020, telescopios como CHIME detectaron un Fast Radio Burst (FRB) originado directamente por un magnetar dentro de la Vía Láctea (SGR 1935+2154), resolviendo el misterio.",
+      "visual": "Radio telescope array pointing at night sky, magnetar with intense magnetic lines, millisecond pulse wave emitting, scientific spectrum data overlay"
+    },
+    {
+      "key": "trappist_1_resonance_music",
+      "titulo": "El sistema solar alienígena que se mueve en perfecta armonía musical",
+      "hook": "Siete planetas rocosos del tamaño de la Tierra bailan alrededor de su estrella con sincronía matemática perfecta.",
+      "angle": "El sistema TRAPPIST-1 se encuentra en una compleja resonancia orbital casi exacta (cadenas resonantes), donde sus períodos forman proporciones matemáticas de notas armónicas.",
+      "visual": "Ultra-cool red dwarf star, seven rocky exoplanets aligned in orbits, geometric orbital resonance lines connecting them, atmospheric renders of TRAPPIST-1e"
+    },
+    {
+      "key": "jwst_stephan_quintet_shockwave",
+      "titulo": "La onda de choque intergaláctica más violenta jamás fotografiada",
+      "hook": "Una galaxia entera está estrellándose contra un grupo a 800 kilómetros por segundo.",
+      "angle": "El telescopio James Webb captó la gigantesca onda de choque en el Quinteto de Stephan cuando la galaxia NGC 7318b desgarra el gas intergaláctico a velocidades hipersónicas.",
+      "visual": "James Webb deep infrared imaging, Stephan Quintet colliding galaxies, massive glowing red shockwave ridge, ionized hydrogen filaments"
+    },
+    {
+      "key": "sagittarius_b2_alcohol_cloud",
+      "titulo": "La gigantesca nube cósmica con olor a ron y sabor a frambuesa",
+      "hook": "En el centro de nuestra galaxia flota una nube molecular con billones de litros de alcohol.",
+      "angle": "Sagitario B2 contiene inmensas cantidades de formiato de etilo (compuesto responsable del olor a ron y sabor de frambuesas) junto con etanol y moléculas orgánicas complejas precursoras de la química prebiótica.",
+      "visual": "Dense molecular gas cloud near galactic center, glowing chemical emission spectra, floating molecular formulas, vibrant pink and amber nebula hues"
+    },
+    {
+      "key": "mercury_shrinking_thrust_faults",
+      "titulo": "El planeta que se está encogiendo sobre sí mismo",
+      "hook": "El planeta más cercano al Sol está arrugándose literalmente como una manzana seca.",
+      "angle": "Mercurio ha reducido su radio en hasta 7 kilómetros debido a que su enorme núcleo de hierro se enfría y solidifica, formando enormes fallas de empuje geológicas.",
+      "visual": "MESSENGER probe orbital view of Mercury, massive thrust fault scarps cutting across craters, shrinking planetary core cross-section, stark high-contrast shadows"
+    },
+    {
+      "key": "neutrino_icecube_blazar_detection",
+      "titulo": "El telescopio enterrado en el hielo de la Antártida que detecta fantasmas cósmicos",
+      "hook": "Científicos construyeron un detector del tamaño de un kilómetro cúbico congelado bajo el Polo Sur.",
+      "angle": "El observatorio IceCube utiliza sensores enterrados en el hielo antártico para detectar partículas de neutrinos de ultra-alta energía provenientes de núcleos activos galácticos (blázars).",
+      "visual": "Antarctic research station under aurora, glowing blue sensors embedded deep inside blue glacial ice, neutrino Cherenkov radiation flash, distant blazar jet"
     }
   ]
 }
