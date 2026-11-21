@@ -1,12 +1,8 @@
 {
   "cases": {
     "kio": {
-      "count": 61,
+      "count": 62,
       "history": [
-        {
-          "ts": "2026-10-23T16:06:19.319813+00:00",
-          "topic": "Torres KIO en Madrid: el fraude bursátil de 300 millones de euros que arruinó a la Kuwait Investment Office"
-        },
         {
           "ts": "2026-10-23T17:31:06.006667+00:00",
           "topic": "[CRIMEN] Torres KIO: el fraude bursátil de 300 millones de euros que dejó las torres de Madrid en bancarrota"
@@ -42,6 +38,10 @@
         {
           "ts": "2026-11-17T15:57:34.169936+00:00",
           "topic": "El fraude de las Torres KIO: cómo se desviaron 300 millones de euros en la bolsa española que acabaron en condenas firmes del Tribunal Supremo"
+        },
+        {
+          "ts": "2026-11-21T10:17:30.934520+00:00",
+          "topic": "[CRIMEN] Las Torres KIO: el fraude bursátil de 300 millones que conmocionó la economía española"
         }
       ]
     },
