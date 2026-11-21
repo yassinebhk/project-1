@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T00:33:06.043322+00:00",
+  "generated_at": "2026-11-21T01:01:14.825197+00:00",
   "topics": [
     {
       "key": "efecto_arrastre",
@@ -259,6 +259,55 @@
       "hook": "Cuando tú llegas tarde es por el tráfico, pero cuando llega otro es porque es un irresponsable.",
       "angle": "Explicar el error fundamental de atribución documentado por Lee Ross (1977), donde sobreestimamos los factores disposicionales en los demás y subestimamos las situaciones.",
       "visual": "Splitscreen traffic jam, office worker clocking in, psychology desk, brain neural network"
+    },
+    {
+      "key": "razonamiento_emocional_psicologico",
+      "titulo": "El error por el que confundes lo que sientes con la realidad",
+      "hook": "Si te sientes un fracasado hoy, tu cerebro asume automáticamente que eres un fracasado.",
+      "angle": "Investigación sobre sesgos cognitivos en la toma de decisiones bajo carga emocional, basada en los principios de racionalidad limitada de Herbert Simon.",
+      "visual": "tormenta mental digital, persona frente al espejo borrosa, gráfico de decisiones, luz fría de oficina"
+    },
+    {
+      "key": "efecto_de_rareza",
+      "titulo": "Por qué crees que tus talentos normales son superpoderes",
+      "hook": "Por qué asumes que lo que se te da bien a ti es rarísimo en el resto del mundo.",
+      "angle": "Kahneman y Tversky sobre la heurística de disponibilidad aplicada a las propias habilidades y rasgos personales.",
+      "visual": "persona frente a espejo gigante, medalla de oro solitaria, luces de neón tenues, rostro sorprendido"
+    },
+    {
+      "key": "sesgo_retrospectivo",
+      "titulo": "Por qué tu cerebro insiste en que ya sabía lo que iba a pasar",
+      "hook": "Por qué después de un partido siempre dices que sabías exactamente quién iba a ganar.",
+      "angle": "Baruch Fischhoff (1975) demostró el sesgo retrospectivo: la tendencia a sobreestimar nuestra capacidad de haber predicho un resultado una vez que ya se conoce.",
+      "visual": "partido de fútbol en televisión, persona señalando la pantalla, periódico antiguo, engranajes mentales"
+    },
+    {
+      "key": "efecto_justicia_del_mundo",
+      "titulo": "La trampa mental por la que culpas a las víctimas de su suerte",
+      "hook": "Por qué nuestro cerebro busca desesperadamente una razón secreta cuando le pasa algo malo a un inocente.",
+      "angle": "Melvin Lerner (1980) formuló la hipótesis del mundo justo: la necesidad psicológica de creer que el mundo es intrínsecamente justo donde cada uno tiene lo que se merece.",
+      "visual": "balanza de la justicia inclinada, persona bajo la lluvia, calle urbana oscura, experimento de laboratorio"
+    },
+    {
+      "key": "ceguera_al_atiborramiento",
+      "titulo": "El experimento real que demuestra que no ves lo que tienes delante",
+      "hook": "Cómo un hombre disfrazado de gorila puede pasar totalmente desapercibido delante de tus ojos.",
+      "angle": "Simons y Chabris (1999) demostraron la ceguera por inatención: cuando nos concentramos en una tarea, somos incapaces de ver estímulos obvios e inesperados.",
+      "visual": "partido de baloncesto en la calle, silueta de gorila difuminada, ojos abiertos observando, laboratorio cognitivo"
+    },
+    {
+      "key": "efecto_de_propiedad_temporal",
+      "titulo": "Por qué te encariñas de algo en solo cinco segundos",
+      "hook": "Por qué te cuesta tanto soltar un objeto inservible en cuanto te lo dan gratis.",
+      "angle": "Kahneman, Knetsch y Thaler (1990) ampliaron el estudio del efecto dotación, mostrando cómo el cerebro valora la posesión instantánea por encima del valor real.",
+      "visual": "mano sosteniendo objeto viejo, etiqueta de precio brillante, habitación minimalista, persona dudando"
+    },
+    {
+      "key": "heuristica_de_afecto",
+      "titulo": "Por qué tomas decisiones financieras basadas solo en tu estado de ánimo",
+      "hook": "Por qué compras cosas que no necesitas solo porque hoy tuviste un buen día.",
+      "angle": "Finucane et al. (2000) investigaron la heurística del afecto: cómo las emociones actúan como un atajo rápido para evaluar riesgos y beneficios sin lógica.",
+      "visual": "tarjeta de crédito brillante, rostro sonriente, centro comercial iluminado, gráfico de barras cayendo"
     }
   ]
 }
