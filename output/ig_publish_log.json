@@ -1,14 +1,5 @@
 [
   {
-    "slug": "la-trampa-de-la-perdida-kahneman-1979",
-    "title": "Por qué perder duele exactamente el doble · Kahneman 1979 · #52",
-    "status": "ok",
-    "media_id": "17924961885221347",
-    "url": "https://instagram.com/reel/17924961885221347",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-05T01:04:58.483133+00:00"
-  },
-  {
     "slug": "top-5-ai-tools-ocr-segmentation",
     "title": "Top 5 AI tools for OCR and segmentation · #1",
     "status": "skip_rate_limit",
@@ -2118,5 +2109,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-21T16:41:44.601851+00:00"
+  },
+  {
+    "slug": "padel_tactic_bandeja_20261121_164748",
+    "title": "The Bandeja — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (10/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-21T17:00:22.176318+00:00"
   }
 ]
