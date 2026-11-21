@@ -1,47 +1,5 @@
 [
   {
-    "slug": "top-5-ai-tools-visual-document-parsing-1",
-    "title": "Top 5 AI tools for visual document parsing · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 79min < 240min mínimo (5/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-04T18:49:42.712346+00:00"
-  },
-  {
-    "slug": "padel_tactic_positioning_20261104_193813",
-    "title": "Move as a Pair — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 128min < 240min mínimo (5/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-04T19:39:37.370226+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-for-school-compliance",
-    "title": "Top 5 AI tools for school compliance · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 206min < 240min mínimo (5/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-04T20:57:29.496799+00:00"
-  },
-  {
-    "slug": "gastos-deducibles-autonomos-vivienda",
-    "title": "TOP 3 gastos deducibles en vivienda · 30% suministros · #1",
-    "status": "ok",
-    "media_id": "18103469666374242",
-    "url": "https://instagram.com/reel/18103469666374242",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-04T23:32:06.969011+00:00"
-  },
-  {
-    "slug": "prestacion-hijos-renta-baja-200-mes-1",
-    "title": "TOP 3 Ayudas Familiares · hasta €200/mes · #1",
-    "status": "ok",
-    "media_id": "18132846670809154",
-    "url": "https://instagram.com/reel/18132846670809154",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-04T23:37:38.148328+00:00"
-  },
-  {
     "slug": "top-3-leyes-roma-450ac",
     "title": "3 Leyes Salvajes de Roma · 450 a.C. · #1",
     "status": "ok",
@@ -2153,5 +2111,13 @@
     "url": "https://instagram.com/reel/17892936468623261",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-21T01:13:47.530753+00:00"
+  },
+  {
+    "slug": "padel_tactic_drop_shot_20261121_041923",
+    "title": "The Drop Shot — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 187min < 240min mínimo (5/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-21T04:20:59.050896+00:00"
   }
 ]
