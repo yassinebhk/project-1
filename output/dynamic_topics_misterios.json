@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-14T00:28:50.605434+00:00",
+  "generated_at": "2026-11-21T00:51:24.685705+00:00",
   "topics": [
     {
       "key": "el_tesoro_de_oak_island",
@@ -371,6 +371,76 @@
       "hook": "Para proteger un asentamiento de incursiones enemigas, los vikingos hundieron deliberadamente cinco naves de guerra distintas en el fondo de un fiordo danés.",
       "angle": "Exponer el hallazgo de los barcos de Skuldelev en el fiordo de Roskilde en 1962, detallando cómo la arqueología subacuática permitió clasificar las diferentes tipologías navales de la época vikinga.",
       "visual": "barco vikingo bajo el agua, buceador arqueologo, fiordo de dinamarca, maderas antiguas sumergidas"
+    },
+    {
+      "key": "baterias_de_bagdad",
+      "titulo": "Las misteriosas jarras de arcilla que la historia oficial debate si eran pilas eléctricas",
+      "hook": "En 1936, unos obreros desenterraron en Irak vasijas de arcilla con tubos de cobre que desafiaron la cronología de la electricidad.",
+      "angle": "Analizar los artefactos conocidos como las baterías de Bagdad hallados en Khuyut Rabu, detallando su diseño y los experimentos modernos que prueban su escaso voltaje, descartando usos industriales.",
+      "visual": "clay jars ancient mesopotamia copper cylinders laboratory experiments"
+    },
+    {
+      "key": "tuneles_subterraneos_scotland",
+      "titulo": "La red de pasadizos secretos excavada bajo Edimburgo que la cartografía oficial ignora",
+      "hook": "Bajo las bulliciosas calles de Escocia se esconde un laberinto de piedra tallada a mano sin registro histórico de quién lo hizo.",
+      "angle": "Explorar los pasadizos de Gilmerton en Edimburgo, documentados en crónicas del siglo XVIII pero de constructor desconocido y propósito totalmente debatido por los historiadores.",
+      "visual": "underground stone tunnels edinburgh flashlight shadows medieval architecture"
+    },
+    {
+      "key": "momias_de_tarim",
+      "titulo": "Cuerpos con rasgos europeos y tejidos celta desenterrados en el árido desierto asiático",
+      "hook": "En la cuenca del Tarim, la arena preservó momias con gabardinas de tartán y rasgos occidentales que vivieron en China hace 4000 años.",
+      "angle": "Examinar el descubrimiento arqueológico documentado de las momias de Tarim, su sorprendente preservación natural gracias a la salinidad del desierto y los análisis de ADN que revelaron su origen.",
+      "visual": "ancient mummies desert preservation plaid textiles archaeological site china"
+    },
+    {
+      "key": "cahokia_la_gran_metropoli",
+      "titulo": "La gigantesca ciudad precolombina en Norteamérica que superaba en tamaño al Londres medieval",
+      "hook": "Mucho antes de la llegada de Colón, una civilización olvidada construyó una metrópoli de pirámides de tierra en el corazón de EE.UU.",
+      "angle": "Presentar los registros arqueológicos de Cahokia, la mayor ciudad de la cultura misisipiana, destacando sus monumentales montículos de tierra y su repentino colapso demográfico.",
+      "visual": "ancient native american mounds city aerial view historical reconstruction"
+    },
+    {
+      "key": "carretera_bimini",
+      "titulo": "La formación rocosa submarina en el Caribe que desató teorías de la Atlántida",
+      "hook": "A pocos metros de la superficie en las Bahamas, miles de enormes bloques de piedra forman una kilométrica calle perfectamente recta.",
+      "angle": "Investigar la llamada 'Carretera de Bimini', explicando los estudios geológicos que concluyeron que se trata de un fenómeno natural de rocas de playa fracturadas por erosión y no de una estructura artificial.",
+      "visual": "underwater stone blocks ocean floor limestone geological formation"
+    },
+    {
+      "key": "pilar_de_hierro_de_delhi",
+      "titulo": "La columna milenaria de la India a la intemperie que se niega rotundamente a oxidarse",
+      "hook": "En el patio de un templo en Delhi se alza un pilar metálico que lleva 1600 años resistiendo los monzones sin una sola mancha de óxido.",
+      "angle": "Exponer el análisis metalúrgico documentado del Pilar de Hierro de Delhi, revelando que su alta concentración de fósforo creó una capa protectora de misawite.",
+      "visual": "ancient iron pillar india temple courtyard weathering resistance"
+    },
+    {
+      "key": "islas_flannan_misterio",
+      "titulo": "La misteriosa desaparición de tres fareros escoceses cuya bitácora final desafía la lógica",
+      "hook": "En 1900, un barco de suministro llegó a un faro remoto y halló la mesa servida, las camas deshechas y ni rastro de los tres cuidadores.",
+      "angle": "Revisar los hechos documentados del faro de las Islas Flannan, el extraño registro del diario sobre una tormenta inexistente y las teorías oficiales sobre una ola gigante repentina.",
+      "visual": "remote lighthouse rocky cliff stormy sea vintage journal"
+    },
+    {
+      "key": "grutas_de_longyou",
+      "titulo": "Las 24 inmensas cuevas artificiales excavadas en la roca sin un solo registro histórico",
+      "hook": "En China, un grupo de lugareños decidió vaciar un estanque y descubrió una red subterránea de cavernas talladas con marcas simétricas imposibles.",
+      "angle": "Describir las Grutas de Longyou, destacando la enorme cantidad de roca extraída estimada en casi un millón de metros cúbicos y la total ausencia de menciones en textos dinásticos antiguos.",
+      "visual": "huge underground stone caverns carved walls pillars china"
+    },
+    {
+      "key": "el_exodo_de_los_anasazi",
+      "titulo": "Por qué los indios pueblo abandonaron de la noche a la mañana sus imponentes acantilados",
+      "hook": "En el siglo XIII, la civilización Anasazi selló sus ciudades en los acantilados y desapareció sin dejar rastro en el desierto americano.",
+      "angle": "Analizar la evidencia arqueológica y climática documentada sobre la gran sequía y los conflictos sociales que forzaron el éxodo y dispersión de los antiguos pueblo.",
+      "visual": "cliff dwelling ruins mesa verde desert canyon architecture"
+    },
+    {
+      "key": "piedras_grabadas_de_ica",
+      "titulo": "Los miles de cantos rodados andinos esculpidos con escenas de cirugía y animales extintos",
+      "hook": "En un museo de Perú se guardan miles de piedras grabadas con imágenes de trasplantes de corazón y hombres combatiendo con dinosaurios.",
+      "angle": "Documentar el origen de las piedras de Ica, explicando cómo fueron talladas por campesinos locales en el siglo XX para el mercado turístico, convirtiéndose en un famoso caso de fraude arqueológico.",
+      "visual": "carved stones symbols ancient artifacts museum display peru"
     }
   ]
 }
