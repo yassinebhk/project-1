@@ -1,21 +1,5 @@
 [
   {
-    "slug": "padel_tactic_back_wall_20261105_030253",
-    "title": "Off the Back Wall — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (13/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-05T03:04:16.452874+00:00"
-  },
-  {
-    "slug": "caso-estepona-barrientos-astapa",
-    "title": "Caso Estepona — 28M€ en mordidas · #1",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (14/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-05T10:08:26.825593+00:00"
-  },
-  {
     "slug": "padel_tactic_positioning_20261105_113142",
     "title": "Move as a Pair — Padel Tactics #padel #shorts",
     "status": "skip_rate_limit",
@@ -2125,5 +2109,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-21T19:30:26.073514+00:00"
+  },
+  {
+    "slug": "padel_tactic_smash_20261122_003424",
+    "title": "The 'Por Tres' Smash — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (8/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-22T00:35:57.488563+00:00"
   }
 ]
