@@ -2125,5 +2125,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-22T00:45:10.007760+00:00"
+  },
+  {
+    "slug": "efecto-mera-exposicion-zajonc-1968",
+    "title": "Por qué te acaba gustando esa canción que odiabas",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-22T01:08:03.773943+00:00"
   }
 ]
