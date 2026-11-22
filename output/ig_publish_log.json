@@ -1,13 +1,5 @@
 [
   {
-    "slug": "padel_tactic_drop_shot_20261106_032147",
-    "title": "The Drop Shot — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 159min < 240min mínimo (4/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-06T03:23:27.377829+00:00"
-  },
-  {
     "slug": "caso-roldan-estafas-espanolas-1",
     "title": "Caso Roldán — 1.500M de pesetas ROBADOS a huérfanos · #1",
     "status": "ok",
@@ -2119,5 +2111,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-22T17:21:36.167564+00:00"
+  },
+  {
+    "slug": "padel_tactic_defense_20261122_191258",
+    "title": "Patient Defense — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-22T19:14:33.802584+00:00"
   }
 ]
