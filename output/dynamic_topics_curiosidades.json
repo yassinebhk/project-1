@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-16T11:40:22.059674+00:00",
+  "generated_at": "2026-11-22T12:25:39.749780+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -567,6 +567,90 @@
       "hook": "Las placas tectónicas se moverían a la velocidad de un río en lugar de unos pocos milímetros al año.",
       "angle": "Reología de la astenosfera, anisotropía de cristales líquidos bajo alta presión y velocidad acelerada de convección térmica en el interior planetario.",
       "visual": "corte transversal de la Tierra mostrando un manto multicolor refractante, continentes desplazándose a gran velocidad, fluidos viscosos brillantes bajo la corteza"
+    },
+    {
+      "key": "pisar_aerogel_sobre_lava",
+      "titulo": "¿Qué pasaría si pisaras aerogel flotando sobre lava?",
+      "hook": "Imagina caminarr sobre una capa de solo dos centímetros de aerogel colocada directamente sobre lava hirviendo.",
+      "angle": "Explora la nanostructura del aerogel de sílice, compuesto en un 99.8% por aire, que detiene la conducción térmica casi a cero.",
+      "visual": "bota presionando aerogel transparente, lava incandescente debajo, gráficos de dispersión de calor, estructura microscópica de sílice"
+    },
+    {
+      "key": "lluvia_metano_liquido_tierra",
+      "titulo": "¿Qué pasaría si lloviera metano líquido en la Tierra?",
+      "hook": "Si las nubes de la Tierra descargaran metano líquido a 180 grados bajo cero, las gotas se evaporarían antes de tocar el suelo.",
+      "angle": "Analiza la termodinámica de los hidrocarburos volátiles en atmósferas densas basándose en los datos climáticos de la luna Titán.",
+      "visual": "gotas transparentes congeladas cayendo, niebla densa hirviendo en contacto con la tierra, paisaje helado alienígena, animación molecular"
+    },
+    {
+      "key": "cucharada_estrella_blanca_oceano",
+      "titulo": "¿Qué pasaría si arrojaras materia de enana blanca al océano?",
+      "hook": "Una sola cucharadita de materia de enana blanca pesa cinco toneladas y liberaría la energía de una bomba nuclear al contacto con el agua.",
+      "angle": "Detalla la física de la materia degenerada por electrones y la violenta expansión térmica al perder la presión gravitacional estrella.",
+      "visual": "cucharada de material hiperdenso brillante cayendo al agua, explosión de vapor gigante, ondas de choque submarinas, gráfico de densidad estelar"
+    },
+    {
+      "key": "oceano_totalmente_transparente",
+      "titulo": "¿Qué pasaría si el océano fuera 100% transparente a la luz?",
+      "hook": "Si el agua marina no absorbiera los fotones de luz, el fondo del océano a diez mil metros estaría tan iluminado como la superficie.",
+      "angle": "Examina los coeficientes de absorción fotónica de la molécula de H2O y el impacto de los rayos ultravioleta destruyendo la zona abisal.",
+      "visual": "océano de cristal donde se ven fosas profundas desde el aire, luz solar penetrando abismos oscuros, criaturas abisales cegadas, modelo óptico"
+    },
+    {
+      "key": "esfera_titanio_hidrogeno_metalico_jupiter",
+      "titulo": "¿Qué pasaría si lanzaras titanio al interior de Júpiter?",
+      "hook": "Una esfera de titanio sólido que cayera en Júpiter no chocaría contra una superficie, sino que flotaría en un océano de hidrógeno metálico.",
+      "angle": "Explica la transición de fase del hidrógeno bajo cuatro millones de atmósferas de presión y la flotabilidad de metales en fluidos cuánticos.",
+      "visual": "esfera de metal descendiendo en nubes naranjas, transición gradual de gas a líquido metálico brillante, compresión extrema, diagrama de fase"
+    },
+    {
+      "key": "plantas_reflejando_luz_infrarroja",
+      "titulo": "¿Qué pasaría si los árboles reflejaran toda la luz infrarroja?",
+      "hook": "Si el cloroplasto vegetal reflejara el 100% del infrarrojo cercano, los bosques del planeta se verían de un blanco deslumbrante.",
+      "angle": "Analiza el efecto fotométrico del corte de clorofila en el espectro electromagnético y el cambio en el albedo planetario.",
+      "visual": "bosque tropical de color blanco brillante bajo el sol, espectro infrarrojo descompuesto, vista satelital de la Tierra blanca, cloroplasto en render 3D"
+    },
+    {
+      "key": "trompeta_en_hexafloruro_de_azufre",
+      "titulo": "¿Qué pasaría si tocaras una trompeta en hexafloruro de azufre?",
+      "hook": "Un instrumento de viento sonaría cinco octavas más grave dentro de una habitación llena de gas hexafloruro de azufre.",
+      "angle": "Demuestra la acústica física: cómo la densidad molecular del gas reduce la velocidad del sonido de 343 a 150 metros por segundo.",
+      "visual": "músico tocando trompeta en cámara transparente, ondas sonoras lentas visualizadas en vapor, gráfico de frecuencias acústicas, moléculas pesadas"
+    },
+    {
+      "key": "ola_marina_hipersonica",
+      "titulo": "¿Qué pasaría si una ola del océano viajara a Mach 5?",
+      "hook": "Una ola que alcanzara la velocidad hipersónica convertiría el agua del frente de choque en plasma hirviendo antes de tocar la playa.",
+      "angle": "Cálculo de dinámica de fluidos: la cavitación extrema y el calentamiento por fricción compresiva a 6.000 kilómetros por hora.",
+      "visual": "tsunami de agua envuelto en plasma brillante, vaporización instantánea de la costa, onda de choque supersónica en el agua, modelo físico"
+    },
+    {
+      "key": "tierra_forma_de_dona_toroide",
+      "titulo": "¿Qué pasaría si la Tierra tuviera forma de dona?",
+      "hook": "En una Tierra toroidal, la gravedad en el ecuador interior sería tan débil que podrías saltar edificios con facilidad.",
+      "angle": "Analiza el equilibrio hidrostático y el campo gravitatorio de una figura en toroide manteniendo la masa y rotación terrestre.",
+      "visual": "planeta en forma de dona rotando en el espacio, atmósfera curvada hacia el centro, persona saltando alto en el ecuador interior, mapas de gravedad"
+    },
+    {
+      "key": "tardigrado_tamano_gato_biologia",
+      "titulo": "¿Qué pasaría si un tardígrado midiera lo mismo que un gato?",
+      "hook": "Si escala a un tardígrado al tamaño de un gato, se asfixiaría al instante debido a la ley del cuadrado-cubo.",
+      "angle": "Explica las limitaciones biofísicas de la respiración cutánea por difusión pasiva y la resistencia estructural del exoesqueleto de quitina.",
+      "visual": "microscopio mostrando tardígrado gigantesco, animación de difusión de oxígeno fallando, comparación de volumen corporal, modelo estructural 3D"
+    },
+    {
+      "key": "helio_liquido_superfluido_vacio",
+      "titulo": "¿Qué pasaría si liberaras helio superfluido en el vacío?",
+      "hook": "El helio superfluido en el vacío del espacio treparía fuera de su contenedor desafiando la gravedad antes de evaporarse.",
+      "angle": "Cubre la mecánica cuántica macroscópica, la viscosidad cero de los condensados Bose-Einstein y la película de Rollin.",
+      "visual": "líquido brillante escalando paredes de cristal sin fricción, gota flotando y evaporándose instantáneamente, gráfico de niveles cuánticos"
+    },
+    {
+      "key": "magnetar_distancia_pluton_efectos",
+      "titulo": "¿Qué pasaría si un magnetar llegara a la órbita de Plutón?",
+      "hook": "A pesar de estar a miles de millones de kilómetros, el campo magnético de un magnetar deformaría la estructura atómica de tu cuerpo.",
+      "angle": "Describe la polarización del vacío en electrodinámica cuántica y la elongación de nubes electrónicas en campos de 10 mil millones de Teslas.",
+      "visual": "estrella de neutrones azul ultra brillante cerca de Plutón, líneas de campo magnético distorsionando el sistema solar, átomos estirados en cilindros"
     }
   ]
 }
