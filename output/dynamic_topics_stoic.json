@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T12:52:04.287131+00:00",
+  "generated_at": "2026-11-22T13:32:12.695529+00:00",
   "topics": [
     {
       "key": "inbox_zero_anxiety",
@@ -432,6 +432,114 @@
       "hook": "A twenty-four-year-old posts their Forbes feature while you eat cereal at your desk.",
       "titulo": "Zeno On Stopping The Peer Success Comparison Trap",
       "visual": "dark mirror reflection, dramatic side lighting, empty room, storm"
+    },
+    {
+      "key": "last_minute_project_pivot",
+      "stoic": "Marcus Aurelius",
+      "principle": "reserve clause",
+      "stressor": "last-minute project overhaul by clients",
+      "hook": "Your presentation is fully finished, and then a 5 PM client email demands a complete redesign before morning.",
+      "titulo": "Client Ruined Your Work? The Marcus Aurelius Reset",
+      "visual": "weathered marble statue, storm clouds gathering over ruins, single glowing candle, rain on glass"
+    },
+    {
+      "key": "social_burnout_fomo",
+      "stoic": "Musonius Rufus",
+      "principle": "voluntary social simplicity",
+      "stressor": "pressure to say yes to every weekend plan",
+      "hook": "You are exhausted on Friday night, yet you force yourself out just so you do not get left out of the group dynamic.",
+      "titulo": "Exhausted by Social Obligations? Musonius Rufus on Setting Limits",
+      "visual": "marble bust in dim light, flickering candle flames, dark rain-slicked street, fog over mountains"
+    },
+    {
+      "key": "unexpected_rent_hike",
+      "stoic": "Seneca",
+      "principle": "premeditatio malorum",
+      "stressor": "sudden landlord rent increase notice",
+      "hook": "Opening your inbox to a notice that your monthly rent is jumping twenty percent leaves your chest feeling tight.",
+      "titulo": "Facing a Sudden Rent Surge? Seneca's Guide to Financial Calm",
+      "visual": "ancient stone archway, heavy rain, glowing lantern, solitary shadowy figure"
+    },
+    {
+      "key": "video_call_burnout",
+      "stoic": "Marcus Aurelius",
+      "principle": "guarding mental focus",
+      "stressor": "endless back-to-back virtual meetings",
+      "hook": "After seven continuous hours of staring at pixelated faces on screen, your brain feels completely drained and numb.",
+      "titulo": "Trapped in Endless Meetings? Marcus Aurelius on Mental Boundaries",
+      "visual": "marble bust of Marcus Aurelius, shadows casting on stone, flickering flame, dark moody storm"
+    },
+    {
+      "key": "lost_package_frustration",
+      "stoic": "Epictetus",
+      "principle": "dichotomy of control",
+      "stressor": "delayed or lost critical delivery packages",
+      "hook": "Tracking shows your urgent package was delivered, but your porch is completely empty and customer support is a bot.",
+      "titulo": "Lost Delivery Rage? How Epictetus Handles Supply Chaos",
+      "visual": "stone statue in heavy rain, mist rising from dark ground, candle in lantern, stormy sky"
+    },
+    {
+      "key": "side_hustle_exhaustion",
+      "stoic": "Seneca",
+      "principle": "avoiding self-imposed busyness",
+      "stressor": "grinding on side projects after full-time work hours",
+      "hook": "It is 10 PM, your eyes are burning from screen glare, and your secondary hustle feels like a second prison sentence.",
+      "titulo": "Burned Out on Your Side Project? Seneca on Constant Hustle",
+      "visual": "marble statue profile, candle flickering out, dark thunderous cloudscape, misty stone corridor"
+    },
+    {
+      "key": "passive_aggressive_roommate",
+      "stoic": "Epictetus",
+      "principle": "inner sovereign independence",
+      "stressor": "toxic passive-aggressive notes in shared living spaces",
+      "hook": "Walking into the kitchen to find another sarcastic sticky note pinned to the fridge makes your blood boil instantly.",
+      "titulo": "Living With Hostile Roommates? Epictetus on Emotional Armor",
+      "visual": "ancient bust in shadow, raindrops on dark window, solitary candle flame, foggy mountain peak"
+    },
+    {
+      "key": "career_choice_paralysis",
+      "stoic": "Zeno",
+      "principle": "living in accordance with nature",
+      "stressor": "paralyzing indecision when selecting a new career path",
+      "hook": "Staring at ten open job portals, you feel paralyzed by the terror of choosing the wrong professional path.",
+      "titulo": "Paralyzed by Career Decisions? Zeno's Guide to Taking Action",
+      "visual": "bronze statue in twilight, heavy storm over sea, glowing embers, dark stone pillar"
+    },
+    {
+      "key": "neighborhood_change_grief",
+      "stoic": "Marcus Aurelius",
+      "principle": "universal impermanence",
+      "stressor": "loss of familiar local community spaces and haunts",
+      "hook": "Walking past your favorite decade-old coffee shop to see it boarded up and replaced by a corporate chain.",
+      "titulo": "Watching Your Town Change? Marcus Aurelius on Impermanence",
+      "visual": "crumbling ancient ruins, dark stormy skyline, lone lantern flicker, rainfall on stone steps"
+    },
+    {
+      "key": "workplace_value_compromise",
+      "stoic": "Musonius Rufus",
+      "principle": "moral integrity over status",
+      "stressor": "pressure from management to cut ethical corners for profit",
+      "hook": "Your team leader asks you to hide product flaws from a client, forcing you to choose between your job and your principles.",
+      "titulo": "Forced to Compromise Values at Work? Musonius Rufus on Integrity",
+      "visual": "stern marble bust, dim candlelight on dark wood, brewing storm, fog over cliffside"
+    },
+    {
+      "key": "software_breakage_frustration",
+      "stoic": "Seneca",
+      "principle": "mental flexibility under disruption",
+      "stressor": "sudden system updates breaking your daily digital workflow",
+      "hook": "An unannounced software update wipes out your custom settings minutes before your key deadline.",
+      "titulo": "Software Ruined Your Workflow? Seneca on Sudden Disruption",
+      "visual": "ancient carved relief, heavy rain on dark obsidian, flickering torchlight, misty mountain ruins"
+    },
+    {
+      "key": "silent_friendship_drift",
+      "stoic": "Epictetus",
+      "principle": "acceptance of relationship cycles",
+      "stressor": "growing apart from a long-time friend without closure",
+      "hook": "You realize your best friend from college has not answered your text in six months, leaving an unsaid void.",
+      "titulo": "Friends Growing Apart? Epictetus on Natural Separation",
+      "visual": "weathered statue in autumn mist, soft candlelight, dark overcast horizon, rain on marble floor"
     }
   ]
 }
