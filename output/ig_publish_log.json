@@ -2117,5 +2117,13 @@
     "reason": "cap diario alcanzado (8/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-22T00:35:57.488563+00:00"
+  },
+  {
+    "slug": "zenos-guide-to-client-ghosting",
+    "title": "Zeno's Guide to Dealing with Ghosting Clients",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-22T00:45:10.007760+00:00"
   }
 ]
