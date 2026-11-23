@@ -2118,5 +2118,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-23T00:41:25.785115+00:00"
+  },
+  {
+    "slug": "stoic-guide-to-3am-overthinking",
+    "title": "Marcus Aurelius On Stopping 3 AM Mental Loops",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (6/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-23T00:49:12.615174+00:00"
   }
 ]
