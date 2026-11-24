@@ -2130,5 +2130,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-24T01:21:56.594009+00:00"
+  },
+  {
+    "slug": "licencia-moral-monin-miller",
+    "title": "Licencia moral: por qué ser bueno te invita a fallar · #68",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-24T01:42:48.795712+00:00"
   }
 ]
