@@ -59,9 +59,9 @@ CHANNELS: list[dict] = [
     dict(key="stoic",        name="Stoic Mind",          pk="youtube_stoic",      handle="@StoicMind_videos",       cat="Estoicismo (EN)",            status="active", lang="EN", group="core"),
     dict(key="padel",        name="Padel Pro ES",        pk="youtube_padel",      handle="@PadelProES",             cat="Pádel (Manim)",              status="active", lang="ES", group="core"),
     dict(key="scams",        name="Alerta Estafas",      pk="youtube_scams",      handle="@alerta_estafas_es",      cat="Estafas y seguridad",        status="active", lang="ES", group="core"),
-    dict(key="ainews",       name="AI Decoded",          pk="youtube_ainews",     handle="@ai_decoded_en",          cat="IA explicada (EN)",          status="active", lang="EN", group="core"),
-    dict(key="business",     name="Money Machines",      pk="youtube_business",   handle="@money_machines_en",      cat="Negocio / dinero (EN)",      status="active", lang="EN", group="core"),
-    dict(key="geography",    name="Map Decoded",         pk="youtube_geography",  handle="@map_pecoded",            cat="Geografía (EN)",             status="active", lang="EN", group="core"),
+    dict(key="ainews",       name="Tu Cuerpo Increíble", pk="youtube_ainews",     handle="@tucuerpoincreible",      cat="Cuerpo humano (ES)",         status="active", lang="ES", group="core"),
+    dict(key="business",     name="Historia Oscura",     pk="youtube_business",   handle="@historiaoscura_es",      cat="Historia (ES)",              status="active", lang="ES", group="core"),
+    dict(key="geography",    name="Reino Salvaje",       pk="youtube_geography",  handle="@reinosalvaje_es",        cat="Animales / naturaleza (ES)", status="active", lang="ES", group="core"),
     dict(key="compare",      name="Scale Compare",       pk="youtube_compare",    handle="@scale_compare",          cat="Comparaciones de escala (EN)", status="active", lang="EN", group="core"),
     # Pre-cableados 15/10: NO-OP hasta crear canal YT + secrets YT_<X>_*. group="extra" = sección "sin canal YT dedicado".
     dict(key="truecrime",    name="Convicted (True Crime EN)", pk="youtube_truecrime", handle="(pendiente)",        cat="True crime EN (fraude/corrupción, clon WaitWhy)", status="setup", lang="EN", group="extra"),

@@ -363,9 +363,9 @@ CHANNEL_BRANDS: dict[str, tuple[str, str]] = {
     "YT_STOIC":        ("@StoicMind_videos",        "Stoic Mind"),
     "YT_PADEL":        ("@PadelProES",              "Padel Pro ES"),
     "YT_SCAMS":        ("@alerta_estafas_es",       "Alerta Estafas"),
-    "YT_AINEWS":       ("@ai_decoded_en",           "AI Decoded"),
-    "YT_BUSINESS":     ("@money_machines_en",       "Money Machines"),
-    "YT_GEOGRAPHY":    ("@map_pecoded",             "Map Decoded"),
+    "YT_AINEWS":       ("@tucuerpoincreible",       "Tu Cuerpo Increíble"),
+    "YT_BUSINESS":     ("@historiaoscura_es",       "Historia Oscura"),
+    "YT_GEOGRAPHY":    ("@reinosalvaje_es",         "Reino Salvaje"),
     "YT_COMPARE":      ("@scale_compare",           "Scale Compare"),
 }
 

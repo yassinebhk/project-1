@@ -367,128 +367,188 @@ SCAMS = SimpleChannelConfig(
     ],
 )
 
-# ───────────────────────── 8) AI explained / weekly (EN) ─────────────────────────
-# Dedup vs AI Tools Weekly: aquí CONCEPTOS/novedades de IA (cómo funciona), no reseñas de
-# herramientas. Seeds evergreen (sin fecha) para no envejecer; news en vivo vía RSS = mejora futura.
+# ───────────────────────── 8) Tu Cuerpo Increíble (ES) — reconvierte AI Decoded ─────────────────────────
+# 24/11: AI Decoded (EN, muerto: 11 subs, mediana 4 views) → curiosidades del CUERPO HUMANO en
+# ES (fórmula ganadora tipo Datos/Cosmos: asombro + número concreto + ES). REUTILIZA el canal
+# YT_AINEWS ya autorizado (mismo token, sin reauth; el usuario solo renombra en Studio a
+# "Tu Cuerpo Increíble" / @tucuerpoincreible). ⚠️ YMYL: dato asombroso, NUNCA consejo médico.
 AINEWS = SimpleChannelConfig(
-    slug="ainews", prefix="YT_AINEWS", display_name="AI Decoded",
-    platform_key="youtube_ainews", lang="en", system_prompt_file="batch_en_system.md",
-    tone="clear, concrete tech explainer; concepts + why they matter; no hype",
-    category_id="28", emoji="🤖", cross_teaser="🤖 AI decoded", refresh_interval_days=7,
-    theme_desc=("An English faceless channel explaining AI concepts, milestones and developments "
-                "for a general audience: how LLMs work, agents, open vs closed models, context "
-                "windows, hallucinations, RAG, training vs inference, AI safety. Explainers, "
-                "not tool reviews."),
-    veracity_rules=("- Cite the concrete source (paper, official announcement, docs). No hype or "
-                    "unverified capability claims; label speculation. No financial advice "
-                    "(no 'buy NVIDIA'). Explain, don't predict."),
+    slug="ainews", prefix="YT_AINEWS", display_name="Tu Cuerpo Increíble",
+    platform_key="youtube_ainews", lang="es", system_prompt_file="batch_es_system.md",
+    tone="asombro por el cuerpo humano; un dato fisiológico que deja loco pero 100% verificable; divulgativo, SIN consejo médico",
+    category_id="27", emoji="🧠", cross_teaser="🧠 Tu cuerpo", refresh_interval_days=7,
+    theme_desc=("A Spanish faceless channel of ONE amazing-but-true fact about the HUMAN BODY per "
+                "short (physiology, anatomy, the brain, the senses, cells, human limits) — the "
+                "'¿sabías que?!' format. Science only. NOT medical advice, NOT health tips, NOT "
+                "disease/cure claims."),
+    veracity_rules=("- Cada dato DEBE ser real y citable (fisiología, anatomía, revisado por pares, "
+                    "fuentes médicas) con la fuente en pantalla. PROHIBIDO consejo médico, "
+                    "diagnóstico, 'esto cura/previene X' o cualquier afirmación de salud (nada de "
+                    "YMYL). Explicar un hecho, nunca prescribir. Sin mitos ni leyendas urbanas."),
     seed=[
-        {"key": "next_token", "titulo": "How ChatGPT actually works (it just predicts the next word)",
-         "hook": "It doesn't 'know' anything. It predicts one token at a time.",
-         "angle": "LLMs are next-token predictors; the Transformer let this scale. Source: 'Attention Is All You Need' (Vaswani et al., 2017).",
-         "visual": "text completing word by word, transformer diagram, probability bars"},
-        {"key": "ai_agent", "titulo": "What an 'AI agent' really is (and why everyone builds them)",
-         "hook": "A chatbot answers. An agent acts.",
-         "angle": "An AI agent loops: plan → use tools → observe → repeat, to do multi-step tasks. Source: public tool-use/function-calling docs.",
-         "visual": "loop diagram plan-act-observe, tool icons, terminal running"},
-        {"key": "hallucination", "titulo": "Why AI confidently makes things up",
-         "hook": "It's not lying. It's doing exactly what it was trained to do.",
-         "angle": "Hallucinations: predicting plausible text without grounding; reduced with retrieval/citations. Source: model-provider docs + grounding research.",
-         "visual": "confident wrong answer, fabricated citation, question mark"},
-        {"key": "context_window", "titulo": "What a 'context window' is (the AI's short-term memory)",
-         "hook": "The AI forgets everything outside its context window.",
-         "angle": "Context window = max tokens attended at once; bigger = more input but more compute. Source: model-provider specs.",
-         "visual": "sliding window over text, token counter, memory fading"},
-        {"key": "open_vs_closed", "titulo": "Open vs closed AI models: the real difference",
-         "hook": "Some AIs you can download. Others you can only rent.",
-         "angle": "Open-weight models ship weights you can run; closed models are API-only. Source: official model licenses/announcements.",
-         "visual": "download icon vs cloud lock, weights file, API endpoint"},
-        {"key": "rag", "titulo": "The trick that stops AI from making things up (RAG)",
-         "hook": "How you make AI answer from YOUR documents.",
-         "angle": "Retrieval-Augmented Generation fetches relevant text and feeds it in so answers are grounded + citable. Source: RAG paper (Lewis et al., 2020).",
-         "visual": "search over documents, retrieved snippets, grounded answer"},
+        {"key": "stomach_acid", "titulo": "El ácido de tu estómago puede disolver metal",
+         "hook": "Tu estómago fabrica un ácido capaz de corroer una cuchilla.",
+         "angle": "El jugo gástrico es ácido clorhídrico a pH ~1,5-2, corrosivo para muchos metales; el moco protege la propia pared del estómago. Fuente: fisiología digestiva.",
+         "visual": "estómago anatómico, gota de ácido, metal corroído"},
+        {"key": "saliva_life", "titulo": "En tu vida produces saliva para llenar dos piscinas",
+         "hook": "Generas tanta saliva que llenarías piscinas enteras.",
+         "angle": "~1-1,5 litros al día → más de 40.000 litros a lo largo de una vida. Fuente: fisiología oral.",
+         "visual": "glándulas salivales, litros acumulándose, piscina"},
+        {"key": "brain_watts", "titulo": "Tu cerebro genera electricidad para una bombilla",
+         "hook": "Ahora mismo tu cerebro produce unos 20 vatios.",
+         "angle": "El cerebro consume ~20 W de potencia metabólica, suficiente para una bombilla LED. Fuente: neurociencia del metabolismo cerebral.",
+         "visual": "cerebro, impulsos eléctricos, bombilla encendida"},
+        {"key": "new_skeleton", "titulo": "Cada ~10 años tienes un esqueleto nuevo",
+         "hook": "El hueso que tocas no es el mismo de hace una década.",
+         "angle": "La remodelación ósea continua reemplaza el esqueleto por completo en ~10 años. Fuente: fisiología ósea.",
+         "visual": "hueso, osteoclastos y osteoblastos, reloj"},
+        {"key": "blood_lap", "titulo": "Un glóbulo rojo recorre todo tu cuerpo en ~1 minuto",
+         "hook": "Da la vuelta entera a tu cuerpo en menos de lo que tardas en leer esto.",
+         "angle": "El circuito completo de la circulación dura ~60 segundos en reposo. Fuente: fisiología cardiovascular.",
+         "visual": "glóbulo rojo, red de vasos, cronómetro"},
+        {"key": "bones_birth", "titulo": "Naces con ~300 huesos y acabas con 206",
+         "hook": "Pierdes casi 100 huesos al crecer. ¿A dónde van?",
+         "angle": "Muchos huesos infantiles se fusionan (cráneo, sacro, etc.): de ~270-300 al nacer a 206 en el adulto. Fuente: anatomía humana.",
+         "visual": "esqueleto de bebé, fusión de huesos, esqueleto adulto"},
+        {"key": "nerve_speed", "titulo": "Tus nervios transmiten a más de 400 km/h",
+         "hook": "La orden de mover el dedo viaja más rápido que un F1.",
+         "angle": "La conducción en nervios mielinizados llega a ~120 m/s (~430 km/h). Fuente: neurofisiología.",
+         "visual": "neurona, impulso recorriendo el axón, velocímetro"},
+        {"key": "small_intestine", "titulo": "Tu intestino delgado mide como un autobús",
+         "hook": "Llevas enrollados unos 6-7 metros de intestino.",
+         "angle": "El intestino delgado mide ~6-7 metros plegado en el abdomen. Fuente: anatomía humana.",
+         "visual": "intestino enrollado, cinta métrica, autobús"},
+        {"key": "taste_is_smell", "titulo": "Lo que llamas 'sabor' es sobre todo olfato",
+         "hook": "Tápate la nariz y la comida casi pierde el sabor.",
+         "angle": "Gran parte de la percepción del sabor depende del olfato retronasal, no solo de la lengua. Fuente: neurociencia sensorial.",
+         "visual": "nariz y lengua, comida, aromas subiendo"},
+        {"key": "skin_renew", "titulo": "Pierdes millones de células de piel cada día",
+         "hook": "Buena parte del polvo de tu casa… eras tú.",
+         "angle": "La epidermis se renueva sin parar; se desprenden de cientos de miles a millones de células muertas al día. Fuente: dermatología/fisiología.",
+         "visual": "capas de piel, células descamando, polvo a contraluz"},
     ],
 )
 
-# ───────────────────────── 9) Business / money breakdowns (EN) ─────────────────────────
-# Cómo ganan dinero las empresas (datos públicos). NO consejo de inversión (no YMYL).
+# ───────────────────────── 9) Historia Oscura (ES) — reconvierte Money Machines ─────────────────────────
+# 24/11: Money Machines (EN, muerto: 2 subs) → hechos históricos impactantes en ES (fórmula
+# ganadora: asombro + número concreto + ES). REUTILIZA el canal YT_BUSINESS ya autorizado
+# (mismo token, sin reauth; el usuario solo renombra en Studio a "Historia Oscura" /
+# @historiaoscura_es). Afín a WaitWhy/Enigmas pero propio (historia, no crimen vivo).
 BUSINESS = SimpleChannelConfig(
-    slug="business", prefix="YT_BUSINESS", display_name="Money Machines",
-    platform_key="youtube_business", lang="en", system_prompt_file="batch_en_system.md",
-    tone="sharp business explainer, concrete numbers from public filings; analytical, no advice",
-    category_id="27", emoji="💰", cross_teaser="💰 How it profits", refresh_interval_days=14,
-    theme_desc=("An English faceless channel explaining how companies and products actually make "
-                "money, and why businesses rise or fall, using public financials. 'How the "
-                "business works', never investment advice."),
-    veracity_rules=("- Use PUBLIC data (annual reports, SEC 10-K, reputable press) and cite it on "
-                    "screen. No stock tips, price targets or predictions (no YMYL). Don't assert "
-                    "unproven claims about a company's intent."),
+    slug="business", prefix="YT_BUSINESS", display_name="Historia Oscura",
+    platform_key="youtube_business", lang="es", system_prompt_file="batch_es_system.md",
+    tone="asombro histórico; hechos reales del pasado que impactan, con intriga pero sin sensacionalismo ni morbo gratuito",
+    category_id="27", emoji="🕯️", cross_teaser="🕯️ Historia oscura", refresh_interval_days=14,
+    theme_desc=("A Spanish faceless channel of ONE striking-but-true fact from history per short "
+                "(strange real events, falls of empires, surprising timelines, grim customs, "
+                "forgotten episodes) — the '¿sabías que?!' format for history. Real, sourced "
+                "history only; no live politics."),
+    veracity_rules=("- Cada hecho DEBE ser real y citable (historiadores, fuentes académicas, "
+                    "enciclopedias serias) con la fuente en pantalla. PROHIBIDO teorías "
+                    "conspirativas, citas inventadas o mitos como hechos (si es leyenda, "
+                    "etiquetarla como leyenda). Respeto con tragedias reales: sin morbo ni gore."),
     seed=[
-        {"key": "ikea_maze", "titulo": "Why IKEA is built like a maze (it makes you spend more)",
-         "hook": "You can't take a shortcut in IKEA. That's on purpose.",
-         "angle": "IKEA's one-way layout maximizes product exposure (the 'Gruen effect'). Source: retail-design analysis / reputable press.",
-         "visual": "IKEA floor-plan arrows, showroom maze, full cart"},
-        {"key": "costco_membership", "titulo": "Costco barely profits on what it sells — here's the real engine",
-         "hook": "Costco makes most of its profit before you buy anything.",
-         "angle": "Membership fees make up the bulk of Costco's operating income; goods sell near cost. Source: Costco annual report (10-K).",
-         "visual": "membership card, warehouse aisles, receipt near cost"},
-        {"key": "spotify_payout", "titulo": "Why Spotify pays artists so little per stream",
-         "hook": "One stream pays a fraction of a cent. Here's why.",
-         "angle": "Spotify pays ~2/3 of revenue to rights holders via a pooled pro-rata model; per-stream is tiny. Source: Spotify 'Loud & Clear' / annual report.",
-         "visual": "stream counter, tiny coin, revenue pie split"},
-        {"key": "printer_ink", "titulo": "Why printers are cheap but ink costs more than perfume",
-         "hook": "They basically give you the printer for free.",
-         "angle": "Razor-and-blades model: cheap hardware, profit on consumables (ink). Source: industry/press analysis.",
-         "visual": "cheap printer price tag, expensive ink cartridge, perfume comparison"},
-        {"key": "amazon_aws", "titulo": "Amazon's real money machine isn't the store — it's AWS",
-         "hook": "The shopping site barely profits. The cloud carries it.",
-         "angle": "AWS provides the majority of Amazon's operating income despite smaller revenue. Source: Amazon annual report (10-K) segment data.",
-         "visual": "store box vs server racks, operating-income bar chart"},
-        {"key": "free_apps", "titulo": "How 'free' apps actually make money off you",
-         "hook": "If it's free, the product is your attention — or your data.",
-         "angle": "Free apps monetize via ads, in-app purchases, subscriptions or data. Source: app-economy reports.",
-         "visual": "app store 'free', ad banner, in-app purchase popup"},
+        {"key": "oxford_aztec", "titulo": "Oxford es más antigua que el Imperio Azteca",
+         "hook": "Cuando se fundó Tenochtitlan, en Oxford ya daban clases.",
+         "angle": "Hay constancia de enseñanza en Oxford desde ~1096; Tenochtitlan se fundó ~1325. Fuente: historia medieval y mesoamericana.",
+         "visual": "Oxford medieval, Tenochtitlan, línea temporal"},
+        {"key": "emu_war", "titulo": "Australia le declaró la guerra a los emús… y perdió",
+         "hook": "En 1932 el ejército luchó contra aves gigantes y se rindió.",
+         "angle": "La 'Guerra del Emú' de 1932: soldados con ametralladoras no lograron frenar la plaga de emús. Fuente: historia de Australia.",
+         "visual": "emús corriendo, soldados años 30, titular de época"},
+        {"key": "shortest_war", "titulo": "La guerra más corta de la historia duró 38 minutos",
+         "hook": "Una guerra entera cupo en menos de una hora.",
+         "angle": "La guerra anglo-zanzibarí de 1896 duró unos 38-40 minutos. Fuente: historia / registros británicos.",
+         "visual": "barcos de guerra, cañones, reloj marcando 38 minutos"},
+        {"key": "roman_concrete", "titulo": "El hormigón romano se auto-repara (2.000 años después)",
+         "hook": "Sigue en pie y se sella solo. El nuestro no.",
+         "angle": "El hormigón romano con puzolana y cal reactiva se auto-sella; estudios del MIT (2023) explican el mecanismo. Fuente: estudios de materiales.",
+         "visual": "Panteón de Roma, hormigón milenario, grieta sellándose"},
+        {"key": "berlin_wall", "titulo": "El Muro de Berlín cayó por un error en una rueda de prensa",
+         "hook": "Una frase mal dicha en TV abrió el muro esa misma noche.",
+         "angle": "El 9-nov-1989 Schabowski anunció por error la apertura 'inmediata' de fronteras; multitudes acudieron al muro. Fuente: historia contemporánea.",
+         "visual": "rueda de prensa 1989, multitud en el muro, caída"},
+        {"key": "pyramids_workers", "titulo": "Las pirámides NO las construyeron esclavos",
+         "hook": "El mito es falso: eran obreros pagados y alimentados.",
+         "angle": "La evidencia arqueológica (poblado y tumbas de obreros en Guiza) indica trabajadores remunerados, no esclavos. Fuente: egiptología.",
+         "visual": "pirámides de Guiza, poblado de obreros, excavación"},
+        {"key": "black_death", "titulo": "La peste negra borró a un tercio de Europa en 5 años",
+         "hook": "En apenas un lustro desapareció un tercio de un continente.",
+         "angle": "La peste negra (~1347-1352) mató a cerca del 30-50% de la población europea. Fuente: historiografía.",
+         "visual": "mapa de Europa medieval, velas, ciudad vacía"},
+        {"key": "napoleon_rabbits", "titulo": "A Napoleón lo 'derrotó' una horda de conejos",
+         "hook": "Organizó una cacería y los conejos cargaron contra él.",
+         "angle": "Episodio documentado de 1807: conejos (criados mansos) rodearon a Napoleón en una cacería y lo hicieron retirarse. Fuente: crónicas históricas (anécdota).",
+         "visual": "Napoleón en el campo, horda de conejos, retirada"},
+        {"key": "library_alexandria", "titulo": "La Biblioteca de Alejandría no ardió en una sola noche",
+         "hook": "No fue un gran incendio: se apagó poco a poco durante siglos.",
+         "angle": "Su declive se debió a varios episodios (César, recortes, conflictos) a lo largo de siglos, no a una única noche. Fuente: historiadores.",
+         "visual": "biblioteca antigua, rollos, decadencia gradual"},
+        {"key": "tutankhamun", "titulo": "Tutankamón fue un faraón olvidado 3.000 años",
+         "hook": "Reinó siendo un niño y el mundo lo borró… hasta 1922.",
+         "angle": "Tutankamón reinó ~9 años desde la infancia; su fama viene del hallazgo intacto de su tumba por Howard Carter en 1922. Fuente: egiptología.",
+         "visual": "máscara dorada, tumba, excavación de 1922"},
     ],
 )
 
-# ───────────────────────── 10) Geography / geopolitics explainer (EN) ─────────────────────────
-# Por qué el mapa es como es / por qué unos países son ricos. Evergreen, SIN conflictos vivos.
+# ───────────────────────── 10) Reino Salvaje (ES) — reconvierte Map Decoded ─────────────────────────
+# 24/11: Map Decoded (EN, muerto: 5 subs) → datos ASOMBROSOS de animales/naturaleza en ES
+# (fórmula ganadora tipo Datos/Cosmos: asombro + número concreto + ES). REUTILIZA el canal
+# YT_GEOGRAPHY ya autorizado (mismo token, sin reauth; el usuario solo renombra en Studio a
+# "Reino Salvaje" / @reinosalvaje_es). Dedup vs Datos: aquí SOLO fauna/naturaleza.
 GEOGRAPHY = SimpleChannelConfig(
-    slug="geography", prefix="YT_GEOGRAPHY", display_name="Map Decoded",
-    platform_key="youtube_geography", lang="en", system_prompt_file="batch_en_system.md",
-    tone="curious geography/economics explainer; factual, evergreen, no live conflicts or taking sides",
-    category_id="27", emoji="🗺️", cross_teaser="🗺️ Map decoded", refresh_interval_days=14,
-    theme_desc=("An English faceless channel explaining why the world map looks the way it does "
-                "and why some places are rich or poor: geography, history, economics, climate. "
-                "Evergreen; avoid live geopolitical conflicts."),
-    veracity_rules=("- Factual geography/history/economics with a citable source (World Bank, UN, "
-                    "Britannica, Köppen climate). Evergreen ONLY: NO live conflicts, NO taking "
-                    "political sides, NO sensitive current events."),
+    slug="geography", prefix="YT_GEOGRAPHY", display_name="Reino Salvaje",
+    platform_key="youtube_geography", lang="es", system_prompt_file="batch_es_system.md",
+    tone="asombro por la naturaleza; un dato brutal de animales 100% real que deja loco; divulgativo",
+    category_id="15", emoji="🦁", cross_teaser="🦁 Reino salvaje", refresh_interval_days=7,
+    theme_desc=("A Spanish faceless channel of ONE jaw-dropping-but-true ANIMAL / nature fact per "
+                "short (extreme abilities, predators, the deep sea, survival, record-holders) — "
+                "the '¿sabías que?!' format for the animal kingdom. Real zoology/biology only. "
+                "NOT general trivia (that's another channel), ONLY animals and nature."),
+    veracity_rules=("- Cada dato DEBE ser real y citable (zoología, biología marina, National "
+                    "Geographic, estudios científicos) con la fuente en pantalla. Sin mitos, sin "
+                    "exageraciones y sin leyendas sobre animales ya desmentidas."),
     seed=[
-        {"key": "ru_timezones", "titulo": "Why Russia has 11 time zones",
-         "hook": "When it's breakfast in one part of Russia, it's already midnight in another.",
-         "angle": "Russia spans ~11 time zones due to its east-west extent (~9,000 km). Source: Britannica / official time-zone data.",
-         "visual": "map of Russia with time-zone bands, clocks, sunrise and sunset"},
-        {"key": "netherlands_sea", "titulo": "Why the Netherlands pumped the sea out to make land",
-         "hook": "They didn't find this land. They drained it.",
-         "angle": "Polders reclaimed from the sea, kept dry by dikes and pumps; large areas would flood without them. Source: Dutch government / Britannica.",
-         "visual": "dikes, polder grid, pumping station, sea-level line"},
-        {"key": "singapore_rich", "titulo": "How Singapore got rich with almost no resources",
-         "hook": "No oil, no farmland, barely any water — yet one of the richest.",
-         "angle": "A strategic port plus trade, manufacturing, finance and governance drove growth. Source: World Bank GDP-per-capita data.",
-         "visual": "port cranes, skyline, shipping-lane map"},
-        {"key": "mercator", "titulo": "Why Africa looks small on your map (it isn't)",
-         "hook": "Greenland looks as big as Africa. Africa is ~14x bigger.",
-         "angle": "The Mercator projection inflates areas near the poles; Africa ~30.4M km² vs Greenland ~2.2M. Source: cartography / area figures.",
-         "visual": "Mercator vs true-size overlay, Africa swallowing Greenland"},
-        {"key": "canada_border", "titulo": "Why almost all Canadians live near the US border",
-         "hook": "The world's 2nd-biggest country is mostly empty.",
-         "angle": "Most of Canada's population lives within ~150 km of the US border, driven by climate and arable land. Source: Statistics Canada.",
-         "visual": "Canada population-density map, thin southern strip, cold north"},
-        {"key": "chile_shape", "titulo": "Why Chile is so absurdly long and thin",
-         "hook": "~4,300 km long, ~350 km wide at most.",
-         "angle": "Chile is hemmed between the Andes and the Pacific, stretching along the coast. Source: Britannica / geography.",
-         "visual": "map of Chile, Andes wall, Pacific coast"},
+        {"key": "mantis_shrimp", "titulo": "La gamba mantis golpea tan fuerte que hierve el agua",
+         "hook": "Su puñetazo acelera como una bala y crea una burbuja hirviendo.",
+         "angle": "El apéndice de la galera (mantis shrimp) acelera a ~23 m/s y la cavitación genera un destello de luz y calor momentáneo. Fuente: biomecánica (Patek et al.).",
+         "visual": "gamba mantis de colores, puñetazo a cámara lenta, burbuja de cavitación"},
+        {"key": "immortal_jelly", "titulo": "Existe una medusa biológicamente inmortal",
+         "hook": "Esta medusa rejuvenece y no muere de vieja.",
+         "angle": "Turritopsis dohrnii revierte a su fase de pólipo (transdiferenciación), potencialmente inmortal. Fuente: biología marina.",
+         "visual": "medusa diminuta, ciclo de vida, océano azul"},
+        {"key": "peregrine_falcon", "titulo": "El halcón peregrino supera los 380 km/h en picado",
+         "hook": "Es el animal más rápido del planeta, y no vuela: cae.",
+         "angle": "El 'stoop' (picado) del halcón peregrino se ha medido por encima de 380 km/h. Fuente: National Geographic / ornitología.",
+         "visual": "halcón peregrino en picado, cielo abierto, presa"},
+        {"key": "tardigrade", "titulo": "El tardígrado sobrevive al vacío del espacio",
+         "hook": "Lo hierves, lo congelas, lo mandas al espacio… y sigue vivo.",
+         "angle": "Tardígrados sobrevivieron a la exposición al vacío y la radiación en órbita (experimento TARDIS, ESA 2007). Fuente: astrobiología.",
+         "visual": "tardígrado al microscopio, espacio, hielo"},
+        {"key": "axolotl", "titulo": "El ajolote regenera hasta partes de su cerebro",
+         "hook": "Le vuelve a crecer una pata, el corazón o tejido cerebral.",
+         "angle": "Ambystoma mexicanum regenera extremidades, órganos y parte del tejido cerebral. Fuente: estudios de regeneración.",
+         "visual": "ajolote rosa, extremidad regenerando, agua"},
+        {"key": "blue_whale_tongue", "titulo": "La lengua de una ballena azul pesa como un elefante",
+         "hook": "Solo su lengua pesa lo que un elefante entero.",
+         "angle": "La lengua de la ballena azul pesa ~2.700 kg; es el animal más grande que ha existido. Fuente: biología marina.",
+         "visual": "ballena azul, océano, elefante para comparar escala"},
+        {"key": "bombardier_beetle", "titulo": "El escarabajo bombardero dispara química a 100 °C",
+         "hook": "Mezcla dos químicos y te lanza una explosión hirviendo.",
+         "angle": "Combina peróxido de hidrógeno e hidroquinona en una reacción exotérmica que expulsa el líquido a ~100 °C. Fuente: entomología.",
+         "visual": "escarabajo bombardero, chorro defensivo, vapor"},
+        {"key": "wood_frog", "titulo": "Hay una rana que se congela entera y revive en primavera",
+         "hook": "Su corazón se para, se congela… y luego vuelve a latir.",
+         "angle": "Rana sylvatica usa glucosa como anticongelante natural y sobrevive a la congelación parcial. Fuente: fisiología animal.",
+         "visual": "rana congelada en el hielo, deshielo, bosque"},
+        {"key": "hummingbird_heart", "titulo": "El corazón de un colibrí late más de 1.000 veces por minuto",
+         "hook": "El tuyo late 70 veces por minuto; el del colibrí, más de mil.",
+         "angle": "En vuelo, la frecuencia cardíaca del colibrí llega a ~1.200 latidos por minuto. Fuente: ornitología.",
+         "visual": "colibrí batiendo alas, flor, latido acelerado"},
+        {"key": "elephant_feet", "titulo": "Los elefantes se 'escuchan' con las patas",
+         "hook": "Hablan con el suelo: vibraciones que viajan kilómetros.",
+         "angle": "Usan comunicación sísmica: infrasonidos que viajan por el suelo y detectan con las patas a kilómetros. Fuente: bioacústica.",
+         "visual": "manada de elefantes, ondas en el suelo, sabana"},
     ],
 )
 
@@ -549,7 +609,8 @@ TRUECRIME = SimpleChannelConfig(
 )
 
 # ───────────────────────── 12) How it's made / cómo se fabrica (EN) ─────────────────────────
-# Faceless, visual, evergreen y sin riesgo legal/YMYL. Familia 'Decoded' (AI Decoded, Map Decoded).
+# Faceless, visual, evergreen y sin riesgo legal/YMYL. (AI Decoded y Map Decoded se reconvirtieron
+# a canales ES de curiosidad el 24/11; Factory Decoded sigue siendo el único "Decoded" vivo.)
 # Evitamos el nombre registrado "How It's Made" (marca TV) → "Factory Decoded".
 HOWMADE = SimpleChannelConfig(
     slug="howmade", prefix="YT_HOWMADE", display_name="Factory Decoded",
