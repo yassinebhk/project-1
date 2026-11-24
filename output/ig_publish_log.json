@@ -1,82 +1,5 @@
 [
   {
-    "slug": "top-5-lightweight-speech-ai-tools",
-    "title": "Top 5 AI tools for lightweight speech models · #1",
-    "status": "ok",
-    "media_id": "18137775622679349",
-    "url": "https://instagram.com/reel/18137775622679349",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T10:43:35.132423+00:00"
-  },
-  {
-    "slug": "5-casos-resueltos-por-insectos-entomologia",
-    "title": "5 casos resueltos por insectos · entomología · #1",
-    "status": "ok",
-    "media_id": "18066410642628507",
-    "url": "https://instagram.com/reel/18066410642628507",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T11:00:10.673022+00:00"
-  },
-  {
-    "slug": "padel_tactic_defense_20261107_110158",
-    "title": "Patient Defense — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "18133483259498985",
-    "url": "https://instagram.com/reel/18133483259498985",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T11:04:22.443581+00:00"
-  },
-  {
-    "slug": "cuanto-gana-amazon-por-segundo-2-billones-1",
-    "title": "Amazon 2 billones — cuánto gana por segundo · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 116min < 240min mínimo (3/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T12:59:56.554241+00:00"
-  },
-  {
-    "slug": "padel_tactic_positioning_20261107_150113",
-    "title": "Move as a Pair — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 238min < 240min mínimo (3/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T15:02:50.700628+00:00"
-  },
-  {
-    "slug": "3-causas-de-despido-nulo-readmision-1",
-    "title": "TOP 3 causas de despido NULO · Readmisión obligada · #1",
-    "status": "ok",
-    "media_id": "18135140533801830",
-    "url": "https://instagram.com/reel/18135140533801830",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T15:54:31.029800+00:00"
-  },
-  {
-    "slug": "padel_tactic_drop_shot_20261107_153932",
-    "title": "The Drop Shot — Padel Tactics #padel #shorts",
-    "status": "ok",
-    "media_id": "18177869884454803",
-    "url": "https://instagram.com/reel/18177869884454803",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T15:56:15.543564+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-for-video-tutorials-1",
-    "title": "Top 5 AI tools for recording video tutorials · #1",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 178min < 240min mínimo (5/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T18:54:11.595445+00:00"
-  },
-  {
-    "slug": "padel_tactic_drop_shot_20261107_185804",
-    "title": "The Drop Shot — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "espaciado: último reel hace 183min < 240min mínimo (5/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T18:59:18.504268+00:00"
-  },
-  {
     "slug": "top-3-derechos-erte-2026",
     "title": "TOP 3 derechos que NO pierdes en un ERTE · 50-70% base · #1",
     "status": "ok",
@@ -2193,5 +2116,13 @@
     "reason": "cap diario alcanzado (6/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-24T17:49:36.182070+00:00"
+  },
+  {
+    "slug": "iphone-real-manufacturing-cost-margin",
+    "title": "Fabricar un iPhone — 520$ de piezas por 1.200€ · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-24T18:35:37.534354+00:00"
   }
 ]
