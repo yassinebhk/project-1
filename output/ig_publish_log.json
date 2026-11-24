@@ -1,32 +1,5 @@
 [
   {
-    "slug": "top-3-derechos-erte-2026",
-    "title": "TOP 3 derechos que NO pierdes en un ERTE · 50-70% base · #1",
-    "status": "ok",
-    "media_id": "18122432686947289",
-    "url": "https://instagram.com/reel/18122432686947289",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T23:19:15.088252+00:00"
-  },
-  {
-    "slug": "kit-digital-autonomos-12000-euros-2026",
-    "title": "TOP 3 bonos Kit Digital 2026 · hasta €12.000 · #1",
-    "status": "ok",
-    "media_id": "18351974860248626",
-    "url": "https://instagram.com/reel/18351974860248626",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T23:27:15.555563+00:00"
-  },
-  {
-    "slug": "premio-herralde-ganadora-colombiana-2026",
-    "title": "TOP 1 Novela ganadora del Premio Herralde · 2026 · #1",
-    "status": "ok",
-    "media_id": "18163064452539977",
-    "url": "https://instagram.com/reel/18163064452539977",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-07T23:33:30.548742+00:00"
-  },
-  {
     "slug": "top-5-ai-tools-local-inference-management-1",
     "title": "Top 5 AI tools for local inference management · #1",
     "status": "ok",
@@ -2140,5 +2113,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-24T19:59:22.125428+00:00"
+  },
+  {
+    "slug": "padel_tactic_drop_shot_20261124_200845",
+    "title": "The Drop Shot — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-24T20:24:42.134838+00:00"
   }
 ]
