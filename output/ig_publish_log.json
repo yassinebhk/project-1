@@ -2124,5 +2124,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-24T18:35:37.534354+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-github-pr-reviews",
+    "title": "Top 5 AI tools for automated GitHub PR reviews · #1",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-24T19:29:14.978636+00:00"
   }
 ]
