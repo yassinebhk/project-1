@@ -1,21 +1,5 @@
 [
   {
-    "slug": "top-5-ai-tools-thumbnail-click-prediction",
-    "title": "Top 5 AI tools for thumbnail click prediction · #1",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (8/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-08T18:37:55.671465+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-campaign-localization",
-    "title": "Top 5 AI tools for multi region campaign localization · #1",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (8/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-08T18:57:32.100029+00:00"
-  },
-  {
     "slug": "padel_tactic_drop_shot_20261108_185815",
     "title": "The Drop Shot — Padel Tactics #padel #shorts",
     "status": "skip_rate_limit",
@@ -2129,5 +2113,14 @@
     "reason": "espaciado: último reel hace 191min < 240min mínimo (5/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-25T15:27:16.967690+00:00"
+  },
+  {
+    "slug": "cuota-minima-autonomos-2026-boe",
+    "title": "3 claves de la cuota mínima de autónomos 2026 · 200€/mes · #1",
+    "status": "ok",
+    "media_id": "18107167664033779",
+    "url": "https://instagram.com/reel/18107167664033779",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-25T18:19:19.747434+00:00"
   }
 ]
