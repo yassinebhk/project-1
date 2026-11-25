@@ -2127,5 +2127,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-25T00:10:16.824693+00:00"
+  },
+  {
+    "slug": "padel_tactic_serve_20261125_003952",
+    "title": "The Smart Serve — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-25T00:41:26.621818+00:00"
   }
 ]
