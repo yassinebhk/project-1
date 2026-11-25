@@ -2143,5 +2143,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-25T00:53:03.820660+00:00"
+  },
+  {
+    "slug": "efecto-tercera-persona-davison-1983",
+    "title": "Efecto tercera persona: por qué crees que eres inmune · #68",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-25T01:14:39.700690+00:00"
   }
 ]
