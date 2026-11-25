@@ -1,45 +1,5 @@
 [
   {
-    "slug": "padel_tactic_positioning_20261108_110256",
-    "title": "Move as a Pair — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (11/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-08T11:04:17.710449+00:00"
-  },
-  {
-    "slug": "javier-de-la-rosa-grand-tibidabo",
-    "title": "Caso Grand Tibidabo — 40M€ robados a 10.000 familias · #1",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (10/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-08T13:23:27.642914+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-for-rapid-ui-wireframing",
-    "title": "Top 5 AI tools for rapid UI wireframing · #1",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (10/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-08T14:37:42.572120+00:00"
-  },
-  {
-    "slug": "padel_tactic_bandeja_20261108_145845",
-    "title": "The Bandeja — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (10/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-08T14:59:59.111725+00:00"
-  },
-  {
-    "slug": "padel_tactic_lob_20261108_155746",
-    "title": "The Deep Lob — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (8/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-08T16:13:26.341090+00:00"
-  },
-  {
     "slug": "top-5-ai-tools-thumbnail-click-prediction",
     "title": "Top 5 AI tools for thumbnail click prediction · #1",
     "status": "skip_rate_limit",
@@ -2153,5 +2113,13 @@
     "url": "https://instagram.com/reel/17998764875844332",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-25T12:16:02.359376+00:00"
+  },
+  {
+    "slug": "top-5-ai-tools-for-architectural-sketches",
+    "title": "Top 5 AI tools for architectural sketches · #1",
+    "status": "skip_rate_limit",
+    "reason": "espaciado: último reel hace 168min < 240min mínimo (5/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-25T15:04:26.941587+00:00"
   }
 ]
