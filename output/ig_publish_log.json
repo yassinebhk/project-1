@@ -2135,5 +2135,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-25T00:41:26.621818+00:00"
+  },
+  {
+    "slug": "seneca-freelance-income-drop-stoic-mind",
+    "title": "The Seneca Reset For When Your Income Suddenly Drops",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-25T00:53:03.820660+00:00"
   }
 ]
