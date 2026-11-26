@@ -2173,5 +2173,13 @@
     "url": "https://instagram.com/reel/18121423601012769",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-26T19:23:24.780003+00:00"
+  },
+  {
+    "slug": "guia-completa-becas-universidad-espana-2026_teaser",
+    "title": "GUÍA COMPLETA becas universidad España 2026 · MEC + autonómicas",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-26T19:28:04.923908+00:00"
   }
 ]
