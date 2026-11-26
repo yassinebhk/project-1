@@ -2144,5 +2144,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-26T00:53:26.471040+00:00"
+  },
+  {
+    "slug": "maldicion-del-conocimiento-camerer-1989",
+    "title": "Maldición del conocimiento: por qué los expertos fallan · #68",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (10/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-26T01:13:55.947179+00:00"
   }
 ]
