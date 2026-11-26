@@ -2136,5 +2136,13 @@
     "reason": "cap diario alcanzado (10/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-26T00:45:34.964212+00:00"
+  },
+  {
+    "slug": "zeno-on-rent-hikes-and-city-instability",
+    "title": "Zeno on Finding Stability When Rent Surges",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (10/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-26T00:53:26.471040+00:00"
   }
 ]
