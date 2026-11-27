@@ -2129,5 +2129,13 @@
     "reason": "cap diario alcanzado (7/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-27T00:02:52.939062+00:00"
+  },
+  {
+    "slug": "friends-growing-apart-epictetus-separation",
+    "title": "Friends Growing Apart Without Closure: Epictetus on Natural Separation",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (7/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-27T00:07:40.620488+00:00"
   }
 ]
