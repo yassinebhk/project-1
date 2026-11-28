@@ -2121,5 +2121,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-28T03:55:36.706697+00:00"
+  },
+  {
+    "slug": "hipotesis-mundo-justo-melvin-lerner",
+    "title": "Por qué culpas a las víctimas (Lerner 1980) · #68",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-28T04:04:37.119769+00:00"
   }
 ]
