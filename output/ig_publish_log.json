@@ -1,21 +1,5 @@
 [
   {
-    "slug": "padel_tactic_bandeja_20261111_183343",
-    "title": "The Bandeja — Padel Tactics #padel #shorts",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (11/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-11T18:34:54.197824+00:00"
-  },
-  {
-    "slug": "top-5-ai-tools-for-automating-newsletters",
-    "title": "Top 5 AI tools for automating weekly newsletters · #1",
-    "status": "skip_rate_limit",
-    "reason": "cap diario alcanzado (11/6 en 24h)",
-    "ig_bucket": "f8d1626a",
-    "ts": "2026-11-11T19:52:43.888498+00:00"
-  },
-  {
     "slug": "padel_tactic_serve_20261111_201018",
     "title": "The Smart Serve — Padel Tactics #padel #shorts",
     "status": "skip_rate_limit",
@@ -2129,5 +2113,13 @@
     "reason": "cap diario alcanzado (11/6 en 24h)",
     "ig_bucket": "f8d1626a",
     "ts": "2026-11-28T04:04:37.119769+00:00"
+  },
+  {
+    "slug": "padel_tactic_smash_20261128_111158",
+    "title": "The 'Por Tres' Smash — Padel Tactics #padel #shorts",
+    "status": "skip_rate_limit",
+    "reason": "cap diario alcanzado (11/6 en 24h)",
+    "ig_bucket": "f8d1626a",
+    "ts": "2026-11-28T11:13:33.581829+00:00"
   }
 ]
