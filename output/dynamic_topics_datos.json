@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T11:09:01.816032+00:00",
+  "generated_at": "2026-11-28T14:35:17.299794+00:00",
   "topics": [
     {
       "key": "nubes_peso",
@@ -462,6 +462,90 @@
       "hook": "Algunos arrecifes de coral absorben la luz azul del océano y emiten un brillo neón brillante.",
       "angle": "La biofluorescencia protectora de los corales mesofóticos ante la radiación solar marina.",
       "visual": "arrecife coral fluorescente neon submarino azul"
+    },
+    {
+      "key": "desierto_hielo_antartida",
+      "titulo": "Por qué el desierto más grande del mundo está cubierto de hielo",
+      "hook": "El desierto más grande de todo el planeta no tiene ni una sola duna de arena.",
+      "angle": "Un desierto se define por sus escasas precipitaciones anuales, convirtiendo a la Antártida en el desierto más grande y seco de la Tierra.",
+      "visual": "Vista satelital de la Antártida, valles secos sin nieve, gráfico de milímetros de lluvia, paisaje glaciar árido"
+    },
+    {
+      "key": "caca_cubica_wombat",
+      "titulo": "El único animal del mundo que produce heces en forma de cubo",
+      "hook": "Hay un mamífero en Australia que defeca cubos geométricos casi perfectos.",
+      "angle": "Las distintas elasticidades en las paredes intestinales del wómbat moldean el alimento digerido en cubos para evitar que rueden al marcar su territorio.",
+      "visual": "Wómbat australiano en roca, modelo 3D de digestión intestinal, heces cúbicas en detalle macro, paisaje del outback"
+    },
+    {
+      "key": "dia_venus_mas_largo_ano",
+      "titulo": "El planeta del sistema solar donde un día dura más que su año",
+      "hook": "En Venus podrías celebrar tu segundo cumpleaños antes de que el Sol vuelva a ponerse.",
+      "angle": "Venus tarda 243 días terrestres en completar una sola rotación sobre su eje, pero solo 225 días terrestres en dar una vuelta completa al Sol.",
+      "visual": "Rotación hiperlenta de Venus en 3D, orbita solar comparativa, reloj planetario animado, atmósfera dorada densa"
+    },
+    {
+      "key": "cornea_sin_sangre",
+      "titulo": "La única parte de tu cuerpo que respira oxígeno directamente del aire",
+      "hook": "Hay un tejido en tu rostro que carece por completo de vasos sanguíneos y toma aire del exterior.",
+      "angle": "La córnea humana se mantiene transparente porque no contiene capilares sanguíneos, recibiendo el oxígeno disuelto directamente de las lágrimas y la atmósfera.",
+      "visual": "Primer plano macro de iris humano, esquema microscópico de difusion de oxígeno, capa transparente de la córnea, parpadeo en cámara lenta"
+    },
+    {
+      "key": "perezoso_aguanta_respiracion",
+      "titulo": "El animal lento que supera a los delfines aguantando la respiración",
+      "hook": "Este animal que apenas se mueve en tierra puede aguantar 40 minutos bajo el agua.",
+      "angle": "Los perezosos son capaces de reducir su frecuencia cardíaca a un tercio del ritmo habitual, permitiéndoles contener la respiración más tiempo que los delfines sumergidos.",
+      "visual": "Perezoso nadando en un río tropical, cronómetro en pantalla a 40m, gráfico de latidos cardíacos ralentizándose, vegetación selvática"
+    },
+    {
+      "key": "chasquido_cachalote_decibelios",
+      "titulo": "El sonido animal tan potente que podría hacer vibrar tu cuerpo",
+      "hook": "El chasquido de un cachalote bajo el agua alcanza la escalofriante cifra de 230 decibelios.",
+      "angle": "Los chasquidos de ecolocalización del cachalote son la emisión acústica biológica más intensa de la naturaleza, capaz de aturdir presas y sentirse físicamente en buzos.",
+      "visual": "Cachalote sumergiéndose en el océano profundo, ondas de sonido sísmicas 3D, gráfico de decibelios comparativo, buzo bajo el agua"
+    },
+    {
+      "key": "mariposas_lagrimas_tortuga",
+      "titulo": "Por qué las mariposas del Amazonas beben lágrimas de tortuga",
+      "hook": "En la selva amazónica, decenas de mariposas se posan en los ojos de las tortugas por una razón vital.",
+      "angle": "El sodio es extremadamenet escaso en la cuenca amazónica, por lo que las mariposas absorben las lágrimas de los reptiles para obtener las sales minerales necesarias.",
+      "visual": "Tortuga amazónica rodeada de mariposas de colores, plano macro del ojo con gota de lágrima, selva tropical de fondo, molécula de sodio flotando"
+    },
+    {
+      "key": "velocidad_oculta_tsunami",
+      "titulo": "La aterradora velocidad a la que viaja un tsunami en mar abierto",
+      "hook": "En pleno océano, una ola de tsunami avanza a la misma velocidad que un avión comercial.",
+      "angle": "En aguas profundas, los tsunamis viajan a más de 800 kilómetros por hora con una altura mínima antes de elevarse catastróficamente al tocar la costa.",
+      "visual": "Animación 3D de ola sísmica submarina, silueta de avión jet comparativo, corte transversal de profundidad oceánica, choque contra la costa"
+    },
+    {
+      "key": "velocidad_impulso_nervioso",
+      "titulo": "A qué velocidad viajan realmente las señales dentro de tus nervios",
+      "hook": "Si te golpeas el dedo del pie, la señal dolorosa corre a tu cerebro más rápido que un coche deportivo.",
+      "angle": "Los impulsos eléctricos de las neuronas mielinizadas se desplazan a velocidades de hasta 400 kilómetros por hora a lo largo del sistema nervioso.",
+      "visual": "Red neuronal brillando con impulsos eléctricos, auto de Fórmula 1 a máxima velocidad, modelo 3D de axón enviando señal, cerebro procesando datos"
+    },
+    {
+      "key": "cola_canguro_quinta_pata",
+      "titulo": "El secreto biomecánico por el que la cola del canguro actúa como quinta pata",
+      "hook": "Cuando un canguro camina despacio, su cola ejerce más fuerza impulsora que sus dos patas delanteras.",
+      "angle": "Estudios biomecánicos demuestran que la musculosa cola del canguro impulsa y apoya el cuerpo como una verdadera pierna adicional durante la marcha lenta.",
+      "visual": "Canguro caminando en cámara lenta, esqueleto mecánico resaltando la cola, vectores de fuerza en pantalla, desierto australiano"
+    },
+    {
+      "key": "rana_de_cristal_transparente",
+      "titulo": "El anfibio con piel transparente que permite ver su corazón latiendo",
+      "hook": "Existe una diminuta rana en Sudamérica cuya piel ventral es tan clara que ves sus órganos funcionar.",
+      "angle": "La rana de cristal (Centrolenidae) posee una piel completamente translúcida que revela su corazón e intestinos, escondiendo además sus glóbulos rojos en el hígado para camuflarse.",
+      "visual": "Rana de cristal vista desde abajo, corazón latiendo en macro extremo, hígado almacenando sangre 3D, hoja verde translúcida"
+    },
+    {
+      "key": "leche_de_buche_palomas",
+      "titulo": "La insólita razón por la que las palomas producen su propia leche",
+      "hook": "Aunque no son mamíferos, las palomas secretan una leche altamente nutritiva para sus pichones.",
+      "angle": "Tanto el macho como la hembra producen 'leche de buche', una sustancia rica en proteínas y grasas regulada por la hormona prolactina para alimentar a sus crías.",
+      "visual": "Paloma alimentando a su pichón en el nido, secreción celular microscópica animada, estructura de la prolactina, primer plano de pico a pico"
     }
   ]
 }
