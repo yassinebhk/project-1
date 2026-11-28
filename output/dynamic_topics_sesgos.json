@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-21T01:01:14.825197+00:00",
+  "generated_at": "2026-11-28T01:16:50.221093+00:00",
   "topics": [
     {
       "key": "efecto_arrastre",
@@ -308,6 +308,34 @@
       "hook": "Por qué compras cosas que no necesitas solo porque hoy tuviste un buen día.",
       "angle": "Finucane et al. (2000) investigaron la heurística del afecto: cómo las emociones actúan como un atajo rápido para evaluar riesgos y beneficios sin lógica.",
       "visual": "tarjeta de crédito brillante, rostro sonriente, centro comercial iluminado, gráfico de barras cayendo"
+    },
+    {
+      "key": "ceguera_inatencional",
+      "titulo": "El famoso experimento del gorila invisible que demuestra que estás ciego",
+      "hook": "¿Cómo puedes tener media tonelada de evidencia frente a tus ojos y no ver absolutamente nada?",
+      "angle": "El estudio de la inatención de Simons y Chabris muestra que la concentración extrema ciega al cerebro ante lo inesperado.",
+      "visual": "jugador de baloncesto, gorila, calle de ciudad, escaneo cerebral"
+    },
+    {
+      "key": "sesgo_autoatribucion",
+      "titulo": "Por qué tus triunfos son talento y tus fracasos mala suerte",
+      "hook": "¿Por qué cuando te sale bien es tu genio, pero si fallas es culpa de los demás?",
+      "angle": "El sesgo de autoatribución documentado en psicología social explica la defensa automática del ego ante los resultados.",
+      "visual": "trofeo de oro, dados trucados, escalera corporativa, tormenta repentina"
+    },
+    {
+      "key": "efecto_arrastre_informacion",
+      "titulo": "Por qué adoptas opiniones solo porque otros las repiten",
+      "hook": "¿Por qué te empieza a gustar una idea absurda solo porque la repiten mil personas?",
+      "angle": "La investigación sobre cascadas de información de Bikhchandani muestra cómo la imitación desplaza al análisis racional.",
+      "visual": "rebaño de ovejas, cascada de agua, red social, fibra óptica"
+    },
+    {
+      "key": "efecto_primacia",
+      "titulo": "Por qué la primera impresión destruye cualquier argumento posterior",
+      "hook": "¿Por qué tus primeros cinco segundos con alguien deciden lo que pensarás de él para siempre?",
+      "angle": "El efecto de primacía en psicología cognitiva demuestra que la primera información recibida domina sobre la posterior.",
+      "visual": "puerta abriéndose, apretón de manos, semáforo en verde, libro cerrado"
     }
   ]
 }
