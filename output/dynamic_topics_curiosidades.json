@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-22T12:25:39.749780+00:00",
+  "generated_at": "2026-11-28T00:33:41.167082+00:00",
   "topics": [
     {
       "key": "oxigeno_doble",
@@ -651,6 +651,55 @@
       "hook": "A pesar de estar a miles de millones de kilómetros, el campo magnético de un magnetar deformaría la estructura atómica de tu cuerpo.",
       "angle": "Describe la polarización del vacío en electrodinámica cuántica y la elongación de nubes electrónicas en campos de 10 mil millones de Teslas.",
       "visual": "estrella de neutrones azul ultra brillante cerca de Plutón, líneas de campo magnético distorsionando el sistema solar, átomos estirados en cilindros"
+    },
+    {
+      "key": "rayos_silenciosos",
+      "titulo": "¿Qué pasaría si los rayos cayeran en completo silencio?",
+      "hook": "Un destello cegador ilumina tu habitación, pero el trueno nunca llega a sonar.",
+      "angle": "Analizar la termodinámica del plasma y cómo la expansión supersónica del aire crea el trueno.",
+      "visual": "silent lightning strike, dark stormy sky, glowing plasma discharge, cinematic slow motion"
+    },
+    {
+      "key": "corteza_hierro_puro",
+      "titulo": "¿Qué pasaría si la superficie de la Tierra estuviera hecha de hierro puro?",
+      "hook": "El suelo bajo tus pies se vuelve tan duro y conductor que un solo imán te atraparía para siempre.",
+      "angle": "Contrastar las propiedades mecánicas de los silicatos actuales frente a una corteza metálica masiva.",
+      "visual": "solid iron landscape, metallic terrain, glowing magnetic field lines, futuristic desolate earth"
+    },
+    {
+      "key": "nieva_grafito_negro",
+      "titulo": "¿Qué pasaría si en lugar de nieve blanca cayera hollín cristalino?",
+      "hook": "Despiertas y el paisaje alpino entero está cubierto por una capa negra como el carbón.",
+      "angle": "Estudiar la física de la cristalización del carbono y cómo afectaría al albedo terrestre.",
+      "visual": "black snow falling, dark graphite crystals, frozen mountain landscape, surreal winter"
+    },
+    {
+      "key": "campo_magnetico_parpadea",
+      "titulo": "¿Qué pasaría si el escudo magnético de la Tierra se apagase un solo instante?",
+      "hook": "Durante un segundo exacto, todas las brújulas del planeta empiezan a girar como locas.",
+      "angle": "Describir el papel de la magnetosfera bloqueando eyecciones de masa coronal del Sol.",
+      "visual": "aurora borealis flickering, intense solar wind particles, planet Earth shield, cosmic space view"
+    },
+    {
+      "key": "arboles_mil_metros",
+      "titulo": "¿Qué pasaría si los bosques crecieran hasta alcanzar las nubes?",
+      "hook": "Las raíces de un solo árbol atraviesan capas enteras de la atmósfera terrestre.",
+      "angle": "Explicar los límites biológicos y físicos de la capilaridad en plantas y la tensión hídrica.",
+      "visual": "massive skyscraper trees, towering forest touching clouds, micro perspective from ground, foggy canopy"
+    },
+    {
+      "key": "gravedad_mitad",
+      "titulo": "¿Qué pasaría si la gravedad de la Tierra disminuyera un cincuenta por ciento?",
+      "hook": "Das un pequeño paso para cruzar la calle y terminas flotando medio metro en el aire.",
+      "angle": "Estudiar la relación entre la masa planetaria, la aceleración gravitacional y la retención atmosférica.",
+      "visual": "low gravity city, people floating slightly, slow motion jumps, reduced weight physics demonstration"
+    },
+    {
+      "key": "aire_50_oxigeno",
+      "titulo": "¿Qué pasaría si la atmósfera aumentara su concentración de oxígeno drásticamente?",
+      "hook": "Cada bocanada de aire te da tanta energía que una cerilla encendida explota como dinamita.",
+      "angle": "Explicar los niveles históricos de oxígeno del periodo Carbonífero y su efecto en la combustibilidad.",
+      "visual": "hyper-oxygenated forest, intense fiery combustion, giant prehistoric insects, glowing green atmosphere"
     }
   ]
 }
